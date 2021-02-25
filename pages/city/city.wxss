@@ -1,0 +1,63 @@
+/**index.wxss**/
+.containers{
+    color: rgb(140,140,140);
+    padding: 14rpx 32rpx;
+    font-size: 28rpx;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    text-align: center;
+}
+.search .weui-input{
+    width: 600rpx;
+    border-radius: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    border:1px solid rgb(86,86,86);
+}
+.place-holder:before{
+    content: "";
+  
+    padding: 10px;
+    background-position: 2rpx -190rpx;
+    background-size: 81rpx;
+    vertical-align: middle;
+}
+
+.used{
+    padding: 40rpx 0;
+    border-bottom: 1rpx solid;
+    margin-bottom: 20rpx;
+}
+.label{
+    padding: 20rpx 0;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+    justify-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+ .btn{
+   display: flex;
+   justify-content: space-between;
+   justify-items: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 10rpx;
+    width: 29%;
+    margin: 20rpx 0;
+     text-align: center;
+     min-height: 56rpx;
+     margin-right: 2%;
+}
+.btn text{
+  width:100%;
+}
+

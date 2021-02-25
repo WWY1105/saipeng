@@ -1,0 +1,26 @@
+<!--pages/order/cardOrder/cardOrder.wxml-->
+<view class="orderContainer">
+    <view class="eachOrder" wx:for="{{ orderList}}" bindtap="toDetail" data-id="{{item.id}}">
+        <view class="orderTitle flexSpace">
+            <view class="flexStart">
+                <image class="orderShopIcon"  src="https://saler.ishangbin.com/img/shareCard/order/orderShopIcon.png"></image>
+                <text class="shopName">{{item.shopName}}</text>
+            </view>
+            <text class="status">{{item.state=='1000'?'已退款':''}}</text>
+        </view>
+        <view class="orderContent flexSpace">
+            <view class="leftMsg flexStart">
+                <image src="{{item.logo}}" class="logo"></image>
+                <view class="textBox">
+                    <view class="cardName">购买共享卡</view>
+                    <view class="date">{{item.createTime}}</view>
+                </view>
+            </view>
+            <view class="orderAmount {{item.state=='1000'?'bgImage':''}}" > 
+               <text class="rmb">￥</text>{{item.orderAmount}}</view>
+        </view>
+    </view>
+</view>
+
+
+<loading show="{{showLoading}}"/>

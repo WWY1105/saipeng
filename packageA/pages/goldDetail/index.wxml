@@ -1,0 +1,33 @@
+<!--packageA/pages/goldDetail/index.wxml-->
+<view>
+  <view class="header">
+    <image class="headerBg" src="/packageA/img/buyGold/header.png" mode="aspectFit"></image>
+    <view class="header_top">
+      <view class="header_top_left">我的金币余额</view>
+      <view class="header_top_right">     
+      </view>
+    </view>
+    <view class="header_bottom">
+      <view class="header_bottom_left">{{goldNum}}</view>
+        <view class="header_bottom_right" bindtap="toShop">购买卡券</view>
+    </view>
+  </view>
+  <view class="jilu">金币变动记录</view>
+  <view class="list" wx:if="{{goldRecord}}">
+    <view class="row" wx:for="{{goldRecord}}" bindtap="toOrderDetail" data-type="{{item.type}}" data-id="{{item.id}}">
+      <view class="rowLeft">
+        <image src="/packageA/img/goldDetail/icon1.png" mode="widthFix" wx:if="{{item.type==601}}"></image>
+        <image src="/packageA/img/goldDetail/icon2.png" mode="widthFix" wx:if="{{item.type==602}}"></image>
+        <view class="rowLeft_content">
+          <view class="rowLeft_content_top">{{item.detail}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+      </view>
+      <view class="rowRight">
+        <view ><text wx:if="{{item.type==601}}">+</text><text wx:if="{{item.type==602}}">-</text> {{item.amount}}</view>
+        <image src="/packageA/img/goldDetail/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <image class="noHave" src="/packageA/img/goldDetail/noHave.png" mode="widthFix" wx:if="{{!goldRecord}}"></image>
+</view>

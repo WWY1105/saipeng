@@ -1,0 +1,90 @@
+<view class="container">
+   <!--1. 会员加入通知 -->
+   <view class="eachPart partOne" wx:if="{{type=='904'||type==904}}">
+      <view class="topBox">
+         <view class="tips">
+            <text class="iconfont icon-dui"></text> 会员加入成功</view>
+         <view class="shop">
+            <text class="shopname">欢迎加入{{data.shopName}},升级为{{data.benefits}}</text>
+         </view>
+         <view class="line"></view>
+      </view>
+
+      <!-- 有红包 -->
+      <view class="advertisementBox" wx:if="{{data.redEnvelope||data.profits}}" bindtap="toShopDetail" data-shopid="{{data.shopId}}">
+         <image class="logo" src="{{data.logo}}" mode="aspectFit"></image>
+         <view class="text" wx:if="{{data.profits}}">{{data.profits}}元现金红包</view>
+         <image class="bg" wx:if="{{data.profits}}" src="/img/shop/red_payment1.png"></image>
+         <image class="bg" wx:if="{{!data.profits}}" src="/img/shop/payment_no_money1.png"></image>
+      </view>
+   </view>
+
+   <!-- 2,权益到账通知 -->
+   <view class="eachPart parTwo" wx:if="{{type=='911'||type==911}}">
+      <view class="topBox">
+         <view class="tips">
+            <text class="iconfont icon-dui"></text> 权益到账通知</view>
+         <view class="shop">
+            <text class="shopname">已经发放到您的账户,请查收</text>
+         </view>
+         <view class="line"></view>
+      </view>
+      <view class="content">
+         <view class="eachList">
+            <text class="left">礼品</text>
+            <text class="right" wx:if="{{!data.benefitsArr}}">{{data.benefits}}</text>
+            <view class="right" style="text-align:right" wx:if="{{data.benefitsArr.length>0}}">
+               <view wx:for="{{data.benefitsArr}}">{{item}}</view>
+            </view>
+         </view>
+         <view class="eachList">
+            <text class="left">时间</text>
+            <text class="right">{{data.checkTime}}</text>
+         </view>
+      </view>
+      <!-- 有红包 -->
+      <view class="advertisementBox" wx:if="{{data.redEnvelope||data.profits}}" bindtap="toShopDetail" data-shopid="{{data.shopId}}">
+         <image class="logo" src="{{data.logo}}" mode="aspectFit"></image>
+         <view class="text" wx:if="{{data.profits}}">{{data.profits}}元现金红包</view>
+         <image class="bg" wx:if="{{data.profits}}" src="/img/shop/red_payment1.png"></image>
+         <image class="bg" wx:if="{{!data.profits}}" src="/img/shop/payment_no_money1.png"></image>
+      </view>
+   </view>
+
+   <!-- 到期通知 -->
+   <view class="eachPart partThree" wx:if="{{type=='912'||type==912}}">
+      <view class="topBox">
+         <view class="tips">
+            <text class="iconfont icon-dui"></text> 到期通知</view>
+         <view class="shop">
+            <text class="shopname">您有优惠券即将到期,请尽快到店使用</text>
+         </view>
+         <view class="line"></view>
+      </view>
+      <view class="content">
+         <view class="eachList">
+            <text class="left">优惠券</text>
+            <text class="right">{{data.benefits}}</text>
+         </view>
+         <view class="eachList">
+            <text class="left">到期时间</text>
+            <text class="right">{{data.checkTime}}</text>
+         </view>
+      </view>
+      <!-- 有红包 -->
+      <view class="advertisementBox" wx:if="{{data.redEnvelope||data.profits}}" bindtap="toShopDetail" data-shopid="{{data.shopId}}">
+         <image class="logo" src="{{data.logo}}" mode="aspectFit"></image>
+         <view class="text" wx:if="{{data.profits}}">{{data.profits}}元现金红包</view>
+         <image class="bg" wx:if="{{data.profits}}" src="/img/shop/red_payment1.png"></image>
+         <image class="bg" wx:if="{{!data.profits}}" src="/img/shop/payment_no_money1.png"></image>
+      </view>
+   </view>
+
+
+
+
+
+
+   <auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+</view>

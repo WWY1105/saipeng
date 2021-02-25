@@ -1,0 +1,134 @@
+/* packageA/pages/goldDetail/index.wxss */
+pages{
+  background-color: #fcfcfc;
+}
+.header {
+  width: 686rpx;
+  height: 220rpx;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20rpx;
+  position: relative;
+}
+.headerBg {
+  height: 100%;
+  width: 100%;
+}
+.header_top {
+  position: absolute;
+  top: 30rpx;
+  width: 622rpx;
+  margin: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.header_top_left {
+  font-size: 36rpx;
+  font-weight: 600;
+  text-shadow: 0 1px 1px #f0973a;
+  color: #fff;
+}
+.header_top_right {
+  display: flex;
+  align-items: center;
+}
+
+.header_bottom {
+  position: absolute;
+  bottom: 30rpx;
+  width: 622rpx;
+  margin: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.header_bottom_left {
+  font-size: 72rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 1px 1px #f0973a;
+}
+.header_bottom_right {
+  width: 186rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 32rpx;
+  font-weight: 550;
+  color: #ef8326;
+  border: solid 1px #ffffff;
+  background-color: #ffffff;
+}
+.jilu {
+  font-size: 36rpx;
+  font-weight: 550;
+  color: #333333;
+  margin-top: 60rpx;
+  margin-left: 32rpx;
+}
+.list {
+  width: 686rpx;
+  padding: 0 32rpx;
+  margin-top: 20rpx;
+  border-top: 1px solid #d8d8d8;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 124rpx;
+  border-bottom: 1px solid #d8d8d8;
+  width: 100%;
+}
+.rowLeft {
+  display: flex;
+  align-items: center;
+  height: 124rpx;
+}
+.rowLeft image{
+  width: 80rpx;
+  height: auto;
+  margin-right: 20rpx;
+}
+.rowLeft_content {
+  display: flex;
+  flex-direction: column;
+
+}
+.rowLeft_content_top {
+  font-size: 32rpx;
+  color: #333333;
+}
+.time {
+  font-size: 28rpx;
+  color: #999999;
+}
+.rowRight {
+  display: flex;
+  align-items: center;
+  height: 124rpx;
+}
+.rowRight view{
+  font-size: 40rpx;
+  color: #df673d;
+  margin-right: 32rpx;
+}
+.rowRight image{
+  width: 16rpx;
+}
+
+.noHave {
+  margin: 0 auto;
+  margin-top: 60rpx;
+  padding-bottom: 60rpx;
+  display: block;
+  width: 400rpx;
+  height: auto;
+}
+.tihuanimg {
+  width: 400rpx;
+  height: auto;
+}

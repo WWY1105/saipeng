@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "赛朋",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "auth": "../component/auth",
+    "buyCardPop": "../component/buyCardPop"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

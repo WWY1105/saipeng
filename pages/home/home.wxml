@@ -1,0 +1,211 @@
+<view id="home">
+   <image src="/img/goTop.png" bindtap="scrollTopFn" class="goTop" wx:if="{{scrollFlag}}"></image>
+   <scroll-view>
+      <view class='header'>
+         <view class="header_top flexSpace">
+            <!-- 定位 -->
+            <view class='city' bindtap='redirectCity'>
+               <text class="location_name" wx:if="{{location.chooseName}}">{{location.chooseName}}</text>
+               <text class="location_name" wx:elif="{{location.name}}">{{location.name}} </text>
+               <text class="location_name" wx:else>上海</text>
+               <text class="iconfont icon-icon_on_the_down locationDown"></text>
+            </view>
+            <!-- 我的参与红包 -->
+            <!-- <view class="myred" hidden="{{!ongoingRebates}}" bindtap="red_envelopes_ing">
+            <image src="/img/home/red.png" class="red"></image>
+            <text  >正在发{{ongoingRebates}}个商家的红包</text>
+            <image class="right_arrow" src="/img/home/right_arrow.png"></image>
+         </view> -->
+            <view class="header_bottom">
+               <view class="inputBox">
+                 <!--  bindconfirm="searchShop" -->
+                  <input type="text" bindinput="shopInput" name="shopname"
+                     placeholder-style="color:#999;text-align:left;" placeholder="" confirm-type="search"></input>
+                  <button class="searchBtn" bindtap="searchFn">搜索</button>
+               </view>
+            </view>
+         </view>
+
+      </view>
+      <!-- 广告图 -->
+      <view class="advertising_box">
+         <ad unit-id="adunit-e1a8c821ff41ac3d"></ad>
+
+      </view>
+
+      <view class="line" wx:if="{{taskList}}"></view>
+
+      <!-- 瀑布流 -->
+      <!--瀑布流所需，图片显示前用来获取图片等宽时的高度-->
+      <view class='get_pubu_img'>
+         <image wx:for="{{pubuliuNewArrData}}" wx:key="index" mode='widthFix' data-key='{{index}}'
+            bindload='pubuImgLoad' src="{{item.picUrl}}" />
+      </view>
+
+      <view class="li_box cardList" wx:if="{{hasData}}">
+         <view class="li_l">
+            <block wx:for="{{pubuliuResultsList.listL}}" wx:key="index">
+               <!-- 业务代码 -->
+               <view class="cateItem" data-item="{{item}}" bindtap="toDetail">
+                  <view class="item">
+                     <view class="topBox">
+                        <view class="shadow"></view>
+                        <view class="discountBox flexStart"  wx:if="{{item.type==1}}">
+                           <view class="discount flexStart">
+                              <text class="circle"></text>
+                              <text>当前{{item.current}}折</text>
+                           </view>
+                           <view class="remains" wx:if="{{item.remained}}">剩{{item.remained}}张副卡</view>
+                        </view>
+                        <image src="{{item.picUrl}}" class="itemImg" mode="widthFix"></image>
+                        <view class="shopBox flexStart">
+                           <image src="{{item.logo}}" class="logoImg" mode="widthFix"></image>
+                           <view>
+                              <view class="shopName">{{item.brand}}</view>
+                              <view class="distance_box" wx:if="{{item.distance}}">
+                                 <wxs src=".././distance.wxs" module="tools" />
+                                 <view class="smallDesc distance">{{tools.distance(item.distance)}}</view>
+                              </view>
+                           </view>
+                        </view>
+                     </view>
+                     <view class="textBox">
+                  
+                        <view class="tagBox"  wx:if="{{item.type==1}}">
+                           <view class="tag flexStart">
+                              <text class="hash">#</text> {{item.tag}}</view>
+                        </view>
+                        <view class="titleText">{{item.title}}</view>
+                        <view class="flexSpace footerBox" wx:if="{{item.type==2}}">
+                           <view>
+                              <view class="priceTitle">主卡售价</view>
+                              <view>
+                                 <text class="price">￥{{item.price}}</text>
+                                 <!-- <text class="orgPrice">￥{{item.orgPrice}}</text> -->
+                              </view>
+                           </view>
+                           <view class="toGet">抢购</view>
+                        </view>
+                        <view class=" footerBox" wx:if="{{item.type==1}}">
+                           <view class="flexSpace">
+                              <view class="flexStart userBox">
+                                 <image src="{{item.avatarUrl}}" class="avatarUrl" mode="widthFix"></image>
+                                 <text class="name">{{item.name}}</text>
+                              </view>
+                              <view class="toGet">领卡</view>
+                           </view>
+                        </view>
+                     </view>
+                  </view>
+               </view>
+            </block>
+         </view>
+         <view class="li_r ">
+            <block wx:for="{{pubuliuResultsList.listR}}" wx:key="index">
+               <!-- 业务代码 -->
+               <view class="cateItem" data-item="{{item}}" bindtap="toDetail">
+                  <view class="item">
+                     <view class="topBox">
+                        <view class="shadow"></view>
+                        <view class="discountBox flexStart"  wx:if="{{item.type==1}}">
+                           <view class="discount flexStart">
+                              <text class="circle"></text>
+                              <text>当前{{item.current}}折</text>
+                           </view>
+                           <view class="remains" wx:if="{{item.remained}}">剩{{item.remained}}张副卡</view>
+                        </view>
+                        <image src="{{item.picUrl}}" class="itemImg" mode="widthFix"></image>
+                        <view class="shopBox flexStart">
+                           <image src="{{item.logo}}" class="logoImg" mode="widthFix"></image>
+                           <view>
+                              <view class="shopName">{{item.brand}}</view>
+                              <view class="distance_box" wx:if="{{item.distance}}">
+                                 <wxs src=".././distance.wxs" module="tools" />
+                                 <view class="smallDesc distance">{{tools.distance(item.distance)}}</view>
+                              </view>
+                           </view>
+                        </view>
+                     </view>
+                     <view class="textBox">
+                    
+                        <view class="tagBox"  wx:if="{{item.type==1}}">
+                           <view class="tag flexStart"><text class="hash">#</text>{{item.tag}}</view>
+                        </view>
+                        <view class="titleText">{{item.title}}</view>
+                        <view class="flexSpace footerBox" wx:if="{{item.type==2}}">
+                           <view>
+                              <view class="priceTitle">主卡售价</view>
+                              <view>
+                                 <text class="price">￥{{item.price}}</text>
+                                 <!-- <text class="orgPrice">￥{{item.orgPrice}}</text> -->
+                              </view>
+                           </view>
+                           <view class="toGet">抢购</view>
+                        </view>
+                        <view class=" footerBox" wx:if="{{item.type==1}}">
+
+                           <view class="flexSpace">
+                              <view class="flexStart userBox">
+                                 <image src="{{item.avatarUrl}}" class="avatarUrl" mode="widthFix"></image>
+                                 <text class="name">{{item.name}}</text>
+                              </view>
+                              <view class="toGet">领卡</view>
+                           </view>
+                        </view>
+                     </view>
+                  </view>
+               </view>
+            </block>
+         </view>
+      </view>
+
+      <!-- 瀑布流end -->
+      <view class='modalbox' wx:if="{{phonePop}}" catchtouchmove='true'>
+         <view class='modal'>
+            <view class='text'>
+               <view>为了优惠券正常发放</view>
+               <view>请同意手机号授权</view>
+            </view>
+            <view style='border-top:1px solid #ccc;'>
+               <button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"
+                  style='color:#56bc37;'>手机号授权</button>
+            </view>
+         </view>
+      </view>
+
+      <view>
+         <view wx:if="{{lastPage}}">
+            <!-- <view class="weui-loadmore-tips">没有更多内容啦</view> -->
+         </view>
+         <!-- <view wx:if='{{!isRefreshing}}' class="weui-loadmore">
+            <view wx:if='{{isLoadingMoreData}}'>
+               <view class="weui-loading"></view>
+               <view class="weui-loadmore-tips">正在加载更多...</view>
+            </view>
+            <view wx:elif='{{hasMoreData}}'>
+               <view class="weui-loadmore-tips" bindtap='onReachBottom'>点击加载更多</view>
+            </view>
+               <view wx:if="{{lastPage}}">
+           <view class="weui-loadmore-tips">没有更多内容啦</view>
+      </view>
+         </view> -->
+      </view>
+   </scroll-view>
+</view>
+
+
+
+<!--  -->
+<view wx:if="{{showModal}}" class='modalbox' catchtouchmove='true' bindtap="closeModal">
+   <view class='modal buySuccessModal flexCenter'>
+      <image lazy-load="true" class="successIcon" src="https://saler.ishangbin.com/img/shareCard/successIcon.png">
+      </image>
+      <view class="buySuccessText">领取副卡成功</view>
+      <view class="tips">可在【我的】菜单查看你的共享卡</view>
+      <view class="tips">扫描商家专用"收款码"，可自动核销使用共享卡优惠</view>
+      <view class="close">知道了</view>
+   </view>
+</view>
+
+
+<loading show='{{showLoading}}' />

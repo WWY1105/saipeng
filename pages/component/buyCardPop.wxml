@@ -1,0 +1,194 @@
+<!--pages/component/buyCardPop.wxml-->
+<view class="cardModle" wx:if="{{showPop}}" catchtouchmove="{{false}}">
+  <view class="cardPop">
+    <image class="close" src="/img/close2.png" bindtap="closeShowPop"></image>
+    <view hidden="{{!cardInfo}}">
+      <view class="header">
+        <view class="line"></view>
+        <view class="cardName">{{cardInfo.name}}</view>  
+      </view>
+      <!-- <view class="xianzhi">限制: 每桌每次仅可使用1张</view> -->
+      <!-- <view class="cardValueBox">
+        <view class="cardValueBox_top">兑换价 <text>{{cardInfo.price}}金币</text></view>
+        <view class="cardValueBox_bottom">仅剩余{{cardInfo.stock}}张</view>
+      </view> -->
+      <scroll-view class="scrollBox" scroll-y>
+        <view class="contentBox" wx:if="{{cardInfo.rules.shops}}">
+          <view class="contentTitle" >适用门店：</view>
+          <view >{{cardInfo.rules.shops}}</view>
+        </view>
+        <view class="contentBox">
+          <view class="contentTitle">使用说明：</view>
+          <view>{{cardInfo.rules.periods}}</view>
+          <view>{{cardInfo.rules.time}}</view>
+          <view>{{cardInfo.rules.shared}}</view>        
+        </view>
+        <view class="contentBox">
+          <view class="contentTitle">备注：</view>
+          <view>{{cardInfo.rules.noCharge}}</view>
+          <view>{{cardInfo.rules.specialExplain}}</view>
+        </view>
+        <view class="contentBox" style="margin-bottom: 50rpx;">
+          <view class="contentTitle">退款说明：</view>
+          <view>本储值卡属于限量特价商品，购买后恕不退换。</view>
+        </view>
+      </scroll-view>
+      <view class="footer">
+        <view class="footer_left"><text>合计 </text><text class="footer_left_gold">{{cardInfo.price}}元</text></view>
+        <view class="footer_right" bindtap="postBuyCard">立即购买</view>
+      </view>
+    </view>
+  </view>
+  <view class="cardModle" wx:if="{{showConfirmPop}}">
+    <view class="confirmPop">
+      <image class="close" src="/img/close2.png" bindtap="closeConfirmPop"></image>
+      <view class="confirmPop_shopName">{{cardInfo.brand}}</view>
+      <view class="confirmPop_card">{{cardInfo.name}}</view>
+      <view class="confirmPop_img">
+        <image class="cardBg" src="{{cardInfo.picUrl}}"></image>
+        <view class="card_nr">
+          <view style="margin-top: 20rpx;height:16rpx;line-height: 16rpx;text-align:left;">
+            <!-- <image class="shopImg" src="{{cardInfo.shopImg}}"></image> -->
+            <!-- <text class="shopName">{{cardInfo.brand}}</text> -->
+            <view class="cardAmount">{{cardInfo.amount}}元</view>
+            <view class="cardType">{{resourceType[cardInfo.type]}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="confirmPop_price">需要: <text>{{cardInfo.price}}金币</text></view>
+      <view class="confirmPop_balance">您持有：{{goldNum}}金币</view>
+      <view class="confirmPop_btn" bindtap="postCard">确定兑换</view>
+      <view class="confirmPop_close" bindtap="closeConfirmPop">我再想想</view>
+    </view>
+  </view>
+
+  <view class="cardModle" wx:if="{{lackGoldPop}}">
+    <view class="lackGoldPop">
+      <image class="close" src="/img/close2.png" bindtap="closeLackGoldPop"></image>
+      <view class="lackGoldPop_top">金币余额不足</view>
+      <view class="confirmPop_price">需要: <text>{{cardInfo.price}}金币</text></view>
+      <view class="confirmPop_balance">您持有：{{goldNum}}金币</view>
+      <view class="lackGoldPop_text">是否现在去购买金币?</view>
+      <view class="lackGoldPop_img">
+        <image  src="/img/home/goldImg.png" mode="aspectFit"></image>
+      </view>
+      <view class="confirmPop_btn" style="margin_top:40rpx;" bindtap="openBuyGoldPop">购买金币</view>
+      <view class="confirmPop_close" bindtap="closeLackGoldPop">不用了</view>
+    </view>
+  </view>
+
+  <view class="cardModle" wx:if="{{successPop}}">
+    <view class="successPop">
+      <image class="close" src="/img/close2.png" bindtap="closeSuccessPop"></image>
+      <view class="successPop_title">兑换成功</view>
+      <view class="successPop_text">你成功花费{{cardInfo.price}}金币兑换</view>
+      <view class="confirmPop_img">
+        <image class="cardBg" src="{{cardInfo.picUrl}}"></image>
+        <view class="card_nr">
+          <view style="margin-top: 20rpx;height:16rpx;line-height: 16rpx;text-align:left;">
+            <!-- <image class="shopImg" src="{{cardInfo.shopImg}}"></image> -->
+            <!-- <text class="shopName">{{cardInfo.brand}}</text> -->
+            <view class="cardAmount">{{cardInfo.amount}}元</view>
+            <view class="cardType">{{resourceType[cardInfo.type]}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="successPop_shopName">{{cardInfo.brand}}</view>
+      <view class="successPop_card">{{cardInfo.name}}</view>
+      <view class="confirmPop_btn" bindtap="toMyCard">查看详情</view>
+      <view class="successPop_close" bindtap="closeSuccessPop" >关闭窗口</view>
+    </view>
+
+    
+  </view>
+
+  <view class="cardModle" wx:if="{{successPop2}}">
+    <view class="successPop2">
+      <image class="close" src="/img/close2.png" bindtap="closeSuccessPop2"></image>
+      <view class="successPop2_title">您已成功购买</view>
+      <view class="successPop2_content">目前金币余额： <text>{{goldNum}}枚</text> </view>
+      <view class="successPop2_text">请继续兑换商品</view>
+      <view class="successPop2_btn" bindtap="againBuyCard">继续兑换</view>
+    </view>
+  </view>
+
+  <view class="cardModle" wx:if="{{buyGoldPop}}">
+    <view class="buyGoldPop">
+      <image class="close" src="/img/close2.png" bindtap="closeBuyGoldPop"></image>
+      <view class="buyGoldPop_top">请选择购买金币数量</view>
+      <view class="goldRule" bindtap="openRule2">
+        <image src="/img/home/rule.png"></image>
+        <view>金币规则</view>
+      </view>
+      <scroll-view class="buySelectBox" scroll-y>
+        <view class="buySelect {{currentTab==index?'active':''}}" wx:key="*this" wx:for="{{buyList}}" data-current="{{index}}" data-payInfo="{{item}}" catchtap="selectBtn">
+          <text data-current="{{index}}" data-payInfo="{{item}}" catchtap="selectBtn">{{item.goods.principal}}枚金币 <text wx:if="{{item.goods.given>0}}">赠送{{item.goods.given}}枚</text></text>
+          <text data-current="{{index}}" data-payInfo="{{item}}" catchtap="selectBtn">¥{{item.price}}</text>
+          <view class="tips" data-current="{{index}}" data-payInfo="{{item}}" catchtap="selectBtn">随时可退</view>
+        </view>
+      </scroll-view>
+      <view class="bottomBox_top">
+        <view class="bottomBox_top_left" bindtap="selectRadio">
+          <view class="radioBox">
+            <view class="radio" wx:if="{{selectRadio}}"></view>
+          </view>
+          <view class="radioText">我已同意</view>
+        </view>
+        <view class="bottomBox_top_right" bindtap="openRule">《赛朋金币协议》</view>
+      </view>
+      <view class="confirmPop_btn" wx:if="{{selectRadio && buyList}}" bindtap="postBuyGold">购买金币</view>
+      <view class="confirmPop_btn" style="background:#ccc;" wx:else>购买金币</view>
+    </view>
+  </view>
+
+  <view class="cardModle" hidden="{{!rulePop}}">
+    <view class="goldTextPop" hidden="{{!rulePop}}">
+      <image class="goldRuleImg" src="/img/home/ruleTop.png" mode="widthFix"></image>
+      <scroll-view class="ruleContent" scroll-y>
+        <view>尊敬的用户,为保障您的合法权益,请您在点击“购买金币”按钮前,完整、仔细地阅读本金币规则,以免造成误解。当您继续点击“购买金币”按钮,即视为您已阅读、理解本协议,并同意按本协议的规定参与金币购买。</view>
+        <view><text>1、购买金币、赠送部分金币、金币余额\n1)购买金币:您实际购买的金币(人民币)\n2)赠送部分金币:根据本平台不时推出的优惠购买金币活动,您购买金币后,在您购买金币数量以外,额外赠予的金币数量。如,您购买500枚金币,根据当时的优惠购买金币活动赠送您500枚金币,超出的500枚即为赠送金币;除此以外,赠送的金币还包括通过其他活动形式赠送或补偿的金币\n3)金币余额:您小程序账户中当前显示的总金币余额,金币余额一般通过直接购买、赠送部分金币及其他形式赠送或补偿的金额所组成。</text></view>
+        <view><text>2、金币使用规则\n1)可用于支付本平台提供的餐厅餐厅储值卡兑换服务。\n2)系统将优先使用充值金额部分,当充值金额为0时,再消耗赠送部分金币。\n3)直接购买金币部分可申请退款,一旦受理并成功退款后,赠送部分金币将会一并清空。\n4)赠送部分金币不能退款或转赠。\n5)赠送的金币将在以下情形将会失效:\na.您主动注销用户账号;\nb.您存在恶意充值行为;\nC.因涉嫌作弊导致您的用户账号被冻结或关闭\nd.其他根据用户协议、相关说明或规则导致\n我们无法向您提供服务或停用服务的情形。</text></view>
+        <view><text>3、发票开具\n用餐服务发票请您向对应餐厅索取,本平台作为您和餐厅之间的信息交互匹配平台仅为您提供信息服务及买单消费代收服务,线下用餐服务由餐厅为您提供。如您需要发票,请及时向餐厅索取。</text></view>
+        <view><text>4、正当性保证\n我们包含购买赠送在内的所有优惠推广活动仅面向正当、合法使用我们赛朋小程序的用户。一旦您存在利用我们的规则漏洞进行任何形式的作弊行为(包括但不限于通过我们的活动获得不正当的经济利益),我们有权取消与作弊行为相关账户的赠送金币,追回您作弊所得的不正当经济利益、关闭作弊账户或与您相关的所有账户,并保留取消您后续使用我们服务/小程序平台的权利,及依据严重程度追究您的法律责任。</text></view>
+        <view><text>5、特别说明\n1)目前仅支持微信支付进行充值\n2)您完全理解并同意,赛朋有权随时修改本协议内容,届时将通过赛朋平台或以其他赛朋平台认为可行的方式公布修改后的协议,该公布将被视为赛朋已通知用户。如您选择继续充值即表示您同意并接受修改后的协议并受其约束;如您不同意我们对本协议的修改,请立即放弃购买或停止使用本服务。\n3)如有纠纷,任何一方均可将争议提交至平台方所在地的人民法院</text></view>     
+      </scroll-view>
+      <view class="closeBtn" bindtap="closeRule">我知道了</view>
+    </view>
+  </view>
+
+  <view class="cardModle" hidden="{{!rulePop2}}">
+    <view class="goldTextPop" hidden="{{!rulePop2}}">
+      <image class="goldRuleImg" src="/img/shop/goldRule.png" mode="widthFix"></image>
+      <scroll-view class="ruleContent2" scroll-y>
+        <view class="ruleText">
+          <image src="/img/shop/leida.png" mode="aspectFit"></image>
+          <view><text style="font-weight:600;">适用范围：\n</text> <text>金币可兑换赛朋上所有商家的储值卡;</text> </view>
+        </view>
+        <view class="ruleText">
+          <image src="/img/shop/shop.png" mode="aspectFit"></image>
+          <view><text style="font-weight:600;">购买说明：\n</text> <text>赛朋按照平台上提供的可兑换储值卡总量出售金币；\n商家可兑换储值卡的库存有波动，先兑先得；\n金币永久有效；</text> </view>
+        </view>
+        <view class="ruleText">
+          <image src="/img/shop/tui.png" mode="aspectFit"></image>
+          <view><text style="font-weight:600;">退款说明：\n</text> <text>金币购买后可随时退款；\n购买之日起7天内退款扣除手续费1%；\n超过7天退款扣除手续费3%</text> </view>
+        </view>
+      </scroll-view>
+      <view class="closeBtn" bindtap="closeRule">我知道了</view>
+    </view>
+  </view>
+
+  <view class='modalbox' wx:if="{{phonePop}}" catchtouchmove='true'>
+    <view class='modal2' >
+      <view class='text'>
+        <view>您还未绑定手机号，为保障您的权益，请绑定手机号后再进行操作</view>
+        <view>请同意绑定手机号</view>
+      </view>
+      <view style='border-top:1px solid #ccc;'>
+        <button plain="true" bindtap="closePhonePop">拒绝</button>
+        <button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='color:#56bc37;'>绑定手机号</button>
+      </view>
+    </view> 
+  </view>
+
+  <auth id="authpop"  parentThis="{{popThis}}"></auth>
+</view>

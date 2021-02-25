@@ -1,0 +1,105 @@
+<!--pages/onlineOrder/submitOrder/submitOrder.wxml-->
+<auth id="authpop" parentThis="{{parentThis}}"></auth>
+<view class="topBox flexCenter">
+   <view class="content">
+
+      <view class="top flexSpace" bindtap="getAddress" wx:if="{{defaultAddress&&defaultAddress.address}}">
+         <view class="addressBox flexStart">
+            <view class="type">{{defaultAddress.address||''}}{{defaultAddress.addressDetail||''}}</view>
+            <view class="address address2">
+               <text class="nickname">{{defaultAddress.nickname||''}}</text>
+               <text>{{defaultAddress.phone||''}}</text>
+            </view>
+         </view>
+
+         <view class="iconfont icon-bianji editIcon" data-item="{{item}}"></view>
+      </view>
+      <view class="top flexSpace" bindtap="getAddress" wx:else>
+         <view class="type">请填写收货地址</view>
+         <text class="iconfont icon-gengduo"></text>
+      </view>
+      <view class="pickerBox flexStart">
+         <view class="section__title">配送时间</view>
+         <text class="time">大约{{order.deliver.time}}送达</text>
+      </view>
+   </view>
+</view>
+<view class="orderDetail">
+   <view class="content">
+      <view class="package flexSpace">
+         <text>包装费</text>
+         <text class="price">￥{{order.packingAmount||0}}</text>
+      </view>
+      <view class="package flexSpace">
+         <text>运费</text>
+         <text class="price">￥{{carriageFee||0}}</text>
+      </view>
+      <view class="total flexEnd">
+         <view class="price">
+            <text class="small">小计</text>
+            <text class="num">￥{{order.amount}}</text>
+         </view>
+      </view>
+   </view>
+</view>
+<view class="orderDetail">
+   <view class="content">
+      <view class="partTitle">订单详情</view>
+      <view class="dishBox">
+         <view class="eachDish flexSpace" wx:for="{{order.menus}}">
+            <view class="left flexStart">
+               <image class="dishImg" src="{{item.picUrl}}"></image>
+               <view class="textBox flexColumn">
+                  <view class="name">{{item.name}}</view>
+                  <view class="desc">{{item.unit}}</view>
+                  <view class="num">x{{item.count}}</view>
+               </view>
+            </view>
+            <view class="right">
+               <view class="price">￥{{item.amount}}</view>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
+<view class="btnBox flexCenter">
+   <view class="priceBox">
+      <text>￥</text>
+      <text class="price">{{order.amount}}</text>
+      <text class="tips">（提示：请在30分钟内完成支付）</text>
+   </view>
+   <view class="right noAddress" bindtap="getAddress" wx:if="{{!defaultAddress||!addressList||addressList.items.length<=0}}">请填写收货地址</view>
+   <view class="right" bindtap="toPay" wx:else>去支付</view>
+</view>
+<!-- modal  -->
+<view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+   <view class="modals-cancel" bindtap="hideModal"></view>
+   <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <view class="titleBox">
+         <view class="cancleBox" bindtap="hideModal">取消</view>
+         <text class="title">我的收货地址</text>
+      </view>
+      <view class="listBox">
+         <view class="eachList flexSpace" wx:for="{{addressList.items}}" bindtap="changeDefaultAddress" data-item="{{item}}" data-index="{{index}}">
+            <view class="leftText flexStart">
+               <view class="radio active" wx:if="{{item.defaultAddress}}">
+                  <view class="circle"></view>
+               </view>
+               <view class="radio " wx:if="{{!item.defaultAddress}}">
+               </view>
+               <view class="addressBox">
+                  <view class="address">{{item.address}}{{item.addressDetail}}</view>
+                  <view class="addressinfo">
+                     <text class="name">{{item.nickname}}</text>
+                     <text class="tel">{{item.phone}}</text>
+                  </view>
+               </view>
+            </view>
+            <view class="iconfont icon-bianji editIcon" catchtap="editAddress" data-item="{{item}}"></view>
+         </view>
+      </view>
+      <view class="newBtnBox" catchtap="toNewAddress">
+         <view class="newBtn">新增收货地址</view>
+      </view>
+   </view>
+</view>

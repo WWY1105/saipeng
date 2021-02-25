@@ -1,0 +1,167 @@
+/* packageA/pages/orderDetail/index.wxss */
+
+page {
+   background-color: #f6d047;
+   height: 100%;
+}
+
+/* getRewards */
+
+.getRewards {
+   /* top: -45%;
+   padding-top: 0;
+   border-radius: 27rpx 27rpx 0 0; */
+}
+
+.getRewards .modal_title {
+   position: relative;
+}
+
+.getRewards .modal_title .iconfont {
+   position: absolute;
+   color: #fff;
+   top: 30rpx;
+   z-index: 99999999;
+   right: 30rpx;
+}
+
+.getRewards .topBox {
+   height: 489rpx;
+   background: url(https://saler.ishangbin.com/img/getRewordBg.png) 100% 100% no-repeat;
+   background-size: contain;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   padding-top: 0;
+   background-position-y: 0;
+   border: none;
+}
+
+.getRewards .topBox .shoplogo {
+   width: 60rpx;
+   height: 60rpx;
+   background-color: #d8d8d8;
+   margin-top: 60rpx;
+   margin-bottom: 10rpx;
+}
+
+.getRewards .topBox .shopname {
+   font-size: 32rpx;
+   color: #fff;
+}
+
+.getRewards .bottomBox {
+   background-color: #f6d047;
+   font-size: 4r0px;
+   font-weight: 500;
+   color: #ce4a2e;
+   text-align: center;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   border-radius: 0 0 27rpx 27rpx;
+}
+
+.getRewards .bottomBox .topTips {
+   max-width: 559rpx;
+   font-weight: 500;
+   margin-bottom: 40rpx;
+   font-size: 40rpx;
+   text-align: center;
+}
+
+.getRewards .couponContainer {
+   margin-bottom: 38rpx;
+}
+
+.getRewards .couponContainer  .coupon_box {
+   width: 510rpx;
+   height: 186rpx;
+   background: url(https://saler.ishangbin.com/img/shop/quan_bg1.png) 100% 100% no-repeat;
+   background-size: cover;
+   background-clip: content-box;
+   position: relative;
+   display: flex;
+}
+
+.getRewards .couponContainer  .coupon_box .quandan_img {
+   position: absolute;
+   width: 148rpx;
+   height: 66rpx;
+   top: 0;
+   left: 0;
+   margin: 0;
+}
+
+.getRewards .couponContainer  .coupon_box .discount_text {
+   font-size: 80rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #c63e37;
+   display: inline-block;
+   width: 50%;
+   /* line-height: 200rpx; *//* padding-left: 13%; */
+   line-height: 200rpx;
+}
+
+.getRewards .couponContainer  .coupon_box .discount_text .smalltext {
+   font-size: 32rpx;
+}
+
+.getRewards .couponContainer  .coupon_box .tight_top_tips {
+   position: absolute;
+   left: 69%;
+   top: 0;
+   color: #fff;
+   font-size: 24rpx;
+   padding: 4rpx 6rpx;
+   border-radius: 0 10rpx 0 10rpx;
+   background: #de1f0d;
+}
+
+.getRewards .couponContainer  .coupon_box  .right_text {
+   width: 50%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   line-height: 50rpx;
+}
+
+.getRewards .couponContainer  .coupon_box  .right_text text {
+   display: block;
+   text-align: left;
+   color: #663000;
+   font-size: 28rpx;
+   line-height: 1.7;
+}
+
+.getRewards .bottomTips {
+   text-align: left;
+   font-size: 24rpx;
+   font-weight: 500;
+   color: #000;
+   width: 500rpx;
+}
+
+.getRewards .bottomTips .title {
+   font-size: 28rpx;
+}
+
+.getRewards .btnBox {
+   margin-top: 36rpx;
+   margin-bottom: 36rpx;
+}
+
+.getRewards .btnBox image {
+   font-size: 34rpx;
+   text-align: center;
+   color: #fff;
+   width: 517rpx;
+   height: 88rpx;
+   border-radius: 46px;
+}
+
+/* =================== */

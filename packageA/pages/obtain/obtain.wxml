@@ -1,0 +1,38 @@
+<view style="overflow:hidden;">
+
+   <view class='modalbox'>
+      <view class="getRewards">
+         <view class="topBox">
+            <image class="shoplogo" src="{{posts.logo}}"></image>
+            <view class="shopname">{{posts.name}}</view>
+         </view>
+         <view class="bottomBox">
+            <view class="topTips" wx:if="{{posts.rebate&&posts.rebate.selfAmount>0}}">{{posts.rebate.selfAmount}}元现金已到达您的微信钱包，请注意微信到账通知</view>
+            <view class='couponContainer'>
+               <view class="coupon_box">
+                  <image src="/img/shop/quandan.png" class="quandan_img"></image>
+                  <!-- <view class="tight_top_tips">限量2000张</view> -->
+                  <view class="discount_text">{{posts.rebate.redEnvelope.amount}}<text class="smalltext">折</text>
+                  </view>
+                  <view class="right_text">
+                     <text>免预约</text>
+                     <text>节假日通用</text>
+                     <text>{{posts.rebate.redEnvelope.nonParticipations||''}}</text>
+                  </view>
+               </view>
+            </view>
+            <view class="bottomTips">
+               <view class="title">使用说明：</view>
+               <!-- <view class="">有效期：2019-10-25 至 2019-10-30</view> -->
+               <view class="">使用方法：到店微信扫码买单自动抵用</view>
+            </view>
+            <view class="btnBox" bindtap='toShopDetail' data-id="{{posts.id}}">
+               <!-- 我也要发返利红包 -->
+               <image src="/img/send_red_img.png"></image>
+            </view>
+         </view>
+      </view>
+   </view>
+
+   <auth id="authpop" parentThis="{{parentThis}}"></auth>
+</view>

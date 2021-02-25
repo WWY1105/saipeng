@@ -1,0 +1,516 @@
+/* pages/shareCard/myCardDesc/myCardDesc.wxss */
+page {
+    padding-top: 24rpx;
+    padding-bottom: 200rpx;
+}
+
+.cardInfo {
+    margin-top: 30rpx;
+    padding: 20rpx;
+    background: #C0352C;
+    border-radius: 10rpx;
+    font-size: 26rpx;
+    color: #FFFEFE;
+    font-weight: bold;
+    align-items: flex-start;
+    margin-bottom:30rpx;
+}
+
+.cardInfo .tongzhi {
+    width: 27rpx;
+    height: 24rpx;
+    margin-right: 20rpx;
+}
+
+.shopInfo {
+    margin-bottom: 24rpx;
+}
+
+.shopInfo .logo {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    margin-right: 10rpx;
+}
+
+.shopInfo .brand {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #343434;
+}
+
+.containerBox {
+    padding: 0 24rpx;
+}
+
+.cardBox {
+    background: url(https://saler.ishangbin.com/img/shareCard/cardBg.png) left center no-repeat;
+    background-size: cover;
+    padding: 40rpx 40rpx 30rpx;
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+    overflow: visible;
+   height: 290rpx;
+   box-sizing: border-box;
+}
+.mainCard,.fuCard{
+    position: absolute;
+    top: 30rpx;
+    left: -16rpx;
+    width: 164rpx;
+    height: 64rpx;
+}
+
+.cardBox  .name {
+    font-size: 32rpx;
+    font-weight: bolder;
+    margin-bottom: 40rpx;
+    color: #C57821;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-clip: text;
+    margin-top: 36rpx;
+    background:linear-gradient(-86deg, #C57821  0%,#FFE695 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+
+.cardBox .date {
+    font-size: 22rpx;
+    color: #EECA94;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    text-align: right;
+    border: 1px solid #EECA94;
+    border-radius: 28rpx;
+    padding: 10rpx 16rpx;
+    width: fit-content;
+}
+
+.cardBox2 .rightBox {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cardBox2 .tips {
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #EECA94;
+    line-height: 26rpx;
+}
+
+.cardBox .rightBox .seeDetail {
+   
+}
+
+.cardBox .cardDetailIcon {
+    width: 44rpx;
+    height: 44rpx;
+    margin-left: 25rpx;
+}
+
+.parterBox {
+    background-color: #fff;
+    padding: 34rpx 20rpx;
+    border-radius: 10rpx;
+    margin-top: 30rpx;
+}
+
+.parterBox .title {
+    font-size: 38rpx;
+    font-weight: bold;
+    color: #282A34;
+    line-height: 48rpx;
+    margin-bottom: 40rpx;
+    align-items: baseline;
+}
+
+.parterBox .toInvide {
+    margin: 0;
+    line-height: 1;
+    background: #FFBC5A;
+    border-radius: 10rpx;
+    text-align: center;
+    padding: 20rpx 48rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #421F00;
+}
+
+
+
+.parterBox .parter {
+    margin-top: 25rpx;
+    font-size: 24rpx;
+    color: #343434;
+    flex-wrap: wrap;
+}
+
+.parterBox .parter .eachParter {
+    text-align: center;
+    margin-right: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.parterBox .parter image.parterImg {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+
+}
+
+.parterBox .parter .name {
+    max-width: 40rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 80rpx;
+}
+
+.couponNav {
+    font-size: 24rpx;
+    color: #EEC993;
+    line-height: 68rpx;
+    width: 50%;
+    height: 68rpx;
+    line-height: 68rpx;
+    border: 1px solid #EEC993;
+    border-radius: 6rpx;
+    margin: 0 10rpx;
+    max-width: 280rpx;
+}
+.couponNav  .leftText{
+    flex: 1;
+    text-align: center;
+}
+.couponNav  .couponCount{
+    color: #EEC993;
+    font-size: 30rpx;
+    font-weight: bold;
+} 
+
+.couponNav  .tag{
+    background: url(https://saler.ishangbin.com/img/shareCard/couponNumBg.png) right center no-repeat;
+    background-size: 115rpx 100%;
+    color: #411E00;
+    font-size: 24rpx;
+    height: 100%;
+    width: 115rpx;
+    text-align: center;
+    line-height: 68rpx;
+}
+.couponNav  .tag .text{
+    width: 90%;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 10rpx;
+}
+
+/* 进度条start */
+.cardProcessBox {
+    margin-top: 80rpx;
+}
+
+.cardProcessBox .lineBox {
+    position: relative;
+    min-height: 10rpx;
+    flex:1;
+    margin: 0 27rpx;
+    margin-top: 10rpx;
+}
+
+.cardProcessBox .bgLine {
+    width: 100%;
+    height: 10rpx;
+    background: #C8B4A0;
+    border-radius: 5rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cardProcessBox .acLine {
+    height: 10rpx;
+    background: #FFBB59;
+    border-radius: 5rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.cardProcessBox .locateBox{
+    position: absolute;
+    top: 50%;
+    margin-top: -17rpx;
+    flex-direction: column;
+}
+.cardProcessBox image.locate {
+    width: 56rpx;
+    height: 33rpx;
+}
+
+
+.cardProcessBox .textBox,.cardProcessBox  .nowDiscount {
+    font-size: 26rpx;
+    font-weight: bold;
+    color: #EEC993;
+    /* margin-top: 15rpx; */
+    align-items: baseline;
+}
+.cardProcessBox .textBox  .discountNum{
+    color: #EEC993;
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+/* 进度条end */
+
+
+
+/* 权益 */
+.contentContainer {
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+}
+
+.contentContainer .content {
+    background: #fff;
+    padding: 0 24rpx;
+    padding-bottom: 43rpx;
+    padding-top: 37rpx;
+    border-radius: 10rpx;
+
+}
+
+.contentContainer .content .rightBox {
+    margin-bottom: 34rpx;
+}
+
+.contentContainer .content .titleLine {
+    width: 106rpx;
+    height: 12rpx;
+}
+
+.contentContainer .content .titleLine.titleLineLeft {
+    margin-right: 40rpx;
+}
+
+.contentContainer .content .titleLine.titleLineRight {
+    margin-left: 40rpx;
+}
+
+.contentContainer .content .rightTitle {
+    font-size: 32rpx;
+    font-weight: bolder;
+    color: #272934;
+    background: linear-gradient(270deg, #B89B7B 0%, #7B6244 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.containerCouponTitle {
+    background: url(https://saler.ishangbin.com/img/shareCard/partBg.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    padding-top: 18rpx;
+    padding-bottom: 14rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.containerCouponTitle .main {
+    font-size: 30rpx;
+    font-weight: bolder;
+    color: #411E00;
+    margin-bottom: 14rpx;
+}
+
+.containerCouponTitle .second {
+    font-size: 24rpx;
+    color: #856944;
+}
+/* 图表 */
+.chartBoxContainer .eachRules:first-child {
+    margin-right: 65rpx;
+}
+
+.chartBoxContainer .eachRules:last-child {
+    margin-left: 65rpx;
+}
+
+.chartBoxContainer .eachRules .content {
+    flex-direction: column;
+    width: 184rpx;
+    height: 184rpx;
+    border-radius: 50%;
+    background: url(https://saler.ishangbin.com/img/shareCard/discountbg.png) center center no-repeat;
+    background-size: cover;
+    color: #411E00;
+    font-size: 20rpx;
+    padding: 0;
+}
+
+.chartBoxContainer .eachRules .present {
+    color: #411E00;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+
+.chartBoxContainer .eachRules .desc {
+    margin-top: 10rpx;
+    text-align: center;
+}
+
+.chartBoxContainer .eachRules .desc .title {
+    color: #333;
+    font-size: 24rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+.chartBoxContainer .eachRules .desc .times {
+    color: #333;
+    font-size: 22rpx;
+    margin-bottom: 20rpx;
+}
+
+.chartBoxContainer .eachRules .desc .times .num {
+    color: #411E00;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+/* 卡折扣翻倍 */
+/* 活动说明 */
+.contentContainer .content .mainTitle {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20rpx;
+}
+
+.contentContainer .content .descBox {
+    color: #000;
+    font-size: 24rpx;
+
+}
+
+.contentContainer .content .descBox .eachDesc {
+    line-height: 48rpx;
+}
+.shopDetailBox {
+    /* padding: 20rpx 24rpx; */
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.shopDetailBox .content .title {
+    /* margin: 0 26rpx; */
+    background: #fff;
+    padding-bottom: 26rpx;
+    /* padding-top: 30rpx; */
+    color: #333;
+    font-size: 30rpx;
+    font-weight: bolder;
+}
+/* 适用门店 */
+.contentContainer .content .shopsBox .eachShop {
+    padding: 20rpx 0;
+}
+
+.contentContainer .content .shopsBox .shopName {
+    color: #000;
+    font-size: 28rpx;
+    margin-bottom: 17rpx;
+}
+
+.contentContainer .content .shopsBox .address {
+    color: #9E9FA8;
+    font-size: 22rpx;
+}
+
+.contentContainer .content .shopsBox .phone {
+    padding-left: 35rpx;
+    min-height: 48rpx;
+    border-left: 2rpx solid #E6E7E9;
+}
+
+.contentContainer .content .shopsBox .phone image {
+    width: 30rpx;
+    height: 38rpx;
+}
+
+.contentContainer .content .seeMoreShop {
+    flex-direction: column;
+    font-size: 24rpx;
+    color: #272934;
+    padding: 20rpx 0;
+    border-top: 1rpx solid #EEEEEE;
+}
+
+.contentContainer .content .seeMoreShop .arrowDown {
+    margin-top: 10rpx;
+    width: 16rpx;
+    height: 9rpx;
+}
+
+.contentContainer .content .seeMoreShop .arrowDown.trans {
+    transform: rotate(180deg);
+}
+
+.contentContainer .content.shopContent {
+    padding-bottom: 0;
+}
+
+
+/*  */
+.arrowRight{
+    width: 9rpx;
+    height: 16rpx;
+    margin-left: 10rpx;
+  }
+  .bottomBtn .price{
+    color: #EEC993;
+    font-size: 26rpx;
+}
+.toBuy{
+    text-align: center;
+    width: 35%;
+    color: #5A3E0E;
+    font-size: 36rpx;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+.toBuy.fulldata {
+   color: #9A9A9A;
+}
+.couponNav1,.parterBox .title .rightTips{
+    color:#91919E;
+    font-size:24rpx;
+    font-weight: bolder;
+   
+    text-align: right;
+}
+.parterBox .title .rightTips{
+    width: 85rpx;
+}
+.parterBox .title .leftTips{
+    flex:1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+.cardTopInfo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

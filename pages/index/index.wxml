@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view wx:if="{{baffle}}">
+  <view class="container">
+    <view class="userinfo">
+        <!-- <view class='avatar'></view> -->
+        <image class='avatar' src='../../img/logo.png'></image>
+        <text class="name">{{name}}</text>
+        <view class='line'></view>
+        <!-- <text class='title'>请确认以下授权信息</text>
+        <text class='content'>·获取你的信息（头像，信息等）</text>
+        <button class='btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button> -->
+    </view>
+  </view>
+  <view class='modal' wx:if="{{phonePop}}">
+    <view class='text'>
+      <view>为了赏金正常到账</view>
+      <view>请同意手机号授权</view>
+    </view>
+    <view>
+      <button plain="true" bindtap='closePop'>拒绝</button>
+      <button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">手机授权</button>
+    </view>
+  </view>
+</view>
+

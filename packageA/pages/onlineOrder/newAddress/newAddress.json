@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "auth": "/pages/component/auth"
+  },
+  "navigationBarTitleText":"新增收货地址"
+}

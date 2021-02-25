@@ -1,0 +1,49 @@
+<view class="container">
+   <view class='topContainer'>
+      <view class="topBox">
+         <view class="title">总收益</view>
+         <view class="num">{{total}}元</view>
+      </view>
+   </view>
+   <!-- 内容 -->
+   <view class="content">
+      <view class="titleBox">
+         <text class="left">收益明细</text>
+      </view>
+      <view class='nodata' wx:if="{{recordList.length==0}}">
+         <view class="iconfont icon-kong"></view>
+         <view class="text">空空的哦~</view>
+      </view>
+      <view class="listBox">
+         <!-- <image class='nocoupon' wx:if="{{recordList.length==0}}" src='https://i.ishangbin.com/img/user/images/nocoupon.png'></image> -->
+
+         <view class="eachList" wx:for="{{recordList}}" wx:key="*this" data-id="{{item.shopId}}" bindtap='toMyIncome'>
+            <view class="left">
+               <view class="textBox">
+                  <view class="ussername">{{item.shopName}}</view>
+               </view>
+            </view>
+            <view class="right">{{item.amount}}元
+               <text class="iconfont icon-gengduo"></text> </view>
+         </view>
+      </view>
+   </view>
+   <view>
+      <view wx:if='{{!isRefreshing}}' class="weui-loadmore">
+         <view wx:if='{{isLoadingMoreData}}'>
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore-tips">正在加载更多...</view>
+         </view>
+         <view wx:elif='{{hasMoreData}}'>
+            <view class="weui-loadmore-tips" bindtap='onReachBottom'>点击加载更多</view>
+         </view>
+         <view wx:else>
+            <view class="weui-loadmore-tips">没有更多内容啦</view>
+         </view>
+      </view>
+   </view>
+   <auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+
+
+</view>

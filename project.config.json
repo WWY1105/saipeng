@@ -1,0 +1,250 @@
+{
+    "description": "项目配置文件。",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": false,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": true,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": true,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "bundle": false,
+        "useIsolateContext": true,
+        "useCompilerModule": true,
+        "userConfirmedUseCompilerModuleSwitch": false,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.7.7",
+    "appid": "wx46f8b078bc4fb106",
+    "projectname": "%E6%8E%A2%E9%95%BF%E6%8E%A2%E5%BA%97",
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "id": 0,
+                    "name": "模拟更新",
+                    "pathName": "pages/home/home",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 1,
+                    "name": "发起者",
+                    "pathName": "pages/shopDetail/index",
+                    "query": "latitude=31.2494&location=021&longitude=121.397&id=907d62bc9e2546f7b75c28ec72cc0a88&timestamp=1571884184109&signature=59f0cb3ec042daec7869933b51ccfc1c",
+                    "scene": 1035,
+                    "referrerInfo": {}
+                },
+                {
+                    "id": 2,
+                    "name": "接收者",
+                    "pathName": "pages/recipients/index",
+                    "query": "redId=5f1aafd6dc0e820012f2c2ac",
+                    "scene": 1008
+                },
+                {
+                    "id": 3,
+                    "name": "pages/home/home",
+                    "pathName": "pages/home/home",
+                    "query": "/rebates/123",
+                    "scene": 1007
+                },
+                {
+                    "id": -1,
+                    "name": "我的",
+                    "pathName": "pages/my/my",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 5,
+                    "name": "正在发",
+                    "pathName": "pages/red_envelopes_ing/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的收益",
+                    "pathName": "pages/myIncome/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "收益记录",
+                    "pathName": "pages/incomeRecord/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 8,
+                    "name": "订单",
+                    "pathName": "pages/orderDetail/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "获得奖励",
+                    "pathName": "pages/getRewards/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "已结束",
+                    "pathName": "pages/red_envelopes_ed/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的优惠券",
+                    "pathName": "packageA/pages/myBenefit/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "pages/home/home",
+                    "pathName": "pages/home/home",
+                    "query": "",
+                    "scene": 1007
+                },
+                {
+                    "id": 13,
+                    "name": "packageA/pages/obtain/obtain",
+                    "pathName": "packageA/pages/obtain/obtain",
+                    "query": "id=d98c38f2a45c4980b9371954e7920e78&latitude=31.2494&location=021&longitude=121.397&shopId=ce535885ea51489c82dd2c40b3047d2e&timestamp=1571884184109&signature=59f0cb3ec042daec7869933b51ccfc1c",
+                    "scene": null
+                },
+                {
+                    "id": 14,
+                    "name": "通知",
+                    "pathName": "pages/notification/index",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 15,
+                    "name": "新增地址",
+                    "pathName": "packageA/pages/onlineOrder/newAddress/newAddress",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 16,
+                    "name": "确认订单",
+                    "pathName": "packageA/pages/onlineOrder/confirmOrder/index",
+                    "query": "orderId=5f003eb05f150300115f902b",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "支付成功",
+                    "pathName": "packageA/pages/onlineOrder/paySuccess/paySuccess",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 18,
+                    "name": "顾客确认-自提",
+                    "pathName": "packageA/pages/onlineOrder/client/confirmOrderSelf/index",
+                    "query": "orderId=5f0b03155f15030011f30b21",
+                    "scene": null
+                },
+                {
+                    "id": 19,
+                    "name": "顾客确认-外卖",
+                    "pathName": "packageA/pages/onlineOrder/client/confirmOrderTakeout/index",
+                    "query": "orderId=5f0bc33d5f15030011f30b2e",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "共享卡-卡详情",
+                    "pathName": "pages/shareCard/cardDetail/cardDetail",
+                    "query": "activityId=5f609248e21b840011d39b7a&shopId=ab970045467646118b92ee0694c0188c",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "共享卡-我的卡列表",
+                    "pathName": "pages/shareCard/myCardList/myCardList",
+                    "query": "activityId=5f609248e21b840011d39b7a&shopId=ab970045467646118b92ee0694c0188c",
+                    "scene": null
+                },
+                {
+                    "id": 26,
+                    "name": "推广中间页",
+                    "pathName": "pages/business/index",
+                    "query": "t=p&id=c83c8d8e247343689f8ca122aa66ad7f",
+                    "scene": null
+                },
+                {
+                    "name": "购卡",
+                    "pathName": "pages/shareCard/buyCard/buyCard",
+                    "query": "activityId=5f609248e21b840011d39b7a&shopId=815064ce3d4e4acf95f5d1314bc6d5c2",
+                    "scene": null
+                },
+                {
+                    "name": "pages/shareCard/myCardDesc/myCardDesc",
+                    "pathName": "pages/shareCard/myCardDesc/myCardDesc",
+                    "query": "orderId=5fe6c12ad601800011cb3901&shopId=2f7250ff4c72429f9719eec71bffc55c&d",
+                    "scene": null
+                },
+                {
+                    "name": "加入",
+                    "pathName": "pages/shareCard/joinShare/joinShare",
+                    "query": "id=11bc24fa0d0a4fe6961e3a792071f19f",
+                    "scene": null
+                },
+                {
+                    "name": "购买成功",
+                    "pathName": "pages/shareCard/buySuccess/buySuccess",
+                    "query": "orderId=600e57a6e21b840011b373fa",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

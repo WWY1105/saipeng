@@ -1,0 +1,85 @@
+/* pages/order/cardOrder/cardOrder.wxss */
+.orderContainer {
+    padding: 20rpx 24rpx;
+    background: #f5f5f5;
+}
+
+.orderShopIcon {
+    width: 34rpx;
+    height: 28rpx;
+}
+
+.eachOrder {
+    background-color: #FFFEFB;
+    padding: 0 24rpx;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.eachOrder .orderTitle {
+    padding: 28rpx 0;
+    border-bottom: 1rpx solid #ECECEC;
+}
+
+.eachOrder .orderTitle .shopName {
+    margin-left: 10rpx;
+    color: #333;
+    font-weight: bold;
+    font-size: 28rpx;
+}
+
+.eachOrder .orderTitle .status {
+    font-size: 24rpx;
+    color: #FF9700;
+}
+
+.eachOrder .orderContent {
+    padding: 22rpx 0;
+}
+
+.leftMsg {
+    justify-content: flex-start;
+}
+
+.eachOrder .orderContent .logo {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+}
+
+.eachOrder .orderContent .textBox {
+    min-height: 120rpx;
+}
+
+.eachOrder .orderContent .cardName {
+    font-size: 28rpx;
+    color: #333333;
+    margin-bottom: 20rpx;
+}
+
+.eachOrder .orderContent .date {
+    font-size: 24rpx;
+    color: #333333;
+}
+
+.orderAmount {
+    color: #000;
+    font-weight: bold;
+    font-size: 36rpx;
+    width: 132rpx;
+    height: 103rpx;
+    text-align: center;
+    line-height: 103rpx;
+    background-size: cover;
+}
+.orderAmount.bgImage{
+    background: url(https://saler.ishangbin.com/img/shareCard/order/refundIcon.png) center center no-repeat;
+    background-size: cover;
+}
+
+.orderAmount .rmb {
+    color: #000;
+    font-weight: normal;
+    font-size: 24rpx;
+}

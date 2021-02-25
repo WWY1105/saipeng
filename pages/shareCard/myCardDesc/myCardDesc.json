@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "共享权益卡",
+  "usingComponents": {
+    "parser": "../../component/parser/parser"
+  }
+}

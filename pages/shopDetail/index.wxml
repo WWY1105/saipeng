@@ -1,0 +1,353 @@
+<!--pages/shopDetail/index.wxml-->
+<view hidden="{{init}}">
+	<scroll-view class="scrollView-wrapper" scroll-y="true" style="height: 100%;">
+		<view class="topBox">
+			<!-- 顶部 视频图片 start-->
+			<view class="top_media">
+				<video id='myVideo' class='video' src='{{video}}' controls="{{true}}"
+					poster="{{posts.video.coverPicUrl}}" custom-cache="{{false}}" style="{{videoheight}}"
+					wx:if="{{video}}">
+				</video>
+				<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" circular="{{true}}"
+					style="height:422rpx;" wx:if="{{!video}}">
+					<swiper-item wx:for="{{picUrls_fake}}" wx:key="index">
+						<image style="height:422rpx;width:100%;" src="{{item}}" mode="aspectFill"></image>
+					</swiper-item>
+				</swiper>
+			</view>
+			<!-- 顶部 视频图片end -->
+		</view>
+		<!-- 商家简介 start-->
+		<view class="shop_brief_info">
+			<!-- <view class="radius"></view> -->
+			<view class='contenttext'>
+				<view class='poster_box'>
+					<view>
+						<view class="titleBox">
+							<text class='title'>{{posts.brandName}}{{posts.name}}</text>
+							<wxs src=".././distance.wxs" module="tools" />
+							<!-- 测试 测试 测试 测试 测试 测试 测试 测试 测试 -->
+							<!-- <button  form-type='submit' open-type="share">   -->
+							<view class="distance" wx:if="{{posts.distance}}">距离 :{{tools.distance(posts.distance)}}
+							</view>
+							<!-- </button> -->
+						</view>
+						<view class="poster">{{posts.poster}}</view>
+						<view class="tese"> {{posts.businessZoneText}} | {{posts.cuisineText}} | ¥{{posts.avgprice}}/人
+						</view>
+						<view class="shop_info">
+							<view class='address'>
+								<text class="leftText">地址</text>{{posts.address}}</view>
+							<view class="function" bindtap="toMap">
+								<!-- <image src="/packageA/img/shopDetail/gps.png" bindtap="toMap"></image> -->
+								<text class="iconfont icon-daohang"></text>
+								<text>导航</text>
+								<!-- <view></view>
+              <image src="/packageA/img/shopDetail/phone.png" bindtap="makePhone"></image> -->
+							</view>
+						</view>
+						<view class='startTime'>
+							<text class="leftText">营业时间</text> {{posts.beginTime}}—{{posts.closeTime}}
+							<text class="function shop_tel" bindtap="makePhone"><text
+									class="iconfont icon-dianhua"></text>{{posts.tel}}</text>
+						</view>
+
+					</view>
+
+				</view>
+			</view>
+
+		</view>
+		<!-- 商家简介 end-->
+
+
+		<!-- 已经领取过红包了   弹窗 -->
+
+		<view class="line" style="margin-top:80rpx;" wx:if="{{taskList}}"></view>
+		<view class="contentTitle" wx:if="{{taskList}}">
+			<view>
+				<image src="/packageA/img/shopDetail/zuduiImg.png" mode="aspectFit"></image>
+			</view>
+			<view class="contentTitle_line"></view>
+		</view>
+		<!-- 商家详情 -->
+		<!--文案素材 -->
+		<view class="sucaibox" wx:if="{{posts.rebate}}">
+			<view class="line"></view>
+			<view class="content">
+				<view class="title">文案素材</view>
+				<view class="textBox">
+					<view class="textBg">
+						<text class="iconfont icon-xian-dian-copy-copy"></text> 分享文案
+						<text class="iconfont icon-xian-dian-copy"></text>
+					</view>
+					<view class="text"> {{posts.poster}} </view>
+					<view class="copy_btn_box" bindtap='copyText' data-text="{{posts.poster}}">
+						<view class="copy_btn">
+							<text class="iconfont icon-copy"></text> 点击一键复制 </view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 商家海报图片 -->
+		<!-- <view class="haibaoBox" wx:if="{{posts.rebate}}">
+			<view class="line"></view>
+			<view class="titleBox">
+				<text>商家海报图片</text>
+				<form report-submit="true" bindsubmit='saveHaiBaoImg'>
+					<input type='text' value='1' style='display:none;'></input>
+					<button class="saveBtnBox" form-type='submit'>
+						<text class="saveIcon"></text>保存全部图片
+					</button>
+				</form>
+			</view>
+			<view class="picBox">
+				<view class="eachImage flexCenterBox">
+					<image wx:if="{{!canva}}" style="height:100rpx;width:100rpx;" src="{{loading_gif}}" mode='aspectFill'></image>
+					<image style="height:222rpx;width:100%;" src='{{canva}}' wx:if="{{canva}}" data-src='{{canva}}' mode='aspectFill' bindtap="previewImageCanvas"></image>
+				</view>
+				<view class="eachImage" wx:for="{{picUrls_haibao}}" wx:key="index" wx:key="{{index}}" wx:for-index="index" wx:if="{{index<=8}}">
+					<image style="height:222rpx;width:100%;" src="{{item}}" mode="aspectFill" data-src="{{item}}" bindtap="previewImage"></image>
+				</view>
+			</view>
+		</view> -->
+		<!-- 图文详情 -->
+		<view class="line"></view>
+		<view class="textContent">
+			<view class="line white"></view>
+			
+			<parser html="{{posts.richContent}}" wx:if="{{posts.richContent}}"/>
+			<view class="picBox" wx:if="{{!posts.richContent}}">
+				<view wx:for="{{posts.pictures}}" class="item-{{index}}" wx:key="index"
+					style="margin-top:0rpx;color:#333;">
+					<view style='text-align:center;font-size:36rpx;color:#333;word-break: break-all;'>{{item.title}}
+					</view>
+					<text style='font-size:28rpx;color:#999;word-break: break-all;'>{{item.content}}</text>
+					<view>
+						<view class="loading4" wx:if="{{!arry[index]&&item.smallPicFlag}}">
+							<view class="three1"></view>
+							<view class="three2"></view>
+							<view class="three3"></view>
+						</view>
+						<image class="shopsListImg" lazy-load src="{{item.url}}" mode='widthFix' data-index='{{index}}'
+							data-src="{{item.url}}" bindtap="previewImage"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- 图文  end-->
+
+		<!-- 还没有授权地理位置的弹窗 -->
+		<view class='modalbox' wx:if="{{has_no_auth_address}}" catchtouchmove='true'>
+			<view class='modal location_modal'>
+				<view class='text'>
+					<view class="modal_big_title">注意</view>
+					<view class="modal_active_tips">未获得地理位置</view>
+					<view class="modal_common_tips">门店10km内可领钱, 超过10km只有优惠券</view>
+					<view class="modal_shop_address">门店地址：上海市普陀区中山北路1759号浦发广场D座1807</view>
+				</view>
+				<view>
+					<button plain="true" class="btn_to_auth" bindtap='to_auth_address'>去授权</button>
+					<button plain="true" open-type="getPhoneNumber" bindtap="to_get_coupon"
+						class="to_get_coupon">现在领券</button>
+				</view>
+			</view>
+		</view>
+
+		<view class='modalbox' wx:if="{{showPhonePop}}" catchtouchmove='true'>
+			<view class='modal '>
+				<view class='text'>
+					<view>为了赏金能正常到账</view>
+					<view>请同意手机号授权</view>
+				</view>
+				<view style='border-top:1px solid #ccc;'>
+					<button plain="true" bindtap='closePhonePop'>拒绝</button>
+					<button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"
+						style='color:#56bc37;'>手机号授权</button>
+				</view>
+			</view>
+		</view>
+		<!-- 点击发红包之后的弹窗  -->
+		<view class='modalbox' hidden="{{!send_modal}}" catchtouchmove='true'>
+			<view class='modal send_modal'>
+				<view class="modal_title" bindtap="claseRedEnvelopesModal">
+					<text class="close iconfont icon-close" data-modalname="send_modal"></text>
+				</view>
+				<!-- 有钱的情况 -->
+				<view class="content1 {{posts.rebate.total?'':'content2'}}"
+					hidden="{{(posts.rebate&&!(posts.rebate.total>0))}}" style="background-image:url({{hongBg}})">
+					<view class="redShowBox">
+						<!-- 折扣券 start-->
+						<view class="content" wx:if="{{posts.rebate.redEnvelope.couponCategory== '903'}}">
+							<view class="coupon">
+								<view class="discount_text">
+									<text>{{posts.rebate.redEnvelope.amount}}</text><text class="smalltext">折</text>
+								</view>
+							</view>
+							<view class="right" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+								<text class="iconfont icon-X"></text>
+								<text class="web-font">{{posts.rebate.total}}元现金</text>
+							</view>
+						</view>
+						<!-- 折扣券 end-->
+						<!-- 代金券 start-->
+						<view class="content" wx:if="{{posts.rebate.redEnvelope.couponCategory== '901'}}">
+							<view class="coupon cash_coupon cash_coupon_modal" bindtap="toCDetail"
+								data-id="{{posts.rebate.redEnvelope.id}}">
+								<view class="left">
+									<view class="top">{{posts.rebate.redEnvelope.amount}}<text>元</text>
+									</view>
+									<view class="small ellipsis">{{posts.rebate.redEnvelope.useStrategy}}</view>
+								</view>
+								<view class="right">
+									<view class="top">代金券</view>
+									<view class="small ellipsis">{{posts.rebate.redEnvelope.times}}</view>
+								</view>
+							</view>
+							<view class="right cash_coupon_right" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+								<text class="iconfont icon-X"></text>
+								<view class="web-font">
+									<view>{{posts.rebate.total}}元</view>
+									<view>现金</view>
+								</view>
+							</view>
+						</view>
+						<!-- 代金券 end-->
+					</view>
+					<!-- 有钱的红包 -->
+					<view class="desc" wx:if="{{posts.rebate&&posts.rebate.total}}">
+						<view class="each each1">
+							<view class="big web-font2">
+								<text class="icon"></text>
+								<text> 分享后自己先拆<text class="num web-font">{{posts.rebate.selfAmount}}</text>元</text>
+							</view>
+							<!-- 随机金额 -->
+							<view wx:if="{{posts.rebate.partMinAmount}}" class="small web-font2">好友拆
+								<text
+									class="num web-font">{{posts.rebate.partMinAmount}}~{{posts.rebate.partMaxAmount}}</text>元之间
+							</view>
+							<!-- 固定金额 -->
+							<view wx:if="{{posts.rebate.partAmount}}" class="small web-font2">好友拆
+								<text class="num web-font">{{posts.rebate.partAmount}}</text>元</view>
+						</view>
+						<view class="each each2">
+							<view class="big web-font2">
+								<text class="icon"></text>
+								<text class="ellipsis"><text wx:if="{{posts.rebate.commisionMode==2}}">好友拆出现金的<text
+											class="num web-font">{{posts.rebate.commisionAmount}}</text>倍奖励</text>
+									<text wx:if="{{posts.rebate.commisionMode==1}}">好友拆出现金,获<text
+											class="num web-font">{{posts.rebate.commisionAmount}}</text>元奖励</text>
+								</text>
+							</view>
+							<view class="small web-font2">发的多赚的多</view>
+						</view>
+					</view>
+					<!-- 只有券 -->
+					<view class="desc quandesc" wx:if="{{posts.rebate&&!(posts.rebate.total)}}">
+						<view class="title1">分享后你和好友都可领</view>
+						<!-- 限量优惠券 -->
+						<view class="title2">
+							<view class="bg"></view>
+						</view>
+					</view>
+
+				</view>
+				<view class="btnbox" bindtap="showSend">
+					<button>分享拆红包</button>
+				</view>
+			</view>
+		</view>
+
+
+		<!-- 手机号授权弹窗 -->
+		<view class='modalbox' wx:if="{{showPhonePop}}" catchtouchmove='true'>
+			<view class='modal '>
+				<view class='text'>
+					<view>为了赏金能正常到账</view>
+					<view>请同意手机号授权</view>
+				</view>
+				<view style='border-top:1px solid #ccc;'>
+					<button plain="true" bindtap='closePhonePop'>拒绝</button>
+					<button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"
+						style='color:#56bc37;'>手机号授权</button>
+				</view>
+			</view>
+		</view>
+
+		<view class="canvasBox" bindtap='manualCanvas' wx:if="{{canvasBox}}">
+			<canvas canvas-id="shareCanvas" style="width:600px;height:1000px"></canvas>
+		</view>
+
+
+		<auth id="authpop" parentThis="{{parentThis}}" bind:showSend="showSend" bind:sendRedEnvelopes="sendRedEnvelopes"
+			scene="{{scene}}"></auth>
+
+
+		<!-- canvas -->
+
+		<view style='width:0px;height:0px;overflow:hidden;z-index:-999;left: 10000rpx;'>
+			<canvas canvas-id="myCanvas" id="myCanvas" style="width:70px;height:70px;"></canvas>
+		</view>
+
+	</scroll-view>
+	<view class="bottomBox">
+		<view class="flexBoxLeft">
+			<view class="flexBoxLeftBtn" bindtap='toMyIncome'>
+				<text class="bottom_icon icon_fl"></text>
+				<text>我的收益</text>
+			</view>
+			<view class="flexBoxLeftBtn" bindtap='toMyBenefit'>
+				<text class="bottom_icon icon_yhq"></text>
+				<text>我的优惠券</text>
+			</view>
+		</view>
+		<view class="flexBoxRightBtn">
+			<view class="flexBoxRightBtn_btn" bindtap='toHome'>
+				<text class="bottom_icon icon_home"></text>
+				<text class="lastText">首页</text>
+			</view>
+		</view>
+	</view>
+	<!-- canvas -->
+	<view class='canvasimg' wx:if="{{canvamodel}}" catchtouchmove="preventTouchMove">
+		<view class='canvasimg' wx:if="{{!savePop}}" bindtap='closeCanvas'></view>
+		<view class='canvasimg canvasimgBg' wx:if="{{canvamodel}}" bindtap='closeCanvas'></view>
+		<view class="showcanva" wx:if="{{savePop}}">
+			<image class='closeimg' src='../../img/close.png' bindtap='closeCanvas' wx:if="{{canva}}"></image>
+			<image class='canva' src='{{canva}}' data-src='{{canva}}' wx:if="{{canva}}" mode='aspectFit'
+				bindtap="previewImageCanvas" bindlongtap="bingLongTap"></image>
+		</view>
+		<!-- 保存成功之后的提示 -->
+		<view class="savaSuccessTips" wx:if="{{savaSuccessTips}}" bindtap='closeCanvas'>
+			<view class="text">您的专属海报图片,已经成功保存到相册</view>
+			<button>分享海报后,请到分享的位置长按海报领取红包</button>
+		</view>
+		<view class='send' wx:if='{{canvamodelBtns}}'>
+			<view class="top">
+				<view>
+					<form report-submit="true" form-type='submit'>
+						<input type='text' value='1' style='display:none;'></input>
+						<!--   bindtap="previewImageCanvas" src='{{canva}}' data-src='{{canva}}' disabled="{{!redId}}" -->
+						<button open-type="share">
+							<text class="iconfont icon-weixin"></text>
+						</button>
+						<!-- <image class='iconfont icon-weixin' data-src='{{canva}}' style="width: 100rpx;height: 100rpx;margin-top: 20rpx;color:#0bb20b;font-size:96rpx" mode='aspectFit' bindtap="previewImageCanvas"></image> -->
+					</form>
+					<view class='text'>分享好友</view>
+				</view>
+				<view>
+					<form report-submit="true" bindsubmit='saveImg'>
+						<input type='text' value='1' style='display:none;'></input>
+						<button form-type='submit' class="button2" style='background-image: url({{pyq2}})'></button>
+					</form>
+					<view class='text' style="margin-top:10rpx;">保存海报</view>
+				</view>
+			</view>
+			<!-- <view class="tips">
+            <view class="bg"></view>
+         </view> -->
+		</view>
+	</view>
+</view>
+
+<loading show="{{showLoading}}"/>

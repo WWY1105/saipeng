@@ -1,0 +1,35 @@
+<view class="container">
+   <view class='nodata' wx:if="{{list.length==0}}">
+      <view class="iconfont icon-kong"></view>
+      <view class="text">空空的哦~</view>
+   </view>
+   <view class="each_envelopes" wx:for="{{list}}" bindtap="toShopDetail" wx:key="index" data-shopid="{{item.shopId}}" wx:for-item="item">
+      <image class="red_envalopes_img" src="/img/wodehongbao.png"></image>
+      <view class="rightText">
+         <view class="shop_name">{{item.shopName}}</view>
+         <view class="time">开始时间:{{item.createTime}}</view>
+         <view class="bottom_box">
+            <!-- <text>还剩优惠券{{item.remind}}张</text> -->
+            <text>好友领钱,你还赚钱</text>
+            <button>继续发送</button>
+         </view>
+      </view>
+   </view>
+   <view wx:if='{{!isRefreshing}}' class="weui-loadmore">
+      <view wx:if='{{isLoadingMoreData}}'>
+         <view class="weui-loading"></view>
+         <view class="weui-loadmore-tips">正在加载更多...</view>
+      </view>
+      <view wx:elif='{{hasMoreData}}'>
+         <view class="weui-loadmore-tips" bindtap='onReachBottom'>点击加载更多</view>
+      </view>
+      <view wx:else>
+         <view class="weui-loadmore-tips">没有更多内容啦</view>
+      </view>
+   </view>
+
+<auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+
+
+</view>

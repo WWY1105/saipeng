@@ -1,0 +1,10 @@
+{
+"enablePullDownRefresh": true,
+  "onReachBottomDistance": 0,
+  "navigationBarTitleText": "正在发",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "auth": "/pages/component/auth"
+  }
+}

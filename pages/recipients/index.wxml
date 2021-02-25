@@ -1,0 +1,825 @@
+<!--pages/shopDetail/index.wxml-->
+<view hidden="{{init}}">
+   <!--  -->
+   <scroll-view class="scrollView-wrapper" scroll-y="true">
+      <view class="topBox">
+         <!-- 顶部 视频图片 start-->
+         <view class="top_media">
+
+            <video id='myVideo' class='video' src='{{video}}' controls="{{true}}" poster="{{posts.video.coverPicUrl}}" custom-cache="{{false}}" style="{{videoheight}}" wx:if="{{video}}">
+            </video>
+            <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="3000" circular="{{true}}" style="height:422rpx;" wx:if="{{!video}}">
+               <swiper-item wx:for="{{picUrls_fake}}" wx:key="index">
+                  <image style="height:422rpx;width:100%;" src="{{item}}" mode="aspectFill"></image>
+               </swiper-item>
+            </swiper>
+         </view>
+         <!-- 顶部 视频图片end -->
+
+
+      </view>
+      <!-- 商家简介 start-->
+      <view class="shop_brief_info">
+         <!-- <view class="radius"></view> -->
+         <view class='contenttext'>
+            <view class='poster_box'>
+               <view>
+                  <view class="titleBox">
+                     <!-- ({{posts.name}}) -->
+                     <text class='title'>{{posts.brandName}}{{posts.name}}</text>
+                     <wxs src=".././distance.wxs" module="tools" />
+                     <view class="distance" wx:if="{{posts.distance}}">距离 :{{tools.distance(posts.distance)}}</view>
+                  </view>
+                  <view class="poster">{{posts.poster}}</view>
+                  <view class="tese">{{posts.cuisineText}} | {{posts.businessZoneText}}| ¥{{posts.avgprice}}/人 </view>
+                  <view class="shop_info">
+                     <view class='address'>
+                        <text class="leftText">地址</text>{{posts.address}}</view>
+                     <view class="function" bindtap="toMap">
+                        <!-- <image src="/packageA/img/shopDetail/gps.png" bindtap="toMap"></image> -->
+                        <text class="iconfont icon-daohang"></text>
+                        <text>导航</text>
+                        <!-- <view></view>
+              <image src="/packageA/img/shopDetail/phone.png" bindtap="makePhone"></image> -->
+                     </view>
+                  </view>
+                  <view class='startTime'>
+                     <text class="leftText">营业时间</text> {{posts.beginTime}}—{{posts.closeTime}}
+                     <text class="function shop_tel" bindtap="makePhone"><text class="iconfont icon-dianhua" ></text>{{posts.tel}}</text>
+                  </view>
+
+               </view>
+
+            </view>
+         </view>
+
+      </view>
+      <!-- 商家简介 end-->
+
+
+
+
+
+      <!-- <view class="line" style="margin-top:80rpx;" wx:if="{{taskList}}"></view>
+
+  <view class="contentTitle" wx:if="{{taskList}}">
+    <view>
+      <image src="/packageA/img/shopDetail/zuduiImg.png" mode="aspectFit"></image>
+    </view>
+    <view class="contentTitle_line"></view>
+
+  </view> -->
+
+      <view class="line" wx:if="{{cardList}}"></view>
+      <view class="contentTitle" wx:if="{{cardList}}">
+         <view>
+            <image src="/img/receive/shopRule.png" mode="aspectFit"></image>
+         </view>
+         <view class="contentTitle_line"></view>
+      </view>
+
+
+      <!-- 商家详情 &&posts.rebate.total>0-->
+      <view class="line" wx:if="{{posts.rebate}}"></view>
+      <!-- 探店红包 -------start   -->
+      <view class="shopDetailBox" wx:if="{{posts.rebate&&posts.rebate.total>0}}">
+         <view class="tdhb">
+            <view class="title"></view>
+         </view>
+         <view class="redShowBox">
+            <!-- 红包内含 -->
+            <view class="title"></view>
+            <!-- 折扣券 start-->
+            <view class="content" wx:if="{{posts.rebate.redEnvelope.couponCategory== '903'}}">
+               <view class="coupon" bindtap="toCDetail" data-id="{{posts.rebate.redEnvelope.id}}">
+                  <view class="discount_text">
+                     <text>{{posts.rebate.redEnvelope.amount}}</text>
+                     <text class="smalltext">折</text>
+                  </view>
+               </view>
+               <view class="right" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+                  <text class="iconfont icon-X"></text>
+                  <text class="web-font">{{posts.rebate.total}}元现金</text>
+               </view>
+            </view>
+            <!-- 折扣券 end-->
+            <!-- 代金券 start-->
+            <view class="content" wx:if="{{posts.rebate.redEnvelope.couponCategory== '901'}}">
+               <view class="coupon cash_coupon" bindtap="toCDetail" data-id="{{posts.rebate.redEnvelope.id}}">
+                  <view class="left">
+                     <view class="top">{{posts.rebate.redEnvelope.amount}}
+                        <text>元</text>
+                     </view>
+                     <view class="small">{{posts.rebate.redEnvelope.useStrategy}}</view>
+                  </view>
+                  <view class="right">
+                     <view class="top">代金券</view>
+                     <view class="small">{{posts.rebate.redEnvelope.times}}</view>
+                  </view>
+               </view>
+               <view class="right cash_coupon_right" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+                  <text class="iconfont icon-X"></text>
+                  <view class="web-font">
+                     <view>{{posts.rebate.total}}元</view>
+                     <view>现金</view>
+                  </view>
+               </view>
+            </view>
+            <!-- 代金券 end-->
+         </view>
+         <!-- 发的多赚的多 -->
+         <view class="fddzdd">
+            <view class="title"></view>
+         </view>
+         <view class="ruleList">
+            <view class="each">
+               <text class="iconfont icon-xing"></text>分享后,自己和好友都可拆开红包,自己可拆出
+               <text class="num web-font">{{posts.rebate.selfAmount}}</text>元</view>
+            <!-- 随即金额 -->
+            <view class="each" wx:if="{{posts.rebate.partMinAmount}}">
+               <text class="iconfont icon-xing"></text>
+               <text>每个好友可拆出现金</text>
+               <text class="num web-font">{{posts.rebate.partMinAmount}}~{{posts.rebate.partMaxAmount}}</text>元之间, 金额随机 </view>
+            <!-- 固定金额 -->
+            <view class="each" wx:if="{{posts.rebate.partAmount}}">
+               <text class="iconfont icon-xing"></text>
+               <text>每个好友可拆出现金</text>
+               <text class="num web-font">{{posts.rebate.partAmount}}</text>元 </view>
+            <view class="each">
+               <text class="iconfont icon-xing"></text>
+               <text> <text wx:if="{{posts.rebate.commisionMode==2}}">你获得每个好友拆出现金金额的<text class="num web-font">{{posts.rebate.commisionAmount}}</text>倍奖励</text>
+               <text wx:if="{{posts.rebate.commisionMode==1}}">你获得每个好友拆出现金,你也将获得<text class="num web-font">{{posts.rebate.commisionAmount}}</text>元奖励</text>
+               </text>
+            </view>
+         </view>
+         <form report-submit="true" bindsubmit='showSend'>
+            <button class="send_red_btn" form-type='submit'>
+               分享拆红包
+            </button>
+         </form>
+         <!-- 活动说明 -->
+         <view class="hdsm">
+            <view class="title"></view>
+         </view>
+         <view class="hdsmList">
+            <view class="each" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>距离限制</text>
+               </view>
+               <view class="right">本店{{tools.distance(posts.rebate.distanceLimit)||0}}内可拆开现金, 超出只有优惠券</view>
+            </view>
+            <view class="each">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>多发多赚</text>
+               </view>
+               <view class="right">只要分享都可发红包,每人可发数量不限</view>
+            </view>
+            <view class="each">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>优惠说明</text>
+               </view>
+               <view class="right">红包内优惠券限量发行, 使用详情请拆开后仔细查阅券说明</view>
+            </view>
+         </view>
+      </view>
+
+      <!-- 券红包 -->
+      <view class="shopDetailBox" wx:if="{{posts.rebate&&!(posts.rebate.total>0)}}">
+         <view class="tdhb">
+            <view class="title"></view>
+         </view>
+         <view class="redShowBox">
+            <!-- 红包内含 -->
+            <view class="title"></view>
+            <view class="content" style="justify-content: center;">
+               <!-- 折扣券  start-->
+               <view class="coupon" bindtap="toCDetail" data-id="{{posts.rebate.redEnvelope.id}}" wx:if="{{posts.rebate.redEnvelope.couponCategory== '903'}}">
+                  <view class="discount_text">
+                     <text>{{posts.rebate.redEnvelope.amount}}</text>
+                     <text class="smalltext">折</text>
+                  </view>
+               </view>
+               <!-- 折扣券 end-->
+               <!-- 代金券 start-->
+               <view class="coupon cash_coupon" bindtap="toCDetail" data-id="{{posts.rebate.redEnvelope.id}}" wx:if="{{posts.rebate.redEnvelope.couponCategory== '901'}}">
+                  <view class="left">
+                     <view class="top">{{posts.rebate.redEnvelope.amount}}
+                        <text>元</text>
+                     </view>
+                     <view class="small">{{posts.rebate.redEnvelope.useStrategy}}</view>
+                  </view>
+                  <view class="right">
+                     <view class="top">代金券</view>
+                     <view class="small">{{posts.rebate.redEnvelope.times}}</view>
+                  </view>
+               </view>
+               <!-- 代金券 end-->
+            </view>
+         </view>
+         <!-- 发的多赚的多 -->
+         <form report-submit="true" bindsubmit='showSend'>
+            <button class="send_red_btn" form-type='submit'>
+               分享拆红包
+            </button>
+         </form>
+         <!-- 活动说明 -->
+         <view class="hdsm">
+            <view class="title"></view>
+         </view>
+         <view class="hdsmList">
+            <view class="each" wx:if="{{posts.rebate&&(posts.rebate.total>0)}}">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>距离限制</text>
+               </view>
+               <view class="right">本店{{tools.distance(posts.rebate.distanceLimit)||0}}内可拆开现金, 超出只有优惠券</view>
+            </view>
+            <view class="each">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>多发多赚</text>
+               </view>
+               <view class="right">只要分享都可发红包, 每人可发数量不限</view>
+            </view>
+            <view class="each">
+               <view class="left">
+                  <text class="iconfont icon-circle-yes"></text>
+                  <text>优惠说明</text>
+               </view>
+               <view class="right">红包内优惠券限量发行, 使用详情请拆开后仔细查阅券说明</view>
+            </view>
+         </view>
+      </view>
+      <!-- <view class="line"></view> -->
+      <!-- 文案素材 -->
+      <!--文案素材 -->
+      <view class="sucaibox" wx:if="{{posts.rebate}}">
+         <view class="line"></view>
+         <view class="content">
+            <view class="title">文案素材</view>
+            <view class="textBox">
+               <view class="textBg">
+                  <text class="iconfont icon-xian-dian-copy-copy"></text> 分享文案
+                  <text class="iconfont icon-xian-dian-copy"></text>
+               </view>
+               <view class="text"> {{posts.poster}} </view>
+               <view class="copy_btn_box" bindtap='copyText' data-text="{{posts.poster}}">
+                  <view class="copy_btn">
+                     <text class="iconfont icon-copy"></text> 点击一键复制 </view>
+               </view>
+            </view>
+         </view>
+      </view>
+      <!-- 商家海报图片 -->
+      <!-- <view class="haibaoBox" wx:if="{{posts.rebate}}">
+         <view class="line"></view>
+         <view class="titleBox">
+            <text>商家海报图片</text>
+            <form report-submit="true" bindsubmit='saveHaiBaoImg'>
+               <input type='text' value='1' style='display:none;'></input>
+               <button class="saveBtnBox" form-type='submit'>
+                  <text class="saveIcon"></text>保存全部图片
+               </button>
+            </form>
+         </view>
+         <view class="picBox">
+            <view class="eachImage flexCenterBox">
+               <image wx:if="{{!canva}}" style="height:100rpx;width:100rpx;" src="{{loading_gif}}" mode='aspectFill'></image>
+               <image bindtap="previewImageCanvas" style="height:222rpx;width:100%;" src='{{canva}}' wx:if="{{canva}}" data-src='{{canva}}' mode='aspectFill'></image>
+            </view>
+            <view class="eachImage" wx:for="{{picUrls_haibao}}" wx:key="{{index}}" wx:for-index="index" wx:if="{{index<=8}}">
+               <image data-src="{{item}}"  bindtap="previewImage" style="height:222rpx;width:100%;" src="{{item}}" mode="aspectFill"></image>
+            </view>
+         </view>
+      </view> -->
+      <!-- 图文详情 -->
+      <view class="line"></view>
+      <view class="textContent">
+         <view class="line white"></view>
+         <!-- 图文 -->
+         <parser html="{{posts.richContent}}" wx:if="{{posts.richContent}}"/>
+
+         <view class="picBox" wx:if="{{!posts.richContent}}">
+            <view wx:for="{{posts.pictures}}" class="item-{{index}}" wx:key="index" style="margin-top:0rpx;color:#333;">
+               <view style='text-align:center;font-size:36rpx;color:#333;word-break: break-all;'>{{item.title}}</view>
+               <text style='font-size:28rpx;color:#999;word-break: break-all;'>{{item.content}}</text>
+               <view>
+                  <view class="loading4" wx:if="{{!arry[index]&&item.smallPicFlag}}">
+                     <view class="three1"></view>
+                     <view class="three2"></view>
+                     <view class="three3"></view>
+                  </view>
+                  <image class="shopsListImg" lazy-load src="{{item.url}}" mode='widthFix' data-index='{{index}}' data-src="{{item.url}}" bindtap="previewImage"></image>
+               </view>
+            </view>
+         </view>
+         <!-- 图文  end-->
+      </view>
+
+
+      <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%---弹窗---%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+      <!--  钱和券都没了弹窗 catchtouchmove='true'-->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{no_money_coupon_modal}}">
+         <view class='modal get_fail_modal no_money_coupon_modal'>
+            <view class="top_media">
+               <view class="modal_title">
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="no_money_coupon_modal"></text>
+                  <view class="topBox">
+                     <image class="shoplogo" src="{{posts.logo}}"></image>
+                  </view>
+               </view>
+               <view class='text'>
+                  红包已被领完
+               </view>
+               <view class="btn_box" bindtap="closeModal" data-modalname="no_money_coupon_modal">
+                  <button >进店看看，分享赚钱</button>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="bg"></view>
+               <view class="title">领取详情</view>
+               <view class="smallTitle">已领取{{listOfRecipients.total||0}}个</view>
+               <scroll-view scroll-y class="listBox">
+                  <view class="eachList flex_Box" wx:if="{{listOfRecipients.total>0}}" wx:for="{{listOfRecipients.items}}" wx:key="index">
+                     <view class="left flex_Box">
+                        <image src="{{item.avatarUrl}}"></image>
+                        <view class="lefttext">
+                           <view class="name">{{item.nickname}}</view>
+                           <view class="time">{{item.createTime}}</view>
+                        </view>
+                     </view>
+                     <view class="right">{{item.profits}}元</view>
+                  </view>
+
+                  <view wx:if="{{listOfRecipients.total<=0}}" class="no_list_recipitents">还没有人领取现金哦</view>
+               </scroll-view>
+            </view>
+
+
+         </view>
+      </view>
+      <!-- 不能重复领取 弹窗 catchtouchmove='true'-->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{no_chance_modal}}" >
+         <view class='modal get_fail_modal no_chance_modal'>
+            <view class="top_media">
+               <view class="modal_title">
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="no_chance_modal"></text>
+                  <view class="topBox">
+                     <image src="{{posts.logo}}" class="shoplogo" mode="aspectFit"></image>
+                  </view>
+               </view>
+               <view class="moneyBox" wx:if="hasCash">
+                  <!-- 现金<text class="moneyNum">{{profits}}</text>元 -->
+               </view>
+               <view class='textBox'>
+                  <text>这是一个你拆过的红包</text>
+               </view>
+               <view class="couponBox">
+                  <view class="bg">
+                     <view class="top flex">
+                        <text>{{posts.rebate.redEnvelope.couponCategory=='901'?'代金券':'全单折扣券'}}</text>
+                        <view class="discount_text">
+                           {{posts.rebate.redEnvelope.amount}}
+                           <text class="smalltext">{{posts.rebate.redEnvelope.couponCategory=='901'?'元':'折'}}</text>
+                        </view>
+                     </view>
+                     <view class="mid flex">
+                        <view class="left" class="nonParticipations">{{posts.rebate.redEnvelope.nonParticipations||''}}</view>
+                        <view class="right">无门槛 免预约</view>
+                     </view>
+                     <view class="bottom">
+                        有效期:{{posts.rebate.redEnvelope.times}}
+                     </view>
+                  </view>
+               </view>
+               <view class="btn_box" bindtap="closeModal" data-modalname="no_chance_modal">
+                  <button >进店看看，分享赚钱</button>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="bg"></view>
+               <view class="title">领取详情</view>
+               <view class="smallTitle">已领取{{listOfRecipients.total||0}}个</view>
+               <scroll-view scroll-y class="listBox">
+                  <view class="eachList flex_Box" wx:if="{{listOfRecipients.total>0}}" wx:for="{{listOfRecipients.items}}" wx:key="index">
+                     <view class="left flex_Box">
+                        <image src="{{item.avatarUrl}}"></image>
+                        <view class="lefttext">
+                           <view class="name">{{item.nickname}}</view>
+                           <view class="time">{{item.createTime}}</view>
+                        </view>
+                     </view>
+                     <view class="right">{{item.profits}}元</view>
+                  </view>
+
+                  <view wx:if="{{listOfRecipients.total<=0}}" class="no_list_recipitents">还没有人领取现金哦</view>
+               </scroll-view>
+            </view>
+         </view>
+      </view>
+      <!-- 奖励到账 -->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{get_success_modal}}">
+         <view class="modal getRewards">
+            <view class="modal_title"></view>
+            <view class="topBox">
+               <view class="left">
+                  <text class="iconfont icon-weixinqianbao"></text>
+               </view>
+               <!-- 有钱 -->
+               <view class="right" wx:if="{{profits&&profits>0}}">
+                  <view>提现成功！</view>
+                  <view class="small">请留意【微信支付】通知</view>
+               </view>
+               <view class="right" wx:if="{{!profits||profits=='0'||profits==0}}">
+                  <view>福利已到账</view>
+               </view>
+            </view>
+            <view class="bg1"></view>
+            <view class="content">
+               <view class="content_Box">
+                  <view class="title">您已获得限量优惠券，快去使用吧~</view>
+                  <view class="couponBox">
+                     <view class="bg">
+                        <view class="top flex">
+                           <text>{{posts.rebate.redEnvelope.couponCategory=='901'?'代金券':'全单折扣券'}}</text>
+                           <view class="discount_text">
+                              {{posts.rebate.redEnvelope.amount}}
+                              <text class="smalltext">{{posts.rebate.redEnvelope.couponCategory=='901'?'元':'折'}}</text>
+                           </view>
+                        </view>
+                        <view class="mid flex">
+                           <view class="left" class="nonParticipations">{{posts.rebate.redEnvelope.nonParticipations||''}}</view>
+                           <view class="right">无门槛 免预约</view>
+                        </view>
+                        <view class="bottom">
+                           有效期:{{posts.rebate.redEnvelope.times}}
+                        </view>
+                     </view>
+                  </view>
+                  <view class="smallTips">已存入{{user.nickName || user.username}}账户, 到店扫码自动抵用</view>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="btn_box" bindtap="closeModal" data-modalname="get_success_modal">
+                  <button >进店看看,分享赚钱</button>
+               </view>
+
+            </view>
+         </view>
+      </view>
+
+
+      <!--  领券成功的弹窗 catchtouchmove='true'-->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{get_coupon_seccess}}">
+         <view class='modal get_success_modal get_coupon_seccess_modal'>
+            <view class="top_media">
+               <view class="modal_title">
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="get_coupon_seccess"></text>
+                  <view class="topBox">
+                     <image src="{{posts.logo}}" class="shoplogo" mode="aspectFit"></image>
+                  </view>
+               </view>
+               <view class='textBox'>
+                  <text class="textBg"></text>
+                  <text>送你限量优惠券</text>
+               </view>
+               <view class="couponBox">
+                  <view class="bg">
+                     <view class="top flex">
+                        <text>{{posts.rebate.redEnvelope.couponCategory=='901'?'代金券':'全单折扣券'}}</text>
+                        <view class="discount_text">
+                           {{posts.rebate.redEnvelope.amount}}
+                           <text class="smalltext">{{posts.rebate.redEnvelope.couponCategory=='901'?'元':'折'}}</text>
+                        </view>
+                     </view>
+                     <view class="mid flex">
+                        <view class="left" class="nonParticipations">{{posts.rebate.redEnvelope.nonParticipations||''}}</view>
+                        <view class="right">无门槛 免预约</view>
+                     </view>
+                     <view class="bottom">
+                        有效期:{{posts.rebate.redEnvelope.times}}
+                     </view>
+                  </view>
+               </view>
+               <view class="btn_box" bindtap="getMoneyOrCoupon">
+                  <button data-modalname="no_money_coupon_modal">领取到账号</button>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="bg"></view>
+               <view class="title">领取详情</view>
+               <view class="smallTitle">已领取{{listOfRecipients.total||0}}个</view>
+               <scroll-view scroll-y class="listBox">
+                  <view class="eachList flex_Box" wx:if="{{listOfRecipients.total>0}}" wx:for="{{listOfRecipients.items}}" wx:key="index">
+                     <view class="left flex_Box">
+                        <image src="{{item.avatarUrl}}"></image>
+                        <view class="lefttext">
+                           <view class="name">{{item.nickname}}</view>
+                           <view class="time">{{item.createTime}}</view>
+                        </view>
+                     </view>
+                     <view class="right">{{item.profits}}元</view>
+                  </view>
+
+                  <view wx:if="{{listOfRecipients.total<=0}}" class="no_list_recipitents">还没有人领取现金哦</view>
+               </scroll-view>
+            </view>
+
+
+         </view>
+      </view>
+
+      <!-- 恭喜获得  现金 get_coupon_seccess_cash  catchtouchmove='true'-->
+      <view class='modalbox' catchtouchmove='true' hidden="{{!get_coupon_seccess_cash}}">
+         <view class='modal get_success_modal get_coupon_seccess_modal_cash'>
+            <view class="top_media">
+               <view class="modal_title">
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="get_coupon_seccess_cash"></text>
+                  <view class="topBox">
+                     <image src="{{posts.logo}}" class="shoplogo" mode="aspectFit"></image>
+                  </view>
+               </view>
+               <view class="moneyBox" wx:if="hasCash">
+                  现金
+                  <text class="moneyNum">{{profits}}</text>元</view>
+               <view class='textBox'>
+                  <text class="textBg"></text>
+                  <text>再送限量优惠券</text>
+               </view>
+               <view class="couponBox">
+                  <view class="bg">
+                     <view class="top flex">
+                        <text>{{posts.rebate.redEnvelope.couponCategory=='901'?'代金券':'全单折扣券'}}</text>
+                        <view class="discount_text">
+                           {{posts.rebate.redEnvelope.amount}}
+                           <text class="smalltext">{{posts.rebate.redEnvelope.couponCategory=='901'?'元':'折'}}</text>
+                        </view>
+                     </view>
+                     <view class="mid flex">
+                        <view class="left" class="nonParticipations">{{posts.rebate.redEnvelope.nonParticipations||''}}</view>
+                        <view class="right">无门槛 免预约</view>
+                     </view>
+                     <view class="bottom">
+                        有效期:{{posts.rebate.redEnvelope.times}}
+                     </view>
+                  </view>
+               </view>
+               <view class="btn_box" bindtap="getMoneyOrCoupon">
+                  <button data-modalname="no_money_coupon_modal">领取到账户</button>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="bg"></view>
+               <view class="title">领取详情</view>
+               <view class="smallTitle">已领取{{listOfRecipients.total||0}}个</view>
+               <scroll-view scroll-y class="listBox">
+                  <view class="eachList flex_Box" wx:if="{{listOfRecipients.total>0}}" wx:for="{{listOfRecipients.items}}" wx:key="index">
+                     <view class="left flex_Box">
+                        <image src="{{item.avatarUrl}}"></image>
+                        <view class="lefttext">
+                           <view class="name">{{item.nickname}}</view>
+                           <view class="time">{{item.createTime}}</view>
+                        </view>
+                     </view>
+                     <view class="right">{{item.profits}}元</view>
+                  </view>
+                  <view wx:if="{{listOfRecipients.total<=0}}" class="no_list_recipitents">还没有人领取现金哦</view>
+               </scroll-view>
+
+            </view>
+         </view>
+      </view>
+      <!-- <view class='modalbox' catchtouchmove='true' hidden="{{!get_coupon_seccess_cash}}" catchtouchmove='true'>
+      <view class='modal get_success_modal get_coupon_seccess_modal_cash'>
+         <view class="modal_title">
+            <text class="big_title"></text>
+            <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="get_coupon_seccess_cash"></text>
+         </view>
+         <view class="modal_content">
+         
+            <image src="{{redBg2}}" class="redBg2"></image>
+            <view class="modal_logo_box">
+               <image src="{{posts.logo}}" mode="aspectFit"></image>
+            </view>
+            <view class="modal_shopname">{{posts.name}}</view>
+            <view class="cash_box">
+               <view>
+                  <text class="moneyNum">{{profits}}</text>元</view>
+               <!-- <view class="otherText">现金已到账</view> -->
+      <!-- </view>
+            <form class='btn_box' report-submit="true" bindsubmit="getMoneyOrCoupon">
+               <button form-type='submit'>立即领取</button>
+            </form>
+            <view class="use_tips">请查看微信支付通知</view>
+         </view>
+      </view>
+   </view> -->
+
+      <!-- 现金已被抢完 catchtouchmove='true'-->
+      <view class='modalbox' catchtouchmove='true' hidden="{{!get_coupon_seccess_nocash}}">
+         <view class='modal get_success_modal get_coupon_seccess_modal_nocash'>
+            <view class="top_media">
+               <view class="modal_title">
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="no_money_coupon_modal"></text>
+                  <view class="topBox">
+                     <image src="{{posts.logo}}" class="shoplogo" mode="aspectFit"></image>
+                  </view>
+               </view>
+               <view class='textBox'>
+                  <text class="textBg"></text>
+                  <text>送你限量优惠券</text>
+               </view>
+               <view class="couponBox">
+                  <view class="bg">
+                     <view class="top flex">
+                        <text>{{posts.rebate.redEnvelope.couponCategory=='901'?'代金券':'全单折扣券'}}</text>
+                        <view class="discount_text">
+                           {{posts.rebate.redEnvelope.amount}}
+                           <text class="smalltext">{{posts.rebate.redEnvelope.couponCategory=='901'?'元':'折'}}</text>
+                        </view>
+                     </view>
+                     <view class="mid flex">
+                        <view class="left" class="nonParticipations">{{posts.rebate.redEnvelope.nonParticipations||''}}</view>
+                        <view class="right">无门槛 免预约</view>
+                     </view>
+                     <view class="bottom">
+                        有效期:{{posts.rebate.redEnvelope.times}}
+                     </view>
+                  </view>
+               </view>
+               <view class="btn_box" bindtap="getMoneyOrCoupon">
+                  <button data-modalname="no_money_coupon_modal">领取到账号</button>
+               </view>
+            </view>
+            <view class="bottomBox">
+               <view class="bg"></view>
+               <view class="title">领取详情</view>
+               <view class="smallTitle">已领取{{listOfRecipients.total||0}}个</view>
+               <scroll-view scroll-y class="listBox">
+                  <view class="eachList flex_Box" wx:if="{{listOfRecipients.total>0}}" wx:for="{{listOfRecipients.items}}" wx:key="index">
+                     <view class="left flex_Box">
+                        <image src="{{item.avatarUrl}}"></image>
+                        <view class="lefttext">
+                           <view class="name">{{item.nickname}}</view>
+                           <view class="time">{{item.createTime}}</view>
+                        </view>
+                     </view>
+                     <view class="right">{{item.profits}}元</view>
+                  </view>
+                  <view wx:if="{{listOfRecipients.total<=0}}" class="no_list_recipitents">还没有人领取现金哦</view>
+               </scroll-view>
+            </view>
+
+
+         </view>
+      </view>
+
+      <!-- 领取红包弹窗 -->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{recipients_modal_show}}" catchtouchmove='true'>
+         <form class='modal recipients_modal' report-submit="true" bindsubmit="recipientOpen">
+            <button class="contentBox" form-type='submit'>
+               <view class="bgBox"></view>
+               <view class="kai {{animationFlag?'animation':''}}">開</view>
+               <view class="modal_logo_box">
+                  <image src="{{posts.logo}}" mode="aspectFit"></image>
+               </view>
+               <view class='text'>
+                  <view class="modal_shopname">{{posts.brandName}}</view>
+                  <view class="modal_active_tips" wx:if="{{posts.rebate&&posts.rebate.total>0}}">真现金 无套路</view>
+                  <view class="modal_active_tips" wx:if="{{posts.rebate&&!(posts.rebate.total)}}">限量优惠券</view>
+               </view>
+            </button>
+         </form>
+      </view>
+      <!-- 已经授权地理位置,GPS没打开 -->
+      <view class='modalbox' catchtouchmove='true' hidden="{{!reLocation}}" catchtouchmove="preventTouchMove">
+         <view class='modal location_modal'>
+            <view class="modal_big_title">
+               <text>定位失败</text>
+               <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="reLocation"></text>
+            </view>
+            <view class="modal_active_tips" wx:if="{{reLocation}}">定位失败,请打开GPS后重新定位</view>
+            <button plain="true" class="btn_to_auth" bindtap='reLocationFn'>重新定位</button>
+         </view>
+      </view>
+      <!-- 还没有授权地理位置的弹窗 -->
+      <view class='modalbox' catchtouchmove='true' hidden="{{!has_no_auth_address}}" catchtouchmove="preventTouchMove">
+         <view class='modal location_modal'>
+            <view class="modal_big_title">授权失败
+               <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="has_no_auth_address"></text>
+            </view>
+            <view class="modal_active_tips">请授权地理位置</view>
+            <button plain="true" class="btn_to_auth" bindtap='to_auth_address'>去授权</button>
+         </view>
+      </view>
+
+      <!-- 距离太远的弹窗 -->
+      <view class='modalbox' catchtouchmove='true' hidden="{{!too_far_modal}}" catchtouchmove="preventTouchMove">
+         <view class='modal location_modal'>
+            <view class='text'>
+               <view class="modal_big_title">
+                  <text>注意</text>
+                  <text class="close iconfont icon-close" bindtap="closeModal" data-modalname="too_far_modal"></text>
+               </view>
+               <view class="modal_active_tips">你当前距离门店：{{tools.distance(posts.distance)}}</view>
+               <view class="modal_common_tips">门店{{tools.distance(posts.rebate.distanceLimit)||0}}内可领钱, 超过{{tools.distance(posts.rebate.distanceLimit)||0}}只有优惠券</view>
+               <view class="modal_shop_address">门店地址：{{posts.address}}</view>
+            </view>
+            <view>
+               <button plain="true" class="btn_to_auth btn_too_far" bindtap='to_near'>靠近门店再领</button>
+               <form report-submit="true" bindsubmit="toCoupon">
+                  <button plain="true" class="to_get_coupon too_far" form-type='submit'>现在领券</button>
+               </form>
+            </view>
+         </view>
+      </view>
+      <!-- 授权手机号的弹窗 -->
+      <view class='modalbox' catchtouchmove='true' wx:if="{{showPhonePop}}" catchtouchmove="preventTouchMove">
+         <view class='modal '>
+            <view class='text'>
+               <view>为了权益的正常发放</view>
+               <view>需要您的手机号授权</view>
+            </view>
+            <view style='border-top:1px solid #ccc;'>
+               <button plain="true" bindtap='closePhonePop'>拒绝</button>
+               <button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='color:#56bc37;'>去授权</button>
+            </view>
+         </view>
+      </view>
+
+   
+      <view class="canvasBox" bindtap='picture' wx:if="{{canvasBox}}">
+         <canvas canvas-id="shareCanvas" style="width:600px;height:1000px"></canvas>
+      </view>
+
+
+      <auth id="authpop" parentThis="{{parentThis}}" bind:showSend="showSend" bind:sendRedEnvelopes="sendRedEnvelopes" scene="{{scene}}"></auth>
+
+      <view style='width:0px;height:0px;overflow:hidden;z-index:-999;left: 10000rpx;'>
+         <canvas canvas-id="myCanvas" id="myCanvas" style="width:70px;height:70px;"></canvas>
+      </view>
+   </scroll-view>
+
+   <view class="bottomBoxFix">
+      <view class="flexBoxLeft">
+         <view class="flexBoxLeftBtn" bindtap='toMyIncome'>
+            <text class="bottom_icon icon_fl"></text>
+            <text>我的收益</text>
+         </view>
+         <view class="flexBoxLeftBtn" bindtap='toMyBenefit'>
+            <text class="bottom_icon icon_yhq"></text>
+            <text>我的优惠券</text>
+         </view>
+      </view>
+      <view class="flexBoxRightBtn">
+         <view class="flexBoxRightBtn_btn" bindtap='toHome'>
+            <text class="bottom_icon icon_home"></text>
+            <text class="lastText">首页</text>
+         </view>
+      </view>
+   </view>
+
+   <!-- canvas -->
+      <view class='canvasimg' wx:if="{{canvamodel}}" catchtouchmove="preventTouchMove">
+         <view class='canvasimg' wx:if="{{!savePop}}" bindtap='closeCanvas'></view>
+         <view class='canvasimg canvasimgBg' wx:if="{{canvamodel}}" bindtap='closeCanvas'></view>
+         <view class="showcanva" wx:if="{{savePop}}">
+            <image class='closeimg' src='../../img/close.png' bindtap='closeCanvas' wx:if="{{canva}}"></image>
+            <image class='canva' src='{{canva}}' data-src='{{canva}}' mode='aspectFit' bindtap="previewImageCanvas"></image>
+         </view>
+         <!-- 保存成功之后的提示 -->
+         <view class="savaSuccessTips" wx:if="{{savaSuccessTips}}" bindtap='closeCanvas'>
+            <view class="text">您的专属海报图片,已经成功保存到相册</view>
+            <button>分享海报后,请到分享的位置长按海报领取红包</button>
+         </view>
+         <view class='send' wx:if='{{canvamodelBtns}}'>
+         <view class="top">
+             <view>
+             <form report-submit="true"  form-type='submit' >
+                  <input type='text' value='1' style='display:none;'></input> 
+                  <!--   bindtap="previewImageCanvas" src='{{canva}}' data-src='{{canva}}' disabled="{{!redId}}" -->
+                  <button   open-type="share">
+                     <text class="iconfont icon-weixin"></text>
+                  </button>
+                  <!-- <image class='iconfont icon-weixin' data-src='{{canva}}' style="width: 100rpx;height: 100rpx;margin-top: 20rpx;color:#0bb20b;font-size:96rpx" mode='aspectFit' bindtap="previewImageCanvas"></image> -->
+               </form>
+               <view class='text'>分享好友</view>
+            </view>
+            <view>
+               <form report-submit="true" bindsubmit='saveImg'>
+                  <input type='text' value='1' style='display:none;'></input>
+                  <button form-type='submit' class="button2" style='background-image: url({{pyq2}})'></button>
+               </form>
+               <view class='text' style="margin-top:10rpx;">保存海报</view>
+            </view>
+         </view>
+         <!-- <view class="tips">
+            <view class="bg"></view>
+         </view> -->
+      </view>
+      </view>
+
+</view>

@@ -1,0 +1,26 @@
+
+var distance = function (num) {
+  if (num < 1000){
+    console.log(num + "米");
+    return num + "米";
+    
+  } else if (num > 1000){
+    var km = num / 1000
+    return km.toFixed(1) + "公里";
+    
+  }
+}
+
+var fixed = function (num) {
+  var f = parseFloat(num);
+  if (isNaN(f)) {
+    return;
+  }
+  f = Math.round(num * 100) / 100;
+  return f;
+}
+
+module.exports = {
+  distance: distance,
+  fixed: fixed
+};

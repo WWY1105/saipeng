@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view>
+  <view class="containers" >    
+    <view class="used"  data-code="{{choose.code}}" data-name="{{choose.name}}" bindtap="directFn">
+      当前： {{choose.name}}
+    </view>
+    <!--最近访问-->
+    <view class="location" wx:if="{{location}}">
+      <view class="label">定位</view>
+      <view wx:if="{{location.name}}" class="btn" data-code="{{location.code}}" data-name="{{location.name}}" bindtap="directFn">
+        <text>{{location.name}}</text>
+      </view>
+      <view wx:if="{{!location.name}}" class="btn" data-code="{{location.code}}"  bindtap="to_auth_address">
+        <text>授权定位</text>
+      </view>
+    </view>
+   
+    <view class="hot">
+      <view class="label">热门城市</view>
+      <view class="flex">
+        <view class="btn" wx:for="{{data}}" wx:key="index" data-code="{{item.code}}" data-name="{{item.name}}"
+              bindtap="directFn"><text>{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

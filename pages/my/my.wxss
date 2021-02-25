@@ -1,0 +1,236 @@
+page {
+  background: url(https://saler.ishangbin.com/img/shareCard//myBg.png);
+  background-size: 100% 307rpx;
+  background-repeat: no-repeat;
+  color: #333;
+  background-color: #F5F5F5;
+}
+
+.containBox {
+  flex-direction: column;
+  margin-top: 96rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.toLogin {
+  background: transparent;
+  font-size: 30rpx;
+  text-decoration: underline;
+  font-weight: bpold;
+  color: #333;
+  line-height: 1;
+}
+
+.userCard {
+  width: 702rpx;
+  height: 234rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  flex-direction: column;
+  position: relative;
+  padding-top: 90rpx;
+  box-sizing: border-box;
+}
+
+.phone {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 25rpx;
+}
+.phone .bindPhone{
+  font-size: 28rpx;
+  color: #999999;
+  border:none;
+  text-decoration-line: underline;
+  padding: 0;
+}
+
+.userimg {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  position: absolute;
+  overflow: hidden;
+  top: -60rpx;
+}
+
+.userName {
+  color: #3E3E3E;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.containBox  .content{
+    padding-top: 0rpx;
+    width: 100%;
+    background: #fff;
+    padding: 0 27rpx;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+}
+.containBox  .content .each{
+  padding: 45rpx 0 28rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+
+  color: #333;
+  font-size: 30rpx;
+}
+.content .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.content .icon.myProfit{
+  width: 39rpx;
+  height: 28rpx;
+}
+.content .icon.myProfit{
+  width: 39rpx;
+  height: 28rpx;
+}
+.content .icon.myOrder{
+  width: 30rpx;
+  height: 37rpx;
+  padding-right: 9rpx;
+}
+.arrowRight{
+  width: 18rpx;
+  height: 33rpx;
+}
+.eachPart {
+  margin-bottom: 20rpx;
+  padding: 0 20rpx;
+}
+
+.eachPart .titleBox {
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #3b3d43;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.eachPart .titleBox .more {
+  font-size: 28rpx;
+  font-weight: normal;
+  text-align: right;
+  color: #aaa9ab;
+}
+
+.eachPart .titleBox .more .iconfont {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+  line-height: 1;
+}
+
+.eachPart .content {
+  padding: 26rpx 40rpx 40rpx 40rpx;
+}
+
+.eachPart .content .each {
+  margin-right: 30rpx;
+}
+
+.eachPart .content .iconText {
+  font-size: 24rpx;
+}
+
+.eachPart .content image.icon {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.content1 .eachTitle {
+  font-size: 24rpx;
+}
+
+.content1 .each {
+  width: 50%;
+}
+
+.content1 .each .num {
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-top: 5rpx;
+}
+
+.content1 .each .num .yuan {
+  font-size: 24rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+.contentBoxTitle {
+  border-bottom: 2rpx solid #3b3d43;
+  padding: 20rpx 0;
+  margin-bottom: 40rpx;
+  padding-bottom: 0;
+}
+
+.contentBoxTitle .tab {
+  width: 50%;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.contentBoxTitle .tab .line {
+  width: 96rpx;
+  height: 10rpx;
+  border-radius: 5rpx;
+  background-color: #d04048;
+  margin-top: 10rpx;
+}
+.shareCard{
+  margin-top: 20rpx;
+  padding: 37rpx 24rpx;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+.shareCard .title{
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 50rpx;
+}
+.shareCard .title image{
+  width: 39rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+
+.shareCard .contentBox{
+  color: #333;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+.shareCard .shopName{
+  margin-bottom: 30rpx;
+}
+.shareCard .contentBox .cardContent{
+background: linear-gradient(88deg, #525263, #282933);
+border-radius: 10rpx 10rpx 0rpx 0rpx;
+padding: 24rpx 30rpx;
+box-sizing: border-box;
+min-height: 114rpx;
+color: #EEC993;
+margin-bottom: 20rpx;
+}
+.shareCard .contentBox .cardContent .cardName{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.shareCard .contentBox .cardContent .cardDesc{
+  align-items: flex-end;
+}
+.shareCard .contentBox .cardContent .num{
+font-size: 48rpx;
+font-weight: bolder;
+}
+.cannotClick{
+  color: #999;
+  pointer-events: none;
+}

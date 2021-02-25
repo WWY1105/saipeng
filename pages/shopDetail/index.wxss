@@ -1,0 +1,2540 @@
+page {
+   background-color: #fcfcfc;
+   padding-bottom: 100rpx;
+   -webkit-overflow-scrolling: touch;
+   position: relative;
+}
+
+.fz {
+   font-family: fz !important;
+}
+
+/* 第二步：定义使用 webfont 的样式 */
+
+.web-font {
+   font-family: "webfont" !important;
+   /* font-size: 16px; */
+   font-style: normal;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.web-font2 {
+   font-family: "webfont2" !important;
+   /* font-size: 16px; */
+   font-style: normal;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+#myCanvas {
+   /* visibility: hidden; *//*position: fixed;
+   z-index: -999; *//* position: absolute; *//* z-index: -1;
+   color: #fff;
+   background: #fff; */
+}
+
+/* 随机修改 */
+
+.redBigTitle {
+   height: 100rpx;
+   width: 540rpx;
+   margin-top: 100rpx;
+}
+
+/* 随机修改 */
+
+.shopsListImg {
+   width: 100%;
+}
+
+.shopsListImg_loading {
+   opacity: 0;
+   width: 100%;
+   height: 70%;
+   transition: opacity 1s linear 2s;
+}
+
+.shopsListImg_finish {
+   opacity: 1;
+}
+
+.loading4 {
+   width: 300rpx;
+   margin: 100rpx auto;
+   text-align: center;
+   height: 50rpx;
+}
+
+.loading4 >view {
+   width: 36rpx;
+   height: 36rpx;
+   border-radius: 100%;
+   display: inline-block;
+   background-color: #ccc;
+   -webkit-animation: three 1.4s infinite ease-in-out;
+   animation: three 1.4s infinite ease-in-out;
+   -webkit-animation-fill-mode: both;
+   animation-fill-mode: both;
+}
+
+.loading4 .three1 {
+   -webkit-animation-delay: -0.30s;
+   animation-delay: -0.30s;
+}
+
+.loading4 .three2 {
+   -webkit-animation-delay: -0.15s;
+   animation-delay: -0.15s;
+}
+
+@-webkit-keyframes three {
+   0%, 80%, 100% {
+      -webkit-transform: scale(0.0);
+   }
+
+   40% {
+      -webkit-transform: scale(1.0);
+   }
+}
+
+@keyframes three {
+   0%, 80%, 100% {
+      -webkit-transform: scale(0.0);
+   }
+
+   40% {
+      -webkit-transform: scale(1.0);
+   }
+}
+
+/* ========================================= */
+
+.shopCardBox {
+   display: flex;
+   align-items: center;
+   margin-top: 60rpx;
+}
+
+/* --wwy  start--- */
+
+.flexColumn {
+   display: flex;
+   flex-direction: column;
+}
+
+.topBox {
+   /* position: relative; *//* padding-top: 447rpx; *//* border-bottom: 20rpx solid #f3f3f3; */
+}
+
+.topBox .radius {
+   position: absolute;
+   background: #fff;
+   width: 100%;
+   height: 40rpx;
+   border-radius: 30rpx 30rpx 0 0;
+   top: -9%;
+}
+
+.topBox .top_media {
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+.textContent {
+   padding-top: 40rpx;
+   overflow: hidden;
+   padding: 0 30rpx;
+}
+
+.shop_brief_info {
+   width: 100%;
+   background: #f9f9f9;
+   position: relative;
+}
+
+/* .shopdetail_title {
+   width: 100%;
+   height: 288rpx;
+} */
+
+.shop_brief_info .leftText {
+   font-size: 24rpx;
+   font-weight: 500;
+   color: #333;
+   word-break: keep-all;
+   margin-right: 20rpx;
+}
+
+/* .shopdetail_title2 {
+   width: 100%;
+   height: 210rpx;
+   background-image: url(https://saler.ishangbin.com/img/recipitent_sprites.svg);
+   background-repeat: no-repeat;
+   background-size: 80%;
+   background-position-y: 54%;
+   background-position-x: 86%;
+} */
+
+/* 
+.shopdetail_title3 {
+   width: 612rpx;
+   height: 280rpx;
+   margin: 0 auto;
+   display: table;
+} */
+
+.picBox {
+   overflow-x: hidden;
+}
+
+.redBox {
+   position: relative;
+   text-align: center;
+   padding: 32rpx;
+   padding-bottom: 10rpx;
+}
+
+.redBox.coupon_Box .contentTitle {
+   margin-top: 20rpx;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.redBox.coupon_Box .contentTitle .shop_detail_title {
+   background-position-y: -832rpx;
+}
+
+.redBox.coupon_Box .contentTitle .tips {
+   font-size: 24rpx;
+   text-align: center;
+   color: #c63e37;
+   margin-top: 10rpx;
+   margin-bottom: 30rpx;
+}
+
+.redBox .redContent {
+   height: 716rpx;
+   font-size: 60rpx;
+   color: #601e29;
+   background-image: url(https://saler.ishangbin.com/img/shop/redBg.png);
+   background-size: 97% 97%;
+   background-clip: content-box;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.redBox .redContent.flex_Box {
+   display: flex;
+   width: 100%;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   height: 598rpx;
+}
+
+.redBox .redContent.flex_Box .coupon_tips {
+   color: #721c00;
+   font-size: 24rpx;
+}
+
+.redBox .mainText {
+   font-weight: 700;
+}
+
+.redBox .redContent .total_red_num {
+   color: #d50e18;
+   margin-top: 120rpx;
+   display: inline-block;
+   margin-bottom: 60rpx;
+}
+
+.redBox .redContent  .redTips {
+   color: #980700;
+   font-size: 28rpx;
+   margin-top: 24rpx;
+}
+
+.redBox .redContent  .redTips .bignum {
+   color: #980700;
+   font-size: 48rpx;
+   font-weight: 500;
+}
+
+.redBox .redContent  .redTips .iconfont {
+   font-size: 20rpx;
+}
+
+.redBox .redContent  .btnBox {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   margin-top: 120rpx;
+}
+
+.redBox .redContent  .send_red_btn {
+   background: url(https://saler.ishangbin.com/img/shop/btn.png) center center no-repeat;
+   width: 490rpx;
+   height: 100rpx;
+   background-size: cover;
+   font-size: 40rpx;
+   line-height: 90rpx;
+   font-weight: 600;
+   color: #941627;
+}
+
+.redBox .redContent  .send_red_btn:after {
+   display: none;
+}
+
+.redBox .redContent  .send_red_btn .smalltext {
+   font-size: 24rpx;
+   display: inline-block;
+   color: #e64336;
+}
+
+.redBox .redContent  .send_red_btn .smalltext .bigNum {
+   font-size: 40rpx;
+}
+
+.redBox  .coupon_box {
+   width: 510rpx;
+   height: 186rpx;
+   background: url(https://saler.ishangbin.com/img/shop/quan_bg1.png) 100% 100% no-repeat;
+   background-size: cover;
+   background-clip: content-box;
+   position: relative;
+   margin-top: 48rpx;
+   display: flex;
+   margin-bottom: 30rpx;
+   box-shadow: 0 4rpx 18rpx 0 rgba(176, 15, 0, 0.5);
+   border-radius: 10rpx;
+}
+
+.redBox  .coupon_box .quandan_img {
+   position: absolute;
+   width: 148rpx;
+   height: 66rpx;
+   top: -5%;
+   left: -5%;
+   margin: 0;
+}
+
+.redBox  .coupon_box .textBox {
+   display: flex;
+   align-items: center;
+   width: 100%;
+}
+
+.redBox  .coupon_box .discount_text {
+   font-size: 65rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #c63e37;
+   display: inline-block;
+   width: 50%;
+   line-height: 93px;
+   /* padding-left: 13%; */
+}
+
+.redBox  .coupon_box .discount_text .smalltext {
+   font-size: 30rpx;
+}
+
+.redBox  .coupon_box .tight_top_tips {
+   position: absolute;
+   right: 0;
+   top: 0;
+   color: #fff;
+   font-size: 24rpx;
+   padding: 4rpx 6rpx;
+   border-radius: 0 10rpx 0 10rpx;
+   background: #de1f0d;
+}
+
+.redBox  .coupon_box  .right_text {
+   display: inline-block;
+   width: 50%;
+   line-height: 45rpx;
+   /* margin-top: -16px; */
+}
+
+.redBox  .coupon_box  .right_text text {
+   display: block;
+   text-align: left;
+   color: #663000;
+   font-size: 28rpx;
+}
+
+.redBox .redContent  .btn_tips {
+   color: #fff;
+   font-size: 24rpx;
+   margin-top: 15rpx;
+   background: url(https://saler.ishangbin.com/img/shop/shop_detail111.png) center 0 no-repeat;
+   width: 464rpx;
+   height: 78rpx;
+   background-size: cover;
+   /* background-position-y: -676rpx; */
+}
+
+.bottom_icon {
+   display: block;
+   width: 50rpx;
+   height: 48rpx;
+   background-image: url(https://saler.ishangbin.com/img/shop/shop_detail111.svg);
+   background-repeat: no-repeat;
+   background-position-x: 0;
+}
+
+.bottom_icon.icon_fl {
+   background-position-y: 34%;
+}
+
+.bottom_icon.icon_yhq {
+   background-position-y: 57%;
+}
+
+.bottom_icon.icon_home {
+   background-position-y: 45%;
+}
+
+.redBox .redContent  .bottom_tips {
+   color: #fff;
+   font-size: 24rpx;
+   margin-top: 23rpx;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.redBox .redContent    .see_more {
+   margin-left: 20rpx;
+   text-decoration: underline;
+}
+
+.see_more .iconfont {
+   font-size: 18rpx;
+}
+
+.redBox .redContent    .small_coupon_box {
+   display: inline-block;
+   position: relative;
+   background: #fff;
+   color: #c63e37;
+   padding: 2rpx 10rpx;
+   border-radius: 7rpx;
+   overflow: hidden;
+   margin-left: 10rpx;
+}
+
+.redBox .redContent   .small_coupon_box .circle {
+   display: block;
+   width: 12rpx;
+   background: #e74032;
+   position: absolute;
+   height: 12rpx;
+   border-radius: 50%;
+   right: 20%;
+   top: -6rpx;
+}
+
+.redBox .redContent    .small_coupon_box .circle1 {
+   bottom: -3px;
+   top: unset;
+}
+
+.redBox .tips_list {
+   color: #999;
+   font-size: 24rpx;
+   padding-top: 20rpx;
+   border-top: 2rpx solid #e4e4e4;
+   margin-top: 40rpx;
+   text-align: left;
+   line-height: 40rpx;
+}
+
+.modal.send_modal {
+   border-radius: 31rpx;
+   background: transparent;
+   top: -70%;
+   width: 660rpx;
+}
+
+.modal.send_modal .modal_title {
+   height: 112rpx;
+   font-size: 80rpx;
+   font-weight: 500;
+   letter-spacing: 11rpx;
+   text-align: center;
+   color: #f8ebce;
+   position: relative;
+}
+
+.modal.send_modal .modal_title  .icon-close {
+   color: #fff;
+   font-size: 40rpx;
+   padding: 10rpx;
+   position: absolute;
+   top: 78%;
+   margin-top: -27rpx;
+   right: 0;
+}
+
+.modal.send_modal .content1 {
+   background-image: linear-gradient(to bottom, #f2944b, #cd2f22);
+   /* background: url(https://saler.ishangbin.com/img/send_model_bg.png) 100% 100% no-repeat; */
+   height: 760rpx;
+   border-radius: 20rpx;
+   position: relative;
+   overflow: hidden;
+   background-size: 100% 100%;
+   display: block;
+   min-height: 760rpx;
+   /* background-color: #cd2f22; */
+}
+
+.modal.send_modal .content1 .redShowBox {
+   background-color: transparent;
+   box-shadow: none;
+   padding: 0;
+   border-radius: 0;
+   position: absolute;
+   top: 193rpx;
+   left: 0;
+   width: 100%;
+}
+
+.modal.send_modal .btnbox button {
+   background: url(https://saler.ishangbin.com/img/shop/btn.png) center center no-repeat;
+   width: 490rpx;
+   height: 100rpx;
+   background-size: cover;
+   font-size: 40rpx;
+   line-height: 90rpx;
+   font-weight: 600;
+   color: #941627;
+   margin-top: 40rpx;
+}
+
+.modal.send_modal .content1.content2 .redShowBox {
+   display: flex;
+   justify-content: center;
+   margin-left: 0;
+}
+
+.modal.send_modal .content1.content2 .coupon {
+   margin: 0;
+}
+
+.modal.send_modal .content1.content2  .desc.quandesc {
+   text-align: center;
+   color: #fff;
+   top: 500rpx;
+   font-size: 40rpx;
+}
+
+.modal.send_modal .content1.content2  .desc.quandesc .title1 {
+   letter-spacing: 2px;
+}
+
+.modal.send_modal .content1.content2  .desc.quandesc .title2 {
+   display: flex;
+   justify-content: center;
+}
+
+.modal.send_modal .content1.content2  .desc.quandesc .title2  .bg {
+   width: 326rpx;
+   height: 80rpx;
+   background: url(https://saler.ishangbin.com/img/shop/copy_shopDetail.svg) center 0 no-repeat;
+   background-position-x: 0;
+   background-position-y: 91%;
+   margin-top: 40rpx;
+}
+
+.modal.send_modal .desc {
+   width: 100%;
+   text-align: left;
+   position: absolute;
+   left: 0;
+   bottom: 50rpx;
+}
+
+.modal.send_modal .desc .each1 {
+   margin-bottom: 40rpx;
+}
+
+.modal.send_modal .desc .each .big .icon {
+   background: url(https://saler.ishangbin.com/img/copy_shopDetail.svg) center 0 no-repeat;
+   background-position-x: 0;
+   background-position-y: 71%;
+   display: inline-block;
+   width: 90rpx;
+   height: 90rpx;
+   margin-left: 25rpx;
+   margin-right: 10rpx;
+}
+
+.modal.send_modal .desc .each1 .big .icon {
+   background-position-y: 81%;
+}
+
+.modal.send_modal .desc .each .big {
+   font-family: CloudRuiSongCuGBK;
+   font-size: 44rpx;
+   font-weight: normal;
+   font-stretch: normal;
+   font-style: normal;
+   letter-spacing: normal;
+   color: #fff;
+   display: flex;
+   align-content: center;
+   line-height: 90rpx;
+}
+
+.modal.send_modal .desc .each .big .num {
+   font-size: 64rpx;
+   position: static;
+}
+
+.modal.send_modal .desc .each .small {
+   font-family: CloudRuiSongCuGBK;
+   font-size: 26rpx;
+   font-weight: normal;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #fff;
+   padding-left: 129rpx;
+}
+
+.modal.send_modal .desc .each .small.small2 {
+   margin-top: 10rpx;
+}
+
+.modal.send_modal .desc .each .small .num {
+   font-size: 42rpx;
+   position: static;
+}
+
+.modal.send_modal .content1 .redShowBox .content {
+   margin-left: 20rpx;
+}
+
+.modal.send_modal .content1 .redShowBox .content .right {
+   margin-left: 16rpx;
+}
+
+.modal.send_modal .content1 .redShowBox .content .right  .iconfont {
+   font-size: 26rpx;
+}
+
+.modal.send_modal .content .pink_bg {
+   width: 100%;
+   height: 56%;
+   position: absolute;
+   background-color: #fff5f5;
+   border-radius: 67%;
+   z-index: 0;
+   top: -20%;
+}
+
+.modal.send_modal .content  .couponBox {
+   background: url(https://saler.ishangbin.com/img/shop/quan_bg.png) 100% 100% no-repeat;
+   width: 446rpx;
+   height: 160rpx;
+   background-size: contain;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.modal.send_modal .content  .couponBox {
+   text-align: center;
+   margin-bottom: 43rpx;
+   z-index: 1;
+}
+
+.modal.send_modal .content  .couponBox .couponName {
+   font-size: 50rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #c63e37;
+   margin-left: 46rpx;
+}
+
+.modal.send_modal .content .couponBox .couponName  .smalltext {
+   font-size: 24rpx;
+   display: inline-block;
+}
+
+.modal.send_modal .content  .couponBox  .couponTips {
+   font-size: 17rpx;
+   text-align: center;
+   color: #721c00;
+   padding-left: 46rpx;
+}
+
+.modal.send_modal .content  .couponBox  .right {
+   font-size: 20rpx;
+   color: #721c00;
+   line-height: 40rpx;
+   margin-right: 40rpx;
+}
+
+.modal.send_modal .content .minTitle {
+   font-size: 40rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #000;
+   margin-bottom: 50rpx;
+}
+
+.modal.send_modal .content .moneyBox {
+   background: url(https://saler.ishangbin.com/img/shop/hb.png) 100% 100% no-repeat;
+   width: 150rpx;
+   height: 180rpx;
+   background-size: contain;
+   margin-top: 10rpx;
+   text-align: center;
+   line-height: 249rpx;
+   color: #fff;
+   font-weight: 500;
+   font-size: 50rpx;
+   z-index: 1;
+}
+
+.modal.send_modal .content .moneyBox text {
+   width: 180rpx;
+   display: inline-block;
+}
+
+.modal.send_modal .content .btn_to_send {
+   width: 380rpx;
+   height: 92rpx;
+   line-height: 92rpx;
+   border-radius: 46rpx;
+   background-color: #e45435;
+   color: #fff;
+   font-size: 40rpx;
+   font-weight: 500;
+}
+
+.modal.send_modal .content  .bottomTips {
+   font-size: 24rpx;
+   text-align: center;
+   color: #999;
+}
+
+.modal.send_modal .content .bigText {
+   font-size: 40rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #000;
+   margin-bottom: 20rpx;
+}
+
+.modal.send_modal .content .smallTips {
+   margin-bottom: 100rpx;
+   font-size: 28rpx;
+   text-align: center;
+   color: #000;
+}
+
+.modal.send_modal  .modal_shopname {
+   font-size: 32rpx;
+   color: #000;
+   margin-top: 20rpx;
+   margin-bottom: 0rpx;
+   z-index: 1;
+}
+
+.modal.send_modal  .modal_logo_box {
+   width: 592‬rpx;
+   z-index: 1;
+}
+
+.modal.send_modal   image {
+   width: 100%;
+   max-width: 592‬rpx;
+   height: 60rpx;
+   margin-top: 80rpx;
+   margin-bottom: 0;
+}
+
+.modal.send_modal image.logoImg {
+   width: 68rpx;
+   margin-top: 40rpx;
+}
+
+.modal.location_modal {
+   height: 484rpx;
+   padding-top: 0;
+   border-radius: 31rpx;
+}
+
+.modal.location_modal .text {
+   padding-top: 40rpx;
+   padding-bottom: 0;
+   padding-left: 50rpx;
+   padding-right: 50rpx;
+}
+
+.location_modal .modal_big_title {
+   color: #000;
+   font-size: 44rpx;
+   font-weight: 600;
+   margin-bottom: 6rpx;
+}
+
+.location_modal .modal_active_tips {
+   color: #e75d1f;
+   font-size: 28rpx;
+   margin-bottom: 12rpx;
+}
+
+.location_modal .modal_common_tips {
+   color: #000;
+   font-size: 26rpx;
+   margin-bottom: 26rpx;
+}
+
+.location_modal .modal_shop_address {
+   color: #858585;
+   font-size: 24rpx;
+   margin-bottom: 30rpx;
+}
+
+.modal.location_modal button.btn_to_auth,
+.modal.location_modal button.to_get_coupon {
+   color: #e76020;
+   font-size: 32rpx;
+   border: 2rpx solid #e76020;
+   border-radius: 29rpx;
+   padding: 0;
+   width: 244rpx;
+   height: 60rpx;
+   line-height: 60rpx;
+}
+
+.modal.location_modal button.to_get_coupon {
+   color: #fff;
+   background-image: linear-gradient(#f59642, #e75d1f);
+   border: none;
+   margin-left: 50rpx;
+}
+
+/* --wwy  end--- */
+
+.card {
+   width: 210rpx;
+   height: 140rpx;
+   border-radius: 7.7px;
+   position: relative;
+   margin-left: 30rpx;
+}
+
+.cardBg {
+   width: 210rpx;
+   height: 140rpx;
+   border-radius: 7.7px;
+   position: absolute;
+   background: #ccc;
+   top: 0;
+   left: 0;
+}
+
+.amount {
+   position: absolute;
+   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 1px 1px rgba(0, 0, 0, 0.5);
+   font-size: 32rpx;
+   font-weight: bold;
+   color: #ffec92;
+   bottom: 29rpx;
+   left: 12rpx;
+}
+
+.cardType {
+   position: absolute;
+   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 1px 1px rgba(0, 0, 0, 0.5),
+                 0 1px 1px rgba(0, 0, 0, 0.5);
+   font-size: 20rpx;
+   font-weight: bold;
+   color: #ffec92;
+   bottom: 7rpx;
+   left: 12rpx;
+}
+
+.tipsBox {
+   position: absolute;
+   top: 8rpx;
+   left: -14rpx;
+   min-width: 142rpx;
+   height: 60rpx;
+}
+
+.tipsBox image {
+   width: 100%;
+   height: auto;
+   position: absolute;
+   top: 0;
+}
+
+.tipsBox view {
+   font-size: 28rpx;
+   font-weight: 500;
+   color: #fff;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   height: 42rpx;
+   text-align: center;
+}
+
+.moreCard {
+   font-size: 32rpx;
+   color: #0012ff;
+   margin-left: 40rpx;
+   display: flex;
+   align-items: center;
+}
+
+.moreCard image {
+   width: 26rpx;
+   height: 24rpx;
+   margin-left: 6rpx;
+}
+
+.arcBox {
+   width: 178rpx;
+   height: 178rpx;
+   border-radius: 100px;
+   background-color: #cb0202;
+   position: relative;
+   text-align: center;
+   margin-left: 92rpx;
+}
+
+.arcBox_top {
+   font-size: 28rpx;
+   font-weight: 500;
+   margin-top: 32rpx;
+   text-align: center;
+}
+
+.arcBox_bottom {
+   font-size: 60rpx;
+   color: #fff;
+   font-weight: bold;
+}
+
+.arcBox_bottom text {
+   font-size: 28rpx;
+   font-weight: 500;
+}
+
+.cardInfo {
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+}
+
+.cardInfo_left {
+   margin-left: 34rpx;
+}
+
+.price {
+   font-size: 48rpx;
+   font-weight: bold;
+   color: #ed772f;
+}
+
+.price text {
+   font-size: 28rpx;
+   color: #333;
+   text-decoration: line-through;
+   margin-left: 10rpx;
+}
+
+.discount {
+   width: 260rpx;
+   height: 48rpx;
+   position: relative;
+}
+
+.discount image {
+   width: 260rpx;
+   height: 48rpx;
+   position: absolute;
+   top: 0;
+   left: 0;
+}
+
+.discount_info {
+   width: 260rpx;
+   height: 48rpx;
+   position: absolute;
+   font-size: 24rpx;
+   top: 0;
+   left: 0;
+}
+
+.discount_info_name {
+   width: 140rpx;
+   height: 48rpx;
+   line-height: 48rpx;
+   color: #fff;
+   text-align: center;
+   display: inline-block;
+}
+
+.lijian {
+   width: 120rpx;
+   height: 48rpx;
+   line-height: 48rpx;
+   color: #333;
+   text-align: center;
+   display: inline-block;
+}
+
+.cardInfo_right {
+   margin-right: 26rpx;
+}
+
+.cardNum {
+   font-size: 24rpx;
+   color: #999;
+   text-align: center;
+}
+
+.like {
+   height: 54rpx;
+   line-height: 54rpx;
+   padding: 0 24rpx;
+   text-align: center;
+   border-radius: 22px;
+   background-color: #ffd4d4;
+}
+
+.like image {
+   width: 32rpx;
+   height: 28rpx;
+   margin-right: 10rpx;
+   vertical-align: middle;
+}
+
+.like view {
+   font-size: 28rpx;
+   line-height: 28rpx;
+   height: 28rpx;
+   color: #e73434;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.shopTitle {
+   width: 686rpx;
+   font-size: 36rpx;
+   font-weight: bold;
+   color: #333;
+   margin: auto;
+   margin-top: 20rpx;
+}
+
+.traitBox {
+   margin-top: 30rpx;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.trait {
+   display: flex;
+   align-items: center;
+}
+
+.trait image {
+   width: 23rpx;
+   height: 23rpx;
+   margin-right: 10rpx;
+}
+
+.trait view {
+   font-size: 24rpx;
+   color: #333;
+}
+
+.titleBox {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   color: #333;
+   font-size: 40rpx;
+   font-weight: 500;
+}
+
+.title {
+   font-size: 36rrpx;
+   font-weight: bold;
+   color: #333;
+   max-width: 70%;
+}
+
+.distance {
+   font-size: 24rpx;
+   color: #333;
+   /* margin-right: 20rpx; */
+   background: #f9dc54;
+   padding: 10rpx 16rpx;
+   border-radius: 26rpx;
+}
+
+.tese {
+   font-size: 20rpx;
+   color: #9a9ca0;
+   margin-top: 10rpx;
+}
+
+.startTime {
+   font-size: 24rpx;
+   color: #9a9ca0;
+   margin-top: 10rpx;
+}
+
+.function.shop_tel {
+   width: auto;
+   display: inline-block;
+   padding: 2rpx 20rpx;
+   color: #333;
+   font-size: 24rpx;
+   margin-left: 10rpx;
+}
+
+.shop_tel .iconfont {
+   color: #000;
+   font-size: 20rpx;
+   margin-right: 5rpx;
+}
+
+.address {
+   width: 90%;
+   font-size: 24rpx;
+   color: #858585;
+   display: flex;
+   align-items: flex-start;
+}
+
+.shop_info {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 18rpx;
+   margin-top: 24rpx;
+}
+
+.poster {
+   color: #000;
+   font-size: 24rpx;
+   margin: 20rpx 0;
+}
+
+.function {
+   color: #333;
+   font-size: 24rpx;
+   word-break: keep-all;
+   background: #f0f0f0;
+   border-radius: 20rpx;
+   width: 100rpx;
+   height: 40rpx;
+   line-height: 40rpx;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.function image {
+   height: 88rpx;
+   width: 88rpx;
+}
+
+.function view {
+   width: 1px;
+   height: 40rpx;
+   background-color: #4d5159;
+}
+
+.poster_title {
+   font-weight: 300;
+   font-size: 36rpx;
+   text-align: center;
+   width: 100%;
+   padding-top: 20rpx;
+   border-top: 1px solid #5e6269;
+}
+
+.poster_box {
+   min-height: 128rpx;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.poster_box>text {
+   text-align: center;
+   margin: 40rpx 0;
+   font-family: FZFSJW;
+   line-height: 80rpx;
+   font-size: 32rpx;
+}
+
+.userimg {
+   width: 68rpx;
+   height: 68rpx;
+   border-radius: 50px;
+   border: 1px solid #fff;
+}
+
+.user {
+   height: 128rpx;
+   width: 622rpx;
+   display: flex;
+   position: relative;
+   align-items: center;
+   border-top: 1px solid #5e6269;
+}
+
+.info {
+   margin-left: 20rpx;
+}
+
+.username {
+   font-size: 28rpx;
+   color: #fff;
+}
+
+.time {
+   font-size: 24rpx;
+   color: #9a9ca0;
+}
+
+.num {
+   font-size: 32rpx;
+   font-weight: bold;
+   color: #fff;
+   position: absolute;
+   right: 0;
+}
+
+.video {
+   width: 100%;
+}
+
+.contenttext {
+   width: 686rpx;
+   padding: 0rpx 32rpx;
+   padding-bottom: 20rpx;
+   padding-top: 15rpx;
+}
+
+.playTimes {
+   font-size: 24rpx;
+   color: #fff;
+   margin: 30rpx 0 20rpx 32rpx;
+}
+
+.poster_title {
+   font-weight: 300;
+   font-size: 36rpx;
+   text-align: center;
+   width: 100%;
+   margin-top: 20rpx;
+}
+
+.poster_box>text {
+   text-align: center;
+   margin: 40rpx 0;
+   font-family: FZFSJW;
+   line-height: 80rpx;
+   font-size: 32rpx;
+}
+
+.tab-h2 {
+   position: fixed;
+   top: 0;
+}
+
+.tabBox {
+   margin-top: 10rpx;
+   height: 120rpx;
+   background-color: #f3f3f3;
+   overflow: hidden;
+}
+
+.tabBox2 {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   z-index: 99;
+}
+
+.tabBox_view {
+   display: flex;
+   justify-content: center;
+   margin-top: 20rpx;
+}
+
+.tabBox_view image {
+   width: 344rpx;
+   height: 100rpx;
+}
+
+.titleLine {
+   width: 686rpx;
+   height: 48rpx;
+   line-height: 54rpx;
+   border-radius: 5px;
+   border-style: solid;
+   border-width: 1px;
+   border-image-source: linear-gradient(to bottom, #f6eac4, #ead092);
+   border-image-slice: 1;
+   background-image: linear-gradient(94deg, #595959, #222),
+                      linear-gradient(to bottom, #f6eac4, #ead092);
+   background-origin: border-box;
+   background-clip: content-box, border-box;
+   margin: auto;
+   margin-top: 20rpx;
+}
+
+.titleLine image {
+   width: 160rpx;
+   height: 32rpx;
+   margin-left: 20rpx;
+}
+
+.scrollBox {
+   height: 100vh;
+}
+
+.scrollTitle {
+   width: 686rpx;
+   margin: 30rpx auto;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.scrollTitle_left {
+   display: flex;
+}
+
+.scrollTitle_left image {
+   width: 52rpx;
+   height: 52rpx;
+}
+
+.scrollTitle_left text {
+   font-size: 36rpx;
+   font-weight: bold;
+   color: #333;
+   margin-left: 10rpx;
+}
+
+.scrollTitle_right {
+   font-size: 28rpx;
+   color: #999;
+   text-align: right;
+}
+
+.shareBox {
+   width: 630rpx;
+   height: 176rpx;
+   margin: auto;
+   padding: 22rpx 28rpx;
+   margin-bottom: 20rpx;
+   border-radius: 10px;
+   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05);
+   background-color: #fff;
+}
+
+.shareBox_top {
+   font-size: 36rpx;
+   color: #000;
+   font-weight: bold;
+}
+
+.shareBox_bottom {
+   margin-top: 34rpx;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.shareBox_bottom_left {
+   display: flex;
+   flex-direction: column;
+}
+
+.profit {
+   font-size: 36rpx;
+   font-weight: bold;
+   color: #000;
+}
+
+.otherProfit {
+   font-size: 28rpx;
+   color: #f54b4b;
+}
+
+.shareBox_bottom_right {
+   width: 172rpx;
+   height: 58rpx;
+   line-height: 58rpx;
+   border-radius: 14.5px;
+   background-image: linear-gradient(109deg, #ffe74e, #ffca26);
+   font-size: 28rpx;
+   font-weight: bold;
+   text-align: center;
+   color: #6b400d;
+}
+
+.moreBox {
+   width: 200rpx;
+   height: 116rpx;
+   text-align: center;
+   margin: auto;
+   margin-top: 20rpx;
+}
+
+.moreBox image {
+   width: 34rpx;
+   height: 20rpx;
+}
+
+.moreBox view {
+   margin-top: 10rpx;
+   font-size: 28rpx;
+   font-weight: bold;
+   color: #999;
+}
+
+.line {
+   width: 100%;
+   height: 20rpx;
+   margin-top: 20rpx;
+   background-color: #f3f3f3;
+}
+
+.line.white {
+   background: transparent;
+}
+
+.cardBox {
+   width: 490rpx;
+   height: 324rpx;
+   border-radius: 18px;
+   position: relative;
+   margin: auto;
+}
+
+.cardBand {
+   position: absolute;
+   top: 30rpx;
+   left: 30rpx;
+}
+
+.cardBand image {
+   width: 30rpx;
+   height: 30rpx;
+   background-color: #d8d8d8;
+   vertical-align: middle;
+}
+
+.cardBand text {
+   font-size: 23rpx;
+   color: #fff;
+   vertical-align: middle;
+   margin-left: 14rpx;
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.denomination {
+   font-size: 50rpx;
+   font-weight: bold;
+   color: #ffec92;
+   position: absolute;
+   left: 30rpx;
+   bottom: 66rpx;
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cardText {
+   font-size: 23rpx;
+   position: absolute;
+   left: 30rpx;
+   bottom: 34rpx;
+   color: #fff;
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5),
+                 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.look {
+   position: absolute;
+   right: 30rpx;
+   bottom: 34rpx;
+   background-image: linear-gradient(103deg, #ffe74e, #ffca26);
+   text-align: center;
+   height: 34rpx;
+   line-height: 34rpx;
+   font-size: 26rpx;
+   width: 170rpx;
+   border-radius: 100px;
+   color: #333;
+}
+
+.swiperBox {
+   height: 326rpx;
+}
+
+.enlarge {
+   animation: 0.5s enlarge forwards;
+}
+
+.narrow {
+   animation: 0.5s narrow forwards;
+}
+
+@keyframes enlarge {
+   0% {
+      transform: scale(0.8);
+   }
+
+   100% {
+      transform: scale(1);
+   }
+}
+
+@keyframes narrow {
+   0% {
+      transform: scale(1);
+   }
+
+   100% {
+      transform: scale(0.8);
+   }
+}
+
+.surplusCard {
+   font-size: 32rpx;
+   color: #333;
+   text-align: center;
+   margin-top: 12rpx;
+}
+
+.exchangeBtn {
+   width: 360rpx;
+   height: 80rpx;
+   line-height: 80rpx;
+   text-align: center;
+   border-radius: 23px;
+   font-size: 28rpx;
+   font-weight: bold;
+   color: #333;
+   margin: auto;
+   margin-top: 40rpx;
+   background-image: linear-gradient(103deg, #ffe74e, #ffca26);
+}
+
+.tips {
+   font-size: 28rpx;
+   text-align: center;
+   color: #e5531c;
+   text-decoration: underline;
+   margin-top: 30rpx;
+   margin-bottom: 60rpx;
+}
+
+.tihuanimg {
+   width: 400rpx;
+   height: auto;
+}
+
+/* .swiperItem {
+  width: 80%;
+} */
+
+.helpBox {
+   padding-bottom: 80rpx;
+}
+
+.couponBox {
+   height: 156rpx;
+   width: 622rpx;
+   margin: auto;
+   margin-top: 46rpx;
+}
+
+.couponBox_top {
+   height: 92rpx;
+   width: 622rpx;
+   background: #f6efe9;
+   position: relative;
+   overflow: hidden;
+}
+
+.couponBox_top view {
+   text-align: center;
+   margin-top: 30rpx;
+   font-size: 40rpx;
+   font-weight: bold;
+   color: #343235;
+}
+
+.couponBox_top image {
+   width: 128rpx;
+   height: 128rpx;
+   position: absolute;
+   top: -12rpx;
+   right: 0;
+}
+
+.couponBox_bottom {
+   width: 558rpx;
+   padding: 0 32rpx;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #b8a682;
+}
+
+.coupon_text {
+   font-size: 20rpx;
+   color: #fff;
+}
+
+.couponBtn {
+   width: 156rpx;
+   height: 44rpx;
+   line-height: 44rpx;
+   text-align: center;
+   border-radius: 11px;
+   background-color: #fff;
+   font-size: 24rpx;
+   font-weight: bold;
+   color: #b8a682;
+}
+
+.helpBtn {
+   width: 220rpx;
+   height: 220rpx;
+   line-height: 220rpx;
+   border-radius: 100px;
+   box-shadow: 0 5px 10px 0 rgba(237, 119, 48, 0.5);
+   background-image: linear-gradient(to left, #ed762f, #f0994e);
+   font-size: 44rpx;
+   font-weight: bold;
+   text-align: center;
+   color: #fff;
+   margin: auto;
+   margin-top: 80rpx;
+}
+
+.helpBtn2 {
+   background: #cacaca;
+   box-shadow: none;
+}
+
+.taskBox {
+   width: 686rpx;
+   height: 220rpx;
+   border-radius: 10px;
+   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05), 0 5px 4px 0 rgba(238, 110, 54, 0.2);
+   background-color: #fff;
+   margin: auto;
+   margin-top: 20rpx;
+   overflow: hidden;
+   position: relative;
+}
+
+.taskImg {
+   width: 42rpx;
+   height: 220rpx;
+   background-color: #ee6e36;
+   display: inline-block;
+   overflow: hidden;
+   vertical-align: middle;
+   text-align: center;
+}
+
+.taskImg image {
+   width: 24rpx;
+   height: 120rpx;
+   margin: auto;
+   margin-top: 50rpx;
+}
+
+.taskBox_right {
+   display: inline-block;
+   margin-left: 32rpx;
+   overflow: hidden;
+   vertical-align: middle;
+   height: 220rpx;
+}
+
+.taskBox_title {
+   margin-top: 22rpx;
+   font-size: 36rpx;
+   color: #000;
+}
+
+.taskBox_content {
+   margin-top: 34rpx;
+   font-size: 36rpx;
+   color: #000;
+}
+
+.taskBox_content view {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.tag {
+   padding: 0 10rpx;
+   height: 32rpx;
+   line-height: 32rpx;
+   text-align: center;
+   border-radius: 2px;
+   border: solid 0.5px #ee6e36;
+   background-color: #fff;
+   font-size: 20rpx;
+   color: #ee6e36;
+   margin-left: 12rpx;
+}
+
+.taskBox_right_text {
+   font-size: 28rpx;
+   color: #f54b4b;
+}
+
+.taskBox_btn {
+   width: 172rpx;
+   height: 58rpx;
+   line-height: 58rpx;
+   border-radius: 20px;
+   background-image: linear-gradient(109deg, #ffe74e, #ffca26);
+   font-size: 28rpx;
+   font-weight: bold;
+   text-align: center;
+   color: #6b400d;
+   position: absolute;
+   right: 32rpx;
+   bottom: 40rpx;
+}
+
+.contentTitle {
+   text-align: center;
+   margin-top: 40rpx;
+   display: flex;
+   justify-content: center;
+}
+
+/* 富文本 */
+
+/* .richImg {
+  max-width: 9em;
+  max-height: 100%;
+  vertical-align: middle;
+  height: auto!important;
+  width: auto!important;
+} */
+
+/* 
+.richSection, .richP, .richH {
+   padding: 0 10px;
+   max-width: 100% !important;
+   word-wrap:break-word;
+   overflow-wrap: break-word;
+}
+
+.richSection .richP, .richSection .richH {
+   padding: 0;
+}
+
+.richP .richP, .richP .richSpan, .richH .richH, .richH .richP {
+   padding: 0;
+} */
+
+/* 富文本 */
+
+.contentTitle .shop_detail_title {
+   background: url(https://saler.ishangbin.com/img/shop/shop_detail111.svg) center 0 no-repeat;
+   width: 464rpx;
+   height: 68rpx;
+   background-size: cover;
+   background-position-y: -573rpx;
+   background-position-x: 55rpx;
+   margin-bottom: 30rpx;
+}
+
+.contentTitle image {
+   height: 36rpx;
+}
+
+.contentTitle_line {
+   width: 38rpx;
+   height: 1px;
+   border-radius: 1px;
+   border: solid 0.5px #979797;
+   background-color: #d8d8d8;
+   margin: auto;
+   margin-top: 10rpx;
+}
+
+.bottomBox {
+   width: 100%;
+   height: 100rpx;
+   position: fixed;
+   display: flex;
+   bottom: 0;
+   background-color: #fff;
+   padding: 11rpx 0;
+   box-shadow: 0px -5px 5px #ddd;
+   /* z-index: 999999999999999; */
+}
+
+.flexBoxLeft {
+   width: 80%;
+   display: flex;
+   padding: 10rpx 0 6rpx 0;
+   align-items: center;
+   color: #ff461c;
+}
+
+.flexBox_line {
+   width: 1px;
+   height: 52rpx;
+   border-radius: 0.5px;
+   background-color: #f0f0f0;
+   margin-right: 36rpx;
+}
+
+.flexBoxLeftBtn, .flexBoxRightBtn_btn {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   width: 50%;
+   font-size: 20rpx;
+   color: #ff461c;
+   position: relative;
+}
+
+.lastText {
+   display: block;
+   width: 50rpx;
+}
+
+.flexBoxLeftBtn::after {
+   content: '';
+   display: inline-block;
+   width: 2rpx;
+   color: #ececec;
+   height: 60rpx;
+   background: #cecece;
+   position: absolute;
+   right: 0;
+   top: 50%;
+   margin-top: -30rpx;
+}
+
+.shareBtn {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   opacity: 0;
+}
+
+.flexBoxRight {
+   width: 50%;
+   display: flex;
+   align-items: center;
+   position: relative;
+   height: 100rpx;
+   /* background-color: #cacaca; */
+}
+
+.flexBoxRightBtn {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   font-size: 20rpx;
+   position: relative;
+   width: 20%;
+   height: 100rpx;
+   color: #000;
+}
+
+.flexBoxRightBtn .flexBoxLeftBtn::afte {
+   display: none;
+}
+
+/* .flexBoxRightBtn  text{
+
+} */
+
+.flexBoxRightBtn .buyPrice {
+   font-size: 36rpx;
+   color: #fff;
+   margin-top: 12rpx;
+}
+
+.flexBoxRightBtn .buyText {
+   font-size: 24rpx;
+   color: #fff;
+   margin-bottom: 10rpx;
+}
+
+.flexBoxRightBtn image {
+   width: 48rpx;
+   height: 48rpx;
+}
+
+.flexBoxRight_form {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+}
+
+.explainBox {
+   width: 686rpx;
+   margin: auto;
+   margin-top: 28rpx;
+}
+
+.explain {
+   font-size: 32rpx;
+   color: #494949;
+   margin-top: 28rpx;
+}
+
+.explain_content {
+   font-size: 28rpx;
+   color: #999;
+}
+
+.customerService {
+   width: 686rpx;
+   height: 126rpx;
+   border-radius: 2px;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+   background-color: #fff;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin: auto;
+   margin-top: 20rpx;
+}
+
+.customerService_left {
+   display: flex;
+   align-items: center;
+   margin-left: 34rpx;
+}
+
+.logoImg {
+   width: 68rpx;
+   height: 68rpx;
+}
+
+.customerService_text {
+   margin-left: 18rpx;
+   color: #999;
+   font-size: 28rpx;
+}
+
+.customerService_btn {
+   width: 160rpx;
+   height: 68rpx;
+   line-height: 68rpx;
+   border-radius: 2px;
+   background-color: #ee883f;
+   margin-right: 24rpx;
+   text-align: center;
+   font-size: 28rpx;
+   color: #fff;
+   padding: 0;
+}
+
+.modalbox {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 999;
+   background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+   text-align: center;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   width: 592rpx;
+   height: 300rpx;
+   border-radius: 5px;
+   padding-top: 20rpx;
+   background-color: #fff;
+   color: #000;
+}
+
+.modal .text {
+   font-size: 32rpx;
+   min-height: 130rpx;
+   letter-spacing: 0.3px;
+   text-align: center;
+   padding: 36rpx 20rpx;
+   color: #999;
+}
+
+.modalbox_btn {
+   border-top: 0.5px solid #ccc;
+   position: absolute;
+   bottom: 0;
+   margin: auto;
+   left: 0;
+   right: 0;
+}
+
+.modal button {
+   display: inline-block;
+   width: 50%;
+   font-size: 40rpx;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+   border: none;
+}
+
+/* =================== */
+
+.canvasBox {
+   width: 300px;
+   height: 500px;
+   position: absolute;
+   top: 0;
+   left: -2000rpx;
+   z-index: -999;
+   visibility: hidden;
+}
+
+.canvasimg {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   background: rgba(0, 0, 0, 0.1);
+   z-index: 999999999999999999999999999999999999999999999999999999999999999999;
+}
+
+.canvasimgBg {
+   background: rgba(0, 0, 0, 0.6);
+}
+
+.send {
+   position: absolute;
+   bottom: 0;
+   width: 750rpx;
+   display: flex;
+   background: #fff;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+   flex-wrap: wrap;
+   z-index: 999999999999999999999999999999999;
+}
+
+.send>view.top {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   text-align: center;
+   height: 175rpx;
+   width: 100%;
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.send>view.top:focus, .send>view.top:active {
+   background: #eee;
+}
+
+.send .tips {
+   display: flex;
+   width: 90%;
+   justify-content: center;
+   margin-bottom: 10rpx;
+   margin-left: 5%;
+   border-top: 2rpx solid #ccc;
+   padding-top: 10rpx;
+   margin-top: 0;
+}
+
+.send .tips .bg {
+   background: url(https://saler.ishangbin.com/img/shop/copy_shopDetail.svg) center 0 no-repeat;
+   height: 70rpx;
+   background-position-x: 0;
+   background-position-y: 100.4%;
+   width: 503rpx;
+}
+
+.send button {
+   height: 96rpx;
+   width: 96rpx;
+   border-radius: 100px;
+   margin-top: 20rpx;
+   color: #0bb20b;
+   position: relative;
+}
+
+.send .button2 {
+   height: 96rpx;
+   width: 96rpx;
+   background: #fff;
+   border-radius: 100px;
+   margin-top:20rpx;
+   background-position: cover;
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+.send .button2::after {
+   display: none;
+}
+
+.send button .iconfont {
+   font-size: 96rpx;
+   position: absolute;
+   top: 0;
+   left: 0;
+   line-height: 48px;
+}
+
+.send .text {
+   font-size: 28rpx;
+   font-weight: 400;
+   color: #232832;
+}
+
+.closeimg {
+   width: 46rpx;
+   height: 46rpx;
+   top: -60rpx;
+   right: -60rpx;
+   position: absolute;
+}
+
+.showcanva {
+   height: 800rpx;
+   width: 480rpx;
+   position: absolute;
+   top: -184rpx;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   margin: auto;
+   z-index: 999999999999999999999999999999999;
+}
+
+.canvasimg .canva {
+   height: 800rpx;
+   width: 480rpx;
+}
+
+/* 0106 */
+
+.savaSuccessTips {
+   position: absolute;
+   color: #fff;
+   bottom: 5%;
+   z-index: 999;
+   text-align: center;
+   width: 100%;
+   z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+
+}
+
+.savaSuccessTips button {
+   width: 90%;
+   color: #fff;
+   border-radius: 0;
+   background: #0bb20b;
+   margin-top: 35rpx;
+   font-size: 30rpx;
+}
+
+/* 0108
+ */
+
+.tdhb, .fddzdd, .hdsm {
+   display: flex;
+   justify-content: center;
+}
+
+.tdhb .title, .fddzdd .title, .hdsm .title {
+   background: url(https://saler.ishangbin.com/img/copy_shopDetail.svg) center 0 no-repeat;
+   height: 70rpx;
+   width: 380rpx;
+   background-position-x: 0;
+   background-position-y: 0;
+}
+
+.fddzdd .title {
+   background-position-y: 10%;
+   height: 80rpx;
+}
+
+.hdsm .title {
+   width: 128rpx;
+   height: 51rpx;
+   background-position-y: 26%;
+}
+
+.redShowBox .title {
+   width: 246rpx;
+   height: 56rpx;
+   background: url(https://saler.ishangbin.com/img/copy_shopDetail.svg) center 0 no-repeat;
+   background-position-x: 0;
+   background-position-y: 18.3%;
+   margin-left: 48rpx;
+   margin-bottom: 42rpx;
+}
+
+.shopDetailBox {
+   padding: 0 32rpx;
+   padding-top: 30rpx;
+}
+
+.redShowBox {
+   /* height: 298rpx; */
+   border-radius: 32rpx;
+   box-shadow: inset 0 0 20rpx 0 #f63a23;
+   background-color: #fffaf9;
+   margin-top: 30rpx;
+   margin-bottom: 60rpx;
+   padding-top: 38rpx;
+   padding-bottom: 44rpx;
+}
+
+.redShowBox .coupon {
+   width: 256rpx;
+   height: 126rpx;
+   background: url(https://saler.ishangbin.com/img/copy_shopDetail.svg) center 0 no-repeat;
+   background-position-x: 0;
+   background-position-y: 59%;
+   margin-left: 38rpx;
+   position: relative;
+}
+
+.redShowBox .coupon .discount_text {
+   position: absolute;
+   font-family: PingFangSC;
+   font-size: 64rpx;
+   font-weight: 500;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #fff;
+   width: 256rpx;
+   top: 0;
+   left: 0;
+   text-align: center;
+}
+
+.redShowBox  .content {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   font-size: 48rpx;
+   font-family: Tianshi-Yanti;
+   color: #bd3926;
+}
+
+.redShowBox  .content .right {
+   text-align: center;
+   margin-left: 46rpx;
+   display: flex;
+   align-items: baseline;
+}
+
+.redShowBox  .content .right text {
+   font-size: 48rpx;
+   text-align: left;
+   font-weight: 900;
+}
+
+.redShowBox  .content .right  text.iconfont {
+   font-size: 36rpx;
+   margin-right: 16rpx;
+}
+
+.redShowBox .coupon .discount_text .smalltext {
+   font-size: 36rpx;
+}
+
+.shopDetailBox .ruleList {
+   font-family: fz;
+   font-size: 26rpx;
+   color: #000;
+   margin-top: 20rpx;
+   margin-bottom: 66rpx;
+}
+
+.shopDetailBox .ruleList .each {
+   word-break: keep-all;
+   height: 66rpx;
+   line-height: 66rpx;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   font-family: fz;
+}
+
+.shopDetailBox .ruleList .iconfont {
+   color: #bd3926;
+   font-size: 23rpx;
+   margin-right: 10rpx;
+}
+
+.shopDetailBox .ruleList .num {
+   font-size: 50rpx;
+   color: #000;
+   position: static;
+}
+
+.shopDetailBox .send_red_btn {
+   border-radius: 42rpx;
+   background-image: linear-gradient(to left, #ed762f 100%, #f2a15a 0%);
+   width: 100%;
+   height: 84rpx;
+   line-height: 84rpx;
+   font-family: PingFangSC;
+   font-size: 36rpx;
+   font-weight: 500;
+   font-stretch: normal;
+   font-style: normal;
+   letter-spacing: normal;
+   text-align: center;
+   color: #fff;
+   margin-bottom: 80rpx;
+}
+
+.shopDetailBox .hdsmList {
+   margin-bottom: 60rpx;
+   margin-top: 40rpx;
+}
+
+.shopDetailBox .hdsmList .each {
+   font-family: FZZHJW;
+   font-size: 28rpx;
+   font-weight: normal;
+   font-stretch: normal;
+   font-style: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #5e5e5e;
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   margin: 16rpx 0;
+}
+
+.shopDetailBox .hdsmList .each .left {
+   color: #dd3d3d;
+   word-break: keep-all;
+   margin-right: 20rpx;
+}
+
+.shopDetailBox .hdsmList .each .left .iconfont {
+   font-size: 24rpx;
+   margin-right: 10rpx;
+}
+
+/* 0113 */
+
+.sucaibox .content .title {
+   width: auto;
+   font-weight: 500;
+   color: #1d1d1d;
+   font-size: 32rpx;
+   margin-left: 32rpx;
+   margin-top: 20rpx;
+   margin-bottom: 20rpx;
+}
+
+.sucaibox .content .textBox {
+   width: 90%;
+   margin-left: 5%;
+   border: 1rpx solid #e2e2e2;
+   background-color: #f5f5f5;
+   color: #4e4e4e;
+   padding: 20rpx 0;
+   font-size: 28rpx;
+}
+
+.sucaibox .content .textBg {
+   text-align: center;
+   font-size: 32rpx;
+   color: #3e0000;
+   margin-bottom: 30rpx;
+}
+
+.sucaibox .content .textBg  .iconfont {
+   font-size: 32rpx;
+}
+
+.sucaibox .content .text {
+   padding: 0 20rpx;
+   margin-bottom: 40rpx;
+}
+
+.sucaibox .content .copy_btn_box {
+   display: flex;
+   justify-content: center;
+}
+
+.sucaibox .content  .copy_btn {
+   font-size: 32rpx;
+   color: #333;
+   padding: 14rpx 70rpx;
+   border: 1rpx solid #333;
+   border-radius: 8rpx;
+}
+
+.haibaoBox .titleBox {
+   padding: 20rpx 32rpx;
+   font-size: 32rpx;
+   color: #1d1d1d;
+}
+
+.haibaoBox .titleBox .saveBtnBox {
+   border: solid 1px #5b2a00;
+   color: #5b2a00;
+   border-radius: 50rpx;
+   font-size: 28rpx;
+   padding: 4rpx 20rpx;
+   background: url(https://saler.ishangbin.com/img/copy_shopDetail.svg) center 0 no-repeat;
+   background-position-x: -6%;
+   background-position-y: 41%;
+   padding-left: 47rpx;
+   line-height: 1.4;
+}
+
+.haibaoBox .picBox {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   padding: 0 38rpx;
+}
+
+.haibaoBox .picBox .eachImage {
+   width: 31%;
+   margin-right: 1%;
+   margin-bottom: 2%;
+   margin-left: 1%;
+   height: 222rpx;
+}
+
+/* 0114 */
+
+.redShowBox .coupon.cash_coupon {
+   background: url(https://saler.ishangbin.com/img/cash_coupon_bg.png) center 0 no-repeat;
+   width: 238px;
+   height: 81px;
+   box-shadow: 0 5px 10px 0 rgba(139, 15, 4, 0.6);
+   display: flex;
+   justify-content: flex-start;
+   background-size: 100% 100%;
+}
+
+.redShowBox .coupon.cash_coupon .left, .redShowBox .coupon.cash_coupon .right {
+   display: flex;
+   flex-direction: column;
+   margin-left: 24rpx;
+   justify-content: center;
+}
+
+.redShowBox .coupon.cash_coupon .right {
+   margin-left: 48rpx;
+}
+
+.redShowBox .coupon.cash_coupon .right .top {
+   font-size: 40rpx;
+   color: #000;
+   font-weight: 500;
+   margin-top: 14px;
+   margin-bottom: 10rpx;
+}
+
+.redShowBox .coupon.cash_coupon .left .top {
+   font-size: 68rpx;
+   font-weight: 500;
+   color: #d2392b;
+}
+
+.redShowBox .coupon.cash_coupon .left .top text {
+   font-size: 40rpx;
+}
+
+.redShowBox .coupon.cash_coupon .left .small,
+.redShowBox .coupon.cash_coupon .right .small {
+   font-size: 20rpx;
+   color: #5c5c5c;
+   max-width: 188rpx;
+}
+
+.redShowBox .content .right.cash_coupon_right {
+   width: 40%;
+}
+
+.redShowBox .coupon.cash_coupon.cash_coupon_modal {
+   width: 200px;
+   height: 60px;
+}
+
+.redShowBox .coupon.cash_coupon.cash_coupon_modal .left .top {
+   font-size: 60rpx;
+   line-height: 1;
+}
+
+.redShowBox .coupon.cash_coupon.cash_coupon_modal .right .top {
+   font-size: 37rpx;
+   margin-top: 4px;
+   margin-bottom: 0;
+}

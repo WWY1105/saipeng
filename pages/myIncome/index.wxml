@@ -1,0 +1,68 @@
+<view class="container">
+  <view class="topBox">
+    <view class="circleBg"></view>
+    <view class='shopBox'>
+      <image class="logo" src="{{logo}}"></image>
+      <text class="shop_name">{{name}}</text>
+    </view>
+    <view class="numBox">
+      <text class="small">共</text>{{profits}}<text class="small">元</text>
+    </view>
+    <view class="userBox">
+      <!-- <image class="userImg" src="{{user.avatarUrl?user.avatarUrl:'/img/userimg.png'}}" mode="widthFix"></image> -->
+      <!-- <view class="userName">{{user.nickName || user.nickname}}的收益</view> -->
+      <view class="userName">最新收益</view>
+    </view>
+
+  
+
+    <!-- 底部提示信息 -->
+
+
+  </view>
+  <!-- 内容 -->
+    <view class="content">
+      <view class="titleBox">
+         <text class="left"></text>
+        <!-- <text class="right" bindtap="toShopDetail" wx:if="{{incomeList.length}}">继续发送</text> -->
+      </view>
+       <view class='nodata' wx:if="{{incomeList.length==0}}" >
+         <view class="iconfont icon-kong"></view>
+         <view class="text">空空的哦~</view>
+      </view>
+      <view class="listBox">
+        <view class="eachList" wx:for="{{incomeList}}" wx:key="*this">
+          <view class="left">
+            <image class="uxerImg" src="{{item.provider.avatarUrl}}" mode="widthFix"></image>
+            <view class="textBox">
+              <view class="ussername">{{item.provider.nickname}}</view>
+              <view class="time">{{item.createTime}}</view>
+            </view>
+          </view>
+          <view class="right">
+            <view class="source">{{item.source}}</view>
+            <view class="yuan">{{item.amount}}元</view>
+          </view>
+        </view>
+      </view>
+      <view class="bottom_tips" wx:if="{{incomeList.length>0}}">
+        收益金额已存入您的微信钱包
+      </view>
+    </view>
+
+  <auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+<view wx:if='{{!isRefreshing}}' class="weui-loadmore">
+      <view wx:if='{{isLoadingMoreData}}'>
+         <view class="weui-loading"></view>
+         <view class="weui-loadmore-tips">正在加载更多...</view>
+      </view>
+      <view wx:elif='{{hasMoreData}}'>
+         <view class="weui-loadmore-tips" bindtap='onReachBottom'>点击加载更多</view>
+      </view>
+      <view wx:else>
+         <view class="weui-loadmore-tips">没有更多内容啦</view>
+      </view>
+   </view>
+
+</view>

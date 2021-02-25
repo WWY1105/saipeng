@@ -1,0 +1,4 @@
+<!--packageA/pages/goldExperience/index.wxml-->
+<view>
+  <image src="/packageA/img/goldExperience/goldExperience.png" mode='widthFix'></image>
+</view>

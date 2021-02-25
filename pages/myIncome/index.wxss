@@ -1,0 +1,186 @@
+.container {
+   padding: 0;
+}
+
+.topBox {
+   position: relative;
+   background: #d94734;
+   height: 346rpx;
+   width: 100%;
+   overflow: hidden;
+}
+
+.topBox .shopBox {
+   margin-top: 30rpx;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 96‬rpx;
+}
+
+.topBox .shopBox .logo {
+   width: 48rpx;
+   height: 48rpx;
+   border-radius: 2px;
+   background-color: #fff;
+   margin-right: 10rpx;
+}
+
+.topBox .shopBox .shop_name {
+   font-size: 32rpx;
+   color: #fcee7b;
+}
+
+.topBox .numBox {
+   color: #fcee7b;
+   text-align: center;
+   font-size: 73rpx;
+   margin-top: 40rpx
+}
+
+.topBox .numBox .small {
+   font-size: 32rpx;
+}
+
+.topBox  .userBox {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   z-index: 9;
+   margin-top: 70rpx;
+
+}
+
+.topBox  .userBox .userImg {
+   width: 140rpx;
+   height: 140rpx;
+   border-radius: 50%;
+   margin-bottom: 10rpx;
+   background: #333;
+   z-index: 9;
+}
+
+.topBox  .userBox   .userName {
+   text-align: center;
+   font-size: 36rpx;
+   color: #333;
+   z-index: 9;
+   font-weight: 600;
+}
+
+.topBox  .circleBg {
+   position: absolute;
+   background: #fff;
+   width: 106%;
+   height: 210rpx;
+   border-radius: 46%;
+   bottom: -137rpx;
+   left: -3%;
+}
+
+.topBox .content {
+   position: fixed;
+   background: #fff;
+   width: 100%;
+   z-index: 9999999999999999999999999999999;
+}
+
+.topBox .content .titleBox {
+   display: flex;
+   font-size: 28rpx;
+   color: #333;
+   padding: 12rpx 32rpx;
+   justify-content: space-between;
+   margin-top: 8rpx;
+   border-bottom: 2rpx solid #ebebeb;
+}
+
+.topBox .content .titleBox .right {
+   font-size: 32rpx;
+   font-weight: 500;
+   text-align: center;
+   color: #d94734;
+}
+
+.content .listBox {
+   padding: 0rpx 32rpx;
+}
+
+.content .eachList {
+   justify-content: space-between;
+   display: flex;
+   align-items: center;
+   padding: 20rpx 0;
+   border-bottom: 2rpx solid #ebebeb;
+}
+
+.content .eachList  .right {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   align-items: flex-end;
+}
+
+.content .eachList .uxerImg {
+   width: 88rpx;
+   height: 88rpx;
+   border-radius: 50%;
+   /* background: red; */
+}
+
+.content .eachList .left {
+   display: flex;
+   justify-content: flex-start;
+}
+
+.content .eachList .left .textBox {
+   display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+}
+
+.content .eachList .ussername {
+   font-size: 32rpx;
+   color: #333;
+   margin-bottom: 10rpx;
+   margin-left: 20rpx;
+}
+
+.content {
+   width: 100%;
+   background: #fff;
+   border-top: 2rpx solid #ebebeb;
+}
+
+.content .eachList .time {
+   font-size: 24rpx;
+   color: #999;
+   margin-left: 20rpx;
+}
+
+.content .eachList .right .yuan {
+   font-size: 40rpx;
+   color: #333;
+   font-weight: 600rpx;
+   text-align: right;
+}
+
+.source {
+   border: 2rpx solid #ee8038;
+   padding: 2rpx 4rpx;
+   font-size: 24rpx;
+   color: #ee8038;
+   margin-bottom: 2rpx;
+   text-align: center;
+   width: auto;
+   /* max-width: 100rpx; */
+}
+
+.topBox .bottom_tips {
+   font-size: 32rpx;
+   color: #999;
+   background: #f8f8f8;
+   padding-top: 40rpx;
+   text-align: center;
+}

@@ -1,0 +1,58 @@
+/* packageA/pages/onlineOrder/newAddress.wxss */
+page {
+    color: #333;
+    background-color: #fff;
+}
+
+.each {
+    background-color: #fff;
+    padding: 20rpx 40rpx;
+    align-items: flex-start;
+    border-bottom: 2rpx solid #f3f3f3;
+}
+.each.setDefault{
+    align-items: center;
+    border: none;
+}
+.each .label {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.each .value {
+    flex: 1;
+    min-width: 120rpx;
+    margin-left: 40rpx;
+    font-size: 28rpx;
+}
+.body-view{
+    text-align: right;
+}
+.noAddress,
+.placeholder {
+    color: #919191;
+}
+
+.noAddress .iconfont {}
+
+.each .value imput {
+    width: 100%;
+    text-align: left;
+}
+
+/* 底部长按钮 */
+.btnBox {
+    padding: 0 26rpx;
+}
+
+.btnBox .btn {
+    height: 92rpx;
+    border-radius: 10rpx;
+    background-color: #228bff;
+    line-height: 92rpx;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    margin-top: 100rpx;
+}

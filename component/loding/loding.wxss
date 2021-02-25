@@ -1,0 +1,60 @@
+/* component/loding/loding.wxss */
+.containerLoding {
+    z-index: 9999999999999999999999999999999999999999999;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: rgba(200, 200, 200, 0.7);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 30px;
+    color: rgba(200, 200, 200, 0.5);
+    padding: 1em;
+    margin-bottom: .25em;
+    vertical-align: top;
+    transition: .3s color, .3s border;
+}
+
+.loader-02 {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+    border: .2em solid transparent;
+    border-left-color: currentcolor;
+    border-right-color: currentcolor;
+    border-radius: 50%;
+    animation: 1s loader-02 linear infinite;
+}
+@-webkit-keyframes loader-02 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader-02 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

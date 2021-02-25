@@ -1,0 +1,56 @@
+<!--pages/shareCard/cardDetail/cardDetail.wxml-->
+<view class="topBox flexCenter">
+    <view class="codeBox flexCenter">
+       <view class="codeBgWhite">
+        <view class="cardCode">{{card.code}}</view>
+        <canvas class='codeImg' canvas-id='canvas'></canvas>
+       </view>
+        <!-- <view class="codeName">{{card.name}}</view> -->
+        <view class="codeName">当前可享{{card.amount}}折</view>
+    </view>
+</view>
+<!-- 进度 start-->
+<view class="cardProcessBox" wx:if="{{card}}">
+    <view class="textBox flexSpace">
+        <view></view>
+        <view>{{card.limit||0}}</view>
+    </view>
+    <view class="lineBox">
+        <view class="bgLine"></view>
+        <view class="acLine" style="width:{{(card.orgAmount-card.amount)/(card.orgAmount-card.limit-0)}}%">
+        </view>
+        <view class="locateBox flexCenter" style="left:{{(card.orgAmount-card.amount)/(card.orgAmount-card.limit-0)}}%">
+            <view class="orgAmount">{{card.amount||0}}</view>
+            <view class="locate" ></view>
+            <view>当前折扣</view>
+        </view>
+    </view>
+    <view class="textBox flexSpace">
+        <view></view>
+        <view>最终折扣</view>
+    </view>
+</view>
+<!-- 进度条end  -->
+<view class="recordContainer">
+    <view class="recordBox">
+        <view class="recordTitle">本卡共享记录</view>
+        <view class="recordList">
+            <view class="eachRecord flexSpace" wx:for="{{cardDesc}}">
+                <view class="userInfo flexStart">
+                    <image lazy-load="true" src="{{item.avatarUrl}}"></image>
+                    <view class="userText">
+                        <view class="useraName">{{item.nickname}}</view>
+                         <view class="shopName">{{item.shopName}}</view>
+                        <view class="date">{{item.time}}</view>
+                    </view>
+                </view>
+                <view class="rightText">
+                    <view class="discount" wx:if="{{item.amount}}">{{item.amount}}折</view>
+                    <view class="desc">{{item.cause}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<loading show="{{showLoading}}"/>

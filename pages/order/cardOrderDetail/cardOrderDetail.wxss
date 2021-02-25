@@ -1,0 +1,259 @@
+/* pages/order/cardOrderDetail/cardOrderDetail.wxss */
+page{
+    padding-bottom: 65rpx;
+}
+.shopInfo {
+    background: #DFBE8B;
+    height: 327rpx;
+    position: relative;
+    flex-direction: column;
+    padding: 0 10rpx;
+    padding-top: 35rpx;
+}
+
+.shopInfo .logo {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.shopInfo .shopName {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #411E00;
+    line-height: 48rpx;
+    margin-bottom: 30rpx;
+}
+
+.orderDetailBgBox {
+    z-index: 99999;
+    position: absolute;
+    width: 100%;
+    height: 34rpx;
+    padding: 0 8rpx;
+    left: 0;
+    top: -23rpx;
+    box-sizing: border-box;
+}
+
+.orderDetailBg {
+    width: 100%;
+    height: 100%;
+}
+
+.orderContent {
+    padding: 0 24rpx;
+    position: relative;
+    margin-top: -124rpx;
+    box-sizing: border-box;
+    overflow-y: visible;
+}
+
+.orderContent .maincontent {
+    padding: 24rpx 26rpx;
+    margin-top: 60rpx;
+    background: #fff;
+}
+
+.orderContent .maincontent .main {
+    background-color: #fff;
+    padding-top: 10rpx;
+}
+
+.cardBox {
+    margin-bottom: 22rpx;
+}
+
+.cardContent {
+    border-radius: 10rpx;
+    padding: 40rpx 0rpx;
+    color: #EEC993;
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    background: url(https://saler.ishangbin.com/img/shareCard/order/order_card_bg.png) top center no-repeat;
+}
+
+.partTitle {
+    color: #333;
+    font-size: 28rpx;
+    margin-bottom: 35rpx;
+    font-weight: bold;
+}
+
+.cardSmallTitle {
+    color: #333;
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+}
+
+
+/* 自用券 */
+
+.selfCouponBox {
+    padding: 48rpx 17rpx;
+    background: url(https://saler.ishangbin.com/img/shareCard/couponBg.png) right bottom no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 20rpx;
+    position: relative;
+    border-radius: 10rpx;
+}
+
+.selfCouponBox .todayUsable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    line-height: 36rpx;
+    height: 36rpx;
+    background: #DCC09B;
+    border-radius: 0px 0px 18rpx 0px;
+    text-align: center;
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #411E00;
+    padding: 0 27rpx 0 17rpx;
+}
+
+.selfCouponBox .coponName {
+    padding: 0rpx 20rpx 0 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 90rpx;
+    position: relative;
+    min-width: 155rpx;
+}
+
+.yuanIcon {
+    width: 16rpx;
+    height: 19rpx;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.selfCouponBox .couponDesc .bigTitle {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30rpx;
+}
+
+.selfCouponBox .couponDesc .couponRules {
+    font-size: 22rpx;
+    color: #91919E;
+}
+
+.selfCouponBox .couponDesc .couponRules:last-child {
+    margin-top: 15rpx;
+}
+
+.selfCouponBox .content {
+    background-color: transparent;
+    padding: 0;
+}
+
+.selfCouponBox .rightNum {
+    font-size: 90rpx;
+    font-weight: bold;
+    color: #411E00;
+    margin-left: 55rpx;
+    text-align: right;
+}
+
+.couponDesc {
+    flex: 1;
+    text-align: left;
+}
+
+.orderDesc {
+
+    padding: 0rpx 24rpx;
+}
+
+.orderDesc .content {
+    border-top: 2rpx dashed #ECECEC;
+    color: #333;
+    font-size: 24rpx;
+    background-color: #fff;
+    padding: 0 26rpx;
+    padding-top: 30rpx;
+}
+
+.orderDesc .content .eachDesc {
+    padding-bottom: 30rpx;
+}
+
+.orderDesc .content .eachDesc .orderAmount {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.orderDesc .content .eachDesc .rmb {
+    color: #333;
+    font-size: 26rpx;
+    font-weight: normal;
+}
+
+.partLineBox,
+.bottomBox {
+    padding: 0 26rpx;
+    box-sizing: border-box;
+    margin-top: -8rpx;
+}
+
+.partLineBox image {
+    width: 100%;
+    height: 30rpx;
+}
+
+.bottomBox .content {
+    background-color: #fff;
+    width: 100%;
+    padding: 45rpx 0;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #411E00;
+    line-height: 48rpx;
+    box-sizing: border-box;
+}
+.bottomBox .content .each{
+    padding:0 105rpx;
+}
+.bottomBox .content .contact{
+    background-color: #fff;
+    /* padding: 0;
+    margin: 0; */
+    line-height: 1;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #411E00;
+    line-height: 1;
+   
+}
+.bottomBox .content .refund{
+  border-left:2rpx solid  #ECECEC; 
+}
+.orderBottomBg{
+    background-color:transparent;
+}
+
+.cardContent {
+    color:#EEC993;
+    font-size:24rpx;
+    padding: 24rpx 30rpx;
+}
+.cardContent .cardName{
+    font-weight: bold;
+    font-size: 30rpx;
+    text-align: left;
+  }
+  .cardContent .cardDesc{
+    align-items: flex-end;
+    font-weight: normal;
+  }
+  .cardContent .num{
+  font-size: 48rpx;
+  font-weight: bolder;
+  }

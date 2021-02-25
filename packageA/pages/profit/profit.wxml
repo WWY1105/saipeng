@@ -1,0 +1,58 @@
+<view>
+  <view hidden="{{init}}">
+    <view class="header">
+      <image class="headerbg" src="/packageA/img/profit/bg.png" mode="widthFix"></image>
+      <view>
+        <view class="all">
+          <view class="all_title">总计</view>
+          <view class="all_num">¥{{info.amount?info.amount:'0'}}</view>
+        </view>
+        <view class="header_bottom">
+          <view class="rewardBox " >
+            <view class="rewardTitle">返佣奖励</view>
+            <view class="rewardInfo {{selectBtn=='0' ? 'hoverBtn' : '' }}" bindtap="selectType" data-num="0">
+              <view class="rewardNum">¥{{info.salaryAmount?info.salaryAmount:'0'}}</view>
+              <view class="finishTask">任务{{info.count?info.count:'0'}}个</view>
+            </view>
+          </view>
+
+          <view class="rewardBox">
+            <view class="rewardTitle">徒弟抽成</view>
+            <view class="rewardInfo {{selectBtn=='1' ? 'hoverBtn' : '' }}" bindtap="selectType" data-num="1">
+              <view class="rewardNum">¥{{info.discipleAmount?info.discipleAmount:'0'}}</view>
+              <view class="finishTask">任务{{info.discipleCount}}个</view>
+            </view>
+          </view>
+
+          <view class="rewardBox">
+            <view class="rewardTitle">徒孙抽成</view>
+            <view class="rewardInfo {{selectBtn=='2' ? 'hoverBtn' : '' }}" bindtap="selectType" data-num="2">
+              <view class="rewardNum">¥{{info.grandsonAmount?info.grandsonAmount:'0'}}</view>
+              <view class="finishTask">任务{{info.grandsonCount}}个</view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="search" bindtap="showToast">按日期查询>></view> -->
+      </view>
+    </view>
+    <view class="content">
+      <view class="contentTitle">{{title}}</view>
+      <view class="contentBox" wx:if="{{list}}">
+        <view class="contentInfo" wx:for="{{list}}">
+          <view class="line" wx:if="{{index != 0}}"></view>
+          <view class="time">{{item.createTime}}</view>
+          <view class="user">
+            <image class="userImg" src="{{item.provider.avatarUrl?item.provider.avatarUrl:'/img/userimg.png'}}" mode="widthFix"></image>
+            <view class="userInfo">
+              <view class="username">{{item.provider.nickname}}</view>
+              <view class="userBottom">
+                <view class="grade">{{item.provider.grade}}</view>
+                <view class="profit">{{item.source}} {{item.amount}}元</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/onlineOrder/submitOrder/submitOrder.wxml-->
+<auth id="authpop" parentThis="{{parentThis}}"></auth>
+<view class="topBox flexCenter">
+	<view class="content">
+		<view class="top" wx:if="{{order.deliver.type=='1001'||order.deliver.type==1001}}">
+			<view class="type">等待客人填写收货地址</view>
+			<!-- <view class="address">5km内免配送费, 5-10km配送费3元, 10km以上配送费10元</view> -->
+		</view>
+		<view class="top" wx:else>
+			<view class="type">自提订单</view>
+			<!-- <view class="address">5km内免配送费, 5-10km配送费3元, 10km以上配送费10元</view> -->
+		</view>
+		<view class="pickerBox flexStart"  wx:if="{{order.deliver.type=='1001'||order.deliver.type==1001}}">
+			<view class="section__title">配送时间</view>
+			<text class="time">大约{{order.deliver.time}}送达</text>
+		</view>
+		<view class="pickerBox flexStart"  wx:if="{{order.deliver.type=='1000'||order.deliver.type==1000}}">
+			<view class="section__title">自提时间</view>
+			<text class="time">大约{{order.deliver.time}}提货</text>
+		</view>
+	</view>
+</view>
+
+<view class="orderDetail">
+	<view class="content">
+		<view class="partTitle">订单详情</view>
+		<view class="dishBox">
+			<view class="eachDish flexSpace" wx:for="{{order.menus}}">
+				<view class="left flexStart">
+					<image class="dishImg" src="{{item.picUrl}}"></image>
+					<view class="textBox flexColumn">
+						<view class="name">{{item.name}}</view>
+						<view class="desc">{{item.descriptor}}</view>
+						<view class="num">x{{item.count}}</view>
+					</view>
+				</view>
+				<view class="right">
+					<view class="price">￥{{item.amount}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="package flexSpace">
+			<text>包装费</text>
+			<text class="price">￥{{order.packingAmount||0}}</text>
+		</view>
+		<view class="total flexEnd">
+			<view class="price">
+				<text class="small">小计</text>
+				<text class="num">￥{{order.amount}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="btnBox ">
+	<button class="sendBtn" open-type="share" bindtap="toSend">发送给顾客确认</button>
+</view>

@@ -1,0 +1,109 @@
+.container {
+  background: #fff;
+  display: block;
+  padding: 0;
+
+}
+
+.topContainer {
+  padding: 10rpx 32rpx;
+}
+
+.topBox {
+  width: 100%;
+  height: 220rpx;
+  border-radius: 20rpx;
+  background-image: linear-gradient(to right, #f19a4f 0%, #ed762f 100%);
+  font-size: 36rpx;
+  margin-bottom: 60rpx;
+  padding-top: 30rpx;
+
+}
+
+.topBox .title {
+  margin-top: 30rpx;
+  margin-left: 32rpx;
+}
+
+.topBox .num {
+  font-size: 72rpx;
+  margin-left: 32rpx;
+  margin-top: 20rpx;
+}
+
+.container .content {
+  background: #fff;
+  width: 100%;
+}
+
+.container .content .titleBox {
+  display: flex;
+  font-size: 36rpx;
+  color: #333;
+  padding: 12rpx 32rpx;
+  justify-content: space-between;
+  margin-top: 8rpx;
+  border-bottom: 2rpx solid #ebebeb;
+}
+
+.container .content .titleBox .right {
+  font-size: 32rpx;
+  color: #a3a3a3;
+}
+
+.container .content .listBox {
+  padding: 0rpx 32rpx;
+}
+
+.container .content .eachList {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #f8f8f8;
+}
+
+.container .content .eachList .uxerImg {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: red;
+}
+
+.container .content .eachList .left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container .content .eachList .left .textBox {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.container .content .eachList .ussername {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.container .content .eachList .time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.container .content .eachList .right {
+  font-size: 40rpx;
+  color: #df673d;
+} 
+.container .content .eachList .right .iconfont{
+  color: #999999;
+}
+
+.container .bottom_tips {
+  font-size: 32rpx;
+  color: #999;
+  background: #f8f8f8;
+  padding-top: 40rpx;
+  text-align: center;
+}

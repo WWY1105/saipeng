@@ -1,0 +1,75 @@
+.container {
+  padding: 0 32rpx;
+}
+
+.each_envelopes {
+  border-radius: 20rpx;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30rpx;
+  align-items: center;
+  padding: 30rpx;
+  width: 95%;
+background: #fff;
+}
+
+.each_envelopes .red_envalopes_img {
+  height: 155rpx;
+  background: red;
+  margin-right: 20rpx;
+  width: 130rpx;
+  border-radius: 7rpx;
+  min-width: 130rpx;
+
+}
+
+.each_envelopes .rightText {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 155rpx;
+
+}
+
+.shop_name {
+  font-size: 36rpx;
+  color: #333;
+  width: 100%;
+
+}
+.time{
+ font-size: 28rpx;
+  color: #999999;
+  text-align: left;
+  width: 100%;
+   margin-top: 12rpx;
+}
+
+.each_envelopes .rightText .bottom_box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12rpx;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+}
+
+.each_envelopes .rightText .bottom_box text {
+  font-size: 28rpx;
+  color: #f1994e;
+}
+
+.each_envelopes .rightText .bottom_box button {
+  font-size: 32rpx;
+  color: #fff;
+  width: 194rpx;
+  height: 56rpx;
+  border-radius: 14px;
+  box-shadow: 0 2px 5px 0 rgba(237, 119, 48, 0.5);
+  background-image: linear-gradient(to left, #ed762f 100%, rgba(237, 119, 48, 0.5) 0%);
+  line-height: 54rpx;
+ margin: 0;
+}

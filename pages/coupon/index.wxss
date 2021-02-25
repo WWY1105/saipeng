@@ -1,0 +1,186 @@
+/* pages/coupon/coupon.wxss */
+.container {
+  padding: 0 ;
+  /* padding-bottom: 60px; */
+  overflow-x: hidden;
+  background-color: #ff4747;
+  position: relative;
+}
+
+.pic{
+  position: relative;
+  width: 100%;
+
+}
+image {
+  width: 100%;
+}
+.change {
+  position: relative;
+  top: -80rpx;
+  width: 100%;
+  height: 80rpx;
+}
+ .overflow {
+    position: relative;
+    top: -150rpx;
+    width: 100%;
+  }
+ .coupon-show-box {
+  /* z-index: 1; */
+  border: 1px solid #e3e3e3;
+  margin: 0rem 50rpx;
+  padding-bottom: 40rpx;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  }
+.coupon-show-box::before{
+  content: '';
+  width: 100%;
+  height: 15rpx;
+  position: absolute;
+  background: url(https://i.ishangbin.com/img/user/images/line1.png) center no-repeat;
+  background-size: 100% 100%;
+  top: -14rpx;
+  left: 0rpx;
+
+}
+.empty {
+  width: 100%;
+  height: 150rpx;
+}
+.name {
+  background: #fff;
+  line-height: 1.8;
+  margin: 50rpx auto 30rpx;
+  font-size: 42rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.use {
+  color: #333333;
+  font-size: 26rpx;
+}
+.usebtn {
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  background-color: #ff4747;
+  font-family: PingFangSC;
+  font-size: 30rpx;
+  color: #ffffff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.disable {
+ background-color: #d8d8d8;
+}
+.title {
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  display: block;
+  margin: 30rpx 250rpx 70rpx;
+  border-bottom:2px solid #ccc;
+  padding-bottom:15rpx;
+}
+
+.coupons-detail {
+  width: 100%;
+  position: relative;
+  top: -150rpx;
+}
+.items {
+  background-color: #fff;
+  font-size: 25rpx;
+  margin:0 50rpx;
+  padding-top: 20rpx;
+  padding-bottom: 100rpx; 
+  
+}
+.item {
+  margin: 20rpx 40rpx 20rpx 20rpx;
+  text-align: left; 
+}
+.left {
+  float: left;
+  width: 150rpx;
+  text-align: right;
+  color: #aaa; 
+}
+.right2 {
+  margin-left: 170rpx;
+  line-height: 40rpx;
+  color: #000; 
+}
+.tips {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.inviters {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-color: #000000;
+}
+.Show {
+  display: block;
+}
+.Hide {
+  display: none ;
+}
+.code_bg {
+  width: 230px;
+  height: 260px;
+  background:url(https://saler.ishangbin.com/img/shareCard/qrcode_bg.png);
+  background-size: 100% 100%;
+  border-radius: 20rpx;
+  margin: 110px auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-family: PingFangSC;
+  font-size: 32rpx;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.canvasBox{
+  background: #fff;
+  padding: 50rpx;
+}
+.canvas {
+  /* margin: 25px auto 20px; */
+  width: 150px;
+  height: 150px;
+}
+.close {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: -30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-image: url(https://saler.ishangbin.com/img/shareCard/close.png);
+  background-size: 100% 100%;
+}
+.codetxt {
+  font-size: 32rpx;
+  color: #333333;
+  display: block;
+  margin-bottom: 25rpx;
+  margin-top: 30rpx;
+}
+.showCode{
+  margin-top: 70rpx;
+}

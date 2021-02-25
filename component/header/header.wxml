@@ -1,0 +1,15 @@
+<!--component/header/header.wxml-->
+<view class='nav-wrap' style='height: {{height*2+25}}px;background:{{navbarData.background}};color:{{navbarData.color}}'>
+	<!-- 导航栏 中间的标题 -->
+	<view class='nav-title' style='line-height: {{height*2 + 45}}px;'>{{navbarData.title}}</view>
+		<!-- 导航栏  左上角的返回按钮 和home按钮-->
+		<view class='nav-capsule' style='height: {{height*2 + 45}}px;'>
+			<view bindtap='_navback' wx:if='{{currentPage>=2}}'>
+				<image src="http://img.weicinema.com/image/movieWechat/icon/backPage.png" class="backPage"></image>
+			</view>
+			<view wx:if='{{currentPage<1}}' bindtap='_backhome'>
+				<image src="http://img.weicinema.com/image/movieWechat/icon/backHome.png" class="backHome"></image>
+			</view>
+		</view>
+
+</view>

@@ -1,0 +1,145 @@
+/* pages/shareCard/coupons/coupons.wxss */
+page {
+    background: #fff;
+}
+
+.containerBox {
+    padding: 20rpx 25rpx;
+}
+
+.shareTitle {
+    color: #272934;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.shareCouponBox {
+    padding: 28rpx 17rpx;
+    border-radius: 10rpx;
+    background: url(https://saler.ishangbin.com/img/shareCard/shareCouponBg.png) left center no-repeat;
+    background-size: cover;
+}
+
+.shareCouponBox .coponName {
+    padding: 0rpx 33rpx 0 0;
+    color: #411E00;
+    font-weight: bold;
+    font-size: 90rpx;
+    position: relative;
+    padding-left: 20rpx;
+}
+.lineAmount{
+    text-decoration: line-through;
+    color: #999;
+    font-size: 35rpx;
+    margin-top: 10rpx;
+}
+.reduceLimit{
+    color: #999;
+    font-size: 25rpx;
+    margin-top: 10rpx;
+    width: 100%;
+    letter-spacing: 0.1rpx;
+}
+.currentAmount{
+    position: relative;
+}
+.shareCouponBox .couponDesc .bigTitle {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #411E00;
+    margin-bottom: 25rpx;
+}
+
+.shareCouponBox .couponDesc .couponRules {
+    font-size: 22rpx;
+    line-height: 35rpx;
+    color: #411E00;
+    opacity: 0.6;
+}
+.shareCouponBox .couponDesc .couponRules view{
+    margin-bottom: 13rpx;
+}
+.shareCouponBox .leftNum {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #411E00;
+}
+
+.shareCouponTips {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #333333;
+    margin: 20rpx 0;
+}
+
+.shareBtn {
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #FFBB59;
+    border-radius: 44rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #411E00;
+    text-align: center;
+}
+
+.selfCouponContainer {
+    margin-top: 40rpx;
+}
+
+.selfCouponBox {
+    padding: 28rpx 17rpx;
+    border-radius: 10rpx;
+    background: url(https://saler.ishangbin.com/img/shareCard/couponBg.png) right bottom no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: 30rpx;
+}
+
+.selfCouponBox .coponName {
+    padding: 0rpx 10rpx 0 0;
+    color: #272934;
+    font-weight: bold;
+    font-size: 90rpx;
+    letter-spacing: -3px;
+    min-width: 138rpx;
+    position: relative;
+    padding-left: 20rpx;
+}
+
+.selfCouponBox .couponDesc .bigTitle {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #272934;
+    margin-bottom: 25rpx;
+}
+
+.selfCouponBox .couponDesc .couponRules {
+    font-size: 22rpx;
+    line-height: 35rpx;
+    color: #91919E;
+}
+.selfCouponBox .couponDesc .couponRules view{
+    margin-bottom: 13rpx;
+}
+.selfCouponBox .toused {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #411E00;
+    height: 66rpx;
+    background: #FFFFFF;
+    border-radius: 33rpx;
+    line-height: 66rpx;
+    text-align: center;
+    padding: 0 30rpx;
+}
+.yuanIcon{
+    width: 16rpx;
+    height: 19rpx;
+    position: absolute;
+    left: -20rpx;
+    top: 0rpx;
+}
+
+

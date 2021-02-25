@@ -1,0 +1,46 @@
+<!--packageA/pages/onlineOrder/newAddress.wxml-->
+<auth id="authpop" parentThis="{{parentThis}}"></auth>
+<view class="each flexSpace" bindtap="toGetAddress">
+   <view class="label">收货地址:</view>
+   <view class="value flexSpace">
+      <view class="noAddress " wx:if="{{!address}}">
+         <text class="iconfont icon-weizhi"></text>
+         <text> 点击选择收货地址</text>
+      </view>
+      <text class="fullAddress" wx:if="{{address}}">{{address}}</text>
+      <text class="iconfont icon-gengduo"></text>
+
+   </view>
+
+</view>
+<view class="each flexSpace">
+   <view class="label">门牌号：</view>
+   <view class="value">
+      <input placeholder-class="placeholder" bindinput="addressDetailInput" value="{{addressDetail}}" placeholder="详细地址, 例1层101室"></input>
+   </view>
+</view>
+<view class="each flexSpace">
+   <view class="label">联系人：</view>
+   <view class="value">
+      <input bindinput="nicknameInput" value="{{nickname}}" placeholder-class="placeholder" placeholder="请填写收货人姓名"></input>
+   </view>
+</view>
+<view class="each flexSpace">
+   <view class="label">手机号：</view>
+   <view class="value">
+      <input bindinput="phoneInput" value="{{phone}}" placeholder-class="placeholder" placeholder="请填写收货人手机号码" type="number"></input>
+   </view>
+</view>
+<view class="each flexSpace setDefault" wx:if="{{editObj&&editObj.address}}">
+   <view class="label">设置为默认地址：</view>
+   <view class="value">
+      <view class="body-view">
+         <switch checked bindchange="switch1Change" wx:if="{{defaultAddress}}" />
+         <switch bindchange="switch2Change" wx:else />
+      </view>
+   </view>
+</view>
+<!-- 提交 -->
+<view class="btnBox">
+   <view class="btn" bindtap="submit">保存地址</view>
+</view>

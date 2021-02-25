@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "auth": "../../component/auth",
+    "parser": "../../component/parser/parser"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle":"custom"
+}

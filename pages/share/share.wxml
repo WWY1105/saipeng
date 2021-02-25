@@ -1,0 +1,209 @@
+<view class='page'>
+  <view hidden="{{init}}" style="padding-bottom:110rpx;">
+    <view class="header">
+      <image class="headerBg" src="/img/taskDetail/headerBg.png" mode="aspectFit"></image>
+      <view class="header_content">
+        <view class="header_shopName">
+          <text>{{posts.shop.name}}\n组队看视频探店计划</text>
+        </view>
+        <view class="header_middle">
+          <image src="/img/share/zudui.png" mode="aspectFit" style="width:108rpx;"></image>
+          <text>{{posts.recipientsLimit}}</text>
+          <image src="/img/share/kan.png" mode="aspectFit" style="width:166rpx;"></image>
+        </view>
+        <view class="header_middle2">
+          <image src="/img/share/zhuan.png" mode="aspectFit" style="width:184rpx;" wx:if="{{posts.mode == '1001' || posts.mode == '1000'}}"></image>
+          <image src="/img/share/fen.png" mode="aspectFit" style="width:184rpx;" wx:if="{{posts.mode == '1002'}}"></image>
+          <text>{{posts.profitEstimation}}</text>
+          <image src="/img/share/xianjin.png" mode="aspectFit" style="width:184rpx;" ></image>
+          
+        </view>
+        <view class="headerText">领取优惠券即可参与</view>
+      </view>
+    </view>
+    <image class="cleImg" src="/img/taskDetail/cle.png" mode="aspectFit"></image>
+
+    <view class="middleBox">
+      <view class="middleBox_view">
+        <image class="icon" src="/img/share/conpen.png" mode="aspectFit"></image>
+        <view>参与送券</view>
+      </view>
+      <view class="middleBox_view">
+        <image class="icon" src="/img/share/clock.png" mode="aspectFit"></image>
+        <view>限时{{posts.timesLimit}}小时</view>
+      </view>
+      <view class="middleBox_view">
+        <image class="icon" src="/img/share/money.png" mode="aspectFit"></image>
+        <view>拼手气</view>
+      </view>
+    </view>
+
+
+    <view class="taskState" wx:if="{{posts.state == '1000'}}">
+      <image class="taskStateBg" src="/img/share/bg.png" mode="aspectFit"></image>
+      <view class="taskState_content">
+        <view class="taskState_content_title">
+          <image src="/img/taskDetail/title.png"></image>
+          <view>组队进行中</view>
+        </view>
+        <view class="timerBox">
+          <view class="timertext">任务剩余</view>
+          <view class="timer">
+            <text>{{posts.time.h}}</text>:
+            <text>{{posts.time.m}}</text>:
+            <text>{{posts.time.s}}</text>
+          </view>
+        </view>
+        <view class="taskState_content_text">
+          还差{{posts.recipientsLimit-posts.recipientsEffective}}人, 即可分出现金
+          <text bindtap="toFriend">查看详情</text>
+        </view>
+        <view class="shareuser" bindtap="toFriend">
+          <view class="oneuser" wx:for="{{posts.obtainers}}">
+            <image src="{{item.avatarUrl?item.avatarUrl:'../../img/userimg.png'}}" wx:if="{{index<7}}"></image>
+          </view>
+        </view>
+        <view class="shareBtn" bindtap='openModeBox'>立即组队</view>
+        <view class="taskState_text">任务完成佣金直达微信钱包</view>
+      </view>
+    </view>
+    <view class="taskState" wx:if="{{posts.state == '1001'}}">
+      <image class="taskStateBg" src="/img/share/bg.png" mode="aspectFit"></image>
+      <view class="taskState_content">
+        <view class="taskState_content_title">
+          <image src="/img/taskDetail/title.png"></image>
+          <view>组队完成</view>
+        </view>
+        <view class="taskState_content_text">
+          组队成功, 快去看看分到了多少钱
+          <text bindtap="toFriend">查看详情</text>
+        </view>
+        <view class="shareuser" bindtap="toFriend">
+          <view class="oneuser" wx:for="{{posts.obtainers}}">
+            <image src="{{item.avatarUrl?item.avatarUrl:'../../img/userimg.png'}}" wx:if="{{index<7}}"></image>
+          </view>
+        </view>
+        <view class="shareBtn" bindtap="toAllTask">去做新任务</view>
+      </view>
+    </view>
+
+    <view class="taskState" wx:if="{{posts.state == '1002' || posts.state == '1109' || posts.state == '1111'}}">
+      <image class="taskStateBg" src="/img/share/bg.png" mode="aspectFit"></image>
+      <view class="taskState_content">
+        <view class="taskState_content_title">
+          <image src="/img/taskDetail/title.png"></image>
+          <view>组队失败</view>
+        </view>
+        <view style="text-align:center;"><image class="timeoutimg" src="/img/share/timeout.png"></image></view>
+        <view class="taskState_content_text" style="margin-top:14rpx;">
+          还差{{posts.recipientsLimit-posts.recipientsEffective}}人, 即可分出现金
+          <text bindtap="toFriend">查看详情</text>
+        </view>
+        <view class="shareuser" bindtap="toFriend">
+          <view class="oneuser" wx:for="{{posts.obtainers}}">
+            <image src="{{item.avatarUrl?item.avatarUrl:'../../img/userimg.png'}}" wx:if="{{index<7}}"></image>
+          </view>
+        </view>
+        <view class="shareBtn" bindtap="toAllTask">去做新任务</view>
+      </view>
+    </view>
+
+
+
+    <view class="ruleFlex" bindtap="openrule">
+      <text>活\n动\n规\n则</text>
+    </view>
+    <view class="homeBtn" bindtap="toHome"><image src="/img/share/home.png" mode="aspectFit"></image></view>
+
+
+    <view class='modalbox' wx:if="{{rulepop}}" catchtouchmove='true'>
+      <view class='problembigbox'>
+        <view class='problemtitile'>活动规则</view>
+        <scroll-view class='problembox' scroll-y="true">
+
+          <view class='content'>
+            <view class='problem'>佣金任务怎么开启? 怎样才能获得佣金?</view>
+            <view class='answer'>在活动商家消费后使用自助扫码买单，通过识别支付完成页面中“赛朋”小程序码进入小程序，视为成功参与活动。</view>
+            <view class='answer'>在佣金有效时间内邀请好友领取门店福利，每邀请1名本地好友(门店{{posts.distanceLimit}}km内拆红包)成功拆开红包，即可算作一次有效助力，{{posts.recipientsLimit}}次有效助力即算完成任务获得佣金</view>
+            <view class='answer'>注：非本地好友领取或者未授权地理位置信息的好友领取不算作有效助力，但仍然可以获赠门店福利</view>
+          </view>
+          <view class='content'>
+            <view class='problem'>怎样才算本地好友?</view>
+            <view class='answer'>在门店{{posts.distanceLimit}}km内成功拆开红包，即视为本地好友</view>
+          </view>
+          <view class='content'>
+            <view class='problem'>佣金怎么发放？为什么任务完成了还没有收到?</view>
+            <view class='answer'>完成任务后，自动进入审核阶段，佣金会在2个工作日内自动发放到“微信钱包”，请留意服务通知，若未查询到佣金到账，请于下一个工作日10点之后查看</view>
+          </view>
+
+        </scroll-view>
+        <button bindtap="closePop">我知道了</button>
+      </view>
+    </view>
+
+    <view class="canvasBox" bindtap='picture' wx:if="{{canvasBox}}">
+      <canvas canvas-id="shareCanvas" style="width:600px;height:1000px"></canvas>
+    </view>
+
+    <view class="groupmask" catchtouchmove="preventTouchMove" wx:if="{{groupBox}}">
+      <view class="group">
+        <view class="group_title">选择佣金的获取模式</view>
+        <view class="group_box">
+          <view class="group_select" data-mode="1000">
+            <image src="../../img/duxiang.png" mode='aspectFit'></image>
+            <view>
+              <view class="mode_title">自己拿</view>
+              <view class="mode_content">好友为我助力</view>
+              <view class="mode_content">佣金自己独享</view>
+            </view>
+            <form report-submit="true" bindsubmit='submittext'>
+              <input type='text' value='1' style='display:none;'></input>
+              <button class='modeBtn' data-mode="1001" form-type='submit'></button>
+            </form>
+          </view>
+          <view class="group_select" data-mode="1002">
+            <image src="../../img/guafen.png" mode='aspectFit'></image>
+            <view>
+              <view class="mode_title">大家分</view>
+              <view class="mode_content">与{{posts.recipientsLimit}}名好友一起拼</view>
+              <view class="mode_content">手气分佣金</view>
+            </view>
+            <form report-submit="true" bindsubmit='submittext'>
+              <input type='text' value='1' style='display:none;'></input>
+              <button class='modeBtn' data-mode="1002" form-type='submit'></button>
+            </form>
+          </view>
+        </view>
+        <image class="group_close" src="../../img/close.png" mode='aspectFit' bindtap='close'></image>
+      </view>
+    </view>
+
+    <view class='canvasimg' wx:if="{{canvamodel}}" catchtouchmove="preventTouchMove">
+      <view class='canvasimg' wx:if="{{!savePop}}" bindtap='close'></view>
+      <view class='canvasimg canvasimgBg' wx:if="{{savePop}}"></view>
+      <view class="showcanva" wx:if="{{savePop}}">
+        <image class='closeimg' src='../../img/close.png' bindtap='close'></image>
+        <image class='canva' src='{{canva}}' mode='aspectFit'></image>
+      </view>
+      <view class='send'>
+        <view>
+          <form report-submit="true" bindsubmit='submitformid'>
+            <input type='text' value='1' style='display:none;'></input>
+            <button form-type='submit' open-type="share" style='background-image: url({{weixin}})'></button>
+          </form>
+          <view class='text'>分享给好友</view>
+        </view>
+        <view>
+          <form report-submit="true" bindsubmit='picture'>
+            <input type='text' value='1' style='display:none;'></input>
+            <button form-type='submit' style='background-image: url({{download}})'></button>
+          </form>
+
+          <view class='text'>保存并发送朋友圈</view>
+        </view>
+      </view>
+    </view>
+    <image class="hidden" src="{{posts.sharePicUrl}}" wx:if="{{posts.sharePicUrl}}"></image>
+    <auth id="authpop" parentThis="{{parentThis}}"></auth>
+  </view>
+</view>

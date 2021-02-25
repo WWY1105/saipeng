@@ -1,0 +1,72 @@
+<!--pages/shareCard/buySuccess/buySuccess.wxml-->
+<header navbar-data='{{nvabarData}}'></header>
+<view class="buySuccessPage" style='margin-top: {{nvabarData.height}}px'>
+    <view class="contentBox" style='min-height: {{143-nvabarData.height}}px'>
+        <view class="logoBox flexCenter">
+            <image src="https://saler.ishangbin.com/img/shareCard/buySuccess/buySuccessIcon.png"></image>
+        </view>
+        <view class="bigTitle">恭喜获得共享卡</view>
+        <view class="flexCenter selectBox" bindtap="changeMode">
+            <image wx:if="{{mode=='2000'}}" class="gou"
+                src="https://saler.ishangbin.com/img/shareCard/buySuccess/selected.png"></image>
+            <image wx:if="{{mode=='1000'}}" class="gou"
+                src="https://saler.ishangbin.com/img/shareCard/buySuccess/unselect.png"></image>
+            <text wx:if="{{mode=='2000'}}">同意代拼</text>
+            <text wx:if="{{mode=='1000'}}">不同意代拼</text>
+        </view>
+        <view class="smallTips">我们为您开通了【共享卡代拼】服务</view>
+        <view class="btnBox flexCenter">
+            <button open-type="share" class="btn share">送卡给好友</button>
+            <view class="btn seeMore" bindtap="seeMyCard">查看我的卡</view>
+        </view>
+        <view class="orderDesc">
+            <view class="content">
+                <view class="title">服务说明</view>
+                <view class="eachDesc">
+                    【共享卡代拼】服务：您的这张共享卡将开放到赛朋平台，让更多的朋友领取您的副卡，一起加速实现这张共享卡的最低折扣！
+                </view>
+            </view>
+        </view>
+    </view>
+    <loading show="{{showLoading}}" />
+</view>
+<!--bindtap="hideModal"  wx:if="{{cardShow}}" -->
+<!-- style="visibility:{{cardShow?'visible':'hidden'}}" -->
+<view class='modalbox'  catchtouchmove='return' wx:if="{{cardShow}}">
+    <view class='modal flexCenter'>
+        <button open-type="share" style="background-image:url({{sharePic}})">
+            <view class="pplNum">3</view>
+            <view class="discountNUm">{{order.card.orgAmount}}</view>
+            <view class="shareBtn">分享给微信好友</view>
+            <view class="cardShareModal">
+                <view class="quCodeBox flexCenter flexColumn">
+                    <view class="codeTips">面对面发副卡</view>
+                    <view class="canvasBox flexCenter" >
+                        <!-- <view> -->
+                            <!-- <open-data  class="userimg" type="userAvatarUrl"></open-data> -->
+                        <!-- </view> -->
+                        <image src="{{avatarUrl}}" class="userimg"></image>
+                        <image src="{{QRImgUrl}}"  class='qrCodeImg'></image>
+                      
+                    </view>
+
+                </view>
+                <view class="restBox">
+                    <view>主副卡任一消费</view>
+                    <view> 全员折扣膨胀 低至<text class="num">{{order.card.limit}}</text>折！</view>
+                </view>
+
+            </view>
+        </button>
+    </view>
+</view>
+
+<loading show="{{showLoading}}"/>
+<!-- 更多优惠--返回首页 -->
+<image class="moreDiscount" bindtap="toIndex"
+    src="https://saler.ishangbin.com/img/shareCard/buySuccess/moreDiscount.png"></image>
+
+
+
+
+    <canvas class='canvas' canvas-id='canvas' ></canvas>

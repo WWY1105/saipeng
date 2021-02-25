@@ -1,0 +1,50 @@
+<!--pages/onlineOrder/orderRecord/finishOrder/finishOrder.wxml-->
+<auth id="authpop" parentThis="{{parentThis}}"></auth>
+<view class="tabBox flexSpace">
+	<view class="tabItem {{type=='1001'?'active':''}} flexCenter flexColumn" data-type="1001" bindtap="changeType">
+		<text>外卖订单</text>
+		<text class="line"></text>
+	</view>
+	<view class="tabItem {{type=='1000'?'active':''}} flexCenter flexColumn" data-type="1000" bindtap="changeType">
+		<text>自提订单</text>
+		<text class="line"></text>
+	</view>
+</view>
+<view class="contentBox">
+	<view  class="noData" wx:if="{{!orderList}}">暂无数据</view>
+	<view  wx:if="{{orderList&&orderList.length>0}}" wx:key="index"  class="eachRecord" wx:for="{{orderList}}" wx:index="index" bindtap="toEdit" data-id="{{item.id}}" >
+		<view class="userInfo flexSpace flexCenter">
+			<view class="left flexCenter flexStart">
+			<image class="userImg" src="{{item.logo}}" wx:if="{{item.logo}}"></image>
+				<view class="iconfont icon-user userIcon" wx:else></view>
+				<text class="username" wx:if="{{item.shopName}}">{{item.shopName}}</text>
+				<!-- <text class="username" wx:if="{{!item.shopName}}">等待顾客确认</text> -->
+			</view>
+			<view class="status">
+				<text class="notpay" wx:if="{{item.state=='909'||item.state==909}}">已付款</text>
+				<text class="notpay feeback" wx:else>已退款</text>
+			</view>
+		</view>
+	<!-- 商品 start-->
+		<scroll-view scroll-x>
+			<!-- 蒙层/总计 -->
+			<view class="mask flexCenter">
+				<view class="totalPrice">￥{{item.amount}}</view>
+				<view class="totalNum">共{{item.total||0}}件</view>
+			</view>
+			<view class="goodBox flexStart">
+				<view class="goodsImg flexStart">
+					<view class="good flexColumn" wx:key="index" wx:for="{{item.menus}}" wx:for-item="i">
+						<image class="goodImg" src="{{i.picUrl}}"></image>
+						<text class="goodName">{{i.name}}</text>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+		<!-- 商品 end-->
+
+		<!-- <view class="deleteBox flexEnd"  wx:if="{{item.state=='909'||item.state==909}}"  catchtap="deleteOrder" data-id="{{item.id}}">
+			<view class="deleteBtn">删除订单</view>
+		</view> -->
+	</view>
+</view>

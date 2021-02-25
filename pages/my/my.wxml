@@ -1,0 +1,180 @@
+<view class="containBox flexCenter">
+	<!-- 顶部用户信息 -->
+	<view class="userCard flexCenter">
+		<view class="userimg">
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<view class="userInfo">
+			<view class="userName" wx:if="{{user.nickName || user.nickname}}">{{user.nickName || user.nickname}}</view>
+			<button open-type="getUserInfo" bindgetuserinfo="toLogin" class="toLogin" 
+				wx:if="{{!user.nickName&&!user.nickname}}">点击登录,查看我的权益</button>
+		</view>
+		<view class="phone flexCenter">手机号：
+			<text wx:if="{{user.phone}}">{{user.phone}}</text>
+
+			<button wx:else  plain="true" class="bindPhone" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">绑定手机号立即同步线下权益</button>
+		</view>
+
+	</view>
+	<!-- <view class="contentBoxTitle">
+		<view class="tab flexCenter ">
+			<view>个人中心</view>
+			<view class="line"></view>
+		</view>
+	</view> -->
+	<!-- 功能 -->
+	<view class="content">
+		<!--<view class="eachPart"> -->
+		<!-- <view class="titleBox flexSpace">
+				<text>我的收益</text>
+				<view class="more flexCenter">
+					<text>详情</text>
+					<text class="iconfont icon-gengduo"></text>
+				</view>
+			</view> -->
+		<!-- <view class="content content1 flexStart">
+				<view class="each">
+					<view class="eachTitle">视频收益</view>
+					<view class="num">0<text class="yuan">元</text></view>
+				</view>
+				<view class="each" bindtap="goto" data-navName="incomeRecord">
+					<view class="eachTitle">金币</view>
+					<view class="num">{{myProfits}}</view>
+				</view>
+			</view> -->
+		<!-- </view> -->
+		<!-- 常用功能 -->
+		<!-- <view class="eachPart"> -->
+		<!-- <view class="titleBox flexSpace">
+				<text>常用功能</text>
+			</view> -->
+		<view class="contentMain">
+			<view class="each  flexSpace">
+				<view class="flexStart flexBaseLine">
+					<image class="icon myProfit" src="https://saler.ishangbin.com/img/shareCard/myProfit.png"></image>
+					<text class="iconText">我的收益</text>
+				</view>
+				<image class="arrowRight" src="https://saler.ishangbin.com/img/shareCard/arrowRight.png"></image>
+			</view>
+			<!-- <view class="each  flexStart">
+				<image class="icon" src="https://saler.ishangbin.com/img/shareCard/myOrder.png"></image>
+				<text class="iconText">我的会员卡</text>
+			</view> -->
+			<view class="each flexSpace {{user.nickName || user.nickname?'':'cannotClick'}}" bindtap="goto" data-navname="order">
+				<view class="flexStart flexBaseLine">
+					<image class="icon myOrder" src="https://saler.ishangbin.com/img/shareCard/myOrder.png"></image>
+					<text class="iconText">我的订单</text>
+				</view>
+				<image class="arrowRight" src="https://saler.ishangbin.com/img/shareCard/arrowRight.png"></image>
+				
+			</view>
+		</view>
+
+
+		<!-- </view> -->
+		<!-- 我的红包 -->
+		<!-- <view class="eachPart">
+			<view class="titleBox flexSpace">
+				<text>我的红包</text>
+			</view>
+			<view class="content flexStart">
+				<view class="each  flexCenter" bindtap="goto" data-navname="red_envelopes_ing">
+					<image class="icon" src="https://saler.ishangbin.com/img/my/send_ing.png"></image>
+					<text class="iconText">正在发</text>
+				</view>
+				<view class="each  flexCenter" bindtap="goto" data-navname="red_envelopes_ed">
+					<image class="icon" src="https://saler.ishangbin.com/img/my/send_done.png"></image>
+					<text class="iconText">已结束</text>
+				</view>
+			</view>
+		</view> -->
+	</view>
+    <!-- wx:if="{{cardList&&cardList.items.length>0}}" -->
+	<div class="shareCard" >
+		<view class="title flexStart">
+			<image src="https://saler.ishangbin.com/img/shareCard/myCard.png"></image>
+			<text> 我的共享卡 </text>
+		</view>
+		<view class="contentBox" wx:for="{{cardList.items}}" wx:key="index" wx:if="{{cardList&&cardList.items&&cardList.items.length>0}}">
+			<view class="shopName">{{item.brand}}
+				<text wx:if="{{item.cards&&item.cards.length>1}}">（{{item.cards.length}}张）</text>
+			</view>
+			<view class="cardContent" wx:for="{{item.cards}}" wx:key="index" wx:for-item="i"
+				bindtap="toCardDetail" data-id="{{i.id}}">
+				<view class="cardName">
+					{{i.name}}
+				</view>
+				<view class="cardDesc flexSpace">
+					<view>共{{i.couponCount||0}}张优惠券</view>
+					<view class="price">
+						当前<text class="num">{{i.amount}}</text>折
+					</view>
+				</view>
+			</view>
+		</view>
+	</div>
+	<!-- 顶部基本信息 -->
+	<!-- <view class='userCard'>
+    <view class="userCard_info">
+      <view class="userCard_top">
+        <view class="userCard_top_left">
+          <image class="userimg" src="{{user.avatarUrl?user.avatarUrl:'/img/userimg.png'}}" mode="widthFix"></image>
+          <view class="userInfo">
+            <view class="userName" wx:if="{{user.nickName || user.nickname}}">{{user.nickName || user.nickname}}</view>
+            <button open-type="getUserInfo" bindgetuserinfo="toLogin"  class="toLogin" bindtap="toLogin" wx:if="{{!user.nickName&&!user.nickname}}">点击登录,查看我的权益</button>
+          </view>
+        </view>
+      </view>
+      <view class="userCard_middle">
+        <text>总收益</text>
+      </view>
+      <view class="moneyBox">
+        <view class="money">{{myProfits}}元</view>
+        <view class="moneyText" bindtap="goto" data-navName="incomeRecord">收益记录</view>
+      </view>
+    </view>
+  </view> -->
+
+	<!-- 我的红包 -->
+	<!-- <view class="carBag">
+    <view class="goldBox_top">
+      <view class="goldBox_top_left">我的红包</view>
+    </view>
+    <view class="carBag_bottom" >
+      
+      <view class="carBag_bottom_elbox" bindtap="goto" data-navname="red_envelopes_ing">
+      <text class='num' wx:if="{{ongoingRebates>0}}">{{ongoingRebates}}</text>
+        <image src="/img/my/icon1.png" mode="widthFix"></image>
+        <view>正在发</view>
+      </view>
+      <view class="carBag_bottom_elbox" bindtap="goto" data-navname="red_envelopes_ed">
+        <text class='num'wx:if="{{endNum>0}}">{{endNum}}</text>
+        <image src="/img/my/icon2.png" mode="widthFix"></image>
+        <view>已结束</view>
+      </view>
+       <view class="carBag_bottom_elbox" bindtap="goto" data-navname="myBenefit">
+        <image src="/img/my/icon3.png" mode="widthFix"></image>
+        <view>优惠券</view>
+      </view>
+    </view>
+  </view> -->
+
+
+
+	<auth id="authpop" parentThis="{{parentThis}}"></auth>
+	<view class='modalbox' wx:if="{{showPhonePop}}" catchtouchmove='true'>
+		<view class='modal'>
+			<view class='text'>
+				<view>为了权益的正常使用</view>
+				<view>请同意手机号授权</view>
+			</view>
+			<view style='border-top:1px solid #ccc;'>
+				<button plain="true" bindtap='closePhonePop'>拒绝</button>
+				<button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"
+					style='color:#56bc37;'>手机号授权</button>
+			</view>
+		</view>
+	</view>
+</view>
+<loading show="{{showLoading}}"/>
+

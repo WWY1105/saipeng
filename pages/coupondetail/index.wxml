@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<!-- <view class="loading" wx:if="{{loading}}"></view> -->
+<view class="container">
+  <view class="pic" wx:if="{{data.picUrl}}">
+    <!-- <image class='picUrl'  src= "https://i.ishangbin.com/img/user/images/none3.png"></image> -->
+    <image class='picUrl'  mode='aspectFill'  src= "{{data.picUrl}}"></image>
+  </view>
+  <image  class="change" src="https://i.ishangbin.com/img/user/images/change.png"></image>
+  <view wx:if="{{!data.picUrl}}" class='empty'></view>
+  <view  class='overflow'>
+    <view class="coupon-show-box">
+      <view class="name_add">
+        <view class="name">{{data.name}}</view>
+        <view class="use">{{data.useStrategy}}</view>
+        <view class="usebtn" bindtap='tapHandler' wx:if="{{data.code}}">立即使用</view>
+        <view class="usebtn disable" wx:else>买单自动抵扣</view>
+      </view>
+    </view>
+  </view>
+  <view class="coupons-detail">
+    <view class='items'>
+      <text class='title'>使用说明</text>
+      <view class="item" wx:if="{{data.amount && data.category != '903'&& data.category != '9031'}}">
+        <view class="left" wx:if="{{data.category == '902' || data.category == '9021'}}">价值：</view>
+        <view class="right2" wx:if="{{data.category == '902' || data.category == '9021'}}">
+          原价:{{data.amount}}元，现价:{{data.currentAmount}}元
+        </view>
+        <view class="right2" wx:if="{{data.category == '901' || data.category == '904'}}">
+          {{data.amount}}元
+        </view>
+      </view>
+      <view class="item" wx:if="{{data.useStrategy}}">
+        <view class="left">使用条件：</view>
+        <view class="right2">{{data.useStrategy}}
+          <view>每次消费最多可使用{{data.countLimit}}张</view>
+          <view wx:if="{{data.category == '9012'}}">每次消费最多可减{{data.reduceLimit}}元</view>
+        </view>
+      </view>
+      <view class="item" wx:if="{{data.times}}">
+        <view class="left">有效期：</view>
+        <view class="right2">{{data.times}}</view>
+      </view>
+      <view class="item" wx:if="{{data.content}}">
+        <view class="left">详情：</view>
+        <view class="right2">
+          <view wx:for="{{data.content}}"  wx:key="index">{{item}}</view>
+          <!-- <view>2、全天有效</view> -->
+          <!-- <view>3、可与消费返券，充值卡同享</view> -->
+        </view>
+      </view>
+      <view class="item">
+        <view class="left">备注：</view>
+        <view class="right2">
+          <view>本券不找零，不兑现，不做外卖使用</view>
+          <view>最终解释权归本公司所有</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class=" tips {{isShow?'Show':'Hide'}}"  catchtouchmove="preventTouchMove">
+    <view class=" inviters ">
+    </view>
+    <view class='code_bg'>
+      <view class='close' bindtap='closebtn'></view>
+      <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+      <text class='codetxt'>{{data.code}}</text>
+      请出示给服务员
+    </view>
+  </view>
+</view>

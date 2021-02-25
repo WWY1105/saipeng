@@ -1,0 +1,179 @@
+/* pages/shareCard/cardDetail/cardDetail.wxss */
+page {
+    background: url(https://saler.ishangbin.com/img/shareCard/cardDetailTopBG.png) 0 0 no-repeat;
+    background-size: 100% 210rpx;
+    background-color: #F5F5F5;
+    color: #333;
+}
+
+.topBox {}
+
+.codeBox {
+    flex-direction: column;
+    margin-top: 20rpx;
+}
+
+.codeBgWhite {
+    background-color: #fff;
+    padding:25rpx ;
+    margin-bottom: 20rpx;
+}
+.codeBgWhite  .cardCode{
+    color:#411E00;
+    font-size:24rpx ;
+    margin-bottom: 10rpx;
+    text-align: center;
+}
+
+.codeBox .codeImg {
+    width: 160px;
+    height: 160px;
+}
+
+.codeBox .codeName {
+    font-size: 48rpx;
+    font-weight: bold;
+    color: #343434;
+    line-height: 30rpx;
+    /* margin-top: 20rpx; */
+    margin-bottom: 26rpx;
+}
+
+.codeBox .codeTips {
+    font-size: 24rpx;
+    color: #421F00;
+}
+
+/* 记录 */
+.recordContainer {
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    margin-top: 56rpx;
+    border-radius: 10rpx;
+}
+
+.recordContainer .recordBox {
+    background-color: #fff;
+    border-radius: 10rpx;
+
+}
+
+.recordContainer .recordBox .recordTitle {
+    color: #343434;
+    font-size: 30rpx;
+    font-weight: bold;
+    padding: 30rpx 25rpx;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.recordContainer .recordBox .eachRecord {
+    padding: 30rpx 25rpx;
+    border-bottom: 1rpx solid #f5f5f5;
+}
+
+.recordContainer .recordBox .eachRecord .userInfo image {
+    width: 82rpx;
+    height: 82rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+    background-color: #333;
+}
+
+.recordContainer .recordBox .eachRecord .userInfo .useraName {
+    color: #343434;
+    font-size: 30rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.recordContainer .recordBox .eachRecord .userInfo .date,
+.recordContainer .recordBox .eachRecord .userInfo .shopName {
+    color: #9EA0A8;
+    font-size: 22rpx;
+}
+
+.recordContainer .recordBox .eachRecord .userInfo .date {
+    margin-top: 20rpx
+}
+
+.recordContainer .recordBox .eachRecord .discount {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20rpx;
+    text-align: right;
+
+}
+
+.recordContainer .recordBox .eachRecord .desc {
+    font-size: 24rpx;
+    color: #343434;
+}
+
+
+/* 进度条start */
+.cardProcessBox {
+    margin-top: 5rpx;
+    padding: 0 24rpx;
+}
+
+.cardProcessBox .lineBox {
+    position: relative;
+    margin: 15rpx 0rpx;
+    min-height: 7rpx;
+}
+
+.cardProcessBox .bgLine {
+    width: 100%;
+    height: 7rpx;
+    background: #C8B4A0;
+    border-radius: 3rpx 3rpx 3rpx 3rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cardProcessBox .acLine {
+    /* width: 0%; */
+    height: 7rpx;
+    background: #411E00;
+    border-radius: 5rpx;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.cardProcessBox .locate {
+    width: 19rpx;
+    height: 19rpx;
+    background: #411E00;
+    border-radius: 50%;
+    margin-bottom: 10rpx;
+    margin-top: 10rpx;
+}
+.cardProcessBox .locateBox {
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    margin-top: -40rpx;
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #C8B4A0;
+}
+
+.cardProcessBox .textBox {
+    font-size: 22rpx;
+    font-weight: bold;
+    color: #C8B4A0;
+    line-height: 25rpx;
+}
+
+.cardProcessBox .textBox .nowDiscount {
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #FFBB59;
+    line-height: 16px;
+
+}
+
+/* 进度条end */

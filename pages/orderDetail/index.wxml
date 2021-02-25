@@ -1,0 +1,39 @@
+<view class="container">
+   <view class="topBox">
+       <view class="tips"><text class="iconfont icon-dui"></text> 交易成功</view>
+      <view class="shop">
+         <!-- <image class="shopImg"></image> -->
+         <text class="shopname">{{data.shopName}}</text>
+      </view>
+      <view class="num">¥ {{totalNum}}</view>
+      <view class="line"></view>
+   </view>
+   <view class="content">
+    <view class="eachList">
+         <text class="left">原单</text>
+         <text class="right">¥ {{data.amount}}</text>
+      </view>
+      <view class="eachList" wx:if="{{data.paymentModeText}}">
+         <text class="left">支付方式</text>
+         <text class="right">{{data.paymentModeText}}</text>
+      </view>
+      <view class="eachList">
+         <text class="left">时间</text>
+         <text class="right">{{data.checkTime}}</text>
+      </view>
+      <view class="eachList">
+         <text class="left">订单号</text>
+         <text class="right">{{data.no}}</text>
+      </view>
+   </view>
+   <!-- 有红包 -->
+   <view class="advertisementBox" wx:if="{{data.redEnvelope||data.profits}}" bindtap="toShopDetail" data-shopid="{{data.shopId}}">
+       <image class="logo" src="{{data.logo}}" mode="aspectFit"></image>
+       <view class="text" wx:if="{{data.profits}}" >{{data.profits}}元现金红包</view>
+       <image class="bg" wx:if="{{data.profits}}"  src="/img/shop/red_payment1.png"></image>
+       <image class="bg" wx:if="{{!data.profits}}"  src="/img/shop/payment_no_money1.png"></image>
+   </view>
+ 
+      <auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+   </view>

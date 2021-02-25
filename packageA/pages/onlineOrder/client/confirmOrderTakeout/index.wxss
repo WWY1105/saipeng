@@ -1,0 +1,383 @@
+/* pages/onlineOrder/submitOrder/submitOrder.wxss */
+
+page {
+   color: #000;
+   padding-bottom: 180rpx;
+   background-size: 100% 120px;
+   background-repeat: no-repeat;
+   background-image: linear-gradient(to bottom, #228bff, #f7f7f7);
+}
+
+.topBox {
+   width: 100%;
+   padding: 0 20rpx;
+   box-sizing: border-box;
+}
+
+.addressBox {
+   flex-direction: column;
+   align-items: flex-start;
+   flex: 1;
+}
+
+.topBox .content {
+   width: 100%;
+   background-color: #fff;
+   padding: 20rpx;
+   border-radius: 20rpx;
+   margin-top: 40rpx;
+}
+
+.topBox .content .top {
+   border-bottom: solid 2rpx #ededed;
+}
+
+.topBox .content .top .type {
+   font-size: 40rpx;
+   font-weight: bold;
+   margin-bottom: 20rpx;
+}
+
+.topBox .content .top .address {
+   font-size: 24rpx;
+   color: #919191;
+   margin-bottom: 20rpx;
+}
+
+.topBox .content .top .address2 {
+   color: #000;
+}
+
+.topBox .content .top .address2 .nickname {
+   margin-right: 20rpx;
+}
+
+.topBox .content .pickerBox {
+   padding: 20rpx 0;
+}
+
+.topBox .content .time {
+   flex: 1;
+   text-align: right;
+   color: #db4e1c;
+   font-size: 28rpx;
+}
+
+/* orderDetail */
+
+.orderDetail {
+   padding: 26rpx;
+}
+
+.orderDetail .content {
+   background: #fff;
+   border-radius: 20rpx;
+   padding: 0 20rpx;
+}
+
+.orderDetail .partTitle {
+   font-size: 28rpx;
+   color: #000;
+   padding: 30rpx 0;
+   border-bottom: solid 2rpx #ededed;
+}
+
+.orderDetail .dishBox {
+   padding: 40rpx 0;
+}
+
+.orderDetail .dishBox .eachDish {
+   margin-bottom: 20rpx;
+}
+
+.orderDetail .dishBox .dishImg {
+   width: 128rpx;
+   height: 128rpx;
+   border-radius: 4rpx;
+   background-color: #d8d8d8;
+   margin-right: 20rpx;
+}
+
+.orderDetail .dishBox .textBox {
+   height: 128rpx;
+   justify-content: space-between;
+}
+
+.orderDetail .dishBox .name {
+   font-size: 28rpx;
+}
+
+.orderDetail .dishBox .desc, .orderDetail .dishBox .num {
+   font-size: 24rpx;
+   color: #919191;
+}
+
+.orderDetail .dishBox .price {
+   font-size: 32rpx;
+   font-weight: bold;
+   text-align: right;
+   color: #000;
+}
+
+.package, .total {
+   padding: 20rpx 0;
+   border-bottom: solid 2rpx #ededed;
+   font-size: 28rpx;
+}
+
+.package .price {
+   font-size: 32rpx;
+   font-weight: bold;
+}
+
+.total {
+   border: none;
+   font-weight: 400;
+}
+
+.total .price .num {
+   font-size: 40rpx;
+   font-weight: bolder;
+   color: #e46858;
+}
+
+.btnBox {
+   width: 100%;
+   position: fixed;
+   bottom: 54rpx;
+   padding: 0 26rpx;
+   left: 0;
+   box-sizing: border-box;
+   background-color: transparent;
+}
+
+.btnBox .priceBox {
+   color: #fff;
+   background-color: #000;
+   flex: 1;
+   border-radius: 46px 0 0 46px;
+   text-align: left;
+   font-size: 28rpx;
+   padding-left: 40rpx;
+}
+
+.priceBox .tips {
+   color: #919191;
+   font-size: 20rpx;
+}
+
+.btnBox .priceBox .price {
+   font-size: 36rpx;
+   font-weight: bold;
+}
+
+.sendBtn {
+   text-align: center;
+   color: #fff;
+   height: 92rpx;
+   line-height: 92rpx;
+   box-shadow: 0 10rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+   max-height: 92rpx;
+   background-color: transparent;
+   border-radius: 46px;
+}
+
+.btnBox .right {
+   font-size: 24rpx;
+   font-weight: bold;
+   background-color: #228bff;
+   padding: 0 6rpx;
+   border-radius: 0 46px 46px 0;
+   height: 97rpx;
+   line-height: 97rpx;
+}
+
+.btnBox .right.noAddress {
+   font-size: 24rpx;
+}
+
+.btnBox {
+   width: 100%;
+   position: fixed;
+   bottom: 54rpx;
+   padding: 0 26rpx;
+   left: 0;
+   box-sizing: border-box;
+   background-color: transparent;
+}
+
+.btnBox .priceBox {
+   color: #fff;
+   background-color: #000;
+   flex: 1;
+   border-radius: 46px 0 0 46px;
+   text-align: left;
+   font-size: 28rpx;
+   padding-left: 40rpx;
+   height: 92rpx;
+   line-height: 92rpx;
+}
+
+.btnBox .priceBox .price {
+   font-size: 36rpx;
+   font-weight: bold;
+}
+
+.sendBtn {
+   text-align: center;
+   color: #fff;
+   height: 92rpx;
+   line-height: 92rpx;
+   box-shadow: 0 10rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+   max-height: 92rpx;
+   background-color: transparent;
+   border-radius: 46px;
+}
+
+.btnBox .right {
+   font-size: 24rpx;
+   font-weight: bold;
+   background-color: #228bff;
+   padding: 0 6rpx;
+   border-radius: 0 46px 46px 0;
+   height: 92rpx;
+   line-height: 92rpx;
+   width: 180rpx;
+   text-align: center;
+   color: #fff;
+   font-size: 36rpx;
+   font-weight: bold;
+}
+
+/* ---------------------------- */
+
+/*模态框*/
+
+/*模态框*/
+
+.modals {
+   position: fixed;
+   z-index: 999;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+.modals-cancel {
+   position: absolute;
+   z-index: 1000;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bottom-dialog-body {
+   position: absolute;
+   z-index: 10001;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   padding: 30rpx;
+   height: 80vh;
+   background-color: #fff;
+}
+
+/*动画前初始位置*/
+
+.bottom-pos {
+   -webkit-transform: translateY(100%);
+   transform: translateY(100%);
+   padding-bottom: 100rpx;
+}
+.bottom-pos .listBox{
+overflow-y: scroll;
+max-height: 70vh;
+
+}
+.editIcon {
+   min-width: 20%;
+   text-align: right;
+}
+
+/* 模态框内容 */
+
+.modals .titleBox {
+   position: relative;
+   text-align: center;
+   font-size: 28rpx;
+   border-bottom: solid 2rpx #ededed;
+   padding-bottom: 30rpx;
+}
+
+.modals .cancleBox {
+   position: absolute;
+}
+
+.modals .eachList {
+   padding: 30rpx 0;
+   border-bottom: solid 2rpx #ededed;
+}
+
+.modals .newBtnBox {
+   padding: 0 26rpx;
+   position: fixed;
+   width: 100%;
+   box-sizing: border-box;
+   left: 0;
+   bottom: 40rpx;
+   z-index: 10000;
+}
+
+.modals .newBtnBox .newBtn {
+   width: 100%;
+   height: 92rpx;
+   line-height: 92rpx;
+   border-radius: 46px;
+   border: solid 2rpx #228bff;
+   color: #228bff;
+   text-align: center;
+   font-size: 36rpx;
+   font-weight: bold;
+   background-color: #fff;
+}
+
+/* radio */
+
+.radio {
+   padding: 10rpx;
+   border: 2rpx solid #919191;
+   border-radius: 50%;
+   margin-right: 20rpx;
+   min-height: 30rpx;
+   min-width: 30rpx;
+}
+
+.radio.active {
+   border-color: #228bff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.radio.active .circle {
+   width: 20rpx;
+   height: 20rpx;
+   background-color: #228bff;
+   border-radius: 50%;
+}
+
+.address {
+   font-size: 28rpx;
+}
+
+.addressinfo {
+   color: #919191;
+   font-size: 28rpx;
+}
+
+.addressinfo .name {
+   margin-right: 20rpx;
+}

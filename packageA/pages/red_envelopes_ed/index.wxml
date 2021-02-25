@@ -1,0 +1,34 @@
+<view class="container">
+   <!-- <image class='nocoupon' wx:if="{{list.length==0}}" src='https://i.ishangbin.com/img/user/images/nocoupon.png'></image> -->
+   <view class='nodata' wx:if="{{list.length==0}}">
+      <view class="iconfont icon-kong"></view>
+      <view class="text">空空的哦~</view>
+   </view>
+   <view class="each_envelopes" wx:for="{{list}}">
+      <image class="red_envalopes_img" src="/img/wodehongbao.png"></image>
+      <view class="rightText">
+         <view class="shop_name">{{item.shopName}}</view>
+         <view class="time">开始时间:{{item.createTime}}</view>
+         <view class="bottom_box">
+            <!-- <text>限量优惠券3000张</text> -->
+            <button>已结束</button>
+         </view>
+      </view>
+   </view>
+
+   <auth id="authpop" parentThis="{{parentThis}}"></auth>
+
+   <view wx:if='{{!isRefreshing}}' class="weui-loadmore">
+      <view wx:if='{{isLoadingMoreData}}'>
+         <view class="weui-loading"></view>
+         <view class="weui-loadmore-tips">正在加载更多...</view>
+      </view>
+      <view wx:elif='{{hasMoreData}}'>
+         <view class="weui-loadmore-tips" bindtap='onReachBottom'>点击加载更多</view>
+      </view>
+      <view wx:else>
+         <view class="weui-loadmore-tips">没有更多内容啦</view>
+      </view>
+   </view>
+
+</view>

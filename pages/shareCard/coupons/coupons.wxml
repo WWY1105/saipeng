@@ -1,0 +1,94 @@
+<!--pages/shareCard/coupons/coupons.wxml-->
+<view class="containerBox">
+    <view wx:if="{{coupons.share}}">
+        <view class="shareTitle">分享券</view>
+        <view class="shareCouponBox flexSpace">
+            <view class="content flexStart">
+                <view class="coponName" wx:if="{{coupons.share.category=='903'}}">
+                    {{coupons.share.amount}}折
+                </view>
+                <view class="coponName flexStart flexColumn" wx:elif="{{coupons.share.category=='902'}}">
+                  
+                    <view class="currentAmount">{{coupons.share.currentAmount}}
+                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                    </view>
+                    <view class="{{coupons.share.currentAmount?'lineAmount':''}}">￥{{coupons.share.amount}}</view>
+                </view>
+                <view class="coponName flexStart flexColumn" wx:elif="{{coupons.share.category=='9012'}}">
+                    <view class="currentAmount">{{coupons.share.value}}
+                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                    </view>
+                    <view class="reduceLimit">最多减{{coupons.share.reduceLimit}}元</view>
+                </view>
+                <view class="coponName flexStart flexColumn" wx:else>
+                
+                 <view class="currentAmount">{{coupons.share.amount}}
+                     <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                 </view> 
+                </view>
+                <view class="couponDesc">
+                    <view class="bigTitle">{{coupons.share.name}}</view>
+                    <view class="couponRules">
+                        <view>{{coupons.share.times}}</view>
+                        <view>{{coupons.share.useStrategy}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="leftNum">还剩{{coupons.share.count}}张</view>
+        </view>
+        <view class="shareCouponTips">
+            *<text wx:if="{{coupons.allpurpose}}">可分享给自己</text>
+            <text wx:else>此券仅限好友使用</text>
+        </view>
+        <button class="shareBtn" open-type="share">分享给朋友领取
+        </button>
+    </view>
+    <!-- 自用券 -->
+    <view class="selfCouponContainer">
+        <view class="shareTitle">自用券</view>
+        <view class="selfCouponBox flexSpace" wx:for="{{coupons.coupon}}" wx:key="index" bindtap="toUse"
+            data-id="{{item.id}}">
+            <view class="content flexStart">
+                <view class="coponName" wx:if="{{item.category=='903'}}">
+                    {{item.amount}}折
+                </view>
+                <view class="coponName flexStart flexColumn" wx:elif="{{item.category=='902'}}">
+                  
+                    <view class="currentAmount">{{item.currentAmount}}
+                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                    </view>
+                    <view class="{{item.currentAmount?'lineAmount':''}}">￥{{item.amount}}</view>
+                </view>
+                <view class="coponName flexStart flexColumn" wx:elif="{{item.category=='9012'}}">
+                   
+                    <view class="currentAmount">{{item.value}}
+                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                    </view>
+                    <view class="reduceLimit">最多减{{item.reduceLimit}}元</view>
+                </view>
+                <view class="coponName flexStart flexColumn" wx:else>
+                
+                    <view class="currentAmount">{{item.amount}}
+                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
+                    </image>
+                    </view>
+                </view>
+                <view class="couponDesc">
+                    <view class="bigTitle">{{item.name}}</view>
+                    <view class="couponRules">
+                        <view>{{item.times}}</view>
+                        <view>{{item.useStrategy}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="toused">去使用</view>
+        </view>
+    </view>
+</view>
+
+<loading show="{{showLoading}}" />

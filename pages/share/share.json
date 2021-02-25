@@ -1,0 +1,6 @@
+{
+ "navigationBarTitleText": "赚佣金收徒弟",
+ "usingComponents": {
+  "auth": "../component/auth"
+  }
+}

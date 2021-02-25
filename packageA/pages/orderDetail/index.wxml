@@ -1,0 +1,55 @@
+<!--packageA/pages/orderDetail/index.wxml-->
+<view style="overflow:hidden;">
+  <view class="header" wx:if="{{type == 601}}">
+    <view class="row" style="border-top: 1px solid #d8d8d8;">
+      <view>订单号</view>
+      <view>{{order.orderNo}}</view>
+    </view>
+    <view class="row">
+      <view>创建时间</view>
+      <view>{{order.createTime}}</view>
+    </view>
+    <view class="row">
+      <view>购买数量</view>
+      <view>购买{{order.goods.principal}}枚金币 <text wx:if="{{order.goods.given}}">送{{order.goods.given}}枚</text></view>
+    </view>
+    <view class="pay">
+      <text>实付款：</text>
+      <text class="money">¥{{order.cost}}</text>
+    </view>
+  </view>
+  <view class="header" wx:if="{{type == 602}}">
+    <view class="imgBox" >
+      <image class="cardBg" src="{{order.goods.picUrl}}"></image>
+      <view class="card_nr">
+        <view style="margin-top: 10rpx;height:10rpx;line-height: 10rpx;">
+          <view class="cardAmount">{{order.goods.amount}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="brand" >
+      <view class="brandName">{{order.goods.brand}}</view>
+      <view class="remindAmount">剩余{{order.goods.remindAmount}}元</view>
+    </view>
+    <view class="row" >
+      <view>订单号</view>
+      <view>{{order.orderNo}}</view>
+    </view>
+    <view class="row">
+      <view>购买时间</view>
+      <view>{{order.createTime}}</view>
+    </view>
+    <view class="row">
+      <view>支付金币</view>
+      <view>{{order.cost}}枚</view>
+    </view>
+  </view>
+  
+  <view class="query">对此账单有疑问?</view>
+  <button class="kefuBtn" open-type="contact" style="">
+    <text class="kefu">联系客服</text>
+  </button>
+  <button class="kefuBtn" open-type="contact" style="border:none;" wx:if="{{type == 601}}">
+    <text class="kefu">退款</text>
+  </button>
+</view>

@@ -1,0 +1,6 @@
+<!--component/loding/loding.wxml-->
+<view class="containerLoding" wx:if="{{show}}">
+    <view class="box" id="loading">
+        <view class="loader-02"></view>
+    </view>
+</view>

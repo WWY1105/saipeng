@@ -1,0 +1,272 @@
+/* pages/shareCard/buySuccess/buySuccess.wxss */
+page {
+    transition: all 0.3s linear 0s;
+    margin-top: 0px;
+    background: linear-gradient(180deg, #525263 0%, #282933 100%);
+    background-size: 100% 922rpx;
+    background-repeat: no-repeat;
+    background-color: #F0F2F5;
+}
+
+.buySuccessPage {}
+
+.contentBox {
+    position: relative;
+}
+
+.logoBox image {
+    width: 253rpx;
+    height: 213rpx;
+    margin-bottom: 55rpx;
+    margin-top: 50rpx;
+}
+
+.bigTitle {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 52rpx;
+    text-align: center;
+}
+
+.selectBox {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 24rpx;
+    margin-top: 22rpx;
+}
+
+.selectBox .gou {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 8rpx;
+}
+
+.smallTips {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 24rpx;
+    text-align: center;
+    margin-top: 22rpx;
+}
+
+.btnBox {
+    margin-top: 46rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    line-height: 24rpx;
+}
+
+.btnBox .btn {
+    width: 200rpx;
+    height: 64rpx;
+    box-shadow: 0px 10rpx 20rpx 0rpx rgba(245, 166, 35, 0.1);
+    border-radius: 100rpx;
+    text-align: center;
+    line-height: 64rpx;
+}
+
+.btnBox .btn.share {
+    background-color: #FFBB59;
+    margin: unset;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #fff;
+}
+
+.btnBox .btn.seeMore {
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+    margin-left: 32rpx;
+}
+
+.orderDesc {
+    padding: 0 24rpx;
+    margin-top: 65rpx;
+}
+
+.orderDesc .content {
+    /* position: absolute; */
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 24rpx;
+    background-color: #fff;
+    padding: 40rpx 32rpx;
+    color: #666666;
+    font-size: 26rpx;
+    min-height: 400rpx;
+}
+
+.orderDesc .content .title {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+}
+
+.orderDesc .content .eachDesc {
+    line-height: 44rpx;
+}
+
+
+
+
+.modalbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 494rpx;
+    height: 712rpx;
+    border-radius: 5px;
+    padding-top: 20rpx;
+    color: #000000;
+}
+
+.modal image {
+    width: 100%;
+    height: 100%;
+}
+
+.modal button {
+    position: relative;
+    min-width: 640rpx;
+    width: 640rpx;
+    height: 815rpx;
+    background: unset;
+    padding: 0;
+    background-color: red;
+    padding: 126rpx 32rpx 0;
+    box-sizing: border-box;
+    background-size: 640rpx 815rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow:visible;
+}
+.modal button .pplNum,.modal button .discountNUm{
+font-weight: bolder;
+font-size: 70rpx;
+font-family: Impact;
+color: #FFD63C;
+line-height: 50rpx;
+position: absolute;
+top: 42rpx;
+text-align: center;
+}
+.modal button .pplNum{
+    left: 141rpx;
+    width: 60rpx;
+}
+.modal button .discountNUm{
+    right: 100rpx;
+    width: 105rpx;
+}
+.moreDiscount {
+    width: 196rpx;
+    height: 246rpx;
+    position: fixed;
+    right: 10rpx;
+    bottom: 5%;
+    z-index: 99;
+}
+
+.cardShareModal {
+    background: #FFBAB2;
+    border-radius: 24rpx 24rpx 10rpx 10rpx;
+    padding: 10rpx;
+    position: relative;
+
+}
+ .shareBtn{
+width: 480rpx;
+height: 90rpx;
+line-height: 90rpx;
+color: #84460E;
+font-size: 36rpx;
+font-weight: bolder;
+background-image: linear-gradient(to right, #FFECD4, #D9A77A);
+text-align: center;
+position: absolute;
+left: 50%;
+margin-left: -240rpx;
+border-radius: 50px;
+bottom: -45rpx;
+}
+.restBox{
+    width: 100%;
+    height: 110rpx;
+    background-image: linear-gradient(to bottom, #F8E0C4, #EDCBA8);
+    padding: 14rpx 87rpx 19rpx;
+    box-sizing: border-box;
+    color: #84460E;
+    font-size: 28rpx;
+    border-radius: 0 0 10rpx 10rpx;
+}
+.restBox view{
+    line-height: 38rpx;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.restBox .num{
+    font-size: 34rpx;
+    font-weight: bold;
+}
+.codeTips {
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #84460E;
+    line-height: 49rpx;
+    letter-spacing: 1rpx;
+    margin-bottom: 20rpx;
+}
+
+.quCodeBox {
+    background-color: #FEEAD2;
+    padding-top: 32rpx;
+    padding-bottom: 28rpx;
+    border-radius: 24rpx 24rpx 0rpx 0rpx;
+}
+.canvasBox{
+    position: relative;
+    min-height: 150px;
+}
+.canvasBox .userimg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -25rpx;
+    margin-top: -25rpx;
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999;
+    width: 50rpx;
+    height: 50rpx;
+}
+.canvas {
+    width: 150px;
+    height: 150px;
+    margin-left:-7500000px;
+    z-index: -9999;
+}
+.qrCodeImg{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    /* z-index: 9999; */
+    min-width: 150px;
+    min-height: 150px;
+}

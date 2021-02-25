@@ -1,0 +1,29 @@
+<view hidden="{{init}}">
+  <image class="rule" src="/packageA/img/myApprentice/rule.png" mode="widthFix"></image>
+  <view>
+    <view class="selectBox">
+      <image src="{{selectBtn=='1' ? '/packageA/img/myApprentice/select2.png' : '/packageA/img/myApprentice/select1.png' }}" bindtap="selectType" data-num="1" mode="widthFix" style="{{selectBtn=='1' ? 'margin-top:1px;':'margin-bottom: 1px;'}}"></image>
+       <image src="{{selectBtn=='2' ? '/packageA/img/myApprentice/select4.png' : '/packageA/img/myApprentice/select3.png' }}" bindtap="selectType" data-num="2" mode="widthFix" style="{{selectBtn=='2' ? 'margin-top:1px;':'margin-bottom: 1px;'}}"></image>
+    </view>
+    <view class="content">
+      <view class="total">总计 {{total}}人</view>
+      <view class="list">
+        <view class="user" wx:for="{{posts}}">
+          <view style="display:flex;">
+            <image class="userImg" src="{{item.avatarUrl?item.avatarUrl:'/img/userimg.png'}}" mode="widthFix"></image>
+            <view class="userInfo">
+              <view class="userName">{{item.nickname}}</view>
+              <view class="time">{{item.createTime}}</view>
+            </view>
+          </view>
+          <view class="grade">
+            <image src="/packageA/img/myApprentice/vip1.png" mode="widthFix" wx:if="{{item.spotterGrade == 1}}"></image>
+            <image src="/packageA/img/myApprentice/vip2.png" mode="widthFix" wx:if="{{item.spotterGrade == 2}}"></image>
+            <image src="/packageA/img/myApprentice/vip3.png" mode="widthFix" wx:if="{{item.spotterGrade == 3}}"></image>
+            <view>{{item.spotterGradeName}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

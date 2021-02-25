@@ -1,0 +1,97 @@
+<!--packageA/pages/buyCard/index.wxml-->
+<view>
+  <view class="header" >
+    <view class="card">
+      <image class="cardBg" src="{{cardInfo.picUrl}}"></image>
+      <view class="amount">{{cardInfo.amount}}元</view>
+      <view class="cardType">储值卡</view>
+      <view class="tipsBox">
+        <image src="/packageA/img/shopDetail/tips.png" mode="widthFix"></image>
+        <view>{{tools.fixed(cardInfo.price/cardInfo.amount*10)}}折发售</view>
+      </view>
+    </view>
+    <view class="header_right">
+      <view class="cardText">{{cardInfo.title}}</view>
+      <view class="cardPrice">¥{{cardInfo.price}}<text>¥{{cardInfo.amount}}</text></view>
+    </view>
+  </view>
+  <view style="background: #fff;">
+    <view class="selectBox">
+      <view class="selectBox_title">储值卡选择</view>
+      <view wx:for="{{cardList}}">
+        <wxs src=".././distance.wxs" module="tools" />
+        <view class="select {{cardIndex==index?'active':''}}"  data-index="{{index}}" bindtap="selectCard">{{item.amount}}元面值储值卡  {{tools.fixed(item.price/item.amount*10)}}折发售</view>
+      </view> 
+    </view>
+  </view>
+  <view style="background: #fff;">
+    <view class="cardNumBox">
+      <view class="cardNumBox_left">
+        <view class="cardNumBox_title">购买数量</view>
+        <view class="cardNum">{{cardInfo.stock}}张剩余</view>
+      </view>
+      <view class="cardNumBox_right">
+        <view class="minus" bindtap="minusCard"><text>-</text></view>
+        <view class="num">{{cardNum}}</view>
+        <view class="add" bindtap="addCard"><text>+</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="user">
+    <view class="userName">
+      <view>姓名</view>
+      <view>{{user.nickname}}</view>
+    </view>
+    <view class="phoneBox">
+      <view>手机</view>
+      <view class="phoneNum" wx:if="{{phoneNum}}">{{phoneNum}}</view>
+      <button wx:if="{{!phoneNum}}"  plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">请输入你的手机号码</button>
+    </view>
+  </view>
+
+  <view class="cardRules">
+    <view class="tulesTitle">使用说明</view>
+    <view class="contentBox" wx:if="{{cardInfo.rules.shops}}">
+      <view class="contentTitle" >适用门店</view>
+      <view class="content">{{cardInfo.rules.shops}}</view>
+    </view>
+    <view class="contentBox">
+      <view class="contentTitle">使用说明</view>
+      <view class="content">{{cardInfo.rules.periods}}</view>
+      <view class="content">{{cardInfo.rules.time}}</view>
+      <view class="content">{{cardInfo.rules.shared}}</view>        
+    </view>
+    <view class="contentBox">
+      <view class="contentTitle">备注</view>
+      <view class="content">{{cardInfo.rules.noCharge}}</view>
+      <view class="content">{{cardInfo.rules.specialExplain}}</view>
+    </view>
+    <view class="contentBox" style="margin-bottom: 50rpx;">
+      <view class="contentTitle">退款说明</view>
+      <view class="content">本储值卡属于限量特价商品，购买当天可退。</view>
+    </view>
+  </view>
+
+  <view class="buyBox">
+    <view class="allPrice">合计：<text>¥{{cardInfo.price*cardNum}}</text></view>
+    <view class="buyBtn" bindtap="postBuyCard">立即购买</view>
+  </view>
+
+
+  <view class='modalbox' wx:if="{{phonePop}}" catchtouchmove='true'>
+    <view class='modal' >
+      <view class='text'>
+        <view>为了权益的正常使用</view>
+        <view>请同意手机号授权</view>
+      </view>
+      <view style='border-top:1px solid #ccc;'>
+        <button plain="true" bindtap='closePhonePop' >拒绝</button>
+        <button plain="true" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='color:#56bc37;'>手机号授权</button>
+      </view>
+    </view> 
+  </view>
+
+  <auth id="authpop"  parentThis="{{parentThis}}"></auth>
+
+</view>

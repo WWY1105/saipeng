@@ -1,0 +1,91 @@
+<!--pages/order/cardOrderDetail/cardOrderDetail.wxml-->
+<view class="shopInfo flexStart">
+    <image src="{{orderDetail.logo}}" class="logo"></image>
+    <view class="shopName">{{orderDetail.brand}}</view>
+
+</view>
+<view class="orderContent">
+    <view class="orderDetailBgBox">
+        <image class="orderDetailBg" src="https://saler.ishangbin.com/img/shareCard/order/orderDetailBg.png"></image>
+    </view>
+    <view class="maincontent">
+        <view class="main">
+            <view class="partTitle">商品</view>
+            <view class="cardBox">
+                <view class="cardSmallTitle">卡</view>
+                <view class="cardContent">
+                    <view class="cardName">
+                        {{orderDetail.card.name}}
+				</view>
+				<view class="cardDesc flexSpace">
+					<view>有效期:{{orderDetail.card.endTime}}</view>
+					<view class="price">
+						当前<text class="num">{{orderDetail.card.amount}}</text>折
+					</view>
+				</view>
+                </view>
+            </view>
+            <div class="couponBox">
+                <view class="cardSmallTitle">券</view>
+                <view class="containerCouponContent">
+                    <view class="selfCouponBox flexSpace" wx:for="{{orderDetail.coupons}}" wx:key="index"
+                        wx:for-index="idx">
+                        <!-- <view class="todayUsable" wx:if="{{item.todayUsable}}">当场可用</view> -->
+                        <view class="content flexStart">
+                            <view class="coponName">
+                                <image wx:if="{{item.category=='1016'}}" class="yuanIcon"
+                                    src="https://saler.ishangbin.com/img/shareCard/yuan.png"></image>
+                                {{item.amount}}
+                            </view>
+                            <view class="couponDesc">
+                                <view class="bigTitle">{{item.name}}</view>
+                                <view class="couponRules">
+                                    <view>{{item.useStrategy}}</view>
+                                </view>
+                                <view class="couponRules">
+                                    <view>{{item.times}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="rightNum">x{{item.count}}</view>
+                    </view>
+                </view>
+            </div>
+        </view>
+    </view>
+</view>
+
+<view class="orderDesc">
+    <view class="content">
+        <view class="eachDesc flexSpace">
+            <text>订单号</text>
+            <text>{{orderDetail.no}}</text>
+        </view>
+        <view class="eachDesc flexSpace">
+            <text>创建时间</text>
+            <text>{{orderDetail.createTime}}</text>
+        </view>
+        <view class="eachDesc flexSpace">
+            <text>金额</text>
+            <text class="orderAmount">
+                <text class="rmb">￥</text>{{orderDetail.orderAmount}}</text>
+        </view>
+    </view>
+</view>
+<view class="partLineBox">
+    <image class="partLine" src="https://saler.ishangbin.com/img/shareCard/order/partLine.png"></image>
+</view>
+
+<view class="bottomBox ">
+    <view class="content flexCenter">
+        <button class="each contact" open-type='contact'>联系客服</button>
+        <view class="each  refund" bindtap="refund" wx:if="{{orderDetail.state!='1000'}}">
+            申请退款
+        </view>
+    </view>
+</view>
+<view class="partLineBox orderBottomBg">
+    <image class="partLine" src="https://saler.ishangbin.com/img/shareCard/order/orderBottomBg.png"></image>
+</view>
+
+<loading show="{{showLoading}}"/>

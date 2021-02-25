@@ -1,0 +1,292 @@
+/* pages/onlineOrder/submitOrder/submitOrder.wxss */
+page {
+  color: #000;
+  background-image: linear-gradient(to bottom, #228bff, #f7f7f7);
+  background-size: 100% 120rpx;
+  background-repeat: no-repeat;
+  padding-bottom: 180rpx;
+}
+
+.topBox {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+
+}
+
+.topBox .content {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+
+}
+
+.topBox .content .top {
+  border-bottom: solid 2rpx #ededed;
+  padding-bottom: 20rpx;
+}
+
+.topBox .content .top .type {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+}
+
+.topBox .content .top .address {
+  font-size: 24rpx;
+  color: #919191;
+}
+.topBox .content .top .address2{
+  color: #000;
+  text-align: left;
+width: 100%;
+
+}
+.topBox .content .top .address2 .nickname{
+  margin-right: 20rpx;
+}
+.topBox .content .pickerBox {
+  padding: 20rpx 0;
+}
+
+.topBox .content .time,
+.topBox .content .wayPicker {
+  flex: 1;
+  text-align: right;
+  color: #db4e1c;
+  font-size: 28rpx;
+}
+
+.topBox .content .wayPicker {
+  color: #000;
+}
+
+/* orderDetail */
+.orderDetail {
+  padding: 26rpx;
+}
+
+.orderDetail .content {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+}
+
+.orderDetail .partTitle {
+  font-size: 28rpx;
+  color: #000000;
+  padding: 30rpx 0;
+  border-bottom: solid 2rpx #ededed;
+}
+
+.orderDetail .partTitle .editMenus {
+  color: #228bff;
+}
+.sendBtn {
+  text-align: center;
+  color: #fff;
+  height: 92rpx;
+  line-height: 92rpx;
+  box-shadow: 0 10rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+  max-height: 92rpx;
+  border-radius:46px ;
+  background-color: #228bff;
+}
+.orderDetail .dishBox {
+  padding: 40rpx 0;
+  border-bottom: solid 2rpx #ededed;
+}
+
+.orderDetail .dishBox .eachDish {
+  margin-bottom: 20rpx;
+}
+
+.orderDetail .dishBox .dishImg {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 4rpx;
+  background-color: #d8d8d8;
+  margin-right: 20rpx;
+}
+
+.orderDetail .dishBox .textBox {
+  height: 128rpx;
+  justify-content: space-between;
+}
+
+.orderDetail .dishBox .name {
+  font-size: 28rpx;
+}
+
+.orderDetail .dishBox .desc,
+.orderDetail .dishBox .num {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.orderDetail .dishBox .price {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: right;
+  color: #000000;
+}
+
+.package,
+.total {
+  padding: 20rpx 0;
+  border-bottom: solid 2rpx #ededed;
+  font-size: 28rpx;
+}
+
+.package .price {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.total {
+  border: none;
+  font-weight: 400;
+}
+
+.total .label {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #e35f4e;
+}
+.total .label.finish{
+  color: #74e34e;
+}
+.total .label.back{
+  color:#c9c9c9;
+}
+.total .price {
+  width: 100%;
+}
+
+.total .price .num {
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+
+.btnBox {
+  width: 100%;
+  margin-top: 100rpx;
+  bottom: 54rpx;
+  padding: 0 26rpx;
+  left: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.btnBox .priceBox {
+  color: #fff;
+  background-color: #000;
+  flex: 1;
+  border-radius: 46px 0 0 46px;
+  text-align: left;
+  font-size: 28rpx;
+  padding-left: 40rpx;
+}
+
+.btnBox .priceBox .price {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.sendBtn {
+  text-align: center;
+  color: #fff;
+  height: 92rpx;
+  line-height: 92rpx;
+  box-shadow: 0 10rpx 20rpx 0 rgba(0, 0, 0, 0.2);
+  max-height: 92rpx;
+  background-color: #228bff;
+  border-radius: 46px;
+}
+
+.btnBox .right {
+  font-size: 36rpx;
+  font-weight: bold;
+  background-color: #228bff;
+  padding: 0 6rpx;
+  border-radius: 0 46px 46px 0;
+  height: 97rpx;
+  line-height: 97rpx;
+  padding: 0 20rpx;
+}
+
+.deleteBtn {
+  width: 164rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border-radius: 4rpx;
+  border: solid 1rpx #c9c9c9;
+  background-color: #f7f7f7;
+  font-size: 24rpx;
+}
+
+.rightIcon {
+  font-size: 20rpx;
+  color: #c9c9c9;
+  margin-left: 14rpx;
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .6);
+
+}
+
+.modal .content {
+  width: 500rpx;
+  height: 600rpx;
+  border-radius: 10px;
+  opacity: 1;
+  background-color:#fff;
+  text-align: center;
+}
+.modal .content   .top{
+  font-size: 48rpx;
+  font-weight: 500;
+  text-align: center;
+  color: #000000;
+  margin-top: 100rpx;
+  margin-bottom:68rpx
+}
+.modal .content   .tips{
+  font-size: 28rpx;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 120rpx;
+}
+.modal .bottomBox{
+padding: 0 70rpx;
+}
+.modal .bottomBox  .toEditbtn{
+  width: 100%;
+  height: 64rpx;
+  line-height: 64rpx;
+  border-radius: 10rpx;
+  background-color: #4f8aff;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin-bottom:40rpx
+}
+.cancelbtn{
+  background:#fff;
+  color: #919191;
+  font-size: 28rpx;
+  text-decoration: underline;
+}

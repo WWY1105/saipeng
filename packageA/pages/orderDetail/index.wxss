@@ -1,0 +1,121 @@
+/* packageA/pages/orderDetail/index.wxss */
+page {
+  background-color: #efefef;
+}
+.header {
+  
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 686rpx;
+  padding: 0 32rpx;
+  border-bottom: 1px solid #d8d8d8;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #000000;
+  background: #fff;
+}
+.pay {
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #000000;
+}
+.money {
+  margin-right: 32rpx;
+  font-size: 36rpx;
+  font-weight: 530;
+  color: #ed752e;
+}
+.query {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #000000;
+  margin-top: 60rpx;
+  margin-left: 32rpx;
+  margin-bottom: 10rpx;
+}
+.kefuBtn{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  text-align: left;
+  font-size: 28rpx;
+  color: #333333;
+  padding:0;
+  background-color: #fff;
+  border-bottom: 1px solid #d8d8d8;
+}
+button::after{
+  border: none;
+}
+.kefu{
+  color: #333333;
+  margin-left: 32rpx;
+}
+.tuikuan {
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 686rpx;
+  padding: 0 32rpx;
+  font-size: 28rpx;
+  color: #333333;
+  background-color: #fff;
+}
+.cardBg {
+  width: 360rpx;
+  height: 240rpx;
+  border-radius: 10px;
+  background: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.card_nr {
+  width: 360rpx;
+  height: 240rpx;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.cardAmount {
+  font-size: 50rpx;
+  font-weight: 550;
+  color: #ffec92;
+  position: absolute;
+  left: 20rpx;
+  bottom: 50rpx;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.imgBox {
+  width: 360rpx;
+  height: 240rpx;
+  border-radius: 12.5px;
+  margin: auto;
+  margin-top: 40rpx;
+  position: relative;
+}
+.brand {
+  margin-top: 14rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.brandName {
+  font-size: 32rpx;
+  font-weight: 550;
+  color: #000000;
+}
+.remindAmount {
+  font-size: 24rpx;
+  color: #000000;
+}

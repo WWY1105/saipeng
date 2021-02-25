@@ -1,0 +1,135 @@
+<!--pages/myBenefit/index.wxml-->
+<view class='coupons'>
+   <scroll-view class="tab-h" scroll-left="{{scrollLeft}}">
+      <view class="tabBox">
+         <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">可使用</view>
+         <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">已使用</view>
+         <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">已过期</view>
+      </view>
+   </scroll-view>
+   <!-- <swiper class="tab-content"  current="{{currentTab}}" duration="300" style="height:{{winHeight}}rpx"> -->
+   <!-- <swiper-item wx:for="{{[0,1,2]}}" catchtouchmove="stopTouchMove"> -->
+   <scroll-view scroll-y="true"  bindscrolltolower="searchScrollLower">
+      <view class="scoll-h">
+         <block wx:if="{{posts}}" wx:for="{{posts}}" wx:key="index">
+            <view class="bandBox">
+               <view class="bandInfo">
+                  <image class="logo" src="{{item.logo}}"></image>
+                  <view class="bandName">{{item.brand}}</view>
+               </view>
+               <view class="num">({{item.couponCount}}张)</view>
+            </view>
+            <block wx:if="{{currentTab == 0}}">
+               <view class="redBox" wx:for="{{item.coupons}}" wx:for-item="coupon" bindtap="toCouponDetail" data-id="{{coupon.id}}">
+                  <!-- 满减券 -->
+                  <view class="quan" category="{{item.category}}" wx:if="{{coupon.category!='903'}}">
+                     <image class="quan_bg" src="/packageA/img/myBenefit/quanbg.png"></image>
+                     <view class="quan_content">
+                        <view class="quan_num">
+                           <!-- <text style="font-size:32rpx;">最高减</text>
+                           <text style="font-size:48rpx;">¥</text> -->
+                           <text style="font-size:40rpx;">{{coupon.name}}</text>
+                        </view>
+                        <view class="receiveBtn">立即使用</view>
+                        <!-- <view class="quan_name">{{coupon.name}}</view> -->
+                        <view class="quan_term">{{coupon.times}}</view>
+                     </view>
+                  </view>
+                  <!-- 优惠券 -->
+                  <view class="coupon_box" wx:if="{{coupon.category=='903'}}">
+                     <image src="/img/shop/quandan.png" class="quandan_img static"></image>
+                     <!-- <view class="tight_top_tips">还剩{{coupon.redEnvelopeTotal}}张</view> -->
+                     <view class="textBox">
+                        <view class="discount_text">{{coupon.amount}}
+                           <text class="smalltext">折</text>
+                        </view>
+                        <view class="right_text">
+                           <text>免预约</text>
+                           <text>节假日通用</text>
+                           <text>{{posts.rebate.redEnvelope.nonParticipations||''}}</text>
+                        </view>
+                     </view>
+                  </view>
+               </view>
+            </block>
+            <block wx:elif="{{currentTab == 1}}">
+               <view class="redBox" wx:for="{{item.coupons}}" wx:for-item="coupon">
+                  <view class="quan" wx:if="{{coupon.category!='903'}}">
+                     <image class="quan_bg" src="/packageA/img/myBenefit/quanbg2.png"></image>
+                     <view class="quan_content">
+                        <view class="quan_num2">
+                           <!-- <text style="font-size:32rpx;">最高减</text>
+                        <text style="font-size:48rpx;">¥</text> -->
+                           <text style="font-size:40rpx;">{{coupon.name}}</text>
+                        </view>
+                        <!-- <view class="receiveBtn2">已过期</view> -->
+                        <!-- <view class="quan_name" style="color: #c6c6c6;">{{coupon.name}}</view> -->
+                        <view class="quan_term" style="color: #c6c6c6;">{{coupon.times}}</view>
+                     </view>
+                  </view>
+                  <!-- 优惠券 -->
+                  <view class="quan" wx:if="{{coupon.category=='903'}}">
+                     <image class="quan_bg" src="/packageA/img/myBenefit/quanbg2.png"></image>
+                     <view class="quan_content">
+                        <view class="quan_num2">
+                           <!-- <text style="font-size:32rpx;">最高减</text>
+                        <text style="font-size:48rpx;">¥</text> -->
+                           <text style="font-size:40rpx;">{{coupon.value}}</text>
+                           <text style="font-size:32rpx;">折券</text>
+                        </view>
+                        <view class="receiveBtn2">已使用</view>
+                        <!-- <view class="quan_name" style="color: #c6c6c6;">{{coupon.name}}</view> -->
+                        <view class="quan_term" style="color: #c6c6c6;">{{coupon.times}}</view>
+                     </view>
+                  </view>
+               </view>
+            </block>
+            <block wx:else>
+               <view class="redBox" wx:for="{{item.coupons}}" wx:for-item="coupon">
+                  <view class="quan" wx:if="{{coupon.category!='903'}}">
+                     <image class="quan_bg" src="/packageA/img/myBenefit/quanbg2.png"></image>
+                     <view class="quan_content">
+                        <view class="quan_num2">
+                           <!-- <text style="font-size:32rpx;">最高减</text>
+                        <text style="font-size:48rpx;">¥</text> -->
+                           <text style="font-size:40rpx;">{{coupon.name}}</text>
+                        </view>
+                        <view class="receiveBtn2">已过期</view>
+                        <!-- <view class="quan_name" style="color: #c6c6c6;">{{coupon.name}}</view> -->
+                        <view class="quan_term" style="color: #c6c6c6;">{{coupon.times}}</view>
+                     </view>
+                  </view>
+                  <!-- 优惠券 -->
+                  <view class="quan" wx:if="{{coupon.category=='903'}}">
+                     <image class="quan_bg" src="/packageA/img/myBenefit/quanbg2.png"></image>
+                     <view class="quan_content">
+                        <view class="quan_num2">
+                           <!-- <text style="font-size:32rpx;">最高减</text>
+                        <text style="font-size:48rpx;">¥</text> -->
+                           <text style="font-size:40rpx;">{{coupon.value}}</text>
+                           <text style="font-size:32rpx;">折券</text>
+                        </view>
+                        <view class="receiveBtn2">已过期</view>
+                        <!-- <view class="quan_name" style="color: #c6c6c6;">{{coupon.name}}</view> -->
+                        <view class="quan_term" style="color: #c6c6c6;">{{coupon.times}}</view>
+                     </view>
+                  </view>
+               </view>
+            </block>
+         </block>
+         <!-- <image wx:else ></image> -->
+         <!-- <image class='nocoupon' wx:if="{{posts.length==0}}" src='https://i.ishangbin.com/img/user/images/nocoupon.png'></image>-->
+      </view>
+      <view class='nodata' wx:if="{{posts.length==0}}">
+         <view class="iconfont icon-kong"></view>
+         <view class="text">空空的哦~</view>
+      </view>
+      <!-- </swiper-item> -->
+      <!-- </swiper> -->
+   </scroll-view>
+
+
+
+
+   <auth id="authpop" parentThis="{{parentThis}}"></auth>
+</view>
