@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "auth": "../../component/auth",
-    "parser": "../../component/parser/parser"
-  },
-  "navigationBarTitleText": "共享权益卡"
+    "parser": "../../component/parser/parser",
+      "header": "../../../component/header/header"
+    },
+    "navigationStyle":"custom"
 }

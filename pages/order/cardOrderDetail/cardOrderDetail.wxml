@@ -33,8 +33,7 @@
                         <!-- <view class="todayUsable" wx:if="{{item.todayUsable}}">当场可用</view> -->
                         <view class="content flexStart">
                             <view class="coponName">
-                                <image wx:if="{{item.category=='1016'}}" class="yuanIcon"
-                                    src="https://saler.ishangbin.com/img/shareCard/yuan.png"></image>
+                            
                                 {{item.amount}}
                             </view>
                             <view class="couponDesc">

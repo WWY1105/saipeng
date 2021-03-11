@@ -15,6 +15,7 @@ App({
       this.globalData.token.token = wx.getStorageSync('token');
     } else {
     }
+    
 
     //console.log("检查版本更新是否支持")
     if (!wx.canIUse("getUpdateManager")) return;
@@ -405,6 +406,7 @@ App({
     })
   },
   globalData: {
+    height:0,
     reloca:false,
     sharePic:'https://saler.ishangbin.com/img/shareCard/buySuccess/faceToFaceBg.png',
     showModal:false,

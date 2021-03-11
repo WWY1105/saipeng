@@ -1,4 +1,5 @@
 // pages/buyCard/buyCard.js
+import tool from "../../../utils/util.js";
 const app = getApp();
 Page({
 
@@ -6,6 +7,13 @@ Page({
      * 页面的初始数据
      */
     data: {
+        navbarData:{
+            height:app.globalData.height,
+            title:'',
+            color:'#333333',
+            backgroundColor:false
+        },
+        
         tagStyle: {
             span: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
             p: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
@@ -18,13 +26,15 @@ Page({
         activityId: '',
         promoteId: '',
         shopId: '',
-        data: {},
+        data: false,
         parentThis: '',
         buySuccessModal: false, //购买成功弹框
         purchase: '',
         hasToken: false,
         maxDiscount: 0,
-        acceptArr: [] //用户订阅消息
+        acceptArr: [], //用户订阅消息
+        type:'self',// 券类型
+        couponList:[]
     },
 
     /**
@@ -51,7 +61,16 @@ Page({
         }
 
     },
-
+    onPageScroll: tool.debounce(function(res) {
+        console.log(res[0].scrollTop)
+        //结果： 延迟函数执行，不管触发多少次都只执行最后一次。
+        if(res[0].scrollTop>this.data.navbarData.height){
+            this.setData({'navbarData.backgroundColor':'#E1B78F'})
+        }else{
+            this.setData({'navbarData.backgroundColor':false})
+        }
+     },50),
+  
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -155,7 +174,9 @@ Page({
                 that.setData({
                     selfCouponCount,
                     maxDiscount,
-                    data: res.result
+                    data: res.result,
+                    'navbarData.title':res.result.name,
+                    couponList:res.result.benefits
                 })
             }
         })
@@ -396,4 +417,19 @@ Page({
             showShopNum
         })
     },
+    changeCouponTab(e){
+       this.setData({couponList:[]},()=>{
+
+      
+        let {type}=this.data;
+        console.log('当前'+type)
+        const {participants,benefits} =this.data.data;
+  
+        let couponList= type=='self'?participants:benefits;
+        console.log(couponList)
+        type=type=='self'?'friend':'self';
+        console.log('后来'+type)
+        this.setData({type,couponList})
+    })
+    }
 })

@@ -1,0 +1,27 @@
+<!--pages/shareCard/shops/shops.wxml-->
+<!-- 适用门店 -->
+<view class="contentContainer shopContentContainer" wx:if="{{shops&&shops.length>0}}">
+    <view class="content shopContent bgf">
+        <view class="mainTitle">适用门店</view>
+        <view class="shopsBox">
+            <view wx:for="{{shops}}" wx:for-index='idx' wx:key="index">
+                <div class="eachShop flexSpace">
+                    <view class="leftText" bindtap="makePhoneCall" data-phone="{{item.tel}}">
+                        <view class="shopName">{{item.name}}</view>
+                        <view class="address">{{item.address}}</view>
+                    </view>
+                    <view class="phone flexCenter" bindtap="makePhoneCall" data-phone="{{item.tel}}">
+                        <image lazy-load="true" src="https://saler.ishangbin.com/img/shareCard/phone.png"></image>
+                    </view>
+                </div>
+            </view>
+        </view>
+        <view class="seeMoreShop flexCenter" wx:if="{{data.shops.length>2}}" bindtap="showAllShop">
+            <view class="seeMoreShopText">{{showShopNum==2?'查看全部门店':'收起'}}</view>
+            <image lazy-load="true" class="arrowDown {{showShopNum>2?'trans':''}}"
+                src="https://saler.ishangbin.com/img/shareCard/arrowDown.png"></image>
+        </view>
+    </view>
+</view>
+
+<view wx:else class="noDataFullPage">没找到数据</view>

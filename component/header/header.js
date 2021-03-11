@@ -8,7 +8,6 @@ Component({
     },
   },
   data: {
-   
     currentPage:'',
     height: app.globalData.height,
     //默认值  默认显示左上角
@@ -19,11 +18,13 @@ Component({
   methods: {
   // 返回上一页面
     _navback() {
+      console.log('返回上一页面')
       wx.navigateBack()
     },
   //返回到首页
     _backhome() {
-      wx.switchTab({
+      console.log('返回到首页')
+      wx.redirectTo({
         url: '/pages/index/index',
       })
     }
@@ -43,6 +44,6 @@ Component({
      
     } 
   },
-   
+ 
   
 }) 

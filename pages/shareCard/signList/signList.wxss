@@ -1,0 +1,142 @@
+page {
+  background-color: #F5F5F5;
+}
+.signListBox {
+  padding: 30rpx 24rpx;
+}
+.signListBox .advertiseBox {
+  background: url(https://saler.ishangbin.com/img/shareCard/newStyle/bg4.png) 0 0 no-repeat;
+  height: 220rpx;
+  background-size: cover;
+  align-items: flex-start;
+  padding-left: 50rpx;
+  margin-bottom: 30rpx;
+}
+.signListBox .advertiseBox .tips {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #F8CA86;
+  line-height: 44rpx;
+}
+.signListBox .advertiseBox .disCountBox .num {
+  font-size: 92rpx;
+  font-weight: bold;
+  color: #FFE2B7;
+  line-height: 100rpx;
+}
+.signListBox .advertiseBox .disCountBox .zhe {
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #FFE2B7;
+  line-height: 34rpx;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.signListBox .listBox .titleBox {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #84460E;
+  line-height: 40rpx;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+  box-sizing: border-box;
+}
+.signListBox .listBox .lineBg {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.signListBox .listBox .lineBg .circle {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background-color: #F5F5F5;
+}
+.signListBox .listBox .lineBg .circle.circle1 {
+  margin-left: -20rpx;
+}
+.signListBox .listBox .lineBg .circle.circle2 {
+  margin-right: -20rpx;
+}
+.signListBox .listBox .line {
+  width: 100%;
+  border-bottom: 2rpx dashed #FFE2B7;
+}
+.signListBox .content {
+  padding: 0 50rpx;
+}
+.signListBox .content .eachListBox {
+  width: 100%;
+  padding-left: 15rpx;
+  box-sizing: border-box;
+}
+.signListBox .content .eachListBox .eachList {
+  width: 100%;
+  padding: 20rpx 0;
+  position: relative;
+  padding-left: 30rpx;
+}
+.signListBox .content .eachListBox .eachList .processLine {
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+.signListBox .content .eachListBox .eachList .processLine .dot {
+  width: 10rpx;
+  height: 10rpx;
+  background: #FF781D;
+  border-radius: 50%;
+}
+.signListBox .content .eachListBox .eachList .processLine .line {
+  width: unset;
+  border: 2rpx solid #FCF1E0;
+  height: 50%;
+}
+.signListBox .content .eachListBox .eachList .processLine .line.hide {
+  visibility: hidden;
+}
+.signListBox .content .eachListBox .eachList .leftBox .numBox {
+  width: 96rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  background: linear-gradient(180deg, #FFF7E7 0%, #FFE3B9 100%);
+  border-radius: 50%;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #84460E;
+  text-shadow: 0rpx 2rpx 4rpx rgba(132, 70, 14, 0.2);
+  text-align: center;
+  margin-right: 20rpx;
+}
+.signListBox .content .eachListBox .eachList .leftBox .textBox .name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 32rpx;
+  margin-bottom: 12rpx;
+}
+.signListBox .content .eachListBox .eachList .leftBox .textBox .desc {
+  font-size: 20rpx;
+  color: #666666;
+  line-height: 32rpx;
+}
+.signListBox .content .eachListBox .eachList .rightBtn .signBtn {
+  text-align: center;
+  line-height: 52rpx;
+  width: 180rpx;
+  height: 52rpx;
+  background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
+  border-radius: 26rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.signListBox .content .eachListBox .eachList .rightBtn .signBtn.cannot {
+  border: 2rpx solid #FE482A;
+  background: #fff;
+  border-radius: 26rpx;
+  color: #FE482A;
+}
+.signListBox .content .eachListBox .eachList .rightBtn .hasErceiptIcon {
+  width: 116rpx;
+  height: 116rpx;
+}

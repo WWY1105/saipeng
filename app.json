@@ -1,98 +1,100 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/home/home",
-        "pages/my/my",
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/my/my",
+    "pages/orderDetail/index",
+    "pages/notification/index",
+    "pages/myIncome/index",
+    "pages/incomeRecord/index",
+    "pages/share/share",
+    "pages/city/city",
+    "pages/coupon/index",
+    "pages/coupondetail/index",
+    "pages/shopDetail/index",
+    "pages/recipients/index",
+    "pages/publicCode/publicCode",
+    "pages/shareCard/buyCard/buyCard",
+    "pages/shareCard/coupons/coupons",
+    "pages/shareCard/cardDetail/cardDetail",
+    "pages/shareCard/myCardDesc/myCardDesc",
+    "pages/shareCard/joinShare/joinShare",
+    "pages/business/index",
+    "pages/order/cardOrder/cardOrder",
+    "pages/order/cardOrderDetail/cardOrderDetail",
+    "pages/shareCard/buySuccess/buySuccess",
+    "pages/shareCard/shops/shops",
+    "pages/shareCard/signList/signList"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/profit/profit",
+        "pages/myApprentice/index",
+        "pages/myBenefit/index",
+        "pages/buyGold/index",
         "pages/orderDetail/index",
-        "pages/notification/index",
-        "pages/myIncome/index",
-        "pages/incomeRecord/index",
-        "pages/share/share",
-        "pages/city/city",
-        "pages/coupon/index",
-        "pages/coupondetail/index",
-        "pages/shopDetail/index",
-        "pages/recipients/index",
-        "pages/publicCode/publicCode",
-        "pages/shareCard/buyCard/buyCard",
-        "pages/shareCard/coupons/coupons",
-        "pages/shareCard/cardDetail/cardDetail",
-        "pages/shareCard/myCardDesc/myCardDesc",
-        "pages/shareCard/joinShare/joinShare",
-        "pages/business/index",
-        "pages/order/cardOrder/cardOrder",
-        "pages/order/cardOrderDetail/cardOrderDetail",
-        "pages/shareCard/buySuccess/buySuccess"
-    ],
-    "subpackages": [
-        {
-            "root": "packageA",
-            "pages": [
-                "pages/profit/profit",
-                "pages/myApprentice/index",
-                "pages/myBenefit/index",
-                "pages/buyGold/index",
-                "pages/orderDetail/index",
-                "pages/goldDetail/index",
-                "pages/goldExperience/index",
-                "pages/buyCard/index",
-                "pages/red_envelopes_ing/index",
-                "pages/red_envelopes_ed/index",
-                "pages/obtain/obtain",
-                "pages/onlineOrder/confirmOrder/index",
-                "pages/onlineOrder/client/confirmOrderTakeout/index",
-                "pages/onlineOrder/client/confirmOrderSelf/index",
-                "pages/onlineOrder/newAddress/newAddress",
-                "pages/onlineOrder/paySuccess/paySuccess",
-                "pages/onlineOrder/order/order",
-                "pages/onlineOrder/orderDetail/orderDetail"
-            ]
-        }
-    ],
-    "preloadRule": {
-        "pages/home/home": {
-            "network": "all",
-            "packages": [
-                "packageA"
-            ]
-        }
-    },
-    "window": {
-        "onReachBottomDistance": 50,
-        "backgroundTextStyle": "dark",
-        "backgroundColor": "#fff",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-        "borderStyle": "white",
-        "color": "#999",
-        "selectedColor": "#ed7831",
-        "list": [
-            {
-                "pagePath": "pages/home/home",
-                "text": "发现",
-                "iconPath": "./img/home/discover.png",
-                "selectedIconPath": "./img/home/discover_active.png"
-            },
-            {
-                "pagePath": "pages/my/my",
-                "text": "我的",
-                "iconPath": "./img/home/mine.png",
-                "selectedIconPath": "./img/home/mine_active.png"
-            }
-        ]
-    },
-    "usingComponents": {
-        "loading": "./component/loding/loding"
-    },
-    "permission": {
-        "scope.userLocation": {
-            "desc": "你的位置信息将用于小程序位置接口的效果展示"
-        }
-    },
-    "sitemapLocation": "sitemap.json",
-    "networkTimeout": {
-        "request": 20000
+        "pages/goldDetail/index",
+        "pages/goldExperience/index",
+        "pages/buyCard/index",
+        "pages/red_envelopes_ing/index",
+        "pages/red_envelopes_ed/index",
+        "pages/obtain/obtain",
+        "pages/onlineOrder/confirmOrder/index",
+        "pages/onlineOrder/client/confirmOrderTakeout/index",
+        "pages/onlineOrder/client/confirmOrderSelf/index",
+        "pages/onlineOrder/newAddress/newAddress",
+        "pages/onlineOrder/paySuccess/paySuccess",
+        "pages/onlineOrder/order/order",
+        "pages/onlineOrder/orderDetail/orderDetail"
+      ]
     }
+  ],
+  "preloadRule": {
+    "pages/home/home": {
+      "network": "all",
+      "packages": [
+        "packageA"
+      ]
+    }
+  },
+  "window": {
+    "onReachBottomDistance": 50,
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#999",
+    "selectedColor": "#ed7831",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "发现",
+        "iconPath": "./img/home/discover.png",
+        "selectedIconPath": "./img/home/discover_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./img/home/mine.png",
+        "selectedIconPath": "./img/home/mine_active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "loading": "./component/loding/loding"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "networkTimeout": {
+    "request": 20000
+  }
 }

@@ -7,11 +7,21 @@
     color: #fff;
     z-index: 9999999;
   }
+  .back{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .nav-wrap.bg{
+    background-image: url(https://saler.ishangbin.com/img/shareCard/newStyle/buyCarBg.png);
+    background-size: 100% 372rpx;
+    background-repeat: no-repeat;
+  }
   /* 标题要居中 */
   .nav-title {
     position: absolute;
-    text-align: center;
-    max-width: 400rpx;
+    text-align: left;
+    /* max-width: 400rpx; */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -20,8 +30,11 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    font-size:32rpx;
+    font-size:34rpx;
     font-weight: bold;
+    padding-left:70rpx;
+    color:#333;
+    z-index: -1;
   }
   
   .nav-capsule {
@@ -55,6 +68,10 @@
     height: 42rpx;
   }
   .backPage{
-    width: 20rpx;
-    height: 34rpx;
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .home{
+    width:30rpx;
+    height: 30rpx;
   }

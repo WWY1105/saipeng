@@ -1,4 +1,5 @@
 // pages/shareCard/joinShare/joinShare.js
+import tool from "../../../utils/util.js";
 const app = getApp()
 Page({
 
@@ -6,6 +7,12 @@ Page({
      * 页面的初始数据
      */
     data: {
+        navbarData:{
+            height:app.globalData.height,
+            title:'共享权益卡',
+            color:'#333333',
+            backgroundColor:false
+        },
         showLoading: true,
         successMsg: '',
         errorMsgModal: false,
@@ -15,7 +22,7 @@ Page({
         type: '',
         id: '',
         successModal: false,
-        data: {},
+        data: false,
         maxDiscount: 0,
         showShopNum: 2,
         hasReceiptId: '',
@@ -47,7 +54,16 @@ Page({
     onReady: function () {
 
     },
-
+    onPageScroll: tool.debounce(function(res) {
+        console.log(res[0].scrollTop)
+        //结果： 延迟函数执行，不管触发多少次都只执行最后一次。
+        if(res[0].scrollTop>this.data.navbarData.height){
+            this.setData({'navbarData.backgroundColor':'#E1B78F'})
+        }else{
+            this.setData({'navbarData.backgroundColor':false})
+        }
+     },50),
+  
     /**
      * 生命周期函数--监听页面显示
      */
@@ -197,22 +213,11 @@ Page({
                 wx.hideLoading();
                 console.log(res)
                 if (res.code == 200) {
-                    // let successMsg = ''
-                    // if (this.data.type == 'card') {
-                    //     successMsg = '加入成功'
-                    // } else {
-                    //     successMsg = '领取成功。知道了'
-                    // }
-                    // that.setData({
-                    //     successMsg,
-                    //     successModal: true,
-                    //     hasReceiptId: res.result.id
-                    // })
                  
                       app.globalData.showModal=true;
-                      wx.switchTab({
-                        url: '/pages/home/home',
-                      })
+                    //   wx.switchTab({
+                    //     url: '/pages/home/home',
+                    //   })
                 } else if (res.code == 403060) {
                     that.setData({
                         showPhonePop: true
@@ -339,5 +344,10 @@ Page({
             }
         })
     },
-
+ //   查看更多门店
+ toMoreShop(){
+    wx.navigateTo({
+      url: "/pages/shareCard/shops/shops?id"+this.data.id,
+    })
+}
 })

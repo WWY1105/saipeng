@@ -1,0 +1,60 @@
+/* pages/shareCard/shops/shops.wxss */
+
+/* 适用门店 */
+.contentContainer{
+  padding:24rpx;
+}
+.contentContainer .content {
+  padding:30rpx;
+  box-sizing: border-box;
+}
+.contentContainer .content .mainTitle {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20rpx;
+}
+
+.contentContainer .content .shopsBox .eachShop {
+  padding: 20rpx 0;
+}
+
+.contentContainer .content .shopsBox .shopName {
+  color: #000;
+  font-size: 28rpx;
+  margin-bottom: 17rpx;
+}
+
+.contentContainer .content .shopsBox .address {
+  color: #9E9FA8;
+  font-size: 22rpx;
+}
+
+.contentContainer .content .shopsBox .phone {
+  padding-left: 35rpx;
+  min-height: 48rpx;
+  border-left: 2rpx solid #E6E7E9;
+}
+
+.contentContainer .content .shopsBox .phone image {
+  width: 30rpx;
+  height: 38rpx;
+}
+.contentContainer .content  .seeMoreShop{
+flex-direction: column;
+font-size: 24rpx;
+color: #272934;
+padding: 20rpx 0;
+border-top: 1rpx solid #EEEEEE;
+}
+.contentContainer .content  .seeMoreShop .arrowDown{
+  margin-top: 10rpx;
+  width: 16rpx;
+  height: 9rpx;
+}
+.contentContainer .content  .seeMoreShop .arrowDown.trans{
+  transform: rotate(180deg);
+}
+.contentContainer .content.shopContent{
+  padding-bottom: 0;
+}

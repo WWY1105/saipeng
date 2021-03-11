@@ -1,51 +1,5 @@
 {
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": false,
-    "enhance": true,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": true,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": true,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "bundle": false,
-    "useIsolateContext": true,
-    "useCompilerModule": true,
-    "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.7.7",
-  "appid": "wx46f8b078bc4fb106",
-  "projectname": "赛朋",
-  "isGameTourist": false,
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -235,13 +189,31 @@
         {
           "name": "加入",
           "pathName": "pages/shareCard/joinShare/joinShare",
-          "query": "id=11bc24fa0d0a4fe6961e3a792071f19f",
+          "query": "id=596efd37ccda4e14b596e282f4d6ac78",
           "scene": null
         },
         {
           "name": "购买成功",
           "pathName": "pages/shareCard/buySuccess/buySuccess",
           "query": "orderId=600e57a6e21b840011b373fa",
+          "scene": null
+        },
+        {
+          "name": "卡列表进入卡详情",
+          "pathName": "pages/shareCard/myCardDesc/myCardDesc",
+          "query": "id=fa62723062a2489a85c1aeae954b80f7",
+          "scene": null
+        },
+        {
+          "name": "签收列表",
+          "pathName": "pages/shareCard/signList/signList",
+          "query": "id=fa62723062a2489a85c1aeae954b80f7",
+          "scene": null
+        },
+        {
+          "name": "适用门店",
+          "pathName": "pages/shareCard/shops/shops",
+          "query": "id=596efd37ccda4e14b596e282f4d6ac78",
           "scene": null
         }
       ]

@@ -10,23 +10,20 @@
                 <view class="coponName flexStart flexColumn" wx:elif="{{coupons.share.category=='902'}}">
                   
                     <view class="currentAmount">{{coupons.share.currentAmount}}
-                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+          
                     </view>
                     <view class="{{coupons.share.currentAmount?'lineAmount':''}}">￥{{coupons.share.amount}}</view>
                 </view>
                 <view class="coponName flexStart flexColumn" wx:elif="{{coupons.share.category=='9012'}}">
                     <view class="currentAmount">{{coupons.share.value}}
-                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+           
                     </view>
                     <view class="reduceLimit">最多减{{coupons.share.reduceLimit}}元</view>
                 </view>
                 <view class="coponName flexStart flexColumn" wx:else>
                 
                  <view class="currentAmount">{{coupons.share.amount}}
-                     <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+                
                  </view> 
                 </view>
                 <view class="couponDesc">
@@ -58,24 +55,21 @@
                 <view class="coponName flexStart flexColumn" wx:elif="{{item.category=='902'}}">
                   
                     <view class="currentAmount">{{item.currentAmount}}
-                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+                
                     </view>
                     <view class="{{item.currentAmount?'lineAmount':''}}">￥{{item.amount}}</view>
                 </view>
                 <view class="coponName flexStart flexColumn" wx:elif="{{item.category=='9012'}}">
                    
                     <view class="currentAmount">{{item.value}}
-                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+                
                     </view>
                     <view class="reduceLimit">最多减{{item.reduceLimit}}元</view>
                 </view>
                 <view class="coponName flexStart flexColumn" wx:else>
                 
                     <view class="currentAmount">{{item.amount}}
-                        <image lazy-load="true" class="yuanIcon" src="https://saler.ishangbin.com/img/shareCard/yuan.png">
-                    </image>
+        
                     </view>
                 </view>
                 <view class="couponDesc">

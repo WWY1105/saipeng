@@ -180,6 +180,7 @@ font-size: 200rpx;
 }
 
 /* flex布局 */
+
 .flexStart{
    display: flex;
    align-items: center;
@@ -208,19 +209,145 @@ font-size: 200rpx;
    display: flex;
   align-items: center;
 }
-.bottomBtn{
-   width: 100%;
-   position: fixed;
-   bottom:0;
-   left:0;
-   z-index: 999999999999999999999999;
-   background:url(https://saler.ishangbin.com/img/shareCard/bottomBtnBg1.png) center bottom no-repeat;
-   background-size: 100% 100% ;
-   height: 98rpx;
-   line-height: 98rpx;
-   padding: 0 30rpx;
-   box-sizing: border-box;
- }
+.baseLine{
+   align-items: baseline;
+}
  .noMarginRight{
     margin-right: 0!important;
+ }
+ .bgf{
+    background-color: #fff;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+.modalbox {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 999;
+   background:rgba(0, 0, 0, 0.6);
+ }
+ 
+ .modal {
+   text-align: center;
+   position: absolute;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+   margin:auto;
+   width: 592rpx;
+   height: 300rpx;
+   border-radius: 5px;
+   padding-top: 20rpx; 
+   background-color: #ffffff;
+   color: #000000;
+ }
+ 
+ .modal .text {
+   font-size: 32rpx;
+   min-height: 130rpx;
+   letter-spacing: 0.3px;
+   text-align: center;
+   padding: 36rpx 20rpx;
+   color: #999;
+ }
+ .modalbox_btn {
+   border-top:0.5px solid #ccc;
+   position:absolute;
+   bottom:0;
+   margin:auto;
+   left:0;
+   right:0;
+ 
+ }
+ .modal button {
+   display: inline-block;
+   width: 50%;
+   font-size: 40rpx;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+   border: none;
+ 
+ }
+
+
+
+/* 成功弹窗 */
+.modal.buySuccessModal {
+   width: 484rpx;
+   padding: 30rpx 0 58rpx;
+   border-radius: 20rpx;
+   height: min-content;
+   flex-direction: column;
+}
+
+.modal.buySuccessModal .successIcon {
+   width: 236rpx;
+   height: 187rpx;
+   margin-bottom: 20rpx;
+}
+
+.modal.buySuccessModal .successIcon.error {
+   width: 209rpx;
+   height: 178rpx;
+}
+
+.modal.buySuccessModal .buySuccessText {
+   font-weight: bold;
+   font-size: 32rpx;
+   color: #272934;
+   line-height: 40rpx;
+   margin-bottom: 30rpx;
+}
+
+.modal.buySuccessModal .tips {
+   font-size: 24rpx;
+   color: #848497;
+   max-width: 300rpx;
+   line-height: 40rpx;
+   margin-bottom: 40rpx;
+}
+
+.modal.buySuccessModal .close {
+   font-size: 32rpx;
+   color: #272934;
+   font-weight: bold;
+   margin-top: 60rpx;
+}
+
+
+ 
+ 
+ @keyframes bounce {
+   0% {
+      margin-top:-15rpx;
+   }
+   100% {
+    margin-top:0;
+   }
+ }
+
+ .noDataFullPage{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top:30%;
+    color: #333;
  }

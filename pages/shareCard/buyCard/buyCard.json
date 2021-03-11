@@ -1,8 +1,8 @@
 {
   "usingComponents": {
     "auth": "../../component/auth",
-    "parser": "../../component/parser/parser"
+    "parser": "../../component/parser/parser",
+    "header": "../../../component/header/header"
   },
-  "navigationBarTitleText": "",
   "navigationStyle":"custom"
 }

@@ -1,0 +1,61 @@
+<!--pages/shareCard/signList/signList.wxml-->
+<view class="signListBox">
+  <view class="advertiseBox flexCenter flexColumn">
+    <view class="tips">当前可用折扣</view>
+    <view class="disCountBox">
+      <text class="num">{{signList.amount}}</text>
+      <text class="zhe">折</text>
+    </view>
+  </view>
+
+
+  <view class="listBox ">
+    <view class="titleBox bgf">请按顺序从上至下签收折扣～</view>
+    <view class="lineBg flexSpace bgf">
+      <view class="circle circle1"></view>
+      <view class="line"></view>
+      <view class="circle circle2"></view>
+    </view>
+    <view class="content bgf ">
+
+      <view class="eachListBox" wx:if="{{signList.records}}">
+        <!-- 已经签收 -->
+        <view class="eachList flexSpace">
+          <view class="processLine flexStart flexColumn">
+            <view class="line hide"></view>
+            <view class="dot"></view>
+            <view class="line {{index!=signList.records.length-1?'':'hide'}}"></view>
+          </view>
+          <view class="leftBox flexStart">
+            <view class="numBox">{{signList.amount}}</view>
+            <view class="textBox">
+              <view class="name">{{signList.amount}}折</view>
+              <view class="desc">继续签收更低折扣</view>
+            </view>
+          </view>
+          <view class="rightBtn">
+           <image class="hasErceiptIcon" src="https://saler.ishangbin.com/img/shareCard/newStyle/hasErceipt.png"></image>
+          </view>
+        </view>
+        <view class="eachList flexSpace" wx:for="{{signList.records}}" wx:for-index="index" wx:key="*this">
+          <view class="processLine flexStart flexColumn">
+            <view class="line {{index==0?!signList.amount?'hide':'':''}}"></view>
+            <view class="dot"></view>
+            <view class="line {{index!=signList.records.length-1?'':'hide'}}"></view>
+          </view>
+          <view class="leftBox flexStart">
+            <view class="numBox">{{item.amount}}</view>
+            <view class="textBox">
+              <view class="name">{{item.amount}}折</view>
+              <view class="desc">继续签收更低折扣</view>
+            </view>
+          </view>
+          <view class="rightBtn" bindtap="toSign" >
+            <button class="signBtn" wx:if="{{index==0}}" open-type="share" data-id="{{item.id}}">立即签收</button>
+            <button class="signBtn cannot" wx:else  >立即签收</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

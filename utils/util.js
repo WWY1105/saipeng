@@ -139,7 +139,33 @@ const ajax = function (json) {
    });
 
 }
-
+/*函数节流*/
+const throttle=function(fn, interval) {
+   var enterTime = 0;//触发的时间
+   var gapTime = interval || 300 ;//间隔时间，如果interval不传，则默认300ms
+   return function() {
+     var context = this;
+     var backTime = new Date();//第一次函数return即触发的时间
+     if (backTime - enterTime > gapTime) {
+       fn.call(context,arguments);
+       enterTime = backTime;//赋值给第一次触发的时间，这样就保存了第二次触发的时间
+     }
+   };
+ }
+ 
+ /*函数防抖*/
+ const debounce=function(fn, interval) {
+   var timer;
+   var gapTime = interval || 200;//间隔时间，如果interval不传，则默认1000ms
+   return function() {
+     clearTimeout(timer);
+     var context = this;
+     var args = arguments;//保存此处的arguments，因为setTimeout是全局的，arguments不是防抖函数需要的。
+     timer = setTimeout(function() {
+       fn.call(context,args);
+     }, gapTime);
+   };
+ }
 function isHttpSuccess(status) {
    return status >= 200 && status < 300 || status === 304;
 }
@@ -315,20 +341,7 @@ function request(that, options = {}, keepLogin = true) {
    }
 }
 
-function throttle(fn, gapTime) {
-   if (gapTime == null || gapTime == undefined) {
-      gapTime = 2000
-   }
-   let _lastTime = null
-   return function () {
-      let _nowTime = + new Date()
-      if (_nowTime - _lastTime > gapTime || !_lastTime) {
-         // 将this和参数传给原函数
-         fn.apply(this, arguments)
-         _lastTime = _nowTime
-      }
-   }
-}
+
 
 // 授权地理位置---------------------------------
 function getLocation(that) {
@@ -403,12 +416,13 @@ function getLocation(that) {
 
 
 module.exports = {
+   debounce,
+   throttle,
    // formatTime: formatTime,
    getUrl: getUrl,
    // getDistance: getDistance,
    ajax: ajax,
    request: request,
    login: login,
-   throttle: throttle,
    getLocation: getLocation
 }
