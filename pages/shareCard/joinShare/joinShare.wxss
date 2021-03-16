@@ -162,6 +162,7 @@ page {
 }
 .container .advertiseBox .targetDiscount {
   color: #F8CA86;
+  text-align: left;
 }
 .container .advertiseBox .targetDiscount .tips {
   font-size: 20rpx;
@@ -202,11 +203,10 @@ page {
   background: #FFE2B7;
   border-radius: 26rpx;
   text-align: center;
-  line-height: 48rpx;
   font-size: 28rpx;
   font-weight: bold;
   color: #FD582C;
-  line-height: 40rpx;
+  line-height: 48rpx;
 }
 .container .benefitBox {
   margin-bottom: 30rpx;
@@ -215,6 +215,13 @@ page {
   overflow-y: scroll;
   box-sizing: border-box;
   max-height: 520rpx;
+}
+.container .benefitBox .title {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
 }
 .container .benefitBox .selfCouponBox .leftBox {
   height: 152rpx;
@@ -475,6 +482,7 @@ page {
   padding: 30rpx;
   box-sizing: border-box;
   border-radius: 8rpx;
+  overflow: hidden;
 }
 .container .activityDesc .title {
   font-size: 28rpx;
@@ -513,12 +521,17 @@ page {
   font-weight: bold;
   color: #666666;
   line-height: 36rpx;
+}
+.container .activityDesc .part .introduce .loadDiscount .downText {
   background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 .container .activityDesc .part .poples {
   margin-top: 26rpx;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 .container .activityDesc .part .poples .eachParter {
   margin: 0 50rpx 20rpx 0;
@@ -536,12 +549,13 @@ page {
   line-height: 32rpx;
 }
 .container .bottomBtn {
-  padding: 0 50rpx;
+  padding: 50rpx;
   position: fixed;
-  bottom: 70rpx;
+  bottom: 20rpx;
   width: 100%;
   box-sizing: border-box;
   z-index: 998;
+  background-color: #fff;
 }
 .container .bottomBtn .btnContent {
   width: 100%;

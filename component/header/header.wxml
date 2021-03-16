@@ -1,14 +1,16 @@
 <!--component/header/header.wxml-->
 <view class="nav-wrap {{navbarData.backgroundColor?'bg':''}}"
-	style="height: {{navbarData.height*2+25}}px;color:{{navbarData.color}}">
+	style="height: {{navbarData.height*2+25}}px;color:{{navbarData.color}}"
+	bindtap='_navback' >
 	<!-- 导航栏 中间的标题 -->
 	<view class='nav-title' style='line-height: {{height*2 + 45}}px;'>{{navbarData.title}}</view>
 	<!-- 导航栏  左上角的返回按钮 和home按钮-->
 	<view class='nav-capsule' style='height: {{height*2 + 45}}px;'>
-		<view bindtap='_navback' wx:if='{{currentPage>=2}}' class="back flexCenter">
+		<view wx:if='{{currentPage>=2}}' class="back flexCenter">
 			<image src="https://saler.ishangbin.com/img/shareCard/newStyle/headArrow.png" class="backPage"></image>
 		</view>
-		<view wx:if='{{currentPage<=1}}' bindtap='_backhome' class="back flexCenter">
+		<!-- bindtap='_backhome' -->
+		<view wx:if='{{currentPage<=1}}'  class="back flexCenter">
 			<image src="https://saler.ishangbin.com/img/shareCard/newStyle/home.png" class="home"></image>
 		</view>
 	</view>

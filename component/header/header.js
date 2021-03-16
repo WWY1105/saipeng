@@ -18,8 +18,11 @@ Component({
   methods: {
   // 返回上一页面
     _navback() {
-      console.log('返回上一页面')
-      wx.navigateBack()
+      if(this.data.currentPage>=2){
+        wx.navigateBack()
+      }else{
+        this._backhome()
+      }
     },
   //返回到首页
     _backhome() {

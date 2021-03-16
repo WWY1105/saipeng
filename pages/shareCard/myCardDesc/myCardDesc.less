@@ -18,11 +18,18 @@ page {
     line-height: 36rpx;
     width: 100%;
     margin-bottom: 10rpx;
-
+    overflow: hidden;
+    .loopAnimate{
+      display: inline-block;
+      white-space: nowrap;
+      animation: 10s wordsLoop linear infinite normal;
+    }
     .tongzhi {
       width: 27rpx;
       height: 24rpx;
       margin-right: 12rpx;
+      background-color: #FFE2B7;
+      z-index: 9;
     }
   }
 
@@ -33,7 +40,7 @@ page {
 
     .cardBox {
       margin-bottom: 30rpx;
-      background: linear-gradient(128deg, #3A3D50 0%, #464B62 100%);
+      background: linear-gradient(to right, #464B62 0%,#3A3D50 100%);
       box-shadow: 0px 4rpx 14rpx 0rpx rgba(58, 61, 80, 0.55);
       border-radius: 16rpx;
       width: 100%;
@@ -133,7 +140,18 @@ page {
             line-height: 72rpx;
             text-shadow: 0px 2rpx 6rpx rgba(36, 41, 73, 0.71);
             position: absolute;
-            top: -90rpx;
+            top: -96rpx;
+            text-align: center;
+            height: 143rpx;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: space-between;
+            .amountTips{
+              font-size: 20rpx;
+              color: #FFE2B7;
+              line-height: 28rpx;
+            }
           }
 
           .startAmount {
@@ -164,7 +182,7 @@ page {
         left: 0;
         bottom: 0;
         width: 100%;
-        background: linear-gradient(128deg, #44485D 0%, #515773 100%);
+        background: linear-gradient(to right,#515773 0%,   #44485D 100%);
         border-radius: 0px 0px 16rpx 16rpx;
         padding: 26rpx 30rpx;
         box-sizing: border-box;
@@ -227,7 +245,7 @@ page {
 
     .targetDiscount {
       color: #F8CA86;
-
+      text-align: left;
       .tips {
         font-size: 20rpx;
       }
@@ -293,7 +311,8 @@ page {
     .content {
       padding: 30rpx;
       box-sizing: border-box;
-
+      border-radius: 8rpx;
+      overflow: hidden;
       .title {
         color: #333333;
         font-size: 34rpx;
@@ -563,16 +582,20 @@ page {
           font-weight: bold;
           color: #666666;
           line-height: 36rpx;
+        
+       .downText{
           background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-
-        }
+          background-clip: text;
+          color: transparent;
+       }
+      }
       }
 
       .poples {
         margin-top: 26rpx;
-
+        flex-wrap: nowrap;
+        overflow-x: scroll;
         .eachParter {
           margin: 0 50rpx 20rpx 0;
 
@@ -597,12 +620,13 @@ page {
 
   // 底部按钮
   .bottomBtn {
-    padding: 0 50rpx;
+    padding: 50rpx;
     position: fixed;
-    bottom: 70rpx;
+    bottom: 20rpx;
     width: 100%;
     box-sizing: border-box;
     z-index: 998;
+ background-color: #fff;
 
     .btnContent {
       width: 100%;

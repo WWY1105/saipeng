@@ -1,6 +1,6 @@
 <!--pages/buyCard/buyCard.wxml-->
 <header navbarData="{{navbarData}}"></header>
-<view wx:if="{{data}}" class="container"  style='padding-top: {{navbarData.height*2 +25}}px;' wx:if="{{data}}">
+<view wx:if="{{data}}" class="container"  style='padding-top: {{navbarData.height*2 +25}}px;'>
     <!-- 顶部渐变卡片 -->
     <view class="cardBox">
         <view class="cardContentBox">
@@ -12,7 +12,8 @@
                     </view>
                     <image src="https://saler.ishangbin.com/img/shareCard/newStyle/slogan.png" class="slogan"></image>
                 </view>
-                <view class="midLine"></view>
+                <!-- <view class="midLine"></view> -->
+                <image class="midLine" src="https://saler.ishangbin.com/img/shareCard/newStyle/midLine.png"></image>
                 <!-- 购买即可获得 -->
                 <view class="flexStart buyGet">
                     <view class="tag"></view>
@@ -130,8 +131,10 @@
             <view class="introduce flexStart">
                 <view class="cardIcon">主卡</view>
                 <text>{{data.card.grows[0].times}}次机会｜每次使用后折扣</text>
-                <view class="loadDiscount flexStart" >
-                    <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png"></image>下降 {{data.card.grows[0].value*10}}%</view>
+                <view class="loadDiscount flexStart">
+                    <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png"></image>
+                   <text class="downText">下降{{down1}}%</text>
+                </view>
             </view>
             <view class="poples">
                 <image class="defaulyAvator" src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png"></image>
@@ -143,7 +146,9 @@
             <view class="introduce flexStart">
                 <view class="cardIcon">副卡</view>
                 <text>每人{{data.card.grows[1].times}}次机会｜每次使用后折扣</text>
-                <view class="loadDiscount flexStart" >  <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png"></image>下降 {{data.card.grows[1].value*10}}%</view>
+                <view class="loadDiscount flexStart">  <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png"></image>
+                <text class="downText">下降{{down2}}%</text>
+            </view>
             </view>
             <view class="poples">
                 <image class="defaulyAvator" src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png"></image>
@@ -181,7 +186,7 @@
         <!-- <view class="price">￥{{data.price}}
             <text class="orgAmount" wx:if="{{data.card.orgAmount}}">￥{{data.orgPrice}}</text>
         </view> -->
-       <view class="btnContent">立即购买</view> 
+       <view class="btnContent">￥{{data.orgPrice}}立即购买</view> 
     </view>
 
 

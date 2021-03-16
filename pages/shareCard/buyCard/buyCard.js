@@ -34,7 +34,9 @@ Page({
         maxDiscount: 0,
         acceptArr: [], //用户订阅消息
         type:'self',// 券类型
-        couponList:[]
+        couponList:[],
+        down1:0,
+        down2:0
     },
 
     /**
@@ -171,12 +173,16 @@ Page({
                         title: res.result.card.name,
                     })
                 }
+                let down1=res.result.card.grows[0].value*10;
+                let down2=res.result.card.grows[1].value*10;
                 that.setData({
                     selfCouponCount,
                     maxDiscount,
                     data: res.result,
                     'navbarData.title':res.result.name,
-                    couponList:res.result.benefits
+                    couponList:res.result.benefits,
+                    down1,
+                    down2
                 })
             }
         })

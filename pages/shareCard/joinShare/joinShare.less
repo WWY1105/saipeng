@@ -193,7 +193,7 @@ page {
 
     .targetDiscount {
       color: #F8CA86;
-
+      text-align: left;
       .tips {
         font-size: 20rpx;
       }
@@ -246,7 +246,7 @@ page {
         font-size: 28rpx;
         font-weight: bold;
         color: #FD582C;
-        line-height: 40rpx;
+        line-height: 48rpx;
       }
     }
   }
@@ -259,7 +259,13 @@ page {
     overflow-y: scroll;
     box-sizing: border-box;
     max-height: 520rpx;
-
+    .title{
+      font-size: 28rpx;
+font-weight: bold;
+color: #333333;
+line-height: 40rpx;
+margin-bottom: 20rpx;
+    }
     .selfCouponBox {
       // margin-top: 24rpx;
 
@@ -573,7 +579,7 @@ page {
     padding: 30rpx;
     box-sizing: border-box;
     border-radius: 8rpx;
-
+  overflow: hidden;
     .title {
       font-size: 28rpx;
       font-weight: bold;
@@ -614,16 +620,20 @@ page {
           font-weight: bold;
           color: #666666;
           line-height: 36rpx;
+        
+       .downText{
           background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
           -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-
-        }
+          background-clip: text;
+          color: transparent;
+       }
+      }
       }
 
       .poples {
         margin-top: 26rpx;
-
+        flex-wrap: nowrap;
+        overflow-x: scroll;
         .eachParter {
           margin: 0 50rpx 20rpx 0;
 
@@ -648,13 +658,13 @@ page {
 
   // 底部按钮
   .bottomBtn {
-    padding: 0 50rpx;
+    padding: 50rpx;
     position: fixed;
-    bottom: 70rpx;
+    bottom: 20rpx;
     width: 100%;
     box-sizing: border-box;
     z-index: 998;
-
+    background-color: #fff;
     .btnContent {
       width: 100%;
       height: 92rpx;

@@ -332,7 +332,26 @@ font-size: 200rpx;
 }
 
 
- 
+@keyframes wordsLoop {
+   0% {
+           transform: translateX(200px);
+           -webkit-transform: translateX(200px);
+    }
+   100% {
+          transform: translateX(-100%);
+          -webkit-transform: translateX(-100%);
+    }
+}
+@-webkit-keyframes wordsLoop {
+   0% {
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+   }
+   100% {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+   }
+}
  
  @keyframes bounce {
    0% {

@@ -14,7 +14,7 @@ page {
     // 顶部卡片-start
     .cardBox {
         padding: 30rpx;
-        background: linear-gradient(90deg, #FB8532 0%, #FE482A 100%);
+        background: linear-gradient(to right,#FE482A  0%, #FB8532 100%);
         box-shadow: 0px 4rpx 8rpx 0rpx rgba(132, 70, 14, 0.49);
         border-radius: 16rpx;
         box-sizing: border-box;
@@ -46,8 +46,6 @@ page {
                 width: 100%;
                 margin: 20rpx 0;
                 height: 2rpx;
-                border-radius: 1rpx;
-                background: linear-gradient(90deg, rgba(255, 94, 67, 1), rgba(255, 153, 81, 1));
             }
 
             .buyGet {
@@ -136,7 +134,7 @@ page {
                                 text-align: center;
                                 height: 36rpx;
                                 background: linear-gradient(128deg, #FFFEFE 0%, #F8EEDF 100%);
-                                box-shadow: 0px 4rpx 8rpx 0rpx rgba(132, 70, 14, 0.49);
+                                // box-shadow: 0px 4rpx 8rpx 0rpx rgba(132, 70, 14, 0.49);
                                 border-radius: 26rpx 26rpx 26rpx 0px;
                                 font-size: 20rpx;
                                 font-weight: bold;
@@ -172,7 +170,8 @@ page {
     .contentContainer {
         padding: 0 24rpx;
         width: 100%;
-
+        border-radius: 8rpx;
+        overflow: hidden;
         //   门店
         .shopInfo {
             margin-bottom: 20rpx;
@@ -196,10 +195,12 @@ page {
         .shopDetailBox {
             padding: 30rpx;
             margin-bottom: 30rpx;
-
+            border-radius: 8rpx;
+            overflow: hidden;
             .content {
                 box-sizing: border-box;
-
+                border-radius: 8rpx;
+                overflow: hidden;
                 .title {
                     color: #333333;
                     font-size: 34rpx;
@@ -214,8 +215,11 @@ page {
     .containerCouponBox {
         width: 100%;
         margin-top: 30rpx;
-        background-color: #fff;
+        // background-color: #fff;
         padding-bottom: 30rpx;
+        border-radius: 8rpx;
+        overflow: hidden;
+        box-shadow: 0px 4px 8px 0px rgba(0,0,0, 0.1);
         .titleBox {
             height: 107rpx;
             border-radius: 12rpx 8rpx 0px 0px;
@@ -249,7 +253,7 @@ page {
 
                 &.normal {
                     // background-color: #FFEFD2;
-                    width: 55%;
+                    width: 50%;
                     // z-index: -99;
                 }
 
@@ -344,7 +348,7 @@ page {
                         .couponNameAndDesc {
                             text-align: right;
                             padding-right: 40rpx;
-                            border-right: 2px dashed #8E6829;
+                            border-right: 2px dotted #8E6829;
                             flex: 1;
 
                             .couponName {
@@ -380,7 +384,8 @@ page {
         margin: 30rpx 0;
         padding: 30rpx;
         box-sizing: border-box;
-
+        border-radius: 8rpx;
+        overflow: hidden;
         .title {
             font-size: 28rpx;
             font-weight: bold;
@@ -415,22 +420,29 @@ page {
                     height: 20rpx;
                     margin: 0 10rpx;
                 }
+                .downText{
+
+                }
 
                 .loadDiscount {
                     font-size: 26rpx;
                     font-weight: bold;
                     color: #666666;
                     line-height: 36rpx;
+                  
+                 .downText{
                     background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
                     -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-
+                    background-clip: text;
+                    color: transparent;
+                 }
                 }
             }
 
             .poples {
                 margin-top: 26rpx;
-
+                flex-wrap: nowrap;
+    overflow-x: scroll;
                 .defaulyAvator {
                     width: 96rpx;
                     height: 96rpx;
@@ -450,12 +462,13 @@ page {
 
     // 底部按钮
     .bottomBtn {
-        padding: 0 50rpx;
+        padding: 50rpx;
         position: fixed;
-        bottom: 70rpx;
+        bottom: 20rpx;
         width: 100%;
         box-sizing: border-box;
         z-index: 998;
+        background-color: #fff;
 
         .btnContent {
             width: 100%;

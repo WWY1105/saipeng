@@ -103,8 +103,13 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
+        let discount = this.data.data.card.limit;
+        let url = "/pages/shareCard/joinShare/joinShare?id=" + this.data.data.id + "&type=card";
+        let title = '快领我的共享卡，和我共享全场' + discount + '折！'
         return {
-            title: '分享',
+            title: title,
+            path: url,
+            imageUrl: this.data.data.picUrl
         }
     },
     // 获取卡
