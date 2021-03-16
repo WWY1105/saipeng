@@ -7,6 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        nickname:'',
         navbarData:{
             height:app.globalData.height,
             title:'共享权益卡',
@@ -26,7 +27,8 @@ Page({
         maxDiscount: 0,
         showShopNum: 2,
         hasReceiptId: '',
-        acceptArr: [] //用户订阅消息
+        acceptArr: [], //用户订阅消息
+        userInfo:false
     },
 
     /**
@@ -46,6 +48,13 @@ Page({
                 type: options.type
             })
         }
+        if (options.nickname) {
+            this.setData({
+                nickname: options.nickname
+            })
+        }
+        this.setData({userInfo:wx.getStorageSync('userInfo')})
+        
     },
 
     /**
@@ -104,7 +113,7 @@ Page({
      */
     onShareAppMessage: function () {
         let discount = this.data.data.card.limit;
-        let url = "/pages/shareCard/joinShare/joinShare?id=" + this.data.data.id + "&type=card";
+        let url = "/pages/shareCard/joinShare/joinShare?id=" + this.data.data.id + "&type=card"+'&nickname='+this.data.userInfo.nickname;
         let title = '快领我的共享卡，和我共享全场' + discount + '折！'
         return {
             title: title,

@@ -86,7 +86,18 @@ page {
   line-height: 72rpx;
   text-shadow: 0px 2rpx 6rpx rgba(36, 41, 73, 0.71);
   position: absolute;
-  top: -90rpx;
+  top: -96rpx;
+  text-align: center;
+  height: 143rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.container .cardBoxContainer .cardBox .discountProcess .content .amount .amountTips {
+  font-size: 20rpx;
+  color: #FFE2B7;
+  line-height: 28rpx;
 }
 .container .cardBoxContainer .cardBox .discountProcess .content .startAmount {
   color: #FFE2B7;
@@ -169,6 +180,7 @@ page {
 }
 .container .advertiseBox .targetDiscount .targetDiscountText {
   align-items: flex-start;
+  position: relative;
 }
 .container .advertiseBox .targetDiscount .targetDiscountText .num {
   font-size: 60rpx;
@@ -178,6 +190,9 @@ page {
 }
 .container .advertiseBox .targetDiscount .targetDiscountText .zhe {
   font-size: 20rpx;
+  position: absolute;
+  right: -25rpx;
+  top: 16rpx;
 }
 .container .advertiseBox .invideBox {
   text-align: right;
@@ -303,6 +318,7 @@ page {
 .container .contentContainer .shopInfo .shopLogo {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 8rpx;
 }
 .container .contentContainer .shopInfo .shopInfoText {
   flex: 1;
@@ -483,6 +499,7 @@ page {
   box-sizing: border-box;
   border-radius: 8rpx;
   overflow: hidden;
+  width: 100%;
 }
 .container .activityDesc .title {
   font-size: 28rpx;
@@ -532,21 +549,48 @@ page {
   margin-top: 26rpx;
   flex-wrap: nowrap;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
-.container .activityDesc .part .poples .eachParter {
+.container .activityDesc .part .poples .eachParter .contentP {
   margin: 0 50rpx 20rpx 0;
 }
-.container .activityDesc .part .poples .eachParter .defaulyAvator {
+.container .activityDesc .part .poples .eachParter .imgBox {
+  position: relative;
+}
+.container .activityDesc .part .poples .eachParter .imgBox .decline {
+  height: 24rpx;
+  background: linear-gradient(to right, #FE482A 0%, #FB8532 100%);
+  border-radius: 24rpx;
+  line-height: 24rpx;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22rpx;
+  text-align: center;
+  padding: 0 10rpx;
+  position: absolute;
+  bottom: 0;
+  right: -14rpx;
+}
+.container .activityDesc .part .poples .eachParter .imgBox .decline .downArrow {
+  width: 12rpx;
+  height: 16rpx;
+  margin-right: 4rpx;
+}
+.container .activityDesc .part .poples .eachParter .imgBox .defaulyAvator {
   width: 96rpx;
   height: 96rpx;
   box-shadow: 0px 2px 14px 0px #FFF0DB;
-  margin-bottom: 16rpx;
   border-radius: 50%;
 }
 .container .activityDesc .part .poples .eachParter .text {
   font-size: 24rpx;
   color: #84460E;
   line-height: 32rpx;
+  margin-top: 16rpx;
+  max-width: 100rpx;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .bottomBtn {
   padding: 50rpx;

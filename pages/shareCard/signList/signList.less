@@ -65,7 +65,8 @@ page {
         &.circle1 {
           margin-left: -20rpx;
         }
-        &.circle2{
+
+        &.circle2 {
           margin-right: -20rpx;
         }
       }
@@ -85,15 +86,18 @@ page {
       width: 100%;
       padding-left: 15rpx;
       box-sizing: border-box;
+
       .eachList {
         width: 100%;
         padding: 20rpx 0;
         position: relative;
         padding-left: 30rpx;
-        .processLine{
+
+        .processLine {
           height: 100%;
           position: absolute;
           left: 0;
+
           // top:65rpx;
           .dot {
             width: 10rpx;
@@ -101,15 +105,18 @@ page {
             background: #FF781D;
             border-radius: 50%;
           }
-          .line{
+
+          .line {
             width: unset;
             border: 2rpx solid #FCF1E0;
             height: 50%;
-            &.hide{
+
+            &.hide {
               visibility: hidden;
             }
           }
         }
+
         .leftBox {
           .numBox {
             width: 96rpx;
@@ -154,19 +161,56 @@ page {
             font-size: 28rpx;
             font-weight: bold;
             color: #FFFFFF;
-            &.cannot{
+
+            &.cannot {
               border: 2rpx solid #FE482A;
               background: #fff;
               border-radius: 26rpx;
               color: #FE482A;
             }
           }
-          .hasErceiptIcon{
+
+          .hasErceiptIcon {
             width: 116rpx;
             height: 116rpx;
           }
         }
       }
+    }
+  }
+}
+
+
+.noDataBox {
+  background: #fff url(https://saler.ishangbin.com/img/shareCard/newStyle/signBg.png) bottom center no-repeat;
+  padding-bottom: 240rpx;
+  background-size:572rpx 250rpx ;
+  .shareArrow {
+    padding-top: 66rpx;
+    position: relative;
+    font-size: 28rpx;
+    color: #666666;
+    line-height: 40rpx;
+    padding-right: 165rpx;
+    margin-bottom: 96rpx;
+
+    .signArrow {
+      width: 82rpx;
+      height: 96rpx;
+      position: absolute;
+      top: 0;
+      right: 75rpx;
+    }
+  }
+
+  .nodataMidTips {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #84460E;
+    line-height: 50rpx;
+    padding-left: 56rpx;
+    .first{
+      margin-bottom: 8rpx;
     }
   }
 }

@@ -134,7 +134,7 @@ Page({
       that.setData({
          showLoading: true
       })
-      // encodeURI()
+  
       let json = {
          "keyword":that.data.keyword,
          "location": that.data.location.location,
@@ -144,6 +144,7 @@ Page({
          "page": page,
          "city": that.data.location.city || "021",
       }
+      console.log(json)
       let header=app.globalData.token;
       wx.request({
          url: app.util.getUrl('/activities', json),

@@ -201,13 +201,13 @@
         {
           "name": "卡列表进入卡详情",
           "pathName": "pages/shareCard/myCardDesc/myCardDesc",
-          "query": "id=fa62723062a2489a85c1aeae954b80f7",
+          "query": "id=596efd37ccda4e14b596e282f4d6ac78",
           "scene": null
         },
         {
           "name": "签收列表",
           "pathName": "pages/shareCard/signList/signList",
-          "query": "id=fa62723062a2489a85c1aeae954b80f7",
+          "query": "",
           "scene": null
         },
         {

@@ -14,7 +14,7 @@ page {
     // 顶部卡片-start
     .cardBox {
         padding: 30rpx;
-        background: linear-gradient(to right,#FE482A  0%, #FB8532 100%);
+        background: linear-gradient(to right, #FE482A 0%, #FB8532 100%);
         box-shadow: 0px 4rpx 8rpx 0rpx rgba(132, 70, 14, 0.49);
         border-radius: 16rpx;
         box-sizing: border-box;
@@ -172,23 +172,48 @@ page {
         width: 100%;
         border-radius: 8rpx;
         overflow: hidden;
+
         //   门店
         .shopInfo {
-            margin-bottom: 20rpx;
+            width: 100%;
+            margin-top: 30rpx;
 
             .shopLogo {
                 width: 100rpx;
                 height: 100rpx;
+                border-radius: 8rpx;
             }
 
-            .shopName {
-                font-size: 28rpx;
-                font-weight: bold;
-                color: #666666;
-                line-height: 40rpx;
-                margin-bottom: 10rpx;
-                padding-left: 20rpx;
+            .shopInfoText {
+                flex: 1;
+
+                .shopName {
+                    font-size: 28rpx;
+                    font-weight: bold;
+                    color: #666666;
+                    line-height: 40rpx;
+                    margin-bottom: 10rpx;
+                    padding-left: 20rpx;
+
+                    .moreShop {
+                        color: #666666;
+                        font-size: 24rpx;
+                        font-weight: normal;
+
+                        .arrowRight {
+                            width: 25rpx;
+                            height: 25rpx;
+                        }
+                    }
+                }
+
+                .address {
+                    color: #999;
+                    font-size: 24rpx;
+                    padding-left: 20rpx;
+                }
             }
+
         }
 
         // 商家详情
@@ -197,10 +222,12 @@ page {
             margin-bottom: 30rpx;
             border-radius: 8rpx;
             overflow: hidden;
+
             .content {
                 box-sizing: border-box;
                 border-radius: 8rpx;
                 overflow: hidden;
+
                 .title {
                     color: #333333;
                     font-size: 34rpx;
@@ -219,7 +246,8 @@ page {
         padding-bottom: 30rpx;
         border-radius: 8rpx;
         overflow: hidden;
-        box-shadow: 0px 4px 8px 0px rgba(0,0,0, 0.1);
+        box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+
         .titleBox {
             height: 107rpx;
             border-radius: 12rpx 8rpx 0px 0px;
@@ -291,6 +319,7 @@ page {
             box-sizing: border-box;
             max-height: 520rpx;
             min-height: 200rpx;
+
             .selfCouponBox {
                 margin-top: 24rpx;
 
@@ -386,6 +415,8 @@ page {
         box-sizing: border-box;
         border-radius: 8rpx;
         overflow: hidden;
+        width: 100%;
+
         .title {
             font-size: 28rpx;
             font-weight: bold;
@@ -420,29 +451,29 @@ page {
                     height: 20rpx;
                     margin: 0 10rpx;
                 }
-                .downText{
 
-                }
+                .downText {}
 
                 .loadDiscount {
                     font-size: 26rpx;
                     font-weight: bold;
                     color: #666666;
                     line-height: 36rpx;
-                  
-                 .downText{
-                    background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    color: transparent;
-                 }
+
+                    .downText {
+                        background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        color: transparent;
+                    }
                 }
             }
 
             .poples {
                 margin-top: 26rpx;
                 flex-wrap: nowrap;
-    overflow-x: scroll;
+                overflow-x: scroll;
+                overflow-y: hidden;
                 .defaulyAvator {
                     width: 96rpx;
                     height: 96rpx;
@@ -468,7 +499,6 @@ page {
         width: 100%;
         box-sizing: border-box;
         z-index: 998;
-        background-color: #fff;
 
         .btnContent {
             width: 100%;

@@ -45,6 +45,7 @@ const getDistance = distance => {
 }
 const getUrl = function (url, para = {}) {
    const app = getApp();
+
    //origin
    url += "?";
    const password = "037925fa578c4ed98885d7b28ade5462";
@@ -58,12 +59,14 @@ const getUrl = function (url, para = {}) {
       url += key_json[h] + "=" + j[key_json[h]] + "&";
    }
 
+   encode_str=encodeURI(encode_str)
+
    let i = md5.hexMD5(encode_str + password), m = "";
    for (let o = 0; o < i.length; o += 2) m += i.charAt(o);
    for (let s = 1; s < i.length; s += 2) m += i.charAt(s);
    return app.globalData.ajaxOrigin + url + "signature=" + m;
 };
-//json={url，method,success}
+
 let goon = true;
 const ajax = function (json) {
    if (!goon) return;
@@ -74,7 +77,7 @@ const ajax = function (json) {
       json.data = {};
    }
    const app = getApp();
-  
+
    wx.request({
       url: json.url,
       header: app.globalData.token,
@@ -128,10 +131,10 @@ const ajax = function (json) {
                      }
                   }
                })
-            }else{
+            } else {
                login();
             }
-          
+
          } else {
             json.success(res);
          }
@@ -140,32 +143,32 @@ const ajax = function (json) {
 
 }
 /*函数节流*/
-const throttle=function(fn, interval) {
+const throttle = function (fn, interval) {
    var enterTime = 0;//触发的时间
-   var gapTime = interval || 300 ;//间隔时间，如果interval不传，则默认300ms
-   return function() {
-     var context = this;
-     var backTime = new Date();//第一次函数return即触发的时间
-     if (backTime - enterTime > gapTime) {
-       fn.call(context,arguments);
-       enterTime = backTime;//赋值给第一次触发的时间，这样就保存了第二次触发的时间
-     }
+   var gapTime = interval || 300;//间隔时间，如果interval不传，则默认300ms
+   return function () {
+      var context = this;
+      var backTime = new Date();//第一次函数return即触发的时间
+      if (backTime - enterTime > gapTime) {
+         fn.call(context, arguments);
+         enterTime = backTime;//赋值给第一次触发的时间，这样就保存了第二次触发的时间
+      }
    };
- }
- 
- /*函数防抖*/
- const debounce=function(fn, interval) {
+}
+
+/*函数防抖*/
+const debounce = function (fn, interval) {
    var timer;
    var gapTime = interval || 200;//间隔时间，如果interval不传，则默认1000ms
-   return function() {
-     clearTimeout(timer);
-     var context = this;
-     var args = arguments;//保存此处的arguments，因为setTimeout是全局的，arguments不是防抖函数需要的。
-     timer = setTimeout(function() {
-       fn.call(context,args);
-     }, gapTime);
+   return function () {
+      clearTimeout(timer);
+      var context = this;
+      var args = arguments;//保存此处的arguments，因为setTimeout是全局的，arguments不是防抖函数需要的。
+      timer = setTimeout(function () {
+         fn.call(context, args);
+      }, gapTime);
    };
- }
+}
 function isHttpSuccess(status) {
    return status >= 200 && status < 300 || status === 304;
 }
@@ -219,7 +222,7 @@ function getSessionId() {
       }
    });
 }
-function authSuccess(fn){
+function authSuccess(fn) {
    fn()
 }
 
@@ -310,7 +313,7 @@ function request(that, options = {}, keepLogin = true) {
                                     if (that.selectComponent("#authpop")) {
                                        pop = that.selectComponent("#authpop");
                                        pop.hiddenpop();
-                                       
+
                                        requestP(options)
                                           .then(res)
                                           .catch(rej);
@@ -377,7 +380,7 @@ function getLocation(that) {
                      })
                      wx.setStorageSync('citys', city)
                      console.log(curl)
-                     if (curl == 'pages/home/home' || curl == 'pages/city/city' || curl == 'pages/recipients/index'){
+                     if (curl == 'pages/home/home' || curl == 'pages/city/city' || curl == 'pages/recipients/index') {
                         // 切换当前位置
                         that.loadCity(res.latitude, res.longitude);
                      }
@@ -408,7 +411,7 @@ function getLocation(that) {
          // that.setData({
          //    has_no_auth_address: true
          // })
-        
+
       }
    })
 

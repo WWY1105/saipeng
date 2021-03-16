@@ -1,5 +1,5 @@
 <!--pages/shareCard/signList/signList.wxml-->
-<view class="signListBox">
+<view class="signListBox" wx:if="{{signList}}">
   <view class="advertiseBox flexCenter flexColumn">
     <view class="tips">当前可用折扣</view>
     <view class="disCountBox">
@@ -30,11 +30,12 @@
             <view class="numBox">{{signList.amount}}</view>
             <view class="textBox">
               <view class="name">{{signList.amount}}折</view>
-              <view class="desc">继续签收更低折扣</view>
+              <view class="desc">分享一下，即可完成签收</view>
             </view>
           </view>
           <view class="rightBtn">
-           <image class="hasErceiptIcon" src="https://saler.ishangbin.com/img/shareCard/newStyle/hasErceipt.png"></image>
+            <image class="hasErceiptIcon" src="https://saler.ishangbin.com/img/shareCard/newStyle/hasErceipt.png">
+            </image>
           </view>
         </view>
         <view class="eachList flexSpace" wx:for="{{signList.records}}" wx:for-index="index" wx:key="*this">
@@ -50,12 +51,24 @@
               <view class="desc">继续签收更低折扣</view>
             </view>
           </view>
-          <view class="rightBtn" bindtap="toSign" >
+          <view class="rightBtn" bindtap="toSign" data-id="{{item.id}}">
             <button class="signBtn" wx:if="{{index==0}}" open-type="share" data-id="{{item.id}}">立即签收</button>
-            <button class="signBtn cannot" wx:else  >立即签收</button>
+            <button class="signBtn cannot" wx:else bindtap="showTips">立即签收</button>
           </view>
         </view>
       </view>
     </view>
+  </view>
+</view>
+
+
+<view wx:else class="noDataBox bgf">
+  <view class="shareArrow flexEnd">
+     <text>继续优惠买单请点击这里</text>
+     <image class="signArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/signArrow.png"></image>
+  </view>
+  <view class="nodataMidTips">
+    <view class="first">恭喜！已签收当前所有的折扣！</view>
+    <view>快去用卡吧！</view>
   </view>
 </view>

@@ -19,11 +19,13 @@ page {
     width: 100%;
     margin-bottom: 10rpx;
     overflow: hidden;
-    .loopAnimate{
+
+    .loopAnimate {
       display: inline-block;
       white-space: nowrap;
       animation: 10s wordsLoop linear infinite normal;
     }
+
     .tongzhi {
       width: 27rpx;
       height: 24rpx;
@@ -40,7 +42,7 @@ page {
 
     .cardBox {
       margin-bottom: 30rpx;
-      background: linear-gradient(to right, #464B62 0%,#3A3D50 100%);
+      background: linear-gradient(to right, #464B62 0%, #3A3D50 100%);
       box-shadow: 0px 4rpx 14rpx 0rpx rgba(58, 61, 80, 0.55);
       border-radius: 16rpx;
       width: 100%;
@@ -147,7 +149,8 @@ page {
             flex-direction: column;
             justify-content: space-between;
             align-content: space-between;
-            .amountTips{
+
+            .amountTips {
               font-size: 20rpx;
               color: #FFE2B7;
               line-height: 28rpx;
@@ -182,7 +185,7 @@ page {
         left: 0;
         bottom: 0;
         width: 100%;
-        background: linear-gradient(to right,#515773 0%,   #44485D 100%);
+        background: linear-gradient(to right, #515773 0%, #44485D 100%);
         border-radius: 0px 0px 16rpx 16rpx;
         padding: 26rpx 30rpx;
         box-sizing: border-box;
@@ -246,13 +249,17 @@ page {
     .targetDiscount {
       color: #F8CA86;
       text-align: left;
+      position: relative;
+
       .tips {
         font-size: 20rpx;
+        line-height: 24rpx;
+        color: #F8CA86;
       }
 
       .targetDiscountText {
         align-items: flex-start;
-
+        position: relative;
         .num {
           font-size: 60rpx;
           font-weight: bold;
@@ -262,362 +269,407 @@ page {
 
         .zhe {
           font-size: 20rpx;
+          position: absolute;
+          right: -25rpx;
+          top: 16rpx;
         }
       }
-
-
     }
 
-    .invideBox {
-      text-align: right;
-      align-items: flex-end;
 
-      .transText {
-        font-size: 20rpx;
-        font-weight: bold;
-        color: #FFE2B7;
-        line-height: 24rpx;
-        margin-bottom: 6rpx;
-      }
+  }
 
-      .midText {
-        font-size: 24rpx;
-        font-weight: bold;
-        color: #FFFFFF;
-        line-height: 28rpx;
-        margin-bottom: 10rpx;
-      }
+  .invideBox {
+    text-align: right;
+    align-items: flex-end;
 
-      .invideSmallBtn {
-        width: 152rpx;
-        height: 48rpx;
-        background: #FFE2B7;
-        border-radius: 26rpx;
-        text-align: center;
-        line-height: 48rpx;
-        font-size: 28rpx;
-        font-weight: bold;
-        color: #FD582C;
-        line-height: 40rpx;
-      }
+    .transText {
+      font-size: 20rpx;
+      font-weight: bold;
+      color: #FFE2B7;
+      line-height: 24rpx;
+      margin-bottom: 6rpx;
+    }
+
+    .midText {
+      font-size: 24rpx;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 28rpx;
+      margin-bottom: 10rpx;
+    }
+
+    .invideSmallBtn {
+      width: 152rpx;
+      height: 48rpx;
+      background: #FFE2B7;
+      border-radius: 26rpx;
+      text-align: center;
+      line-height: 48rpx;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #FD582C;
+    }
+  }
+}
+
+.contentContainer {
+  padding: 0 24rpx;
+  width: 100%;
+  border-radius: 8rpx;
+  overflow: hidden;
+
+  .content {
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-radius: 8rpx;
+    overflow: hidden;
+
+    .title {
+      color: #333333;
+      font-size: 34rpx;
+      font-weight: bold;
     }
   }
 
-  .contentContainer {
-    padding: 0 24rpx;
+  //   门店
+  .shopInfo {
+    margin-bottom: 30rpx;
     width: 100%;
-    border-radius: 8rpx;
-    overflow: hidden;
-    .content {
-      padding: 30rpx;
-      box-sizing: border-box;
+
+    .shopLogo {
+      width: 100rpx;
+      height: 100rpx;
       border-radius: 8rpx;
-      overflow: hidden;
+    }
+
+    .shopInfoText {
+      flex: 1;
+
+      .shopName {
+        font-size: 28rpx;
+        font-weight: bold;
+        color: #666666;
+        line-height: 40rpx;
+        margin-bottom: 10rpx;
+        padding-left: 20rpx;
+
+        .moreShop {
+          color: #666666;
+          font-size: 24rpx;
+          font-weight: normal;
+
+          .arrowRight {
+            width: 25rpx;
+            height: 25rpx;
+          }
+        }
+      }
+
+      .address {
+        color: #999;
+        font-size: 24rpx;
+        padding-left: 20rpx;
+      }
+    }
+
+  }
+
+  // 商家详情
+  .shopDetailBox {
+    padding: 30rpx;
+    margin-bottom: 30rpx;
+
+    .content {
+      box-sizing: border-box;
+
       .title {
         color: #333333;
         font-size: 34rpx;
         font-weight: bold;
       }
     }
-
-    //   门店
-    .shopInfo {
-      margin-bottom: 30rpx;
-      width: 100%;
-
-      .shopLogo {
-        width: 100rpx;
-        height: 100rpx;
-      }
-.shopInfoText{
-  flex:1;
-  .shopName {
-    font-size: 28rpx;
-    font-weight: bold;
-    color: #666666;
-    line-height: 40rpx;
-    margin-bottom: 10rpx;
-    padding-left: 20rpx;
-    .moreShop{
-      color: #666666;
-      font-size: 24rpx;
-      font-weight: normal;
-      .arrowRight{
-        width: 25rpx;
-        height: 25rpx;
-      }
-    }
   }
 
-  .address {
-    color: #999;
-    font-size: 24rpx;
-    padding-left: 20rpx;
-  }
 }
-    
-    }
 
-    // 商家详情
-    .shopDetailBox {
-      padding: 30rpx;
-      margin-bottom: 30rpx;
+// 券
+.containerCouponBox {
+  background-image: url(https://saler.ishangbin.com/img/shareCard/newStyle/bg3.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 600rpx;
+  position: relative;
+  width: 100%;
+  margin-top: 30rpx;
 
-      .content {
-        box-sizing: border-box;
-
-        .title {
-          color: #333333;
-          font-size: 34rpx;
-          font-weight: bold;
-        }
-      }
-    }
-
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 648rpx;
+    z-index: -1;
   }
 
-  // 券
-  .containerCouponBox {
-    background-image: url(https://saler.ishangbin.com/img/shareCard/newStyle/bg3.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    min-height: 600rpx;
+  .titleBox {
+    height: 107rpx;
+    border-radius: 12rpx 8rpx 0px 0px;
     position: relative;
-    width: 100%;
-    margin-top: 30rpx;
 
-    .bg {
-      position: absolute;
-      width: 100%;
-      height: 648rpx;
-      z-index: -1;
-    }
+    .containerCouponTitle {
+      text-align: center;
+      height: 100%;
+      color: #84460E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-    .titleBox {
-      height: 107rpx;
-      border-radius: 12rpx 8rpx 0px 0px;
-      position: relative;
+      &.active {
+        color: #333333;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+      }
 
-      .containerCouponTitle {
-        text-align: center;
-        height: 100%;
-        color: #84460E;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+      &.normal {
+        background-color: #FFEFD2;
+        width: 55%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -99;
+      }
 
-        &.active {
-          color: #333333;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 50%;
-        }
+      .main {
+        font-size: 28rpx;
+        line-height: 40rpx;
+        font-weight: bold;
+        margin-bottom: 5rpx;
+      }
 
-        &.normal {
-          background-color: #FFEFD2;
-          width: 55%;
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          z-index: -99;
-        }
-
-        .main {
-          font-size: 28rpx;
-          line-height: 40rpx;
-          font-weight: bold;
-          margin-bottom: 5rpx;
-        }
-
-        .second {
-          font-size: 22rpx;
-          font-weight: normal;
-          line-height: 32rpx;
-        }
+      .second {
+        font-size: 22rpx;
+        font-weight: normal;
+        line-height: 32rpx;
       }
     }
+  }
 
-    .couponBoxList {
-      padding: 0 24rpx;
-      z-index: 9999;
-      width: 100%;
-      top: 110rpx;
-      overflow-y: scroll;
-      box-sizing: border-box;
-      max-height: 520rpx;
+  .couponBoxList {
+    padding: 0 24rpx;
+    z-index: 9999;
+    width: 100%;
+    top: 110rpx;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    max-height: 520rpx;
 
-      .selfCouponBox {
-        margin-top: 24rpx;
+    .selfCouponBox {
+      margin-top: 24rpx;
 
-        .leftBox {
-          height: 136rpx;
-          flex: 1;
-          background: linear-gradient(90deg, #FFECD4 0%, #FFE7D2 100%);
-          border-radius: 8rpx;
+      .leftBox {
+        height: 136rpx;
+        flex: 1;
+        background: linear-gradient(90deg, #FFECD4 0%, #FFE7D2 100%);
+        border-radius: 8rpx;
 
-          .couponCategory {
-            width: 107rpx;
-            height: 100%;
-            background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
-            background-size: cover;
-            border-radius: 8rpx 0px 60rpx 8rpx;
+        .couponCategory {
+          width: 107rpx;
+          height: 100%;
+          background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
+          background-size: cover;
+          border-radius: 8rpx 0px 60rpx 8rpx;
 
-            .couponIcon {
-              width: 40rpx;
-              height: 24rpx;
-              margin-bottom: 12rpx;
-            }
-
-            .couponCategoryText {
-              color: #FFE2B7;
-              font-size: 26rpx;
-            }
+          .couponIcon {
+            width: 40rpx;
+            height: 24rpx;
+            margin-bottom: 12rpx;
           }
 
-          .content {
+          .couponCategoryText {
+            color: #FFE2B7;
+            font-size: 26rpx;
+          }
+        }
+
+        .content {
+          flex: 1;
+
+          .couponAmount {
+            padding: 0;
+            font-size: 60rpx;
+            font-weight: bold;
+            color: #84460E;
+            line-height: 84rpx;
+            min-width: 160rpx;
+            text-align: center;
+
+            .currentAmount {
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+
+              .yuan {
+                font-weight: normal;
+                font-size: 20rpx;
+                padding-left: 10rpx;
+              }
+            }
+
+          }
+
+          .couponNameAndDesc {
+            text-align: right;
+            padding-right: 40rpx;
+            border-right: 2px dashed #8E6829;
             flex: 1;
 
-            .couponAmount {
-              padding: 0;
-              font-size: 60rpx;
-              font-weight: bold;
+            .couponName {
               color: #84460E;
-              line-height: 84rpx;
-              min-width: 160rpx;
-              text-align: center;
-
-              .currentAmount {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-
-                .yuan {
-                  font-weight: normal;
-                  font-size: 20rpx;
-                  padding-left: 10rpx;
-                }
-              }
-
+              font-size: 28rpx;
+              font-weight: bold;
+              margin-bottom: 4rpx;
+              line-height: 40rpx;
             }
 
-            .couponNameAndDesc {
-              text-align: right;
-              padding-right: 40rpx;
-              border-right: 2px dashed #8E6829;
-              flex: 1;
+            .couponDesc {
+              font-size: 20rpx;
+              color: #666666;
+              line-height: 28rpx;
 
-              .couponName {
-                color: #84460E;
-                font-size: 28rpx;
-                font-weight: bold;
-                margin-bottom: 4rpx;
-                line-height: 40rpx;
-              }
-
-              .couponDesc {
-                font-size: 20rpx;
-                color: #666666;
-                line-height: 28rpx;
-
-              }
             }
           }
         }
+      }
 
-        .rightNum {
-          color: #FE4A2A;
-          font-size: 48rpx;
-          font-weight: bold;
-          padding-left: 10rpx;
-        }
+      .rightNum {
+        color: #FE4A2A;
+        font-size: 48rpx;
+        font-weight: bold;
+        padding-left: 10rpx;
       }
     }
   }
+}
 
-  // 活动折扣介绍
-  .activityDesc {
-    margin: 30rpx 0;
-    padding: 30rpx;
-    box-sizing: border-box;
-    border-radius: 8rpx;
-    .title {
-      font-size: 28rpx;
-      font-weight: bold;
-      color: #84460E;
-      line-height: 40rpx;
-      margin-bottom: 30rpx;
-    }
+// 活动折扣介绍
+.activityDesc {
+  margin: 30rpx 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 8rpx;
 
-    .part {
-      margin-bottom: 30rpx;
+  .title {
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #84460E;
+    line-height: 40rpx;
+    margin-bottom: 30rpx;
+  }
 
-      .introduce {
+  .part {
+    margin-bottom: 30rpx;
+
+    .introduce {
+      font-size: 26rpx;
+      color: #666666;
+      line-height: 36rpx;
+
+      .cardIcon {
+        background-image: url(https://saler.ishangbin.com/img/shareCard/newStyle/kaTagBg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 88rpx;
+        height: 32rpx;
+        line-height: 32rpx;
+        text-align: center;
+        color: #84460E;
+        font-size: 24rpx;
+        margin-right: 6rpx;
+      }
+
+      .downArrow {
+        width: 12rpx;
+        height: 20rpx;
+        margin: 0 10rpx;
+      }
+
+      .loadDiscount {
         font-size: 26rpx;
+        font-weight: bold;
         color: #666666;
         line-height: 36rpx;
 
-        .cardIcon {
-          background-image: url(https://saler.ishangbin.com/img/shareCard/newStyle/kaTagBg.png);
-          background-size: 100% 100%;
-          background-repeat: no-repeat;
-          width: 88rpx;
-          height: 32rpx;
-          line-height: 32rpx;
-          text-align: center;
-          color: #84460E;
-          font-size: 24rpx;
-          margin-right: 6rpx;
-        }
-
-        .downArrow {
-          width: 12rpx;
-          height: 20rpx;
-          margin: 0 10rpx;
-        }
-
-        .loadDiscount {
-          font-size: 26rpx;
-          font-weight: bold;
-          color: #666666;
-          line-height: 36rpx;
-        
-       .downText{
+        .downText {
           background: linear-gradient(90deg, #FE482A 0%, #FB8532 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
-       }
+        }
       }
-      }
+    }
 
-      .poples {
-        margin-top: 26rpx;
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        .eachParter {
+    .poples {
+      margin-top: 26rpx;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      .eachParter {
+        .contentP {
           margin: 0 50rpx 20rpx 0;
+        }
+
+        .imgBox {
+          position: relative;
+
+          .decline {
+            height: 24rpx;
+            background: linear-gradient(to right, #FE482A 0%, #FB8532 100%);
+            border-radius: 24rpx;
+            line-height: 24rpx;
+            color: #fff;
+            font-weight: bold;
+            font-size: 22rpx;
+            text-align: center;
+            padding: 0 10rpx;
+            position: absolute;
+            bottom: 0;
+            right: -14rpx;
+
+            .downArrow {
+              width: 12rpx;
+              height: 16rpx;
+              margin-right: 4rpx;
+            }
+          }
 
           .defaulyAvator {
             width: 96rpx;
             height: 96rpx;
             box-shadow: 0px 2px 14px 0px #FFF0DB;
-            margin-bottom: 16rpx;
             border-radius: 50%;
           }
+        }
 
-          .text {
-            font-size: 24rpx;
-            color: #84460E;
-            line-height: 32rpx;
-          }
+        .text {
+          font-size: 24rpx;
+          color: #84460E;
+          line-height: 32rpx;
+          margin-top: 16rpx;
+          max-width: 100rpx;
+          word-break: keep-all;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
         }
 
       }
     }
   }
 
+
+}
   // 底部按钮
   .bottomBtn {
     padding: 50rpx;
@@ -626,7 +678,7 @@ page {
     width: 100%;
     box-sizing: border-box;
     z-index: 998;
- background-color: #fff;
+    background-color: #fff;
 
     .btnContent {
       width: 100%;
@@ -642,80 +694,93 @@ page {
       line-height: 44px;
     }
   }
-}
-
 // 有待签收的弹窗 
-.signModalModal {
+.signModal {
   width: 596rpx;
   height: 680rpx;
   background: url(https://saler.ishangbin.com/img/shareCard/newStyle/dialogBg.png) 0 0 no-repeat;
   background-size: cover;
 
-  .topTips {
-    width: 416rpx;
-    height: 64rpx;
-    background: linear-gradient(137deg, #464A69 0%, #3A3D50 100%);
-    box-shadow: 0rpx 2rpx 4rpx 0rpx rgba(42, 46, 68, 0.71);
-    border-radius: 36rpx;
-    line-height: 64rpx;
-    text-align: center;
-    font-size: 28rpx;
-    font-weight: bold;
-    color: #E1E3F1;
-    margin-bottom: 18rpx;
-    margin-top: 200rpx;
-  }
+  .modalContent {
+    position: relative;
 
-  .discountBox {
-    font-size: 100rpx;
-    font-weight: bold;
-    color: #FFFFFF;
-    line-height: 120rpx;
-    letter-spacing: 2rpx;
-    text-shadow: 0rpx 2rpx 6rpx rgba(32, 34, 50, 0.6);
-    // background: linear-gradient(180deg, #FFFFFF 100%);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    margin-bottom: 20rpx;
-  }
-
-  .discountTips {
-    font-size: 28rpx;
-    color: #F8CA86;
-    line-height: 40rpx;
-    text-shadow: 0rpx 2rpx 2rpx rgba(32, 34, 50, 0.6);
-    margin-bottom: 40rpx;
-    .line {
-      width: 40rpx;
-      height: 2rpx;
-      background: #F8CA86;
-      box-shadow: 0rpx 2rpx 2rpx 0rpx rgba(32, 34, 50, 0.6);
-      display: inline-block;
-      margin:0 10rpx;
+    .closeBtn {
+      position: absolute;
+      width: 60rpx;
+      height: 60rpx;
+      top: -80rpx;
+      right: 0;
     }
-  }
-  .getButton{
-    width: 480rpx;
-height: 88rpx;
-background: linear-gradient(180deg, #FFECD4 0%, #D9A77A 100%);
-box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(32, 34, 50, 0.6);
-border-radius: 16rpx;
-text-align: center;
-line-height: 88rpx;
-font-size: 36rpx;
-font-weight: bold;
-color: #3A3D50;
-letter-spacing: 1rpx;
-text-shadow: 0rpx 2rpx 0rpx rgba(255, 255, 255, 0.6);
-.arrowRight{
-  display: inline-block;
-  width: 0;
-  height: 0;
-  // border:20rpx solid  #3A3D50;
-  border-top: 10rpx solid transparent;
-  border-left: 10rpx solid #3A3D50;
-  border-bottom: 10rpx solid transparent;
-  margin-left:8rpx;
-}
+
+    .topTips {
+      width: 416rpx;
+      height: 64rpx;
+      background: linear-gradient(137deg, #464A69 0%, #3A3D50 100%);
+      box-shadow: 0rpx 2rpx 4rpx 0rpx rgba(42, 46, 68, 0.71);
+      border-radius: 36rpx;
+      line-height: 64rpx;
+      text-align: center;
+      font-size: 28rpx;
+      font-weight: bold;
+      color: #E1E3F1;
+      margin-bottom: 18rpx;
+      margin-top: 200rpx;
+    }
+
+    .discountBox {
+      font-size: 100rpx;
+      font-weight: bold;
+      color: #FFFFFF;
+      line-height: 120rpx;
+      letter-spacing: 2rpx;
+      text-shadow: 0rpx 2rpx 6rpx rgba(32, 34, 50, 0.6);
+      // background: linear-gradient(180deg, #FFFFFF 100%);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      margin-bottom: 20rpx;
+    }
+
+    .discountTips {
+      font-size: 28rpx;
+      color: #F8CA86;
+      line-height: 40rpx;
+      text-shadow: 0rpx 2rpx 2rpx rgba(32, 34, 50, 0.6);
+      margin-bottom: 40rpx;
+
+      .line {
+        width: 40rpx;
+        height: 2rpx;
+        background: #F8CA86;
+        box-shadow: 0rpx 2rpx 2rpx 0rpx rgba(32, 34, 50, 0.6);
+        display: inline-block;
+        margin: 0 10rpx;
+      }
+    }
+
+    .getButton {
+      width: 480rpx;
+      height: 88rpx;
+      background: linear-gradient(180deg, #FFECD4 0%, #D9A77A 100%);
+      box-shadow: 0rpx 2rpx 10rpx 0rpx rgba(32, 34, 50, 0.6);
+      border-radius: 16rpx;
+      text-align: center;
+      line-height: 88rpx;
+      font-size: 36rpx;
+      font-weight: bold;
+      color: #3A3D50;
+      letter-spacing: 1rpx;
+      text-shadow: 0rpx 2rpx 0rpx rgba(255, 255, 255, 0.6);
+
+      .arrowRight {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        // border:20rpx solid  #3A3D50;
+        border-top: 10rpx solid transparent;
+        border-left: 10rpx solid #3A3D50;
+        border-bottom: 10rpx solid transparent;
+        margin-left: 8rpx;
+      }
+    }
   }
 }

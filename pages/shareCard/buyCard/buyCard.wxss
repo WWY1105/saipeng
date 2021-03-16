@@ -138,18 +138,37 @@ page {
   overflow: hidden;
 }
 .container .contentContainer .shopInfo {
-  margin-bottom: 20rpx;
+  width: 100%;
+  margin-top: 30rpx;
 }
 .container .contentContainer .shopInfo .shopLogo {
   width: 100rpx;
   height: 100rpx;
+  border-radius: 8rpx;
 }
-.container .contentContainer .shopInfo .shopName {
+.container .contentContainer .shopInfo .shopInfoText {
+  flex: 1;
+}
+.container .contentContainer .shopInfo .shopInfoText .shopName {
   font-size: 28rpx;
   font-weight: bold;
   color: #666666;
   line-height: 40rpx;
   margin-bottom: 10rpx;
+  padding-left: 20rpx;
+}
+.container .contentContainer .shopInfo .shopInfoText .shopName .moreShop {
+  color: #666666;
+  font-size: 24rpx;
+  font-weight: normal;
+}
+.container .contentContainer .shopInfo .shopInfoText .shopName .moreShop .arrowRight {
+  width: 25rpx;
+  height: 25rpx;
+}
+.container .contentContainer .shopInfo .shopInfoText .address {
+  color: #999;
+  font-size: 24rpx;
   padding-left: 20rpx;
 }
 .container .contentContainer .shopDetailBox {
@@ -311,6 +330,7 @@ page {
   box-sizing: border-box;
   border-radius: 8rpx;
   overflow: hidden;
+  width: 100%;
 }
 .container .activityDesc .title {
   font-size: 28rpx;
@@ -360,6 +380,7 @@ page {
   margin-top: 26rpx;
   flex-wrap: nowrap;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 .container .activityDesc .part .poples .defaulyAvator {
   width: 96rpx;
@@ -380,7 +401,6 @@ page {
   width: 100%;
   box-sizing: border-box;
   z-index: 998;
-  background-color: #fff;
 }
 .container .bottomBtn .btnContent {
   width: 100%;

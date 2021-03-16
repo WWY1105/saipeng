@@ -140,3 +140,34 @@ page {
   width: 116rpx;
   height: 116rpx;
 }
+.noDataBox {
+  background: #fff url(https://saler.ishangbin.com/img/shareCard/newStyle/signBg.png) bottom center no-repeat;
+  padding-bottom: 240rpx;
+  background-size: 572rpx 250rpx ;
+}
+.noDataBox .shareArrow {
+  padding-top: 66rpx;
+  position: relative;
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 40rpx;
+  padding-right: 165rpx;
+  margin-bottom: 96rpx;
+}
+.noDataBox .shareArrow .signArrow {
+  width: 82rpx;
+  height: 96rpx;
+  position: absolute;
+  top: 0;
+  right: 75rpx;
+}
+.noDataBox .nodataMidTips {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #84460E;
+  line-height: 50rpx;
+  padding-left: 56rpx;
+}
+.noDataBox .nodataMidTips .first {
+  margin-bottom: 8rpx;
+}

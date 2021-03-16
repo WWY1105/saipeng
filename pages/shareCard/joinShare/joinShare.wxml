@@ -25,7 +25,8 @@
                 <view class="content">
                     <view class="startAmount">{{data.card.orgAmount}}</view>
                     <view class="amount">
-                        <text class="discountNum" wx:if="{{data.card.amount}}">{{data.card.amount}}</text>
+                        <view class="discountNum" wx:if="{{data.card.amount}}">{{data.card.amount}}</view>
+                        <view class="amountTips">当前折扣</view>
                     </view>
                     <view class="limit flexCenter" wx:if="{{data.card.limit}}">
                         目标折扣<text class="discountNum">{{data.card.limit}}</text>
@@ -36,54 +37,55 @@
 
         </view>
     </view>
-       <!-- 获得的券信息 -->
-       <view class="benefitBox">
-           <view class="title">领卡即可获得</view>
-        <view class="selfCouponBox flexSpace" >
-                <!-- 左边券类型 -->
-                <view class="leftBox flexStart">
-                    <view class="couponCategory flexCenter flexColumn">
-                        <view class="couponCategoryText">有效期</view>
-                        <view  class="couponCategoryText"> {{data.benefit.days||0}}天</view> 
+    <!-- 获得的券信息 -->
+    <view class="benefitBox">
+        <view class="title">领卡即可获得</view>
+        <view class="selfCouponBox flexSpace">
+            <!-- 左边券类型 -->
+            <view class="leftBox flexStart">
+                <view class="couponCategory flexCenter flexColumn">
+                    <view class="couponCategoryText">有效期</view>
+                    <view class="couponCategoryText"> {{data.benefit.days||0}}天</view>
+                </view>
+                <view class="content flexStart">
+                    <view class="couponNameAndDesc">
+                        <view class="couponName">
+                            <text class="todayUsable" wx:if="{{data.benefit.todayUsable}}">当场可用</text>
+                            <text
+                                wx:if="{{data.benefit.couponCategory=='903'||data.benefit.couponCategory=='9031'}}">折扣券</text>
+                            <text wx:if="{{data.benefit.couponCategory=='902'}}">实物券</text>
+                            <text wx:if="{{data.benefit.couponCategory=='9012'}}">满减券</text>
+                            <text wx:if="{{data.benefit.couponCategory=='901'}}">代金券</text>
+                            <text wx:if="{{data.benefit.couponCategory=='904'}}">礼品券</text>
+                        </view>
+                        <view class="couponDesc">{{data.benefit.useStrategy}}</view>
                     </view>
-                    <view class="content flexStart">
-                        <view class="couponNameAndDesc">
-                            <view class="couponName">
-                                <text class="todayUsable" wx:if="{{data.benefit.todayUsable}}">当场可用</text>
-                                <text wx:if="{{data.benefit.couponCategory=='903'||data.benefit.couponCategory=='9031'}}">折扣券</text>
-                                <text wx:if="{{data.benefit.couponCategory=='902'}}">实物券</text>
-                                <text wx:if="{{data.benefit.couponCategory=='9012'}}">满减券</text>
-                                <text wx:if="{{data.benefit.couponCategory=='901'}}">代金券</text>
-                                <text wx:if="{{data.benefit.couponCategory=='904'}}">礼品券</text>
-                            </view>
-                            <view class="couponDesc">{{data.benefit.useStrategy}}</view>
-                        </view>
 
-                        <view class="couponAmount" wx:if="{{data.benefit.couponCategory=='903'}}">
-                            <view class="currentAmount"> {{data.benefit.amount}} <text class="yuan">折 </text></view>
+                    <view class="couponAmount" wx:if="{{data.benefit.couponCategory=='903'}}">
+                        <view class="currentAmount"> {{data.benefit.amount}} <text class="yuan">折 </text></view>
+                    </view>
+                    <view class="couponAmount flexStart flexColumn" wx:elif="{{data.benefit.couponCategory=='902'}}">
+                        <view class="currentAmount">
+                            {{data.benefit.currentAmount}}
+                            <text class="yuan">元</text>
                         </view>
-                        <view class="couponAmount flexStart flexColumn" wx:elif="{{data.benefit.couponCategory=='902'}}">
-                            <view class="currentAmount">
-                                {{data.benefit.currentAmount}}
-                                <text class="yuan">元</text>
-                            </view>
-                            <!-- 原价 -->
-                            <!-- <view class="{{data.benefit.currentAmount?'lineAmount':''}}">{{data.benefit.amount}}  <text class="yuan">元</text></view> -->
+                        <!-- 原价 -->
+                        <!-- <view class="{{data.benefit.currentAmount?'lineAmount':''}}">{{data.benefit.amount}}  <text class="yuan">元</text></view> -->
+                    </view>
+                    <view class="couponAmount flexStart flexColumn" wx:elif="{{data.benefit.couponCategory=='9012'}}">
+                        <view class="currentAmount">
+                            {{data.benefit.reduceAmount}}
+                            <text class="yuan">元</text>
                         </view>
-                        <view class="couponAmount flexStart flexColumn" wx:elif="{{data.benefit.couponCategory=='9012'}}">
-                            <view class="currentAmount">
-                                {{data.benefit.reduceAmount}}
-                                <text class="yuan">元</text>
-                            </view>
-                            <!-- <view class="reduceLimit">最多减{{data.benefit.reduceLimit}}元</view> -->
-                        </view>
-                        <view class="couponAmount flexStart flexColumn" wx:else>
-                            <view class="currentAmount">{{data.benefit.amount}} <text class="yuan">元</text></view>
-                        </view>
+                        <!-- <view class="reduceLimit">最多减{{data.benefit.reduceLimit}}元</view> -->
+                    </view>
+                    <view class="couponAmount flexStart flexColumn" wx:else>
+                        <view class="currentAmount">{{data.benefit.amount}} <text class="yuan">元</text></view>
                     </view>
                 </view>
-           
             </view>
+
+        </view>
     </view>
     <!-- 门店信息 -->
     <view class="contentContainer">
@@ -95,7 +97,8 @@
                         <text>{{data.shop?data.shop.name:data.name}}</text>
                         <view class="moreShop flexEnd">
                             <text>更多适用门店</text>
-                            <image class="arrowRight" src="https://saler.ishangbin.com/img/shareCard/newStyle/arrowRight666.png"></image>
+                            <image class="arrowRight"
+                                src="https://saler.ishangbin.com/img/shareCard/newStyle/arrowRight666.png"></image>
                         </view>
                     </view>
                     <view class="address" wx:if="{{data.shop}}">{{data.shop.address}}</view>
@@ -104,25 +107,24 @@
         </view>
     </view>
     <!-- 广告 -->
-    <button class="advertiseBox flexSpace"  open-type="share" >
+    <button class="advertiseBox flexSpace" open-type="share">
         <view class="targetDiscount">
             <view class="tips">目标折扣</view>
             <view class="targetDiscountText">
-                <text class="num">{{data.card.limit}}</text>
+                <text class="num">{{data.card.signAmount}}</text>
                 <text class="zhe">折</text>
             </view>
         </view>
-        <view class="invideBox flexEnd flexColumn">
-            <view class="transText">邀请好友加入，一起刷折扣</view>
-            <view class="midText">领取即可{{data.card.amount}}折+100元享受优惠券</view>
-            <view class="invideSmallBtn">邀请好友</view>
+        <view class="invideBox flexEnd flexColumn" bindtap="toJoin">
+            <view class="transText">{{nickname}}邀请您领取共享卡啦</view>
+            <view class="midText">领取即可{{data.card.signAmount}}折+{{data.benefit.name}}</view>
+            <view class="invideSmallBtn">立即领取</view>
         </view>
     </button>
 
     <!-- 中间详情 -->
     <view class="activityDesc bgf">
-        <view class="title">这是一张越用越便宜的共享折扣卡，小姐姐小哥哥们
-            开动起来啦！</view>
+        <view class="title">一人用卡全员共享折扣下降！</view>
         <!-- 主卡 -->
         <view class="part mainPart">
             <view class="introduce flexStart">
@@ -136,9 +138,17 @@
             </view>
             <view class="poples flexStart flexWrap">
                 <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index">
-                    <view class="flexCenter flexColumn" wx:if="{{index==0}}">
-                        <image class="defaulyAvator" src="{{item.avatarUrl}}">
-                        </image>
+                    <view class="flexCenter flexColumn contentP" wx:if="{{index==0}}">
+                        <view class="imgBox">
+                            <image class="defaulyAvator" src="{{item.avatarUrl}}">
+                            </image>
+                            <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                <image class="downArrow"
+                                    src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
+                                </image>
+                                <text>{{item.decline}}%</text>
+                            </view>
+                        </view>
                         <view class="text">{{item.nickname}}</view>
                     </view>
                 </view>
@@ -156,15 +166,28 @@
             </view>
             <view class="poples  flexStart flexWrap">
                 <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index" wx:if="{{index>1}}">
-                    <view class="flexCenter flexColumn" wx:if="{{index>1}}">
-                        <image lazy-load="true" class="defaulyAvator" src="{{item.avatarUrl}}"></image>
-                        <view class="text">{{item.nickname}}</view>
+                    <view class="flexCenter flexColumn contentP" wx:if="{{index>1}}">
+                        <view class="imgBox">
+                            <image class="defaulyAvator" src="{{item.avatarUrl}}">
+                            </image>
+                            <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                <image class="downArrow"
+                                    src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
+                                </image>
+                                <text>{{item.decline}}%</text>
+                            </view>
+                        </view>
                     </view>
                 </view>
                 <view class="eachParter">
-                    <image class="defaulyAvator" src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
-                    </image>
-                    <view class="text">仅{{data.shares.remained}}空位</view>
+                    <view class="flexCenter flexColumn contentP">
+                        <view class="imgBox">
+                            <image class="defaulyAvator"
+                                src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
+                            </image>
+                            <view class="text">仅{{data.shares.remained}}空位</view>
+                        </view>
+                    </view>
                 </view>
             </view>
         </view>
@@ -198,7 +221,7 @@
     <!-- 底部按钮 -->
     <view class="bottomBtn flexSpace" bindtap="toJoin" wx:if="{{type=='card'&&data.obtained?false:true}}">
         <view class="btnContent">
-            {{type=='card'?'领取副卡':'立即领取'}}{{data.card.limit}}折+{{data.benefit.name}}
+            {{type=='card'?'领取副卡':'立即领取'}}{{data.card.signAmount}}折+{{data.benefit.name}}
             <!-- <view class="price">领取即获优惠券</view>
             <view class="toBuy">{{type=='card'?'领取副卡':'立即领取'}}</view> -->
         </view>

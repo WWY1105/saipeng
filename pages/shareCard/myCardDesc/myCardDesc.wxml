@@ -2,10 +2,11 @@
 <header navbarData="{{navbarData}}"></header>
 <view wx:if="{{data}}" class="container" style='padding-top: {{navbarData.height*2 +25}}px;' wx:if="{{data}}">
     <!-- 通知start -->
-    <view class="cardNotice flexStart " wx:if="{{data.latestActivateDate}}">
+    <view class="cardNotice flexStart ">
         <image lazy-load="true" class="tongzhi" src="https://saler.ishangbin.com/img/shareCard/newStyle/tongzhi.png">
         </image>
-        <view class="loopAnimate">副卡名额有限，请您在{{data.latestActivateDate}}之前进行消费，逾期卡片</view>
+        <view class="loopAnimate" wx:if="{{data.latestActivateDate}}">
+            副卡名额有限，请您在{{data.latestActivateDate}}之前进行消费，逾期卡片将自动失效退给主卡重新分配</view>
     </view>
     <!-- 通知end -->
     <view class="cardBoxContainer">
@@ -87,7 +88,7 @@
         <view class="targetDiscount">
             <view class="tips">目标折扣</view>
             <view class="targetDiscountText">
-                <text class="num">{{data.card.limit}}</text>
+                <text class="num">{{data.card.signAmount}}</text>
                 <text class="zhe">折</text>
             </view>
         </view>
@@ -97,59 +98,84 @@
             <view class="invideSmallBtn">邀请好友</view>
         </view>
     </button>
-
-    <!-- 中间详情 -->
-    <view class="activityDesc bgf">
-        <view class="title">这是一张越用越便宜的共享折扣卡，小姐姐小哥哥们
-            开动起来啦！</view>
-        <!-- 主卡 -->
-        <view class="part mainPart">
-            <view class="introduce flexStart">
-                <view class="cardIcon">主卡</view>
-                <text>{{data.card.grows[0].times}}次机会｜每次使用后折扣</text>
-                <view class="loadDiscount flexStart">
-                    <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
-                    </image> <text class="downText">下降 {{data.card.grows[0].value*10}}%</text>
-                </view>
-            </view>
-            <view class="poples flexStart flexWrap">
-                <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index">
-                    <view class="flexCenter flexColumn" wx:if="{{index==0}}">
-                        <image class="defaulyAvator" src="{{item.avatarUrl}}">
-                        </image>
-                        <view class="text">{{item.nickname}}</view>
+    <view class="contentContainer">
+        <!-- 中间详情 -->
+        <view class="activityDesc bgf">
+            <view class="title">一人用卡全员共享折扣下降！</view>
+            <!-- 主卡 -->
+            <view class="part mainPart">
+                <view class="introduce flexStart">
+                    <view class="cardIcon">主卡</view>
+                    <text>{{data.card.grows[0].times}}次机会｜每次使用后折扣</text>
+                    <view class="loadDiscount flexStart">
+                        <image class="downArrow"
+                            src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
+                        </image> <text class="downText">下降 {{item.decline}}%</text>
                     </view>
                 </view>
-            </view>
-        </view>
-        <!-- 副卡 -->
-        <view class="part secondPart">
-            <view class="introduce flexStart">
-                <view class="cardIcon">副卡</view>
-                <text>每人{{data.card.grows[1].times}}次机会｜每次使用后折扣</text>
-                <view class="loadDiscount flexStart">
-                    <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
-                    </image> <text class="downText">下降 {{data.card.grows[1].value*10}}%</text>
-                </view>
-            </view>
-            <view class="poples  flexStart flexWrap">
-                <view class=" " wx:for="{{data.shares.users}}" wx:key="index">
-                    <view class="eachParter" wx:if="{{index>=1}}">
-                        <view class="flexCenter flexColumn" >
-                            <image lazy-load="true" class="defaulyAvator" src="{{item.avatarUrl}}"></image>
+                <view class="poples flexStart flexWrap">
+                    <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index">
+                        <view class="flexCenter flexColumn contentP " wx:if="{{index==0}}">
+                            <view class="imgBox">
+                                <image class="defaulyAvator" src="{{item.avatarUrl}}">
+                                </image>
+                                <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                    <image class="downArrow"
+                                        src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
+                                    </image>
+                                    <text>{{item.decline}}%</text>
+                                </view>
+                            </view>
                             <view class="text">{{item.nickname}}</view>
                         </view>
                     </view>
                 </view>
-                <view class="eachParter">
-                    <image class="defaulyAvator" src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
-                    </image>
-                    <view class="text">仅{{data.shares.remained}}空位</view>
+            </view>
+            <!-- 副卡 -->
+            <view class="part secondPart">
+                <view class="introduce flexStart">
+                    <view class="cardIcon">副卡</view>
+                    <text>每人{{data.card.grows[1].times}}次机会｜每次使用后折扣</text>
+                    <view class="loadDiscount flexStart">
+                        <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
+                        </image> <text class="downText">下降 {{data.card.grows[1].value*10}}%</text>
+                    </view>
+                </view>
+                <view class="poples flexStart flexWrap">
+                    <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index">
+                        <view class="flexCenter flexColumn contentP" wx:if="{{index>=1}}">
+                            <view class="imgBox">
+                                <image class="defaulyAvator" src="{{item.avatarUrl}}">
+                                </image>
+                                <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                    <image class="downArrow"
+                                        src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
+                                    </image>
+                                    <text>{{item.decline}}%</text>
+                                </view>
+                            </view>
+                            <view class="text">{{item.nickname}}</view>
+                        </view>
+                    </view>
+
+                    <!-- ----------------------------------------------------- -->
+
+                    <view class="eachParter">
+                        <view class="flexCenter flexColumn contentP ">
+                            <view class="imgBox">
+                                <image class="defaulyAvator"
+                                    src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
+                                </image>
+                                <view class="text">仅{{data.shares.remained}}空位</view>
+                            </view>
+                        </view>
+
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
 
+    </view>
 
 
     <!-- 活动说明 -->
@@ -177,9 +203,10 @@
 
 
     <!-- 底部按钮 -->
-    <button class="bottomBtn flexSpace" open-type="share" wx:if="{{data.card.grows[1].value*10}}">
-        <view class="btnContent">邀请好友领取{{data.card.grows[1].value*10}}折
-            <text wx:if="{{data.benefit.name}}">+{{data.benefit.name}}</text>
+    <button class="bottomBtn flexSpace" open-type="share" >
+        <view class="btnContent">
+            <text>邀请好友领取副卡{{data.card.signAmount}}折</text><text
+                wx:if="{{data.benefit.name}}">+{{data.benefit.name}}</text>
         </view>
     </button>
 </view>
@@ -190,20 +217,24 @@
 
 <!-- 有待签收的弹窗 -->
 
-<view class='modalbox' wx:if="{{signModal}}" catchtouchmove='true' bindtap="toSignList">
-    <view class='modal signModalModal flexCenter flexColumn'>
-        <view class="topTips">您的共享卡新折扣待签收</view>
-        <view class="discountBox">{{data.card.signAmount}}折</view>
-        <view class="discountTips flexCenter">
-            <text class="line"></text>
-            <text>签收后即刻生效</text>
-            <text class="line"></text>
-        </view>
-        <view class="getButton">
-            <text class="flexCenter">
-                <text>立即签收</text>
-                <text class="arrowRight"></text>
-            </text>
+<view class='modalbox' wx:if="{{signModal}}" catchtouchmove='true'>
+    <view class='modal signModal '>
+        <view class="modalContent flexCenter flexColumn">
+            <image src="https://saler.ishangbin.com/img/shareCard/close.png" class="closeBtn" bindtap="closeSignModal">
+            </image>
+            <view class="topTips">您的共享卡新折扣待签收</view>
+            <view class="discountBox">{{data.card.signAmount}}折</view>
+            <view class="discountTips flexCenter">
+                <text class="line"></text>
+                <text>签收后即刻生效</text>
+                <text class="line"></text>
+            </view>
+            <view class="getButton" bindtap="toSignList">
+                <text class="flexCenter">
+                    <text>立即签收</text>
+                    <text class="arrowRight"></text>
+                </text>
+            </view>
         </view>
     </view>
 </view>

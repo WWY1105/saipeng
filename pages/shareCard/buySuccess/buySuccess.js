@@ -97,7 +97,7 @@ Page({
         console.log(this.data.order)
         let discount = this.data.order.card.limit || '';
         let that = this;
-        let url = "/pages/shareCard/joinShare/joinShare?id=" + this.data.order.id + "&type=card";
+        let url = "/pages/shareCard/joinShare/joinShare?id=" + this.data.order.id + "&type=card"+'&nickname='+this.data.userInfo.nickname;
         let title = '快领我的共享卡，和我共享全场' + discount + '折！'
         return {
             title: title,

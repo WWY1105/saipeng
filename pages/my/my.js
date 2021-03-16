@@ -109,7 +109,7 @@ Page({
 
    },
    // 跳转
-   goto: app.util.throttle(function(e) {
+   goto: function(e) {
       let name = e.currentTarget.dataset.navname;
       let that=this;
       // wx.
@@ -130,13 +130,12 @@ Page({
       wx.navigateTo({
          url: url
       })
-   }),
+   },
    // 获取电话号
    getPhoneNumber(e) {
       wx.showLoading({
          title: '加载中',
       })
-      //console.log(e)
       var _self = this
       if (e.detail.errMsg == 'getPhoneNumber:fail user deny' || e.detail.errMsg == 'getPhoneNumber:user deny' || e.detail.errMsg == 'getPhoneNumber:fail:user deny') {
          wx.showModal({

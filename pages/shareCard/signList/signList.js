@@ -8,7 +8,7 @@ Page({
   data: {
     id: '',
     showLoading: true,
-    signList: [],
+    signList: false,
     signFlag: false
   },
 
@@ -88,6 +88,7 @@ Page({
   getList() {
     const that = this;
     const url = '/shares/' + this.data.id + '/grows';
+    
     app.util.request(that, {
       url: app.util.getUrl(url),
       method: 'GET',
@@ -115,6 +116,7 @@ Page({
   // 点击去领取
   postSign() {
     const that=this;
+    console.log(that.data.signId)
     return new Promise((resolve, reject) => {
       const url = '/shares/' + this.data.id + '/grows';
       app.util.request(that, {
@@ -131,9 +133,17 @@ Page({
             signFlag: false,
             signId: false
           })
+          resolve();
+        }else{
+          this.setData({signList:false})
         }
       })
-      resolve();
+     
+    })
+  },
+  showTips(){
+    wx.showToast({
+      title: '请先签收上面的折扣，再来签收本折扣'
     })
   }
 })
