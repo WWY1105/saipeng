@@ -134,7 +134,7 @@
                                 src="https://saler.ishangbin.com/img/shareCard/newStyle/arrowRight666.png"></image>
                         </view>
                     </view>
-                    <view class="address" wx:if="{{data.shop}}">{{data.shop.address}}</view>
+                    <view class="address">{{data.shop?data.shop.address:'暂无'}}</view>
                 </view>
             </view>
         </view>

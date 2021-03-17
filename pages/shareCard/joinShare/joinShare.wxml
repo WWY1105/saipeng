@@ -34,7 +34,6 @@
                 </view>
             </view>
             <!-- 优惠券 -->
-
         </view>
     </view>
     <!-- 获得的券信息 -->
@@ -101,7 +100,7 @@
                                 src="https://saler.ishangbin.com/img/shareCard/newStyle/arrowRight666.png"></image>
                         </view>
                     </view>
-                    <view class="address" wx:if="{{data.shop}}">{{data.shop.address}}</view>
+                    <view class="address">{{data.shop?data.shop.address:'暂无'}}</view>
                 </view>
             </view>
         </view>
@@ -116,7 +115,7 @@
             </view>
         </view>
         <view class="invideBox flexEnd flexColumn" bindtap="toJoin">
-            <view class="transText">{{nickname}}邀请您领取共享卡啦</view>
+            <view class="transText" wx:if="{{data.shares.users}}">{{data.shares.users[0].nickname}}邀请您领取共享卡啦</view>
             <view class="midText">领取即可{{data.card.signAmount}}折+{{data.benefit.name}}</view>
             <view class="invideSmallBtn">立即领取</view>
         </view>
@@ -177,6 +176,7 @@
                                 <text>{{item.decline}}%</text>
                             </view>
                         </view>
+                        <view class="text">{{item.nickname}}</view>
                     </view>
                 </view>
                 <view class="eachParter">
@@ -185,7 +185,7 @@
                             <image class="defaulyAvator"
                                 src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
                             </image>
-                            <view class="text">仅{{data.shares.remained}}空位</view>
+                            <view class="text active">仅{{data.shares.remained}}空位</view>
                         </view>
                     </view>
                 </view>

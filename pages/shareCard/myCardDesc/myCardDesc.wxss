@@ -547,15 +547,18 @@ page {
   box-shadow: 0px 2px 14px 0px #FFF0DB;
   border-radius: 50%;
 }
-.activityDesc .part .poples .eachParter .text {
+.container .activityDesc .part .poples .eachParter .text {
   font-size: 24rpx;
-  color: #84460E;
+  color: #999;
   line-height: 32rpx;
   margin-top: 16rpx;
   max-width: 100rpx;
   word-break: keep-all;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.container .activityDesc .part .poples .eachParter .text.active {
+  color: #84460E;
 }
 .bottomBtn {
   padding: 50rpx;
@@ -564,7 +567,7 @@ page {
   width: 100%;
   box-sizing: border-box;
   z-index: 998;
-  background-color: #fff;
+  background-color: transparent;
 }
 .bottomBtn .btnContent {
   width: 100%;
@@ -577,7 +580,7 @@ page {
   font-size: 32rpx;
   font-weight: bold;
   color: #FFFFFF;
-  line-height: 44px;
+  line-height: 92rpx;
 }
 .signModal {
   width: 596rpx;

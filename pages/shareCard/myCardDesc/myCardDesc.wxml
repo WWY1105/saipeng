@@ -78,7 +78,7 @@
                                 src="https://saler.ishangbin.com/img/shareCard/newStyle/arrowRight666.png"></image>
                         </view>
                     </view>
-                    <view class="address" wx:if="{{data.shop}}">{{data.shop.address}}</view>
+                    <view class="address" >{{data.shop?data.shop.address:'暂无'}}</view>
                 </view>
             </view>
         </view>
@@ -166,7 +166,7 @@
                                 <image class="defaulyAvator"
                                     src="https://saler.ishangbin.com/img/shareCard/newStyle/who.png">
                                 </image>
-                                <view class="text">仅{{data.shares.remained}}空位</view>
+                                <view class="text active">仅{{data.shares.remained}}空位</view>
                             </view>
                         </view>
 

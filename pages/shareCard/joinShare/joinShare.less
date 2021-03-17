@@ -698,14 +698,16 @@ width: 100%;
 
           .text {
             font-size: 24rpx;
-            color: #84460E;
+            color: #999;
             line-height: 32rpx;
             margin-top: 16rpx;
             max-width: 100rpx;
             word-break: keep-all;
             overflow: hidden;
             text-overflow: ellipsis;
-        
+            &.active{
+              color: #84460E;
+            }
           }
         }
 
@@ -721,7 +723,7 @@ width: 100%;
     width: 100%;
     box-sizing: border-box;
     z-index: 998;
-    background-color: #fff;
+    background-color: transparent;
 
     .btnContent {
       width: 100%;
@@ -734,7 +736,7 @@ width: 100%;
       font-size: 32rpx;
       font-weight: bold;
       color: #FFFFFF;
-      line-height: 44px;
+      line-height: 92rpx;
     }
   }
 }
