@@ -25,7 +25,7 @@
                 <view class="content">
                     <view class="startAmount">{{data.card.orgAmount}}</view>
                     <view class="amount">
-                        <view class="discountNum" wx:if="{{data.card.amount}}">{{data.card.amount}}</view>
+                        <view class="discountNum" wx:if="{{data.card.signAmount}}">{{data.card.signAmount}}</view>
                         <view class="amountTips">当前折扣</view>
                     </view>
                     <view class="limit flexCenter" wx:if="{{data.card.limit}}">
@@ -110,13 +110,13 @@
         <view class="targetDiscount">
             <view class="tips">目标折扣</view>
             <view class="targetDiscountText">
-                <text class="num">{{data.card.signAmount}}</text>
+                <text class="num">{{data.card.limit}}</text>
                 <text class="zhe">折</text>
             </view>
         </view>
         <view class="invideBox flexEnd flexColumn" bindtap="toJoin">
             <view class="transText" wx:if="{{data.shares.users}}">{{data.shares.users[0].nickname}}邀请您领取共享卡啦</view>
-            <view class="midText">领取即可{{data.card.signAmount}}折+{{data.benefit.name}}</view>
+            <view class="midText">领取即享{{data.card.signAmount}}折+{{data.benefit.name}}</view>
             <view class="invideSmallBtn">立即领取</view>
         </view>
     </button>
@@ -132,7 +132,7 @@
                 <view class="loadDiscount flexStart">
                     <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
                     </image>
-                    <text class="downText">下降 {{data.card.grows[0].value*10}}%</text>
+                    <text class="downText">下降 {{data.card.grows[0].value}}%</text>
                 </view>
             </view>
             <view class="poples flexStart flexWrap">
@@ -141,11 +141,11 @@
                         <view class="imgBox">
                             <image class="defaulyAvator" src="{{item.avatarUrl}}">
                             </image>
-                            <view class="decline flexCenter" wx:if="{{item.decline}}">
+                            <view class="decline flexCenter {{!item.grow?'grey':''}}">
                                 <image class="downArrow"
                                     src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
                                 </image>
-                                <text>{{item.decline}}%</text>
+                                <text>{{item.decline||0}}%</text>
                             </view>
                         </view>
                         <view class="text">{{item.nickname}}</view>
@@ -160,7 +160,7 @@
                 <text>每人{{data.card.grows[1].times}}次机会｜每次使用后折扣</text>
                 <view class="loadDiscount flexStart">
                     <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
-                    </image> <text class="downText">下降 {{data.card.grows[1].value*10}}%</text>
+                    </image> <text class="downText">下降 {{data.card.grows[1].value}}%</text>
                 </view>
             </view>
             <view class="poples  flexStart flexWrap">
@@ -169,11 +169,11 @@
                         <view class="imgBox">
                             <image class="defaulyAvator" src="{{item.avatarUrl}}">
                             </image>
-                            <view class="decline flexCenter" wx:if="{{item.decline}}">
+                            <view class="decline flexCenter {{!item.grow?'grey':''}}">
                                 <image class="downArrow"
                                     src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
                                 </image>
-                                <text>{{item.decline}}%</text>
+                                <text>{{item.decline||0}}%</text>
                             </view>
                         </view>
                         <view class="text">{{item.nickname}}</view>

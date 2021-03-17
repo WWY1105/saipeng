@@ -88,7 +88,7 @@
         <view class="targetDiscount">
             <view class="tips">目标折扣</view>
             <view class="targetDiscountText">
-                <text class="num">{{data.card.signAmount}}</text>
+                <text class="num">{{data.card.limit}}</text>
                 <text class="zhe">折</text>
             </view>
         </view>
@@ -110,7 +110,7 @@
                     <view class="loadDiscount flexStart">
                         <image class="downArrow"
                             src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
-                        </image> <text class="downText">下降 {{item.decline}}%</text>
+                        </image> <text class="downText">下降 {{data.card.grows[0].value}}%</text>
                     </view>
                 </view>
                 <view class="poples flexStart flexWrap">
@@ -119,11 +119,11 @@
                             <view class="imgBox">
                                 <image class="defaulyAvator" src="{{item.avatarUrl}}">
                                 </image>
-                                <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                <view class="decline flexCenter {{!item.grow?'grey':''}}">
                                     <image class="downArrow"
                                         src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
                                     </image>
-                                    <text>{{item.decline}}%</text>
+                                    <text>{{item.decline||0}}%</text>
                                 </view>
                             </view>
                             <view class="text">{{item.nickname}}</view>
@@ -138,7 +138,7 @@
                     <text>每人{{data.card.grows[1].times}}次机会｜每次使用后折扣</text>
                     <view class="loadDiscount flexStart">
                         <image class="downArrow" src="https://saler.ishangbin.com/img/shareCard/newStyle/downArrow.png">
-                        </image> <text class="downText">下降 {{data.card.grows[1].value*10}}%</text>
+                        </image> <text class="downText">下降 {{data.card.grows[1].value}}%</text>
                     </view>
                 </view>
                 <view class="poples flexStart flexWrap">
@@ -147,11 +147,11 @@
                             <view class="imgBox">
                                 <image class="defaulyAvator" src="{{item.avatarUrl}}">
                                 </image>
-                                <view class="decline flexCenter" wx:if="{{item.decline}}">
+                                <view class="decline flexCenter {{!item.grow?'grey':''}}">
                                     <image class="downArrow"
                                         src="https://saler.ishangbin.com/img/shareCard/newStyle/whiteArrowDown.png">
                                     </image>
-                                    <text>{{item.decline}}%</text>
+                                    <text>{{item.decline||0}}%</text>
                                 </view>
                             </view>
                             <view class="text">{{item.nickname}}</view>

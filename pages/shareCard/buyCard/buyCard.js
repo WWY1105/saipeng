@@ -173,8 +173,8 @@ Page({
                         title: res.result.card.name,
                     })
                 }
-                let down1=res.result.card.grows[0].value*10;
-                let down2=res.result.card.grows[1].value*10;
+                let down1=res.result.card.grows[0].value;
+                let down2=res.result.card.grows[1].value;
                 that.setData({
                     selfCouponCount,
                     maxDiscount,
