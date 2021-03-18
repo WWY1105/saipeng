@@ -142,7 +142,7 @@ Page({
     //   查看更多门店
     toMoreShop() {
         wx.navigateTo({
-            url: "/pages/shareCard/shops/shops?id=" + this.data.id,
+            url: "/pages/shareCard/shops/shops?id=" + this.data.activityId,
         })
     },
     // 获取活动详情
