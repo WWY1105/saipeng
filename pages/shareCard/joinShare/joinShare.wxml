@@ -165,7 +165,7 @@
             </view>
             <view class="poples  flexStart flexWrap">
                 <view class="eachParter " wx:for="{{data.shares.users}}" wx:key="index" wx:if="{{index>1}}">
-                    <view class="flexCenter flexColumn contentP" wx:if="{{index>1}}">
+                    <view class="flexCenter flexColumn contentP" wx:if="{{index>=1}}">
                         <view class="imgBox">
                             <image class="defaulyAvator" src="{{item.avatarUrl}}">
                             </image>

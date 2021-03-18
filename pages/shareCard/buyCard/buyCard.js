@@ -7,13 +7,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        navbarData:{
-            height:app.globalData.height,
-            title:'',
-            color:'#333333',
-            backgroundColor:false
+        navbarData: {
+            height: app.globalData.height,
+            title: '',
+            color: '#333333',
+            backgroundColor: false
         },
-        
+
         tagStyle: {
             span: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
             p: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
@@ -33,10 +33,10 @@ Page({
         hasToken: false,
         maxDiscount: 0,
         acceptArr: [], //用户订阅消息
-        type:'self',// 券类型
-        couponList:[],
-        down1:0,
-        down2:0
+        type: 'self',// 券类型
+        couponList: [],
+        down1: 0,
+        down2: 0
     },
 
     /**
@@ -63,16 +63,16 @@ Page({
         }
 
     },
-    onPageScroll: tool.debounce(function(res) {
+    onPageScroll: tool.debounce(function (res) {
         console.log(res[0].scrollTop)
         //结果： 延迟函数执行，不管触发多少次都只执行最后一次。
-        if(res[0].scrollTop>this.data.navbarData.height){
-            this.setData({'navbarData.backgroundColor':'#E1B78F'})
-        }else{
-            this.setData({'navbarData.backgroundColor':false})
+        if (res[0].scrollTop > this.data.navbarData.height) {
+            this.setData({ 'navbarData.backgroundColor': '#E1B78F' })
+        } else {
+            this.setData({ 'navbarData.backgroundColor': false })
         }
-     },50),
-  
+    }, 50),
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -138,6 +138,12 @@ Page({
     onShareAppMessage: function () {
 
     },
+    //   查看更多门店
+    toMoreShop() {
+        wx.navigateTo({
+            url: "/pages/shareCard/shops/shops?id=" + this.data.id,
+        })
+    },
     // 获取活动详情
     getActivity() {
         let that = this;
@@ -152,7 +158,7 @@ Page({
                 showLoading: false
             })
             if (res.code == 200) {
-              
+
                 let maxDiscount = 0;
                 if (res.result.card.orgAmount && res.result.card.limit) {
                     maxDiscount = res.result.card.orgAmount - res.result.card.limit;
@@ -173,14 +179,14 @@ Page({
                         title: res.result.card.name,
                     })
                 }
-                let down1=res.result.card.grows[0].value;
-                let down2=res.result.card.grows[1].value;
+                let down1 = res.result.card.grows[0].value;
+                let down2 = res.result.card.grows[1].value;
                 that.setData({
                     selfCouponCount,
                     maxDiscount,
                     data: res.result,
-                    'navbarData.title':res.result.name,
-                    couponList:res.result.benefits,
+                    'navbarData.title': res.result.name,
+                    couponList: res.result.benefits,
                     down1,
                     down2
                 })
@@ -195,19 +201,19 @@ Page({
         })
 
     },
-        // 打电话
-        makePhoneCall(e) {
-            let phone = e.currentTarget.dataset.phone;
-            wx.makePhoneCall({
-                phoneNumber: phone,
-                success: function () {
-                    console.log('拨打成功')
-                },
-                fail: function () {
-                    console.log('拨打失败')
-                }
-            })
-        },
+    // 打电话
+    makePhoneCall(e) {
+        let phone = e.currentTarget.dataset.phone;
+        wx.makePhoneCall({
+            phoneNumber: phone,
+            success: function () {
+                console.log('拨打成功')
+            },
+            fail: function () {
+                console.log('拨打失败')
+            }
+        })
+    },
     cancelPay(orderId) {
         let that = this;
         let url = '/pay/revoke/order/' + orderId;
@@ -241,7 +247,7 @@ Page({
                 wx.requestSubscribeMessage({
                     tmplIds: templateIds,
                     success: (res) => {
-                     
+
                         if (res.errMsg == 'requestSubscribeMessage:ok') {
                             for (let i in res) {
                                 if (i != 'errMsg' && res[i] == 'accept') {
@@ -310,7 +316,7 @@ Page({
                             // })
                             // 支付成功
                             wx.navigateTo({
-                              url: '/pages/shareCard/buySuccess/buySuccess?orderId='+res.result.orderId,
+                                url: '/pages/shareCard/buySuccess/buySuccess?orderId=' + res.result.orderId,
                             })
                         }, () => {
                             console.log('支付失败')
@@ -423,19 +429,19 @@ Page({
             showShopNum
         })
     },
-    changeCouponTab(e){
-       this.setData({couponList:[]},()=>{
+    changeCouponTab(e) {
+        this.setData({ couponList: [] }, () => {
 
-      
-        let {type}=this.data;
-        console.log('当前'+type)
-        const {participants,benefits} =this.data.data;
-  
-        let couponList= type=='self'?participants:benefits;
-        console.log(couponList)
-        type=type=='self'?'friend':'self';
-        console.log('后来'+type)
-        this.setData({type,couponList})
-    })
+
+            let { type } = this.data;
+            console.log('当前' + type)
+            const { participants, benefits } = this.data.data;
+
+            let couponList = type == 'self' ? participants : benefits;
+            console.log(couponList)
+            type = type == 'self' ? 'friend' : 'self';
+            console.log('后来' + type)
+            this.setData({ type, couponList })
+        })
     }
 })

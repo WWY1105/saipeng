@@ -131,7 +131,8 @@ Page({
           })
           that.setData({
             signFlag: false,
-            signId: false
+            signId: false,
+            signList:false
           })
           resolve();
         }else{

@@ -176,7 +176,7 @@ page {
   text-align: left;
 }
 .container .advertiseBox .targetDiscount .tips {
-  font-size: 20rpx;
+  font-size: 22rpx;
 }
 .container .advertiseBox .targetDiscount .targetDiscountText {
   align-items: flex-start;
@@ -570,9 +570,6 @@ page {
   position: absolute;
   bottom: 0;
   right: -14rpx;
-}
-.container .activityDesc .part .poples .eachParter .imgBox .decline.grey{
-  background: linear-gradient(to right, #D2D2D2 0%, #C2C0BE 100%);
 }
 .container .activityDesc .part .poples .eachParter .imgBox .decline.grey {
   background: linear-gradient(to right, #D2D2D2 0%, #C2C0BE 100%);

@@ -17,6 +17,7 @@ page {
   width: 100%;
   margin-bottom: 10rpx;
   overflow: hidden;
+  position: relative;
 }
 .container .cardNotice .loopAnimate {
   display: inline-block;
@@ -29,6 +30,9 @@ page {
   margin-right: 12rpx;
   background-color: #FFE2B7;
   z-index: 9;
+  position: absolute;
+  top:0;
+  left:0;
 }
 .container .cardBoxContainer {
   width: 100%;
@@ -213,7 +217,7 @@ page {
   position: relative;
 }
 .container .advertiseBox .targetDiscount .tips {
-  font-size: 20rpx;
+  font-size: 22rpx;
   line-height: 24rpx;
   color: #F8CA86;
 }
@@ -535,6 +539,9 @@ page {
   position: absolute;
   bottom: 0;
   right: -14rpx;
+}
+.activityDesc .part .poples .eachParter .imgBox .decline.grey {
+  background: linear-gradient(to right, #D2D2D2 0%, #C2C0BE 100%);
 }
 .activityDesc .part .poples .eachParter .imgBox .decline .downArrow {
   width: 12rpx;

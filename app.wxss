@@ -240,7 +240,7 @@ font-size: 200rpx;
    height: 100vh;
    overflow: hidden;
    z-index: 999;
-   background:rgba(0, 0, 0, 0.6);
+   background:rgba(0, 0, 0, 0.8);
  }
  
  .modal {

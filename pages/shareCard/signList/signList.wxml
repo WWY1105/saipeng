@@ -1,5 +1,5 @@
 <!--pages/shareCard/signList/signList.wxml-->
-<view class="signListBox" wx:if="{{signList}}">
+<view class="signListBox" wx:if="{{signList&&signList.records}}">
   <view class="advertiseBox flexCenter flexColumn">
     <view class="tips">当前可用折扣</view>
     <view class="disCountBox">
@@ -48,7 +48,7 @@
             <view class="numBox">{{item.amount}}</view>
             <view class="textBox">
               <view class="name">{{item.amount}}折</view>
-              <view class="desc">继续签收更低折扣</view>
+              <view class="desc">分享一下，即可完成签收</view>
             </view>
           </view>
           <view class="rightBtn" bindtap="toSign" data-id="{{item.id}}">
