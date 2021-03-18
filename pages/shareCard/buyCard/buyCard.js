@@ -15,6 +15,7 @@ Page({
         },
 
         tagStyle: {
+            '._ul-bef':'display:none',
             span: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
             p: 'height:auto;word-break:normal; width:auto;max-width:100%;white-space:pre-wrap;word-wrap : break-word ;overflow: hidden ;',
         },
